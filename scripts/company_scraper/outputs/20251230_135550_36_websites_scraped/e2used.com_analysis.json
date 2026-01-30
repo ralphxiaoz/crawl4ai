@@ -1,0 +1,39 @@
+[
+  {
+    "company_name": "Arrow Green Electronics, Inc.",
+    "website_url": "https://www.e2used.com",
+    "main_business": "IT Asset Disposition (ITAD) and Data Center Equipment Recycling",
+    "description": "Arrow Green Electronics Corporation is an R2V3-certified professional company specializing in the recycling of data center equipment and Apple devices. They provide comprehensive ITAD services, including secure data erasure, IT asset buyback, and environmentally responsible processing. The company focuses on maximizing value recovery while ensuring data security and regulatory compliance.",
+    "products_services": [
+      "ITAD Services (IT Asset Recycling and Buyback)",
+      "Data Erasure Services (Software overwriting, physical destruction, degaussing)",
+      "Purchase of Used IT Equipment: Storage Systems (NETAPP, DELL EMC, HP, IBM), Servers (IBM, Lenovo, DELL-EMC, HPE), CPUs, Memory (RAM), LTO7-LTO8 Tape Drives, Hard Drives (SSD and mechanical)",
+      "Purchase of Apple Devices: MacBook, iMac, iPad, iPhone",
+      "Environmental Processing and Recycling"
+    ],
+    "contact_emails": [
+      "salesE2used@gmail.com"
+    ],
+    "contact_phones": [
+      "(001)831-288-3808"
+    ],
+    "physical_address": "25509 Industrial Blvd #F14 Hayward, CA 94545",
+    "year_founded": null,
+    "certifications": [
+      "R2V3"
+    ],
+    "service_areas": [],
+    "summary": "Arrow Green Electronics, Inc. is an R2V3-certified ITAD and asset recovery firm based in Hayward, California. Their core business is the professional recycling and buyback of enterprise IT assets, with a strong specialization in data center equipment (servers, storage, CPUs, memory, tape drives) and Apple products. They emphasize secure data destruction through both software erasure and physical methods, and they operate with a focus on environmental responsibility and regulatory compliance. The company presents itself as a B2B service provider, offering tailored solutions for organizations looking to dispose of IT assets securely and sustainably.",
+    "is_good_fit": true,
+    "inventory_fit_assessment": "Excellent fit. The company's entire business model is centered on purchasing the exact enterprise IT assets Yilong requires. Their inventory includes: Data Center Servers (IBM, Lenovo, Dell EMC, HPE), Storage Systems (NetApp, Dell EMC, HP, IBM), harvested components (CPU, Memory/RAM, SSD/HDD), and LTO Tape Drives. They also handle Apple devices, which are a high-value commodity. The website repeatedly mentions 'recycling' and 'buyback,' indicating they are a source of bulk assets, not a retail seller. While specific grading (A/B/C) is not explicitly mentioned, their R2V3 certification implies a process that includes testing and functional verification, aligning with Yilong's requirement for 'Tested Functional' grade assets.",
+    "operational_fit_assessment": "Strong operational fit. The company is clearly a B2B-focused ITAD processor and asset recovery firm, not a consumer recycler. Their possession of R2V3 certification is a major positive, demonstrating adherence to industry standards for testing, data sanitization, and environmental responsibility—directly matching Yilong's compliance needs. Their service descriptions (e.g., 'comprehensive enterprise IT asset disposal services,' 'tailored solutions,' 'asset management and reporting') indicate they are equipped to handle large, organizational clients and bulk transactions. The sales channel is implied to be wholesale/bulk, as they are soliciting equipment 'for sale' from businesses, not selling single units to consumers.",
+    "red_flags": [
+      "Lack of explicit mention of wholesale/bulk sales terminology (e.g., pallet, truckload).",
+      "No explicit mention of company size or annual volume handled.",
+      "Primary contact email is a Gmail address, which may raise minor professionalism concerns for a B2B enterprise."
+    ],
+    "recommendation": "Reach out",
+    "reasoning": "Arrow Green Electronics is a highly promising vendor candidate. They meet the critical 'Must Have' criteria for both pillars: 1) Their inventory is a perfect match for enterprise IT assets and components. 2) They are an R2V3-certified ITAD firm with a clear B2B service model. The red flags are minor and typical of a smaller or mid-sized operator; they do not disqualify the company. The R2V3 certification is the strongest indicator that they can provide 'Tested Functional' assets with proper data sanitization, which is essential for Yilong's high-quality refurbishment model. A direct inquiry can clarify their capacity for bulk EXW transactions and specific grading processes.",
+    "error": false
+  }
+]

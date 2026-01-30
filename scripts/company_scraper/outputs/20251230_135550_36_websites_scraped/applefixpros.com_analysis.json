@@ -1,0 +1,49 @@
+[
+  {
+    "company_name": "Apple Fix Pros",
+    "website_url": "https://www.applefixpros.com",
+    "main_business": "Apple Device Sales, Repair, and Parts Wholesale",
+    "description": "Apple Fix Pros is a one-stop shop specializing in new and refurbished Apple Macs, genuine parts, repairs, and device recycling/trade-ins. They operate as an Apple Certified repair center and a wholesale supplier of OEM parts to businesses and repair stores.",
+    "products_services": [
+      "New and Refurbished Mac Sales (MacBook Air, MacBook Pro, iMac, Mac Mini, Mac Studio, Mac Pro)",
+      "Genuine Apple Parts Wholesale",
+      "Mac Repair Services (In-store and Mail-in)",
+      "Device Trade-in / Buyback Program",
+      "Apple Accessories and Electronics Sales (Speakers, Headphones, etc.)"
+    ],
+    "contact_emails": [],
+    "contact_phones": [
+      "+1 (916) 735-5966",
+      "+1 (279) 599-0139",
+      "+1 (916) 771 0672",
+      "+1 (279) 465-7132",
+      "+1 (415) 646-5031"
+    ],
+    "physical_address": "500 Cirby Way, Suite D, Roseville, CA 95678",
+    "year_founded": "2019",
+    "certifications": [
+      "R2V3 Facility",
+      "ISO 9001",
+      "ISO 45001",
+      "ISO 14001",
+      "Apple Certified Technicians",
+      "CompTIA A+ Certified Specialists"
+    ],
+    "service_areas": [
+      "United States",
+      "South America"
+    ],
+    "summary": "Apple Fix Pros is a US-based company specializing in the Apple ecosystem. Their core business revolves around three pillars: selling new and certified refurbished Macs and accessories, providing repair services with genuine parts, and operating a wholesale parts division for other businesses. They emphasize their certifications, including R2V3 and multiple ISO standards, and highlight their B2B capabilities as a major parts supplier to over 7,000 service providers and repair centers. The company serves both consumers and businesses, offering local repair in Citrus Heights/Roseville, CA, and nationwide mail-in services. They have helped over 29,000 customers since 2019 and stock over 800 genuine parts.",
+    "is_good_fit": true,
+    "inventory_fit_assessment": "The company's primary inventory is enterprise-grade Apple laptops and desktops (MacBook Pro, MacBook Air, iMac, Mac Mini, Mac Studio, Mac Pro). They sell devices in various conditions: New, Certified Refurbished, Refurbished, Open Box, Premium, and Used. This aligns with Yilong's need for Tested Functional Grade C (Ready for Refurbishment) assets, as their 'Certified Refurb' and 'Refurbished' categories indicate testing. A strong bonus is their extensive wholesale of harvested, high-value components (logic boards, displays, batteries, etc.), which are explicitly listed as '100% Genuine' OEM parts. However, their focus is exclusively on Apple products, lacking the broader range of enterprise IT assets like servers, networking gear, or non-Apple brands.",
+    "operational_fit_assessment": "Operational fit is strong in several key areas. They have explicit B2B/wholesale capabilities, stating they are 'one of the biggest Mac Parts Wholesalers' and supply parts to over 7,000 businesses. They possess the critical R2V3 certification, indicating proper testing and data wiping procedures. Their sales model supports bulk, as seen in parts listings and wholesale offers for repair stores. They are an ITAD processor for Apple devices, offering a formal trade-in/buyback program with inspection and payment. The company is staffed by certified technicians, ensuring technical competency. A potential concern is that a significant portion of their website is geared toward retail (B2C) sales of individual devices and accessories.",
+    "red_flags": [
+      "Inventory is exclusively Apple products (Macs and accessories). No mention of servers, networking equipment, or storage from other brands.",
+      "Strong retail (B2C) sales presence alongside B2B wholesale, which may indicate a split focus.",
+      "The 'Liquidation' link (coming soon) is ambiguous and could imply mixed-grade lots, but details are not provided."
+    ],
+    "recommendation": "Research further",
+    "reasoning": "Apple Fix Pros is a qualified vendor with the right certifications (R2V3), B2B wholesale operations, and a focus on tested, functional Apple devices and components—a high-value niche. They are a good potential source for premium Apple laptops and desktops, as well as genuine parts for refurbishment. However, they are not a broad-line ITAD provider. The recommendation is to 'Research Further' to determine if their exclusive Apple focus and available volumes align with Yilong's specific monthly procurement targets and product mix. A direct inquiry is warranted to assess their capacity for consistent, bulk shipments of MacBooks and components.",
+    "error": false
+  }
+]

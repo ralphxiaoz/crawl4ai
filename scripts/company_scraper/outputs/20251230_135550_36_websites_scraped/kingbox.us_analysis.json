@@ -1,0 +1,50 @@
+[
+  {
+    "company_name": "Kingbox Group Inc",
+    "website_url": "http://kingbox.us",
+    "main_business": "Electronics Recycling and IT Asset Disposition (ITAD)",
+    "description": "Kingbox is a global e-waste recycler and IT solutions provider for medium and global businesses, electronic OEMs, and data centers. They specialize in electronics recycling, component reuse, and IT asset recovery, with services including data destruction, IC chip testing/reballing, and materials recovery. They are a subsidiary of a Taiwanese electronics manufacturer and operate facilities in North America and Asia.",
+    "products_services": [
+      "Electronics Recycling",
+      "IT Asset Reuse",
+      "Data Destruction",
+      "IC Chip Exploitation/Detach",
+      "IC Chip Testing",
+      "Reballing Services",
+      "SMT (Surface Mount Technology) Services",
+      "Data Center Decommissioning",
+      "Materials Recovery",
+      "Remarketing",
+      "Memory/SSD Manufacturing (Parent Company)"
+    ],
+    "contact_emails": [
+      "info@kingbox.tw",
+      "sales@kingbox.tw"
+    ],
+    "contact_phones": [
+      "760-295-8612"
+    ],
+    "physical_address": "2575 Fortune Way, Vista, CA 92081, USA",
+    "year_founded": "1993",
+    "certifications": [
+      "R2v3"
+    ],
+    "service_areas": [
+      "USA (Vista, California)",
+      "Canada (Whitby, Ontario)",
+      "China (Shenzhen)",
+      "Taiwan (Taipei)"
+    ],
+    "summary": "Kingbox Group Inc is a global electronics recycling and IT asset disposition firm with headquarters in Taiwan and operations in the US, Canada, and China. Founded in 1993, the company provides B2B services including data center decommissioning, data destruction, IT asset reuse, and electronic recycling. They hold R2v3 certification and specialize in the testing, reballing, and reuse of high-value components like IC chips, memory, and CPUs. Their parent company is a manufacturer of SSDs and memory, giving them vertical integration in the component supply chain.\n\nThe company's core capabilities align with enterprise IT asset recovery, focusing on servers, desktops, laptops, and data center equipment. They emphasize a 'reuse, recover' hierarchy and have detailed processes for testing and refurbishing components for reuse. Their operational footprint includes facilities in key North American and Asian markets, supporting a global supply chain.\n\nFor a bulk ITAD buyer like Yilong, Kingbox presents a strong potential vendor due to their B2B focus, R2v3 certification, component-level expertise (especially in memory and IC chips), and wholesale-oriented model. Their ability to handle data destruction and provide tested functional components matches the requirements for a high-volume procurement partner.",
+    "is_good_fit": true,
+    "inventory_fit_assessment": "Strong fit. Kingbox explicitly handles enterprise IT assets from data centers and businesses, including servers, desktops, laptops, and networking/storage equipment. They specialize in harvesting and reusing high-value components like IC chips (CPU, DDR, FLASH), memory (DRAM, FLASH), and SSDs—which are bonus items for Yilong. Their process includes testing, reballing, and grading components for reuse, indicating they can supply 'Tested Functional' (Grade C) or better assets. They mention 'reuse' as a primary strategy, not just shredding/scrap.",
+    "operational_fit_assessment": "Good operational fit. Kingbox is a B2B-focused ITAD processor and asset recovery firm serving medium and global businesses, OEMs, and data centers. They are R2v3 certified, which is highly preferred and indicates proper data wiping and testing procedures. Their services include on-site destruction, bulk pick-up, and transport to processing facilities, suggesting wholesale/bulk sales capabilities. They have a global footprint with facilities in the US and Canada, aligning with Yilong's US sourcing needs.",
+    "red_flags": [
+      "Some website content appears generic or translated, with minor inconsistencies in phrasing.",
+      "The primary contact email uses a .tw domain (info@kingbox.tw), which may indicate operational control is based in Taiwan, though they have a US physical address."
+    ],
+    "recommendation": "Reach out",
+    "reasoning": "Kingbox meets both critical pillars for Yilong. For Inventory Fit, they handle the required enterprise IT assets (servers, desktops, etc.) and specialize in harvesting high-value components like CPUs and memory, with a clear testing and grading process. For Operational Fit, they are a B2B ITAD firm with R2v3 certification and wholesale/bulk service capabilities. The minor red flags do not outweigh their strong alignment with Yilong's procurement model. They are a qualified vendor worth contacting for bulk IT asset purchases.",
+    "error": false
+  }
+]

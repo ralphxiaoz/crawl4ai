@@ -1,0 +1,278 @@
+{
+  "metadata": {
+    "timestamp": "2026-01-16 15:03:23",
+    "website_url": "https://www.argusx.com",
+    "model": "deepseek/deepseek-chat",
+    "temperature": 0.7,
+    "max_tokens": 4000,
+    "content_filtered": true,
+    "original_size_chars": 173391,
+    "sent_size_chars": 13941,
+    "reduction_percent": 92.0
+  },
+  "system_prompt": "IMPORTANT: 请用中文回答所有文本字段。All text output must be in Chinese.\n\n## YOUR ROLE\nYou are a Senior Procurement Consultant for Yilong Business Limited, a high-volume IT Asset Disposition (ITAD) trading firm.\nYour goal is to evaluate potential US-based vendors to see if they fit our supply chain requirements.\n\n## CONTEXT - WHO WE ARE (THE BUYER)\n- Company: Yilong Business Limited (Hong Kong-based with US operations)\n- Business Model: We purchase used IT assets in bulk (Ex Works - EXW) from US facilities and export them to established downstream markets in Hong Kong, Mainland China, and Southeast Asia\n- Volume: We have a purchasing budget of ~$1.5M per month ($10M–$20M annually)\n- Compliance: We operate a strict \"High-Quality Refurbishment\" model. We do NOT export e-waste. We require assets to be \"Tested Functional\" (R2v3 F2/C3 or better)\n\n## YOUR TASK\nYou are analyzing a company website. The provided content belongs to ONE SINGLE company.\nAll URLs are under the same root domain.\nThe content contains text from multiple pages, separated by \"# URL: \".\n\nCRITICAL INSTRUCTIONS:\n1. The crawl covers multiple pages (Home, About, Contact, etc.).\n2. There is significant overlapping/duplicate information across these pages.\n3. You MUST consolidate all information into a SINGLE company profile.\n4. Do NOT output a list of companies. Extract exactly ONE company object.\n5. Ignore minor differences in descriptions across pages; synthesize them into a comprehensive summary.\n\n## INFORMATION TO EXTRACT\n\n1. **Company Information:**\n   - Company name\n   - Main website URL (the root domain, e.g., https://example.com)\n   - Main business/industry\n   - Brief description of what they do\n\n2. **Products/Services:**\n   - List all products or services offered\n   - Key capabilities or specializations\n\n3. **Contact Information:**\n   - ALL email addresses found (support, sales, info, contact, etc.)\n   - Phone numbers\n   - Physical address/location\n   - Contact page URLs\n\n4. **Additional Details:**\n   - Company size (if mentioned)\n   - Year founded (if mentioned)\n   - Certifications or awards (especially R2v3, e-Stewards)\n   - Geographic coverage/service areas\n\n## VENDOR QUALIFICATION CRITERIA\n\nEvaluate if this company is a good fit for Yilong based on these 2 pillars:\n\n### PILLAR 1: INVENTORY FIT\n**Must Have:**\n- Enterprise IT assets: Laptops, Desktops, Data Center Servers, Networking Equipment, Storage\n\n**Bonus Points:**\n- Harvested components (high-value CPU, RAM, SSD/HDD)\n\n**Condition Requirements:**\n- Grade A/B (Ready for Retail) - Preferred\n- Tested Functional Grade C (Ready for Refurbishment) - Acceptable\n\n**RED FLAGS:**\n- Only handles residential recycling (curbside pickup)\n- Focuses primarily on shredding/scrap metal\n- No mention of testing or grading\n- Only handles consumer electronics (phones, tablets, TVs)\n\n### PILLAR 2: OPERATIONAL FIT\n**Business Type:**\n- Must be an ITAD Processor or Asset Recovery Firm (B2B focus)\n- NOT a retail reseller or consumer-focused recycler\n\n**Certification:**\n- R2v3 certification is highly preferred (indicates they can test/wipe data correctly)\n- e-Stewards is also acceptable\n\n**Sales Channel:**\n- Must support Wholesale / Bulk sales (Pallet/Truckload quantities)\n- If they only sell single units on eBay/Amazon to consumers, they are a BAD fit\n\n**RED FLAGS:**\n- Only residential/consumer services\n- No B2B capabilities mentioned\n- No certifications\n- Only retail sales channels\n\n## EVALUATION OUTPUT\nBased on the above criteria, provide:\n- is_good_fit: true/false - Is this company worth reaching out to?\n- inventory_fit_assessment: Detailed explanation of how they match our inventory needs\n- operational_fit_assessment: Detailed explanation of their operational capabilities\n- red_flags: List of any concerns or disqualifying factors\n- recommendation: \"Reach out\", \"Skip\", or \"Research further\"\n- reasoning: Clear explanation of why you recommend reaching out or skipping\n\nBe thorough and extract ALL contact emails you can find.\nIf information is not available, use null for that field.\n",
+  "json_schema": {
+    "properties": {
+      "company_name": {
+        "anyOf": [
+          {
+            "type": "string"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "default": null,
+        "description": "Name of the company",
+        "title": "Company Name"
+      },
+      "website_url": {
+        "anyOf": [
+          {
+            "type": "string"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "default": null,
+        "description": "Main website URL of the company (the root domain, e.g., https://example.com)",
+        "title": "Website Url"
+      },
+      "main_business": {
+        "anyOf": [
+          {
+            "type": "string"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "default": null,
+        "description": "Primary business or industry",
+        "title": "Main Business"
+      },
+      "description": {
+        "anyOf": [
+          {
+            "type": "string"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "default": null,
+        "description": "Brief description of what the company does",
+        "title": "Description"
+      },
+      "products_services": {
+        "anyOf": [
+          {
+            "items": {
+              "type": "string"
+            },
+            "type": "array"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "default": null,
+        "description": "List of products or services offered",
+        "title": "Products Services"
+      },
+      "contact_emails": {
+        "anyOf": [
+          {
+            "items": {
+              "type": "string"
+            },
+            "type": "array"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "default": null,
+        "description": "All email addresses found on the website",
+        "title": "Contact Emails"
+      },
+      "contact_phones": {
+        "anyOf": [
+          {
+            "items": {
+              "type": "string"
+            },
+            "type": "array"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "default": null,
+        "description": "All phone numbers found",
+        "title": "Contact Phones"
+      },
+      "physical_address": {
+        "anyOf": [
+          {
+            "type": "string"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "default": null,
+        "description": "Physical address or location",
+        "title": "Physical Address"
+      },
+      "year_founded": {
+        "anyOf": [
+          {
+            "type": "string"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "default": null,
+        "description": "Year the company was founded",
+        "title": "Year Founded"
+      },
+      "certifications": {
+        "anyOf": [
+          {
+            "items": {
+              "type": "string"
+            },
+            "type": "array"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "default": null,
+        "description": "Any certifications or awards mentioned",
+        "title": "Certifications"
+      },
+      "service_areas": {
+        "anyOf": [
+          {
+            "items": {
+              "type": "string"
+            },
+            "type": "array"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "default": null,
+        "description": "Geographic areas served",
+        "title": "Service Areas"
+      },
+      "summary": {
+        "anyOf": [
+          {
+            "type": "string"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "default": null,
+        "description": "A 2-3 paragraph human-readable summary of the company",
+        "title": "Summary"
+      },
+      "is_good_fit": {
+        "anyOf": [
+          {
+            "type": "boolean"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "default": null,
+        "description": "Overall assessment - Is this company worth reaching out to for Yilong's procurement needs?",
+        "title": "Is Good Fit"
+      },
+      "inventory_fit_assessment": {
+        "anyOf": [
+          {
+            "type": "string"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "default": null,
+        "description": "Detailed explanation of how the company's inventory (product types, grades, volumes) matches Yilong's requirements for enterprise IT assets",
+        "title": "Inventory Fit Assessment"
+      },
+      "operational_fit_assessment": {
+        "anyOf": [
+          {
+            "type": "string"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "default": null,
+        "description": "Detailed explanation of the company's operational capabilities (B2B focus, certifications, wholesale channels) and fit with Yilong's bulk purchasing model",
+        "title": "Operational Fit Assessment"
+      },
+      "red_flags": {
+        "anyOf": [
+          {
+            "items": {
+              "type": "string"
+            },
+            "type": "array"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "default": null,
+        "description": "List of any concerns or disqualifying factors (e.g., residential-only, no certifications, retail-only sales, scrap metal focus)",
+        "title": "Red Flags"
+      },
+      "recommendation": {
+        "anyOf": [
+          {
+            "type": "string"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "default": null,
+        "description": "Action recommendation: 'Reach out', 'Skip', or 'Research further'",
+        "title": "Recommendation"
+      },
+      "reasoning": {
+        "anyOf": [
+          {
+            "type": "string"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "default": null,
+        "description": "Clear explanation of why you recommend reaching out or skipping this vendor, based on the evaluation criteria",
+        "title": "Reasoning"
+      }
+    },
+    "title": "CompanyAnalysis",
+    "type": "object"
+  },
+  "content_sent": "# SITE-WIDE ELEMENTS (Navigation, Footer, etc.)\n\nSkip to content\n\n================================================================================\n\n# PAGE-SPECIFIC CONTENT\n\n# URL: https://www.argusx.com\nHomeadmin2020-11-19T22:45:37-06:00\nFor more than two decades Argus has been delivering high value and low cost IT services to Fortune 1000 as well as Small and Mid-size clients.\nWe service Data Center, Desktop and Mobile client environments... as well as provide safe and secure IT Managed Services.\n## SOURCE\nSpec & Source Equipment\nDevice as a Service\nHardware/Software Bundling\n## MANAGE\nMonitor & Support\nImprove, Secure & Maintain\nManage & Report\n## SUPPORT\nDepot Services\nField Services\nTechnology Moves\n## RETIRE\nSecure Data Destruction\nClient Gainshare or Recycling\nAsset Repurposing & Community\n### THE ARGUS DIFFERENCE\nArgus has a strong history of exceptional service to World Class Corporate clients across the US. In an industry where specialization enhances value, we integrate IT Asset Life-Cycle specialization with proven processes, people, and performance to deliver the most cost effective and high quality solutions and services in the Industry.\nPeople are the most important element to success and we are committed to continuing our 20-year history of sourcing, and deploying the best talent for both our internal operations and most importantly, to meet our clients' unique project needs. From operations to complex systems integration and project management, we take pride in providing not only the right talent but also the sourcing, implementation and support of the right solution.\n# URL: https://www.argusx.com/author/franzescolastico\n# FranzEscolastico\n###  About Franz Escolastico\nThis author has not yet filled in any details.\nSo far Franz Escolastico has created 0 blog entries.\n# URL: https://www.argusx.com/health-care-asset-refresh\nHealth Care – Asset Refreshadmin2019-05-07T23:30:25-05:00\n# Health Care – Asset Refresh\n## The Challenge\nProvide an IT asset refresh cycle that would replace 33% of the hospitals 4500 computers. Include a Secure and Green® solution for the retired assets.\n## The Results\nArgus IT Service’s Desktop Deployment team rose to the occasion using our Technology Center as the central point for receiving, imaging and configuring the computers , resulting in a quick and flawless on-site installation.\n## The Solution\nWhen our Hospital client asked us to help them with their Computer Refresh Project consisting of 1400 pc’s, we went into high gear preparing for the 3 year refresh cycle.\nOur Operations Manager worked closely with the procurement team to provide the initial Asset Management tracking for all equipment shipped from the manufacturer. During the ongoing project, our Operations Manager provided weekly asset management reports that included inventory assets at Argus and tracking of assets that have been deployed. Once the equipment was received into the Argus Information Management System (AIMS), our technical staff went to work preparing the computers for deployment. Each asset was unpacked and quality control processes were initiated to document each step of the entire process, from imaging to installation. Each asset had an initial image applied, an Asset Tag was applied and then it was placed in our Secure Mobile Asset Carts for delivery.\nOur Logistics Team transported our Mobile Asset Carts (MAC) to the hospital for installation. Once on-site, our Installation Team verified the placement of the computer and removed the retired computer. The old asset was placed back into the MAC for secure transport back to the Technology Center for proper disposition, including disk wiping and media shredding. The tech completed the installation ensuring that all connections and peripherals were functioning before turning the computer over to the end user.\nArgus Life Cycle Management has been used since 2000 and has evolved into an extremely efficient process for small and large scale computer deployments.\n# URL: https://www.argusx.com/services/msp/msp-engagement\nmsp-Engagementadmin2020-06-30T02:43:33-05:00\n# Argus Managed Services\nEngagement process…\n  * Discovery - 1 to 3 Day On-site - walk-thru and Assessment (Interviews – exec./operations, HW/SW inventory, review of SLAs, Tools, Key Projects, etc.)\n  * Documentation of Findings (Challenges, Exposures, Areas for Improvement, Expectations, etc.) 1-2 days\n  * Analysis & solution development – 2 to 10 Days\n  * Review of solution options & consensus on “go-forward plan”\n  * Final proposal\n  * Readiness assessment – 1 to 2 days\n  * Transition planning /cross-over pilot 1 week to 90 days\n  * Final implementation and roll-out\n# URL: https://www.argusx.com/services/source\nSourceadmin2021-12-14T12:06:34-06:00\n# Specifications & Source Services\nArgus is an “Authorized Reseller” for the Original Equipment Manufacturers and has licensing agreements with the Industry’s leading software companies. With our decades of IT infrastructure experience, these relationships allow us to be your low cost - high value provider of infrastructure hardware and software solutions.\nWe also offer flexibility and options in financing with our Device as a Service (DaaS) and our Hardware/Software Bundling offerings.\nLet us help you configure the ideal hardware or software solution for your unique environment that meets today’s needs and provides scalability for tomorrow…\n Spec & Source Equipment\n Device as a Service\n Hardware & Software Bundling\n# URL: https://www.argusx.com/services/source/device-as-a-service\nDevice as a ServiceFranz Escolastico2020-06-30T02:41:02-05:00\n# Device as a Service (DaaS)\nArgus’s Device as a Service procurement option gives our **customers one contract and one provider to hold accountable** across HW, SW, and Services. And unlike hardware leasing, our clients get a holistic solution that allows for broad flexibility to scale the hardware over time. Customers are also given the ability to leave the challenges of their IT infrastructure lifecycle management to us, as their **DaaS** provider, freeing them up to stay focused on its core business.\n**DaaS****:****Simplifying IT Lifecycle Management for the End User**\n# URL: https://www.argusx.com/services/source/hardware-software-bundling\nHardware & Software BundlingFranz Escolastico2020-06-30T02:41:14-05:00\n# Hardware & Software Bundling\nArgus IT Services has crafted a solution to address one of the more common, but consistent challenges every IT infrastructure team faces.**one vendor, one price, and one seamlessly integrated solution**.\n**Reduced operating expense (OPEX)** - A Bundled hardware and services acquisition allows you to capitalized the entire cost and remove the associated services from your OPEX budget.\n**Reduced Cost** – With a bundled solution all of your HW/SW costs are included, eliminating the surprises of unexpected service add-ons or over-runs often associated with engaging hourly services.\n**Faster Implementation** – Once the solution is packaged, our proven process and skilled technicians can focus on execution and as needed, allow your organization to only have to interface with one vendor.\n**Streamlined Administration** – Time and effort spent in contract negotiations, budgeting, invoice management, PO processing, vendor screening/badging, etc. are greatly reduced. The need to replicate these activities over multiple vendors or to execute some of the activities multiple times for the same vendor is simple eliminated.\n**Improved overall service and value** – Hardware and full-life-cycle infrastructure services bundling, eliminates the hand-offs, extra scheduling, multiple points of failure, etc. that slow projects down and require more hands-on management time from you organize.\n# URL: https://www.argusx.com/services/source/spec-source-equipment\nSpec & Source EquipmentFranz Escolastico2021-12-14T12:07:03-06:00\n# Specifications & Source Services\nArgus is an “Authorized Reseller” for the Original Equipment\nLet us help you configure the ideal hardware or software solution for your unique environment that meets today’s needs and provides scalability for tomorrow…\n# URL: https://www.argusx.com/services/support-staffing\nSupportadmin2020-06-30T03:41:23-05:00\n# Support\nINSTALLATION, MAINTENANCE, HELP DESK, PROJECT MGT., AND IT STAFFING.\nOur support & staffing services range from Help Desk Personnel to Systems Programmers to Project Managers to Hardware Technicians and everything in-between. Through Argus Support and Staffing Services, our clients have immediate access to technical contract staff resources who can quickly become a part of your team for whatever length of time you require.\n## We also provide:\n  * Specialized Project Staffing\n  * Install, Move, Add, Change Teams (IMACs)\n  * Roll-Out Installation and Migration Teams\n  * Asset Management Teams\n  * Technical Staffing with Placement Options\n  * Call Center and Help Desk Augmentation\n  * Command Center Support\n  * Application Architects\n  * Application Programmers\n  * Complex Project Management for Application and Systems Integration Projects\n  * Industry Specific Business and Solution Skills\n  * And other Specific IT skills\n Depot Services\n Field Services\n Technology Moves\n# URL: https://www.argusx.com/services/support-staffing/data-center-relocation-services\nData Center Relocation Servicesadmin2020-06-30T02:44:03-05:00\n## Why Argus?\nAccording to a recent Gartner Group study, more than 70% of the Global 1000 organizations will be moving or modifying their data center facilities over the next five years… Regardless of company size Argus is ready to help make your next move or data center refresh a success!\n  * Experienced IT Technicians\n  * Expert Planning\n  * Specialized Equipment\n  * Proven Processes\n  * Safe & Professional Packaging\n  * Secure Transport\n  * Expert Installation & De-Installation\n  * Best Possible Customer Service\n# Technology Moves\nMOVES, NEW INSTALLATION, REFRESHES, DECOMMISSIONS\nData centers today represent about one-quarter of most companies total IT costs, but more importantly contain most companies most critical resources, information. Successful planning, managing, and executing a data center relocation or modification takes more than just an experienced mover, it demands the skills, awareness and experience of a company that understands IT and the complexity and importance of a relocation done right.\nArgus IT Services has been providing IT solutions and services to companies ranging from Mid-size to the Fortune 1000’s for over 19 years. We have a proven history of successful Data Center relocations because we understand what needs to happen before, during and after the move. We are an IT company that provides Data Center relocations… not a moving company that also moves IT equipment.\n#### **Services**\n  * Experienced data center services technicians and IT professionals\n  * Relocation services available nation wide 24/7, 365 days a year\n  * Installation, de-installation, along with daily data center support services\n  * Asset, tagging, tracking and overall asset management services (server, rail, and cabling)\n  * Professional application of specialized packaging and materials\n  * Specialized equipment including server lifts, secure carts, and e-dollie\n  * Safe and Secure transport using Argus trucks, equipment and proven logistics processes\n  * Comprehensive Data Center Decommissioning services and DC infrastructure partners\n## Data Center Relocation Services\nOur data center relocation services are based on a foundation of world-class planning and execution standards. In addition, the lessons learned from each client project are used to continuously improve the critical components of preparation, execution, and final deliver….\nDepending on the clients needs, our data center relocation, decommissioning, or end-of-life asset services can be delivered modularly or as an integrated engagement… With either option Argus can provide a proven path to success!\n# URL: https://www.argusx.com/services/support-staffing/depot-services\nDepot ServicesFranz Escolastico2020-06-30T02:44:44-05:00\n# Depot Services\n### WAREHOUSING, SHIPPING. IMAGING, REPAIRS, RETIRED ASSESTS SERVICES\nCentral located in the Dallas/FT Worth area and 15 mins. from the DFW Airport, the Argus Depot Center provides a highly secure and environmental safe facility where we deliver the following services to our clients.\n**New Infrastructure Services** – Ordering, receiving, inventory, imaging of new equipment, asset management and reporting.\n**Repair and Maintenance Services** – Full management and execution of the repair process, including certification as a repair depot for the major OEM providers (i.e. Lenovo, Dell, HP, etc.).\n**End of Life/Retired Asset Services** – Secure and environmentally safe management of Retired assets with Industry compliant recycling and secure Data Destruction.\n# URL: https://www.argusx.com/services/support-staffing/field-services\nField ServicesFranz Escolastico2020-06-30T02:45:21-05:00\n# Field Services\n**TECHNOLOGY REFRESH, BREAK-FIX, INFRASTRUCTURE PLANNING, OPERATION SYSTEMS MIGRATIONS…**\nAs part of our full-life-cycle model, Argus provides full service support of IT assets, from break-fix and warranty and non-warranty repairs, to planned technology refreshes for data center, end-user and mobile environments… Other related services include:\n  * IMAC – Installation, Move, Add, or Change process services.\n  * Consulting Services – Infrastructure Planning,\n  * Data Center Migrations\n  * Data Center Decommissions\n  * IT Environment; Discovery, Assessment, and Configuration Planning\n  * Operating System Migrations – Windows, Unix/Linux, Chrome OS\n  * Project Services, i.e. “Turn-Key” project execution and management of any IT infrastructure initiative.\n  * Installation of Customer Premise Equipment (CPE)\n  * Site Surveys & Readiness Assessments\n  * Technicians are Comp TI Certified.",
+  "content_length_stats": {
+    "characters": 13941,
+    "estimated_tokens": 3485,
+    "estimated_cost_input_usd": 0.000976
+  }
+}

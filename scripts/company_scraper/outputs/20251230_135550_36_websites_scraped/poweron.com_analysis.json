@@ -1,0 +1,57 @@
+[
+  {
+    "company_name": "PowerON Services, Inc.",
+    "website_url": "https://www.poweron.com",
+    "main_business": "IT Asset Disposition (ITAD) and Electronics Reuse/Recycling",
+    "description": "PowerON Services, Inc. is a full-service IT Asset Disposition (ITAD) and electronics reuse/recycling company founded in 1994. They provide turnkey solutions for trade-in, take-back, buyback, refurbishment, repair, and compliance recycling of electronic devices. Their services are designed for B2B clients including retailers, resellers, distributors, manufacturers, educational institutions, government, and nonprofits. They focus on maximizing value recovery, ensuring data security, and promoting environmental sustainability through reuse and responsible recycling.",
+    "products_services": [
+      "Trade-In & Take Back Programs",
+      "IT Asset Disposition (ITAD)",
+      "Buyback - Buy/Sell Excess Inventory",
+      "Processing, Refurbish & Repair",
+      "CapEx Recovery (Capital Equipment Asset Management)",
+      "Compliance Recycling",
+      "Depot Services (Storage, Sorting, Staging)",
+      "Fulfillment Services (Order Processing, Warehousing, Shipping)",
+      "Remote Refresh Management",
+      "Off-Lease Return Management",
+      "College & University Trade-In Program",
+      "K-12 Technology Trade-In Program",
+      "Wholesale/Bulk Sales of Refurbished Electronics"
+    ],
+    "contact_emails": [
+      "channelsupport@poweron.com",
+      "reuse@poweron.com",
+      "press@poweron.com",
+      "aplus@poweron.com"
+    ],
+    "contact_phones": [
+      "866-635-5776"
+    ],
+    "physical_address": "8801 Washington Blvd. Suite 101, Roseville, CA",
+    "year_founded": "1994",
+    "certifications": [
+      "R2v3",
+      "ISO 9001:2015",
+      "ISO 14001:2015",
+      "ISO 45001:2018",
+      "NIST 800-88 Compliant",
+      "HIPAA Compliant",
+      "PII Compliant (NIST SP 800-122)",
+      "Waste Reduction Awards Program (WRAP) Winner 2011"
+    ],
+    "service_areas": [
+      "Americas",
+      "Europe",
+      "Asia-Pacific"
+    ],
+    "summary": "PowerON Services, Inc. is a well-established, certified ITAD and electronics reuse company headquartered in Roseville, California. Founded in 1994, they have over 25 years of experience in the industry. Their core business revolves around providing secure, compliant, and value-driven solutions for managing end-of-life and excess IT assets for business clients. They offer a comprehensive suite of services including ITAD, trade-in programs, bulk buyback, refurbishment, repair, and logistics management. PowerON emphasizes data security, environmental responsibility, and maximizing financial recovery for their partners. They hold key industry certifications like R2v3 and multiple ISO standards, operate facilities serving the Americas, Europe, and Asia-Pacific, and have been recognized on the Inc. 5000 list for seven consecutive years.",
+    "is_good_fit": true,
+    "inventory_fit_assessment": "EXCELLENT FIT. PowerON explicitly handles the exact enterprise IT assets Yilong requires. Their services and case studies repeatedly mention processing laptops, desktops, servers, networking equipment, and storage devices from enterprise, education, retail, and lease/finance clients. They have a clear 'Tested Functional' model, quoting based on 'Working' condition (powering on, functional display, no defective components) which aligns with R2v3 F2/C3 or better. They offer bulk quotes for excess inventory, off-lease, and end-of-life products. Their online store sells certified pre-owned MacBooks, iMacs, and other devices, indicating they grade and refurbish for resale (Grade A/B/C mentioned). No red flags regarding scrap-only or residential recycling focus.",
+    "operational_fit_assessment": "STRONG FIT. PowerON is a classic B2B ITAD processor and asset recovery firm, not a consumer-focused recycler. Their entire website targets business clients (retailers, manufacturers, educational institutions, etc.). They hold the highly preferred R2v3 certification, along with ISO 9001, 14001, and 45001, demonstrating rigorous processes for testing, data wiping, and environmental management. They actively support wholesale/bulk sales, with dedicated pages for 'Sell in Bulk' and 'Buy Wholesale,' inviting bulk quotes and distribution list sign-ups. They manage logistics for pallet/truckload quantities, including 'white glove' service for large volumes. Their operational model is built for scale, serving Fortune 500 companies and managing projects with thousands of devices.",
+    "red_flags": [],
+    "recommendation": "Reach out",
+    "reasoning": "PowerON is a near-ideal vendor candidate for Yilong Business Limited. They perfectly match both critical pillars: 1) INVENTORY FIT: They specialize in the exact enterprise IT assets (laptops, desktops, servers, networking) Yilong purchases, in the required 'Tested Functional' condition, and offer bulk sales. 2) OPERATIONAL FIT: They are a certified (R2v3), B2B-focused ITAD processor with explicit wholesale/bulk sales channels and the capability to handle Yilong's volume (they've processed millions of devices). Their long history, Inc. 5000 recognition, and global service areas indicate stability and scalability. There are no apparent red flags; they are not a consumer recycler or scrap-focused operation. A procurement outreach to their buyback team or via the bulk quote channel is strongly recommended.",
+    "error": false
+  }
+]

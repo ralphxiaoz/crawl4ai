@@ -1,0 +1,278 @@
+{
+  "metadata": {
+    "timestamp": "2026-01-16 15:00:13",
+    "website_url": "https://www.aerworldwide.com",
+    "model": "deepseek/deepseek-chat",
+    "temperature": 0.7,
+    "max_tokens": 4000,
+    "content_filtered": true,
+    "original_size_chars": 104614,
+    "sent_size_chars": 38024,
+    "reduction_percent": 63.7
+  },
+  "system_prompt": "IMPORTANT: 请用中文回答所有文本字段。All text output must be in Chinese.\n\n## YOUR ROLE\nYou are a Senior Procurement Consultant for Yilong Business Limited, a high-volume IT Asset Disposition (ITAD) trading firm.\nYour goal is to evaluate potential US-based vendors to see if they fit our supply chain requirements.\n\n## CONTEXT - WHO WE ARE (THE BUYER)\n- Company: Yilong Business Limited (Hong Kong-based with US operations)\n- Business Model: We purchase used IT assets in bulk (Ex Works - EXW) from US facilities and export them to established downstream markets in Hong Kong, Mainland China, and Southeast Asia\n- Volume: We have a purchasing budget of ~$1.5M per month ($10M–$20M annually)\n- Compliance: We operate a strict \"High-Quality Refurbishment\" model. We do NOT export e-waste. We require assets to be \"Tested Functional\" (R2v3 F2/C3 or better)\n\n## YOUR TASK\nYou are analyzing a company website. The provided content belongs to ONE SINGLE company.\nAll URLs are under the same root domain.\nThe content contains text from multiple pages, separated by \"# URL: \".\n\nCRITICAL INSTRUCTIONS:\n1. The crawl covers multiple pages (Home, About, Contact, etc.).\n2. There is significant overlapping/duplicate information across these pages.\n3. You MUST consolidate all information into a SINGLE company profile.\n4. Do NOT output a list of companies. Extract exactly ONE company object.\n5. Ignore minor differences in descriptions across pages; synthesize them into a comprehensive summary.\n\n## INFORMATION TO EXTRACT\n\n1. **Company Information:**\n   - Company name\n   - Main website URL (the root domain, e.g., https://example.com)\n   - Main business/industry\n   - Brief description of what they do\n\n2. **Products/Services:**\n   - List all products or services offered\n   - Key capabilities or specializations\n\n3. **Contact Information:**\n   - ALL email addresses found (support, sales, info, contact, etc.)\n   - Phone numbers\n   - Physical address/location\n   - Contact page URLs\n\n4. **Additional Details:**\n   - Company size (if mentioned)\n   - Year founded (if mentioned)\n   - Certifications or awards (especially R2v3, e-Stewards)\n   - Geographic coverage/service areas\n\n## VENDOR QUALIFICATION CRITERIA\n\nEvaluate if this company is a good fit for Yilong based on these 2 pillars:\n\n### PILLAR 1: INVENTORY FIT\n**Must Have:**\n- Enterprise IT assets: Laptops, Desktops, Data Center Servers, Networking Equipment, Storage\n\n**Bonus Points:**\n- Harvested components (high-value CPU, RAM, SSD/HDD)\n\n**Condition Requirements:**\n- Grade A/B (Ready for Retail) - Preferred\n- Tested Functional Grade C (Ready for Refurbishment) - Acceptable\n\n**RED FLAGS:**\n- Only handles residential recycling (curbside pickup)\n- Focuses primarily on shredding/scrap metal\n- No mention of testing or grading\n- Only handles consumer electronics (phones, tablets, TVs)\n\n### PILLAR 2: OPERATIONAL FIT\n**Business Type:**\n- Must be an ITAD Processor or Asset Recovery Firm (B2B focus)\n- NOT a retail reseller or consumer-focused recycler\n\n**Certification:**\n- R2v3 certification is highly preferred (indicates they can test/wipe data correctly)\n- e-Stewards is also acceptable\n\n**Sales Channel:**\n- Must support Wholesale / Bulk sales (Pallet/Truckload quantities)\n- If they only sell single units on eBay/Amazon to consumers, they are a BAD fit\n\n**RED FLAGS:**\n- Only residential/consumer services\n- No B2B capabilities mentioned\n- No certifications\n- Only retail sales channels\n\n## EVALUATION OUTPUT\nBased on the above criteria, provide:\n- is_good_fit: true/false - Is this company worth reaching out to?\n- inventory_fit_assessment: Detailed explanation of how they match our inventory needs\n- operational_fit_assessment: Detailed explanation of their operational capabilities\n- red_flags: List of any concerns or disqualifying factors\n- recommendation: \"Reach out\", \"Skip\", or \"Research further\"\n- reasoning: Clear explanation of why you recommend reaching out or skipping\n\nBe thorough and extract ALL contact emails you can find.\nIf information is not available, use null for that field.\n",
+  "json_schema": {
+    "properties": {
+      "company_name": {
+        "anyOf": [
+          {
+            "type": "string"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "default": null,
+        "description": "Name of the company",
+        "title": "Company Name"
+      },
+      "website_url": {
+        "anyOf": [
+          {
+            "type": "string"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "default": null,
+        "description": "Main website URL of the company (the root domain, e.g., https://example.com)",
+        "title": "Website Url"
+      },
+      "main_business": {
+        "anyOf": [
+          {
+            "type": "string"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "default": null,
+        "description": "Primary business or industry",
+        "title": "Main Business"
+      },
+      "description": {
+        "anyOf": [
+          {
+            "type": "string"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "default": null,
+        "description": "Brief description of what the company does",
+        "title": "Description"
+      },
+      "products_services": {
+        "anyOf": [
+          {
+            "items": {
+              "type": "string"
+            },
+            "type": "array"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "default": null,
+        "description": "List of products or services offered",
+        "title": "Products Services"
+      },
+      "contact_emails": {
+        "anyOf": [
+          {
+            "items": {
+              "type": "string"
+            },
+            "type": "array"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "default": null,
+        "description": "All email addresses found on the website",
+        "title": "Contact Emails"
+      },
+      "contact_phones": {
+        "anyOf": [
+          {
+            "items": {
+              "type": "string"
+            },
+            "type": "array"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "default": null,
+        "description": "All phone numbers found",
+        "title": "Contact Phones"
+      },
+      "physical_address": {
+        "anyOf": [
+          {
+            "type": "string"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "default": null,
+        "description": "Physical address or location",
+        "title": "Physical Address"
+      },
+      "year_founded": {
+        "anyOf": [
+          {
+            "type": "string"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "default": null,
+        "description": "Year the company was founded",
+        "title": "Year Founded"
+      },
+      "certifications": {
+        "anyOf": [
+          {
+            "items": {
+              "type": "string"
+            },
+            "type": "array"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "default": null,
+        "description": "Any certifications or awards mentioned",
+        "title": "Certifications"
+      },
+      "service_areas": {
+        "anyOf": [
+          {
+            "items": {
+              "type": "string"
+            },
+            "type": "array"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "default": null,
+        "description": "Geographic areas served",
+        "title": "Service Areas"
+      },
+      "summary": {
+        "anyOf": [
+          {
+            "type": "string"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "default": null,
+        "description": "A 2-3 paragraph human-readable summary of the company",
+        "title": "Summary"
+      },
+      "is_good_fit": {
+        "anyOf": [
+          {
+            "type": "boolean"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "default": null,
+        "description": "Overall assessment - Is this company worth reaching out to for Yilong's procurement needs?",
+        "title": "Is Good Fit"
+      },
+      "inventory_fit_assessment": {
+        "anyOf": [
+          {
+            "type": "string"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "default": null,
+        "description": "Detailed explanation of how the company's inventory (product types, grades, volumes) matches Yilong's requirements for enterprise IT assets",
+        "title": "Inventory Fit Assessment"
+      },
+      "operational_fit_assessment": {
+        "anyOf": [
+          {
+            "type": "string"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "default": null,
+        "description": "Detailed explanation of the company's operational capabilities (B2B focus, certifications, wholesale channels) and fit with Yilong's bulk purchasing model",
+        "title": "Operational Fit Assessment"
+      },
+      "red_flags": {
+        "anyOf": [
+          {
+            "items": {
+              "type": "string"
+            },
+            "type": "array"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "default": null,
+        "description": "List of any concerns or disqualifying factors (e.g., residential-only, no certifications, retail-only sales, scrap metal focus)",
+        "title": "Red Flags"
+      },
+      "recommendation": {
+        "anyOf": [
+          {
+            "type": "string"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "default": null,
+        "description": "Action recommendation: 'Reach out', 'Skip', or 'Research further'",
+        "title": "Recommendation"
+      },
+      "reasoning": {
+        "anyOf": [
+          {
+            "type": "string"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "default": null,
+        "description": "Clear explanation of why you recommend reaching out or skipping this vendor, based on the evaluation criteria",
+        "title": "Reasoning"
+      }
+    },
+    "title": "CompanyAnalysis",
+    "type": "object"
+  },
+  "content_sent": "# URL: https://www.aerworldwide.com\n# Taking the past into the future.\n### AER believes in transformation.\nWe are Transformative Tech – What does this mean?\nTransformative Tech is the evolution of underused IT Equipment and End of Life products back into the vital\nelectronics supply chain ecosystem.\nThe evolution of underused IT Equipment and End of Life products back into the vital electronics supply chain ecosystem.\n Say hello\n## Three core offerings coming together\n## Three core offerings coming together\n[smartslider3 slider=\"2\"]\n##  Three core offerings coming together\n### IT Asset Management\nIT asset management can be challenging. AER removes challenges by nimble, smart decision making to provide the client the highest possible ROI.\n##  Three core offerings coming together\n### Secure Destruction\nHandling high sensitive information is the core of AER. Maximizing solutions in a safe and secure manner enable clients to trust AER.\n##  Three core offerings coming together\n### E-Cycle\nIt is imperative that AER always utilizes the most secure and environmentally sensitive manner of processing our customers’ material. For AER, Environmental Stewardship ensures that not only our own practices are environmentally sound, but also that the same guidelines are practiced by the downstream vendors who further process the materials we send them. We strive for 100% environmental responsibility and will settle for nothing less\n  * 01\n  * 02\n  * 03\n03\n### ITAD &\nRemarketing\nServices\nAER Worldwide’s strategically placed global R2/RIOS certified facilities allow for a comprehensive set of customizable solutions to handle the disposition of your electronic assets in a manner that is secure, cost-effective and environmentally responsible. We can help you recover a portion of your initial IT Asset investment by both remarketing complete units and/or harvesting useable sub-components.\n### Supply Chain Solutions\nAt AER, we understand the pivotal role transportation and logistics play in the services we provide and are constantly looking at ways to minimize costs when it comes to the safety and security of our customers IT assets when moving them from point A to our closest facility.\n## Planning Accessible Holidays for People with Disabilities\nWhen it comes to planning holidays, people with disabilities often face unique challenges. Whether it's finding accessible accommodations, transportation options, or suitable destinations, the process can be overwhelming without the right resources. Fortunately, websites like **DisabilityHolidaysGuide.com** provide invaluable information and guidance for both individuals with disabilities and their caregivers. As explained in <https://www.disabilityholidaysguide.com/>, this platform is designed to help people navigate the complexities of accessible travel. The site offers a variety of tips, from how to choose the right destination to selecting hotels and services that meet specific accessibility needs. One of the most helpful features of the site is its curated list of destinations that are particularly suitable for people with disabilities. These recommendations include destinations with accessible attractions, wheelchair-friendly beaches, and cities that have made strides in creating inclusive environments. Furthermore, **DisabilityHolidaysGuide.com** provides detailed information on accessible accommodations, ensuring that travelers can find hotels that offer the right amenities such as wheelchair ramps, elevators, and accessible bathrooms. The site also outlines various transportation options, including accessible airports, buses, trains, and taxis, to ensure that travelers can move freely and comfortably throughout their journey. Another critical aspect of planning an accessible holiday is insurance, and **DisabilityHolidaysGuide.com** helps users understand their options for disability travel insurance. With the right coverage, travelers can feel secure knowing that their specific needs are accounted for in case of an emergency. Whether it’s assistance with booking accessible transportation or guidance on finding specialized services, the site empowers users to plan trips that are both enjoyable and safe. By offering a comprehensive guide to accessible travel, **DisabilityHolidaysGuide.com** plays a crucial role in helping people with disabilities and their caregivers enjoy vacations with greater confidence and peace of mind.\n### Data Security\nOur secure chain-of-custody procedures enables us to eliminate the risk for environmental and data security liabilities associated with the handling of IT assets.\n## Why AER\n## 25+\n0 +\n## We have a 25+ year legacy of taking the past and turning it into the future.\n## We have the privilege of working with the best clients\n## We have the privilege of working with the best clients\n## We are global\n Asia\n Australia\n Europe\n Israel\n North America\n South America\n# URL: https://aerworldwide.com/acceptable-items\n# Acceptable Items\nAt AER, we prioritize responsible and efficient recycling practices to protect our environment and communities. To ensure the highest standards of sustainability, we kindly request that only items listed on our Acceptable Items List are sent to us for recycling.\n**Why is this important?**\n  * **Environmental Impact:** Sending only accepted items reduces the risk of improper disposal or contamination, minimizing environmental harm.\n  * **Efficiency and Safety:** Processing only approved materials enhances our recycling efficiency and ensures the safety of our facilities and workers.\n  * **Compliance and Quality:** By adhering to our Acceptable Items List, you contribute to maintaining compliance with industry regulations and standards, guaranteeing the quality of our recycling processes.\nPlease refer to our Acceptable Items List before sending any materials for recycling. Together, we can make a significant difference in promoting sustainable recycling practices.\n Acceptable Items PDF\n# URL: https://aerworldwide.com/asia\n# Asia\n## China\n### Guangdong, Shenzhen, Hong Kong\nSubcontractor Processing Facility\n  * apac@aerworldwide.com\n### Capabilities\n  * Asset Recovery\n  * Demanufacturing\n  * Remarketing\n## India\n### Chennai\nAER Worldwide Processing Facility\n  * apac@aerworldwide.com\n  * AER Worldwide India Pvt Ltd\n774, Eladhanderi\n  * Sadayankuppam Village\n  * Manali New Town\n  * Chennai, India 600 103\n### Capabilities\n  * Asset Recovery\n  * Demanufacturing\n  * Shredding\n  * Remarketing\n### Certifications\n  * R2v3, ISO 9001:2015, ISO 14001:2015, ISO 45001:2018\n## Malaysia\n### Penang\nAER Worldwide Processing Facility\n  * apac@aerworldwide.com\n  * AER Worldwide Sdn. Bhd.\n  * 11, Solok Beringin\n  * 11960 Batu Maung\n  * Pulau Penang, Malaysia\n### Capabilities\n  * Asset Recovery\n  * Demanufacturing\n  * Remarketing\n### Certifications\n  * ISO14001:2015\n## Vietnam\nComing Soon\nAER Vannex\n## Japan\n### Tokyo\nSubcontractor Processing Facility\n  * apac@aerworldwide.com\n### Capabilities\n  * Asset Recovery\n  * Demanufacturing\n  * Remarketing\n## Philippines\n### Manila\nSubcontractor Processing Facility\n  * apac@aerworldwide.com\n### Capabilities\n  * Asset Recovery\n  * Demanufacturing\n  * Remarketing\n# URL: https://aerworldwide.com/australia\n# Australia\n## Sydney\nSubcontractor Processing Facility\n  * apac@aerworldwide.com\n### Capabilities\n  * Asset Recovery\n  * Demanufacturing\n  * Remarketing\n# URL: https://aerworldwide.com/company-overview\n# Company Overview\nAER Worldwide mitigates risk and provides global reverse logistics solutions to handle your entire end-of-life materials management needs. We provide eco-friendly solutions and services throughout the entire IT product life cycle. Our Reverse Logistics efforts, or “aftermarket” services, help organizations after the initial sale and provide IT asset disposition support throughout the life of the equipment. With global locations, AER Worldwide will provide eco-friendly services, with certified brand protection techniques.\nAER Worldwide has been providing Asset Management and Value Recovery Solutions since our inception in 1996. Our flagship recycling facility is located in the heart of the Silicon Valley in Livermore, California. To meet the growing needs and requirements of our global client base, we now have six AER owned recycling facilities along with a global network of prequalified recycling partners placed in strategically located markets.\nAER Worldwide understands data security, environmental compliance and downstream transparency are core to our clients’ needs in today’s information age. We work hand in hand with our clients’ using our proprietary reporting tools to deliver comprehensive and transparent reports, which have changed the way our clients look at data and manage their assets and internal policies.\n# URL: https://aerworldwide.com/contact-us\n## Thank you for your interest in AER. We’d love to hear from you.\n### Sales & Marketing\n  * Bill Schoening\n  * VP of Sales\n  * sales@aerworldwide.com\n  * California, United States\n### General Inquires\n  * Rik Krumins\n  * Business Development\n  * ITAD@aerworldwide.com\n  * California, United States\n## Company Overview\nAER Worldwide mitigates risk and provides global reverse logistics solutions to handle your entire end-of-life materials management needs. We provide eco-friendly solutions and services throughout the entire IT product life cycle. Our Reverse Logistics efforts, or “aftermarket” services, help organizations after the initial sale and provide IT asset disposition support throughout the life of the equipment. With global locations, AER Worldwide will provide eco-friendly services, with certified brand protection techniques.\nAER Worldwide has been providing Asset Management and Value Recovery Solutions since our inception in 1996. Our flagship recycling facility is located in the heart of the Silicon Valley in Livermore, California. To meet the growing needs and requirements of our global client base, we now have six AER owned, ISO-14001 certified recycling facilities along with a global network of prequalified recycling partners placed in strategically located markets.\nAER Worldwide understands data security, environmental compliance and downstream transparency are core to our clients’ needs in today’s information age. We work hand in hand with our clients’ using our proprietary reporting tools to deliver comprehensive and transparent reports, which have changed the way our clients look at data and manage their assets and internal policies.\n QEHS policy\n Acceptable items\n## AER LeadershipTeam\nAER Worldwide has a talented and experienced team of leaders that have been involved in the ITAD and Reverse Logistics industry for many years. Learn more about our team here.\n## Andre Weiglein\n  * President\n  * outdoors, family, wine\n## Bill Schoening\n  * Vice President\n  * golf, travel, campfires\n## Rik Krumins\n  * SVP\n  * surfing, foodie, friends\n## Mark Regalado\n  * Director of IT\n  * music, farming, travel, camping\n## Gretchen Stenson\n  * Head of Business Development\n  * music, family, beach\n## Brian Naville\n  * Finance\n  * Travel, working on house, hiking\n## Jeevan Kumar\n  * AER Private Limited, India\n  * family, movies, foodie\n## Tjerk van der Toorn\n  * AER BV, Europe\n  * motorcycles, Spain, music\n## Ravi Pulliyar\n  * AER APAC\n  * refining, foodie, Netflix\n## Elio Onorio\n  * AER LATAM\n  * science books, camping, astronomy\n# URL: https://aerworldwide.com/data-security\n# Data Security\n## Protect data, recover value, and recycle responsibly, anywhere in the world.\nAER’s industry leading hardware retirement process ensures that every IT asset received is handled and processed with the utmost care. Our secure chain-of- custody procedures enable us to eliminate the risk for environmental and data security liabilities associated with the handling of IT assets. Depending on your organization’s risk tolerance, AER can offer a data-security solution to satisfy even your most demanding business requirements.\n## Ensuring data\nsecurity\nToday more than ever, retiring end-of- life assets poses a considerable amount of risk and responsibility. Ensuring that data is securely removed from all storage devices protects not only your own data, but also that of your employees and customers. In addition, secure data sanitization is a key element to AER’s Reverse Logistics Management Solution.\n###  Secure Transport\nand Facilities\nAER follows industry best practices when transporting IT assets to one of our global facilities. By using our own trucks or pre-qualified third party carrier, we assume all liability for your equipment and guarantee its safe delivery to one of our facilities. Additionally, the security of your data and end-of- life materials is always our primary concern. Our facilities are access controlled using proximity cards, photo ID badges, metal detectors, Closed Circuit TV and manned guard posts, all of which ensure maximum protection of your sensitive data prior to its destruction.\n###  Certified\nDestruction\nAER Worldwide understands the need for secure destruction of proprietary and data bearing equipment. As one of our value added programs we offer on-site, witnessed hard drive destruction services without charging a premium for the service.\n###  Data Capture /\nReporting\nAER Worldwide understands the critical role IT Asset Disposition Reporting plays in asset management and global compliance. We offer a full suite of customized, real-time environmental and financial reports online, allowing you to stay informed and take a proactive approach to ITAD decision-making.\n###  Environmental\nLiability\nElimination\nAER Worldwide has also been purchasing excess and obsolete electronic components, hardware and peripheral inventories since our inception in 1996. We have the expertise to work with customers to alleviate them of unwanted product, allowing them to immediately get assets out of their warehouse and off their books, which helps to free up underutilized funds and resources.\n# URL: https://aerworldwide.com/esg\n# Environmental, Social, and Governance (ESG)\nAt AER Worldwide, we believe in the power of sustainability. Environmental, Social, and Governance (ESG) principles are at the heart of everything we do. We invite you to explore our commitment to ESG and how it drives our business forward.\n**Why ESG Matters:**\nESG is more than just a trend—it’s a strategic imperative that shapes our operations. Here’s why it matters:\n  * **Environmental Responsibility:** We are dedicated to minimizing our environmental footprint. From efficient recycling processes to eco-friendly practices, we prioritize sustainability in all our endeavors.\n  * **Social Impact:** AER Worldwide fosters a culture of inclusivity and integrity. We prioritize the well-being of our employees, customers, and communities.\n  * **Governance Excellence:** Transparency and accountability define our governance framework. We uphold high ethical standards and strive for continuous improvement.\n**Join Our Mission:\n** We invite you to join us in making a positive impact through sustainable practices. By partnering with AER Worldwide, you align with a company committed to ESG leadership.\n  English ESG Statement\n  Spanish ESG Statement\n  Tamil ESG Statement\n  Malay ESG Statement\n  English ESG Statement\n  Spanish ESG Statement\n  Tamil ESG Statement\n  Malay ESG Statement\n  English ESG Statement\n  Spanish ESG Statement\n  Tamil ESG Statement\n  Malay ESG Statement\n# URL: https://aerworldwide.com/europe\n# Europe\n## Pan-European Processing Network\nSubcontractor Processing Facility\n  * emea@aerworldwide.com\n### Capabilities\n  * Asset Recovery\n  * Demanufacturing\n  * Remarketing\n  * Shredding\n# URL: https://aerworldwide.com/itad-services\n# ITAD Services\n## Recoup your investment value recovery\nIn today’s global business environment, the challenges to protect data and assets have grown exponentially.\nTo mitigate the risk and protect the data and the assets, AER Worldwide provides onsite pick/pack solutions. With this AER IT asset disposition solution, customers can benefit control and protection from their facility to our AER doors.\nAER customers can be assured that their data, and their customer’s data is safe not only in your facility, but in transit, through out triage process and throughout the entire end cycle of the assets.\n## We are global\nAER Worldwide’s strategically placed, global R2/RIOS certified facilities allow for a comprehensive set of customizable solutions to handle the disposition of your electronic assets in a manner that is secure, cost-effective and environmentally responsible.\n  * Reverse Logistics\n  * Secure Transportation\n  * On-site Pick-pack\n  * International Transport\n  * Data Security\n  * Screen & Test\n  * Data Capture / Reporting\n  * Value Recovery\n  * Counterfeiting\n  * Data Theft\n  * Dumping\n  * Storage Costs\nAER Worldwide can mitigate those risks and provide customized global solutions to handle your entire end-of-life material management needs. Assets that cannot be reused or remarketed are recycled using our audited and certified processes and facilities. Materials are de-manufactured, separating the components by primary materials and using them to generate commodity-grade materials such as Plastic, Copper, Steel, Gold and other metals.\n###  Remarketing\nServices\nAER Worldwide’s strategically placed global R2/RIOS certified facilities allow for a comprehensive set of customizable solutions to handle the disposition of your electronic assets in a manner that is secure, cost-effective and environmentally responsible. We can help you recover a portion of your initial IT Asset investment by both remarketing complete units and/or harvesting useable sub-components.\n###  Excess Inventory\nManagement\nMany Fortune 100 businesses rely on AER’s order fulfillment services and employee sales programs to make their end-of-life, reconditioned and surplus equipment available to qualified buyers. With AER, the entire process is turnkey. We handle everything from web sales to credit card processing, and shipping/fulfillment to RMAs.\nAER’s web-based Asset Sharing Programs can even help you re-deploy equipment across your own enterprise, putting used equipment where it makes the most impact and saves the most on new equipment purchases.\n###  Consignment\nGain the highest return on your excess material by placing it on consignment with us. AER will coordinate delivery of your product to one of our secure global processing facilities and provide a monthly accounting and payment for sold and unsold product. Daily updated consignment reports are also available on a password protected page on the AER Worldwide website.\n###  Purchasing\nAER Worldwide has also been purchasing excess and obsolete electronic components, hardware and peripheral inventories since our inception in 1996. We have the expertise to work with customers to alleviate them of unwanted product, allowing them to immediately get assets out of their warehouse and off their books, which helps to free up underutilized funds and resources.\n# URL: https://aerworldwide.com/leadership-team\n## AER LeadershipTeam\nAER Worldwide has a talented and experienced team of leaders that have been involved in the ITAD and Reverse Logistics industry for many years. Learn more about our team here.\n## Andre Weiglein\n  * President\n  * outdoors, family, wine\n Linkedin\n## Bill Schoening\n  * Vice President\n  * golf, travel, campfires\n Linkedin\n## Rik Krumins\n  * SVP\n  * surfing, foodie, friends\n Linkedin\n## Mark Regalado\n  * Director of IT\n  * music, farming, Foodie, camping\n Linkedin\n## Gretchen Stenson\n  * Head of Business Development\n  * music, family, beach\n Linkedin\n## Brian Naville\n  * Finance\n  * Travel, working on house, hiking\n Linkedin\n## Jeevan Kumar\n  * Director, AER Private Limited, India\n  * family, movies, foodie\n Linkedin\n## Andrew Parlier\n  * VP Operations & Strategy\n Linkedin\n## Ravi Pulliyar\n  * AER APAC\n  * refining, foodie, Netflix\nLinkedin\n## Paola Nevarez\n  * EHS/Compliance Global Manager\n  * Swimming, hiking, travel\n Linkedin\n# URL: https://aerworldwide.com/north-america\n# North America\nTigard OR\n## United States\n### California\nAER Worldwide Corporate Headquarters & Receiving Facility\n  * NorthAmericaOperations@aerworldwide.com\n  * 4603 Las Positas #E\nLivermore, CA 94551\n  * Tel [510.933.0500](tel:510.933.0500)\n  * Fax 510.933.0505\n### Capabilities\n  * Asset Recovery\n  * Demanufacturing\n  * Remarketing\nOregon\nAER Worldwide Processing Facility\n  * NorthAmericaOperations@aerworldwide.com\n6777 SW Bonita Rd.\nTigard, OR 97223\nTel 510.933.0500\nFax 510.933.0505\nCapabilities\n  * Asset Recovery\n  * Demanufacturing\n  * Remarketing\n### South Carolina\nAER Worldwide Processing Facility\n  * NorthAmericaOperations@aerworldwide.com\n  * 790 Berry Shoals Rd\nDuncan, SC 29334\n  * Tel [864.486.9950](tel:864.486.9950)\n  * Fax 864.486.9949\n### Capabilities\n  * Asset Recovery\n  * Demanufacturing\n  * Shredding\n  * Remarketing\n### Certifications\n  * R2v3 & RIOS:2016\n### Texas\nAER Worldwide Processing Facility\n  * NorthAmericaOperations@aerworldwide.com\n  * 19 Butterfield Trail Blvd\nEl Paso, TX 79906\n  * Tel [915.877.2277](tel:915.877.2277)\n  * Fax 510.933.0505\n### Capabilities\n  * Asset Recovery\n  * Demanufacturing\n  * Shredding\n  * Remarketing\n### Certifications\n  * R2v3 & RIOS:2016\n## Canada\n### Cambridge, Ontario\nSubcontractor Processing Facility\n  * NorthAmericaOperations@aerworldwide.com\n### Capabilities\n  * Asset Recovery\n  * Demanufacturing\n  * Shredding\n  * Remarketing\n## Mexico\n### Mexico City\nSubcontractor Processing Facility\n  * NorthAmericaOperations@aerworldwide.com\n### Capabilities\n  * Asset Recovery\n  * Demanufacturing\n  * Shredding\n  * Remarketing\nChihuahua\nReceiving Facility\n  * NorthAmericaOperations@aerworldwide.com\nAllied Electronic Recovery de Mexico S de RL de CV\nAv. Francisco Villa 6501 Int 07,\nPanamericana,\nChihuahua, Chih\nMexico, CP. 31120\nTel +52.33.3673.6581\n## Costa Rica\n### San Jose\nSubcontractor Processing Facility\n  * NorthAmericaOperations@aerworldwide.com\n### Capabilities\n  * Asset Recovery\n  * Demanufacturing\n# URL: https://aerworldwide.com/privacy-policy\n**AER Worldwide Privacy Policy**\nLast Updated: 05/05/2025\nThis privacy policy has been compiled to better serve those who are concerned with how their ‘Personally identifiable information’ (PII) is being used online. PII, as used in US privacy law and information security, is information that can be used on its own or with other information to identify, contact, or locate a single person, or to identify an individual in context. Please read our privacy policy carefully to get a clear understanding of how we collect, use, protect or otherwise handle your Personally Identifiable Information in accordance with our website.\nWhat personal information do we collect from the people that visit our blog, website or app?\nNever. You will not be asked to enter your name, email address, mailing address, credit card information or other details.\nWhen do we collect information?\nNever. We do not collect information from you to use our site.\nHow do we use your information?\nWe do not collect personal information.\nHow do we protect visitor information?\nOur website is scanned on a regular basis for security holes and known vulnerabilities in order to make your visit to our site as safe as possible.\nDo we use ‘cookies’?\nYes. Cookies are small files that a site or its service provider transfers to your computer’s hard drive through your Web browser (if you allow) that enables the site’s or service provider’s systems to recognize your browser and capture and remember certain information. For instance, they are also used to help us understand your preferences based on previous or current site activity, which enables us to provide you with improved services. We also use cookies to help us compile aggregate data about site traffic and site interaction so that we can offer better site experiences and tools in the future.\nWe use cookies to:\nUnderstand and save user’s preferences for future visits.\nCompile aggregate data about site traffic and site interactions in order to offer better site experiences and tools in the future.\nWe may also use trusted third party services that track site information on our behalf.\nYou can choose to have your computer warn you each time a cookie is being sent, or you can choose to turn off all cookies.\nIf you disable cookies, some features will be disabled. It will turn off some of the features that make your site experience more efficient and some of our services will not function properly.\nHow can you opt out, remove or modify information you have provided to us?\nYou can request to have your information removed by clicking on the Contact Us button on this or the home page.\nThird Party Disclosures\nWe do not sell, trade, or otherwise transfer to outside parties your personally identifiable information. This does not include website hosting partners and other parties who assist us in operating our website, conducting our business, or servicing you, so long as those parties agree to keep this information confidential. We may also release your information when we believe release is appropriate to comply with the law, enforce our site policies, or protect ours or others’ rights, property, or safety.\nHowever, non-personally identifiable visitor information may be provided to other parties for marketing, advertising, or other uses.\nThird party Links\nOccasionally, at our discretion, we may include or offer third party products or services on our website. These third party sites have separate and independent privacy policies. We therefore have no responsibility or liability for the content and activities of these linked sites. Nonetheless, we seek to protect the integrity of our site and welcome any feedback about these sites.\nTransfer Of Your Personal Information\nYour information may be transferred to — and maintained on — computers located outside of your state, province, country or other governmental jurisdiction where the data protection laws may differ than those from your jurisdiction.\nWe will take all steps reasonably necessary to ensure that your data is treated securely and in accordance with this Privacy Policy and no transfer of your personal information will take place to an organization or a country unless there are adequate controls in place including the security of your data and other personal information.\nDisclosure Of Your Personal Information\nIf we are involved in a merger, acquisition or asset sale, your personal information will not be transferred.\nUnder certain circumstances, we may be required to disclose your personal information if required to do so by law or in response to valid requests by public authorities (e.g. a court or a government agency).\nRetention of Your Personal Information\nWe will not retain your personal information as set out in this Privacy Policy.\nService Providers\nWe employ third party companies and individuals to facilitate our Website (“Service Providers”), to provide our Website on our behalf, to perform Website-related services or to assist us in analyzing how our Website is used. These third-parties do not have access to your personal information.\nAnalytics\nGoogle Analytics is a web analytics service offered by Google that tracks and reports website traffic. Google uses the data collected to track and monitor the use of our Service. This data is shared with other Google services. Google may use the collected data to contextualize and personalize the ads of its own advertising network.\nYou can opt-out of having made your activity on the Service available to Google Analytics by installing the Google Analytics opt-out browser add-on. The add-on prevents the Google Analytics JavaScript (ga.js, analytics.js, and dc.js) from sharing information with Google Analytics about visits activity.\nFor more information on the privacy practices of Google, please visit the Google Privacy & Terms web page: http://www.google.com/intl/en/policies/privacy/\nWe use email links located on the “contact us” page and other areas of the Website to allow you to contact us directly with any questions or comments you may have. We read every message sent in and try to reply promptly to each one. This information is used to respond directly to your questions or comments. We may also file your comments to improve the Website or our products and services, or review and discard the information. Your personal information is only shared with third parties with your explicit permission.\nHow to Unsubscribe from AER Email Publications\nTo unsubscribe from receiving AER marketing or promotional materials, send an email request to it@development804671.live-website.com. Also, if an unsubscribe link appears at the end of an email, when you click on it you will be unsubscribed from such mailings.\nPayments Processors\nWe do not provide paid products and/or services on our Website. We do not use third-party services for payment processing (e.g. payment processors). We will not store or collect your payment card details.\nInformation Regarding Your Data Protection Rights Under General Data Protection Regulation (GDPR)\nIf you are a resident of the European Economic Area (EEA), you have certain data protection rights. In certain circumstances, you have the following data protection rights:\nThe right to access, update or to delete the personal information we have on you\nThe right of rectification\nThe right to object\nThe right of restriction\nThe right to data portability\nThe right to withdraw consent\nPlease note that we may ask you to verify your identity before responding to such requests. You have the right to complain to a Data Protection Authority about our collection and use of your personal information. For more information, please contact your local data protection authority in the European Economic Area (EEA).\nInformation Regarding Your Data Protection Rights Under California Consumer Privacy Act (CCPA)\nThe California Consumer Privacy Act of 2018 (CCPA) grants “consumers” (any California resident regardless of whether there is a customer or any other relationship with the covered business) new rights respecting their personal information.\nThe right to request disclosure of your business’ data collection and sales practices in connection with the requesting consumer, including the categories of personal information you have collected, the source of the information, your use of the information and, if the information was disclosed or sold to third parties, the categories of personal information disclosed or sold to third parties and the categories of third parties to whom such information was disclosed or sold\nThe right to request a copy of the specific personal information collected about them during the 12 months before their request (together with right #1, a “personal information request”)\nThe right to have such information deleted (with exceptions)\nThe right to request that their personal information not be sold to third parties, if applicable\nThe right not to be discriminated against because they exercised any of the new rights\nPrivacy Policy Questions or Compliance\nIf there are any questions regarding this privacy policy you may contact us.\nAER Electronics, Inc.\n4603 Las Positas #E\nLivermore, CA 94551\nPh: 510.933.0530\nFx: 510.933.0529\nit@aerworldwide.com\n# URL: https://aerworldwide.com/qehs-policy\nQuality, Environmental, Health & Safety Policy (QEHS)\nOur commitment to quality, environmental stewardship, and health & safety defines AER Worldwide’s approach to operations and customer service. As a leader in electronic waste recycling, we prioritize sustainability, data security, regulatory compliance, and the safety of our employees and communities. With clear goals and robust training, we strive for continuous improvement while minimizing environmental impacts and maximizing material reuse.\nLearn more about our Quality, Environmental, Health, and Safety Policy, available in both English and Spanish.\n# URL: https://aerworldwide.com/south-america\n# South America\n## Argentina\n### Buenos Aries\nSubcontractor Processing Facility\n  * latam@aerworldwide.com\n### Capabilities\n  * Asset Recovery\n  * Demanufacturing\n## Brazil\n### Sao Paulo\nSubcontractor Processing Facility\n  * latam@aerworldwide.com\n### Capabilities\n  * Asset Recovery\n  * Demanufacturing\n  * Sorting\n## Colombia\n### Bogota\nSubcontractor Processing Facility\n  * latam@aerworldwide.com\n### Capabilities\n  * Asset Recovery\n  * Demanufacturing\n  * Sorting\n## Peru\n### Lima\nSubcontractor Processing Facility\n  * latam@aerworldwide.com\n### Capabilities\n  * Asset Recovery\n  * Demanufacturing\n  * Sorting\n# URL: https://aerworldwide.com/supply-chain-solutions\n# Supply Chain Solutions\n## Reverse supply chain management\nProtecting your assets is our priority.\nWe are experts at complete package, secure transport and compliance in your reverse supply chain.\n## Solutions\nMaximized\nAt AER, we understand the importance of the Reverse Logistics process and are prepared to find solutions for your reverse supply chain, as well as take on the management for organizations so they can be confident that it’s done with safety, security, efficiency, and cost effectiveness. Within this process, AER provides the following services to their customers:\n###  Logistics Management\nWhen moving our customer’s IT assets from their location to our closest facility, AER is constantly looking at ways to minimize cost while also maintaining strict safety and security protocol, and abiding by any internal requirements as well. These services include Secure Transportation, On-Site Pick-pack, and International Transportation.\n###  Compliance Management / Take-Back and Reporting\nTake-Back Regulatory Compliance over multiple governmental jurisdictions is a complex, often daunting, task. AER Worldwide, along with our Global Compliance Partners, removes the complexity from this process by providing cost-efficient, environmentally sound solutions that meet all legislative obligations and imposed customer requirements.\n###  Internal Reuse Programs\nAER provides Asset Recovery Programs (ARP) for IT departments distributing and taking back assets from employees working in remote locations (WFH). Portal tracking, logistics tracking, and serialized asset control to maintain visibility during the return process. These assets are then redistributed into the client space for reuse; loaner programs, immediate break/fix, and retired assets.\n# URL: https://aerworldwide.com/terms-of-service\n## Terms of Service\nPlease read these terms of service (“terms”, “terms of service”) carefully before using the AER Worldwide website (the “service”) operated by AER Worldwide (“us”, ‘we”, “our”).\nConditions of Use\nWe will provide their services to you, which are subject to the conditions stated below in this document. Every time you visit this website or use its services you accept the following conditions. This is why we urge you to read them carefully.\nPrivacy Policy\nBefore you continue using our website we advise you to read our privacy policy [link to privacy policy] regarding our user data collection. It will help you better understand our practices.\nCopyright\nContent published on this website (digital downloads, images, texts, graphics, logos) is the property of AER Worldwide and/or its content creators and protected by international copyright laws. The entire compilation of the content found on this website is the exclusive property of AER Worldwide, with copyright authorship for this compilation by AER Worldwide.\nCommunications\nThe entire communication with us is electronic. Every time you send us an email or visit our website, you are going to be communicating with us. You hereby consent to receive communications from us. If you subscribe to the news on our website, you are going to receive regular emails from us. We will continue to communicate with you by posting news and notices on our website and by sending you emails. You also agree that all notices, disclosures, agreements and other communications we provide to you electronically meet the legal requirements that such communications be in writing.\nApplicable Law\nBy visiting this website, you agree that the laws of the California, without regard to principles of conflict laws, will govern these terms of service, or any dispute of any sort that might come between AER Worldwide and you, or its business partners and associates.\nDisputes\nAny dispute related in any way to your visit to this website shall be arbitrated by state or federal court California and you consent to exclusive jurisdiction and venue of such courts.\nComments, and Emails\nVisitors may post content as long as it is not obscene, illegal, defamatory, threatening, infringing of intellectual property rights, invasive of privacy or injurious in any other way to third parties. Content has to be free of software viruses, political campaign, and commercial solicitation.\nWe reserve all rights (but not the obligation) to remove and/or edit such content. When you post your content, you grant AER Worldwide non-exclusive, royalty-free and irrevocable right to use, reproduce, publish, modify such content throughout the world in any media.\nLicense and Site Access\nWe grant you a limited license to access and make personal use of this website. You are not allowed to download or modify it. This may be done only with written consent from us.\n# URL: https://aerworldwide.com/wp-content/uploads/2024/04/Acceptable_Items_2024.pdf\n# URL: https://aerworldwide.com/wp-content/uploads/2024/04/ESG_Statement_2024.pdf\n# URL: https://www.aerworldwide.com/wp-content/uploads/2024/12/ESG-Statement-2025-Malay.pdf\n# URL: https://www.aerworldwide.com/wp-content/uploads/2024/12/ESG-Statement-2025-Spanish.pdf\n# URL: https://www.aerworldwide.com/wp-content/uploads/2024/12/ESG-Statement-2025-Tamil.pdf\n# URL: https://www.aerworldwide.com/wp-content/uploads/2024/12/ESG-Statement-2025.pdf",
+  "content_length_stats": {
+    "characters": 38024,
+    "estimated_tokens": 9506,
+    "estimated_cost_input_usd": 0.002662
+  }
+}

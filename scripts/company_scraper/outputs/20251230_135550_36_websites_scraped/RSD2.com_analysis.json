@@ -1,0 +1,39 @@
+[
+  {
+    "company_name": "RSD2",
+    "website_url": "https://rsd2.com",
+    "main_business": "IT Asset Disposition (ITAD) and Data Destruction",
+    "description": "RSD2 is a trusted partner for secure and reliable data destruction and IT asset disposition services. They specialize in ensuring sensitive data is completely and irreversibly destroyed, protecting business and customer privacy. They offer specialized ITAD services focusing on data sanitization, hard drive destruction, disposal, and shredding, all certified with data destruction certificates. They prioritize sustainability, data security, and compliance, with processing facilities and international offices across the globe, serving large organizations worldwide.",
+    "products_services": [
+      "IT Asset Disposition (ITAD) - Equipment Buyback Program, Certified Audit Reporting, Asset Decommission Services",
+      "Data Sanitization - Data Destruction via Software Wiping, Hardware Restored To Factory OEM Standards For REUSE",
+      "Physical Data Destruction - Hard Drive Shredding, Hard Drive Crushing, Asset Recycling",
+      "Refurbished Server & Computer Parts - Servers, Storage, Networking, CPUs"
+    ],
+    "contact_emails": [
+      "info@rsd2.com"
+    ],
+    "contact_phones": [
+      "888-333-1330"
+    ],
+    "physical_address": null,
+    "year_founded": null,
+    "certifications": [
+      "R2V3 Certified Recycler"
+    ],
+    "service_areas": [
+      "Worldwide"
+    ],
+    "summary": "RSD2 is a global provider of IT Asset Disposition (ITAD) and secure data destruction services. They offer a comprehensive suite of services including equipment buyback, certified data sanitization (both software wiping and physical destruction), and asset decommissioning. A key differentiator is their R2V3 certification, which demonstrates a commitment to responsible recycling, data security, and environmental standards. They serve large organizations worldwide and operate on a circular economy model with a zero-landfill policy. In addition to their core ITAD services, they also sell refurbished IT components like servers, storage, networking gear, and CPUs, which are sourced from their certified ITAD processes.",
+    "is_good_fit": true,
+    "inventory_fit_assessment": "Excellent fit. RSD2 explicitly handles the core enterprise IT assets Yilong requires: Data Center Servers, Storage, and Networking Equipment, as listed under their 'Refurbished Server & Computer Parts' section. They also offer a buyback program for IT equipment, indicating they acquire and process these assets in volume. Their services include restoring hardware to 'Factory OEM Standards for REUSE,' which aligns with Yilong's 'Tested Functional' (R2v3 F2/C3 or better) requirement. The sale of harvested components like CPUs is a strong bonus point. There is no mention of consumer electronics or residential recycling, which is positive.",
+    "operational_fit_assessment": "Strong operational fit. RSD2 is clearly a B2B-focused ITAD processor and asset recovery firm, trusted by large organizations worldwide. Their R2V3 certification is a critical and highly preferred qualification, confirming they have the processes to test, wipe data, and grade assets correctly. While not explicitly stated, their business model of serving large organizations and having a buyback program strongly implies they support wholesale/bulk sales (pallet/truckload quantities). They have international offices and global reach, which suggests scalability. No red flags regarding retail-only sales or lack of B2B capabilities.",
+    "red_flags": [
+      "No explicit mention of asset grading (A/B/C) on their public website, though their R2V3 certification and reuse focus imply it.",
+      "Physical address/location details are not provided in the crawled content, which is a minor transparency issue."
+    ],
+    "recommendation": "Reach out",
+    "reasoning": "RSD2 is a highly promising vendor that meets or exceeds Yilong's core criteria. They are an R2V3 certified ITAD processor with a clear B2B focus, handling the exact enterprise IT inventory Yilong needs (servers, storage, networking). Their operational model includes a buyback program and they sell refurbished components, indicating they are set up for bulk transactions. The R2V3 certification is a major trust signal for data security and proper asset handling. The lack of explicit grading details is not a disqualifier, as this is typically discussed during sales engagement. They are a strong candidate for a bulk supplier relationship.",
+    "error": false
+  }
+]

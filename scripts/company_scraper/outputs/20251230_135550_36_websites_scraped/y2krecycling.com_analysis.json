@@ -1,0 +1,45 @@
+[
+  {
+    "company_name": "Y2K Electronics Recycling, LLC",
+    "website_url": "https://www.y2krecycling.com",
+    "main_business": "Electronic Waste Recycling / IT Asset Disposition",
+    "description": "A state-certified electronic waste recycling center committed to diverting e-waste from landfills. They offer pick-up services for businesses, data centers, educational facilities, biotech labs, hospitals, and non-profits, as well as drop-off services. They sort, package, and ship material to downstream certified recyclers.",
+    "products_services": [
+      "One-time electronic waste pick-up (residential & business)",
+      "E-waste event services",
+      "Free drop-off for most items",
+      "Recurring pick-up service contracts for businesses",
+      "Free pick-up for school districts, churches, and most non-profits",
+      "Hard drive destruction service (with certificate of destruction available)",
+      "Recycling of TVs, computers, laptops, cables, stereos, networking equipment, servers, and phones"
+    ],
+    "contact_emails": [],
+    "contact_phones": [
+      "(510) 925-9919"
+    ],
+    "physical_address": "44875-C Industrial Drive Fremont, CA 94538",
+    "year_founded": "2015",
+    "certifications": [
+      "R2v3",
+      "ISO 9001:2015",
+      "ISO 14001:2015",
+      "ISO 45001:2018"
+    ],
+    "service_areas": [
+      "San Francisco Bay Area",
+      "Fremont, California"
+    ],
+    "summary": "Y2K Electronics Recycling, LLC is a state-certified e-waste recycling center based in Fremont, California, serving the Bay Area since 2015. Their core mission is to divert electronic waste from landfills. They provide a range of services including scheduled pick-ups for businesses and residents, community e-waste events, and a free drop-off facility. They handle a wide variety of electronics, with a specific list of certified items that includes enterprise IT assets like desktop computers, laptops, servers, and all networking equipment. The company is R2v3 certified, along with several ISO standards, indicating a structured process for handling electronic assets. They offer hard drive destruction services and work with downstream, state-certified recyclers to process materials according to recycling standards.",
+    "is_good_fit": true,
+    "inventory_fit_assessment": "The company's 'Certified Electronics List' explicitly includes key enterprise IT assets that are core to Yilong's needs: Desktop computers, Laptops, All networking including servers. Gallery photos confirm they handle workstations and servers. They offer a hard drive destruction service, indicating they handle components, though there is no explicit mention of harvesting high-value CPUs, RAM, or SSDs for resale. The website does not specify asset grading (A/B/C) or testing protocols, which is a gap in information. However, their R2v3 certification suggests they have processes for testing and data sanitization. They do NOT focus solely on consumer electronics; while they accept TVs and phones, enterprise IT is clearly part of their intake.",
+    "operational_fit_assessment": "Y2K demonstrates strong B2B operational capabilities. They explicitly offer services for 'all businesses, data centers, educational facilities, biotech labs, hospitals and non-profits' and provide contracts for frequent business pick-ups. Their R2v3 certification is a major positive, aligning with Yilong's requirement for vendors who can test/wipe data correctly. They support wholesale/bulk operations, as evidenced by gallery photos showing palletized flatscreen TVs and packaged servers/workstations, and they offer recurring service contracts. They are not a retail reseller. The primary service model appears to be recycling collection and processing, not direct retail sales, which fits the ITAD processor profile Yilong seeks.",
+    "red_flags": [
+      "No explicit mention of asset testing, grading (A/B/C), or 'Tested Functional' status on the website.",
+      "No email addresses were found in the provided content, only a phone number and address.",
+      "Business model emphasis is on recycling collection; unclear if they actively sell tested, functional assets in bulk or if all material is sent downstream for recycling/scrap."
+    ],
+    "recommendation": "Research further",
+    "reasoning": "Y2K is a promising candidate due to its R2v3 certification, clear handling of enterprise IT assets (servers, networking, desktops), and established B2B service model in the Bay Area. However, a key piece of information is missing: it is not explicitly clear from the website content if they SELL tested, functional assets in bulk (EXW) or if their primary revenue is from recycling fees. Their gallery shows 'packaged' assets 'ready for recycling,' which could mean ready for scrap. Before initiating a procurement pitch, Yilong should conduct further research (likely a phone call) to confirm: 1) If they sell tested, functional IT assets in pallet/truckload quantities, and 2) Their typical pricing and grading model. The lack of this clarity warrants a 'Research further' recommendation instead of a direct 'Reach out'.",
+    "error": false
+  }
+]

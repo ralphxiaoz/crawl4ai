@@ -1,0 +1,26 @@
+[
+  {
+    "company_name": null,
+    "website_url": "https://www.esavetheplanet.com",
+    "main_business": null,
+    "description": "The website for this domain has expired and is no longer accessible. No information about the company's business, products, or services could be retrieved.",
+    "products_services": [],
+    "contact_emails": [],
+    "contact_phones": [],
+    "physical_address": null,
+    "year_founded": null,
+    "certifications": [],
+    "service_areas": [],
+    "summary": "The provided content indicates that the website at https://www.esavetheplanet.com has expired. The only information available is a generic Squarespace message stating 'Website Expired' and that the account has expired. There is no accessible content about the company's name, business model, services, contact details, or operational capabilities. Therefore, it is impossible to create a company profile or evaluate its fit as a vendor.",
+    "is_good_fit": false,
+    "inventory_fit_assessment": "No information is available to assess inventory fit. The website is expired, so we cannot determine what types of IT assets, if any, the company handles, their condition grades, or their volume capabilities.",
+    "operational_fit_assessment": "No information is available to assess operational fit. The website is expired, so we cannot determine the company's business type (B2B/B2C), certifications (R2v3, e-Stewards), sales channels (wholesale/bulk), or any other operational details.",
+    "red_flags": [
+      "Website is expired and non-functional, indicating the company may no longer be in operation or is not maintaining a professional online presence.",
+      "Complete lack of accessible information prevents any evaluation against procurement criteria."
+    ],
+    "recommendation": "Skip",
+    "reasoning": "The target website is expired and contains no substantive information about the company. This is a major red flag for a potential B2B vendor, as it suggests the business may be inactive, unprofessional, or not serious about maintaining a supply chain presence. Without any data on products, certifications, or operational model, it is impossible to qualify this entity against Yilong's critical requirements for inventory type, condition, B2B focus, and certifications. Attempting to reach out would be inefficient with a very low probability of success. It is recommended to skip this lead entirely and focus on vendors with active, informative websites.",
+    "error": false
+  }
+]

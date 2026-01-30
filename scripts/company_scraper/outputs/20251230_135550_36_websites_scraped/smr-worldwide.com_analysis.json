@@ -1,0 +1,47 @@
+[
+  {
+    "company_name": "Sprout (SMR Holdings LLC)",
+    "website_url": "https://www.sproutup.com",
+    "main_business": "IT Asset Disposition (ITAD) and Circular Supply Chain Management",
+    "description": "Sprout is a technology-powered IT asset lifecycle management company providing secure, sustainable, and software-driven solutions for enterprise hardware. They specialize in IT asset disposition (ITAD), certified data destruction, value recovery, redeployment, and responsible recycling, serving major enterprise clients globally.",
+    "products_services": [
+      "IT Asset Disposition (ITAD)",
+      "Lifecycle Optimization (Redeployment, Equipment Reconciliation, Omni-Channel Monetization)",
+      "Certified Data Destruction (Levels 1-3)",
+      "Value-Added Processing (Data wiping, testing, grading, triage)",
+      "On-Site Services (Decommissioning, data destruction, packing)",
+      "Secure Logistics & Turnkey Logistics",
+      "Responsible Recycling & Zero Landfill Disposition",
+      "OpTime by Sprout (IT infrastructure support, maintenance, and parts)",
+      "Sourcing & Procurement",
+      "Corporate Responsibility/ESG Reporting"
+    ],
+    "contact_emails": [
+      "info@sproutup.com"
+    ],
+    "contact_phones": [],
+    "physical_address": "Multiple owned US locations: Woodland, CA; Statesville, NC; Garland, TX; Taunton, MA. Corporate/Remote operations.",
+    "year_founded": "2014",
+    "certifications": [
+      "R2v3 Certification",
+      "NAID AAA Certified",
+      "ISO 9001 Certified",
+      "ISO 14001 Certified",
+      "ISO 27001 Certified",
+      "ISO 45001 Certified",
+      "e-Stewards Standard (referenced in QEHS policy)"
+    ],
+    "service_areas": [
+      "United States",
+      "Global (through partner network)"
+    ],
+    "summary": "Sprout is a US-based IT Asset Disposition (ITAD) and circular supply chain management firm founded in 2014. They provide a comprehensive suite of technology-enabled services for enterprise clients, focusing on secure data destruction, maximum value recovery, and sustainable lifecycle management of IT hardware. Their proprietary SmartERP platform integrates with client systems to provide real-time tracking, automated workflows, and data-driven insights. Sprout owns and operates multiple R2v3 and ISO-certified facilities across the US (California, North Carolina, Texas, Massachusetts) and serves a global clientele, including over 60% of the top S&P 500 technology and manufacturing companies. They emphasize B2B services, handling enterprise-grade assets like servers, networking equipment, storage, and laptops through wholesale/bulk channels.",
+    "is_good_fit": true,
+    "inventory_fit_assessment": "Excellent fit. Sprout explicitly handles the full range of enterprise IT assets Yilong seeks: data center servers, storage, networking equipment, switches, routers, desktop computers, laptops, tablets, and mobile devices. Their service descriptions and case studies involve decommissioning data centers and enterprise offices, indicating a source of high-volume, commercial-grade equipment. They perform value-added processing including testing, grading, and triage, which aligns with Yilong's requirement for 'Tested Functional' (R2v3 F2/C3 or better) assets. Their 'Omni-Channel Monetization' service and mention of harvesting components for resale to service providers suggest they can supply both whole units and high-value components (CPU, RAM, SSD/HDD). There is no indication they focus on consumer electronics or residential recycling.",
+    "operational_fit_assessment": "Strong operational fit. Sprout is a classic B2B ITAD processor and asset recovery firm, not a retail reseller. They hold the critical R2v3 certification across multiple owned facilities, demonstrating compliant testing and data wiping procedures. Their business model is built on wholesale/bulk handling, as evidenced by services like 'Turnkey Logistics' for pallet/truckload quantities, data center decommissions, and managing portfolios for large enterprises. They have processed over $2 billion in assets for 200+ enterprise clients, indicating the scale and wholesale capability Yilong requires. Their sales channels include a network of value-added resellers (VARs) and managed service providers (MSPs), which is a wholesale/B2B model, supplemented by a direct-to-consumer brand that likely helps clear inventory but is not their primary focus.",
+    "red_flags": [],
+    "recommendation": "Reach out",
+    "reasoning": "Sprout is a highly qualified vendor that meets or exceeds all of Yilong's core criteria. They are a certified (R2v3, ISO), large-scale B2B ITAD processor with owned US facilities, specializing in the exact enterprise IT asset categories Yilong procures. Their operational model is built for bulk/wholesale transactions with major corporations, aligning perfectly with Yilong's EXW purchasing model. The company's technology platform, focus on value recovery, and established track record with Fortune 500 clients make them a prime candidate for a strategic supplier relationship. No red flags were identified regarding inventory type, business focus, or sales channels.",
+    "error": false
+  }
+]

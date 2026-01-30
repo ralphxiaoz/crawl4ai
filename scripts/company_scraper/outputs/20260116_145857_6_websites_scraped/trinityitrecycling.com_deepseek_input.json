@@ -1,0 +1,278 @@
+{
+  "metadata": {
+    "timestamp": "2026-01-16 14:59:18",
+    "website_url": "https://www.trinityitrecycling.com",
+    "model": "deepseek/deepseek-chat",
+    "temperature": 0.7,
+    "max_tokens": 4000,
+    "content_filtered": true,
+    "original_size_chars": 127498,
+    "sent_size_chars": 26283,
+    "reduction_percent": 79.4
+  },
+  "system_prompt": "IMPORTANT: 请用中文回答所有文本字段。All text output must be in Chinese.\n\n## YOUR ROLE\nYou are a Senior Procurement Consultant for Yilong Business Limited, a high-volume IT Asset Disposition (ITAD) trading firm.\nYour goal is to evaluate potential US-based vendors to see if they fit our supply chain requirements.\n\n## CONTEXT - WHO WE ARE (THE BUYER)\n- Company: Yilong Business Limited (Hong Kong-based with US operations)\n- Business Model: We purchase used IT assets in bulk (Ex Works - EXW) from US facilities and export them to established downstream markets in Hong Kong, Mainland China, and Southeast Asia\n- Volume: We have a purchasing budget of ~$1.5M per month ($10M–$20M annually)\n- Compliance: We operate a strict \"High-Quality Refurbishment\" model. We do NOT export e-waste. We require assets to be \"Tested Functional\" (R2v3 F2/C3 or better)\n\n## YOUR TASK\nYou are analyzing a company website. The provided content belongs to ONE SINGLE company.\nAll URLs are under the same root domain.\nThe content contains text from multiple pages, separated by \"# URL: \".\n\nCRITICAL INSTRUCTIONS:\n1. The crawl covers multiple pages (Home, About, Contact, etc.).\n2. There is significant overlapping/duplicate information across these pages.\n3. You MUST consolidate all information into a SINGLE company profile.\n4. Do NOT output a list of companies. Extract exactly ONE company object.\n5. Ignore minor differences in descriptions across pages; synthesize them into a comprehensive summary.\n\n## INFORMATION TO EXTRACT\n\n1. **Company Information:**\n   - Company name\n   - Main website URL (the root domain, e.g., https://example.com)\n   - Main business/industry\n   - Brief description of what they do\n\n2. **Products/Services:**\n   - List all products or services offered\n   - Key capabilities or specializations\n\n3. **Contact Information:**\n   - ALL email addresses found (support, sales, info, contact, etc.)\n   - Phone numbers\n   - Physical address/location\n   - Contact page URLs\n\n4. **Additional Details:**\n   - Company size (if mentioned)\n   - Year founded (if mentioned)\n   - Certifications or awards (especially R2v3, e-Stewards)\n   - Geographic coverage/service areas\n\n## VENDOR QUALIFICATION CRITERIA\n\nEvaluate if this company is a good fit for Yilong based on these 2 pillars:\n\n### PILLAR 1: INVENTORY FIT\n**Must Have:**\n- Enterprise IT assets: Laptops, Desktops, Data Center Servers, Networking Equipment, Storage\n\n**Bonus Points:**\n- Harvested components (high-value CPU, RAM, SSD/HDD)\n\n**Condition Requirements:**\n- Grade A/B (Ready for Retail) - Preferred\n- Tested Functional Grade C (Ready for Refurbishment) - Acceptable\n\n**RED FLAGS:**\n- Only handles residential recycling (curbside pickup)\n- Focuses primarily on shredding/scrap metal\n- No mention of testing or grading\n- Only handles consumer electronics (phones, tablets, TVs)\n\n### PILLAR 2: OPERATIONAL FIT\n**Business Type:**\n- Must be an ITAD Processor or Asset Recovery Firm (B2B focus)\n- NOT a retail reseller or consumer-focused recycler\n\n**Certification:**\n- R2v3 certification is highly preferred (indicates they can test/wipe data correctly)\n- e-Stewards is also acceptable\n\n**Sales Channel:**\n- Must support Wholesale / Bulk sales (Pallet/Truckload quantities)\n- If they only sell single units on eBay/Amazon to consumers, they are a BAD fit\n\n**RED FLAGS:**\n- Only residential/consumer services\n- No B2B capabilities mentioned\n- No certifications\n- Only retail sales channels\n\n## EVALUATION OUTPUT\nBased on the above criteria, provide:\n- is_good_fit: true/false - Is this company worth reaching out to?\n- inventory_fit_assessment: Detailed explanation of how they match our inventory needs\n- operational_fit_assessment: Detailed explanation of their operational capabilities\n- red_flags: List of any concerns or disqualifying factors\n- recommendation: \"Reach out\", \"Skip\", or \"Research further\"\n- reasoning: Clear explanation of why you recommend reaching out or skipping\n\nBe thorough and extract ALL contact emails you can find.\nIf information is not available, use null for that field.\n",
+  "json_schema": {
+    "properties": {
+      "company_name": {
+        "anyOf": [
+          {
+            "type": "string"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "default": null,
+        "description": "Name of the company",
+        "title": "Company Name"
+      },
+      "website_url": {
+        "anyOf": [
+          {
+            "type": "string"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "default": null,
+        "description": "Main website URL of the company (the root domain, e.g., https://example.com)",
+        "title": "Website Url"
+      },
+      "main_business": {
+        "anyOf": [
+          {
+            "type": "string"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "default": null,
+        "description": "Primary business or industry",
+        "title": "Main Business"
+      },
+      "description": {
+        "anyOf": [
+          {
+            "type": "string"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "default": null,
+        "description": "Brief description of what the company does",
+        "title": "Description"
+      },
+      "products_services": {
+        "anyOf": [
+          {
+            "items": {
+              "type": "string"
+            },
+            "type": "array"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "default": null,
+        "description": "List of products or services offered",
+        "title": "Products Services"
+      },
+      "contact_emails": {
+        "anyOf": [
+          {
+            "items": {
+              "type": "string"
+            },
+            "type": "array"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "default": null,
+        "description": "All email addresses found on the website",
+        "title": "Contact Emails"
+      },
+      "contact_phones": {
+        "anyOf": [
+          {
+            "items": {
+              "type": "string"
+            },
+            "type": "array"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "default": null,
+        "description": "All phone numbers found",
+        "title": "Contact Phones"
+      },
+      "physical_address": {
+        "anyOf": [
+          {
+            "type": "string"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "default": null,
+        "description": "Physical address or location",
+        "title": "Physical Address"
+      },
+      "year_founded": {
+        "anyOf": [
+          {
+            "type": "string"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "default": null,
+        "description": "Year the company was founded",
+        "title": "Year Founded"
+      },
+      "certifications": {
+        "anyOf": [
+          {
+            "items": {
+              "type": "string"
+            },
+            "type": "array"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "default": null,
+        "description": "Any certifications or awards mentioned",
+        "title": "Certifications"
+      },
+      "service_areas": {
+        "anyOf": [
+          {
+            "items": {
+              "type": "string"
+            },
+            "type": "array"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "default": null,
+        "description": "Geographic areas served",
+        "title": "Service Areas"
+      },
+      "summary": {
+        "anyOf": [
+          {
+            "type": "string"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "default": null,
+        "description": "A 2-3 paragraph human-readable summary of the company",
+        "title": "Summary"
+      },
+      "is_good_fit": {
+        "anyOf": [
+          {
+            "type": "boolean"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "default": null,
+        "description": "Overall assessment - Is this company worth reaching out to for Yilong's procurement needs?",
+        "title": "Is Good Fit"
+      },
+      "inventory_fit_assessment": {
+        "anyOf": [
+          {
+            "type": "string"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "default": null,
+        "description": "Detailed explanation of how the company's inventory (product types, grades, volumes) matches Yilong's requirements for enterprise IT assets",
+        "title": "Inventory Fit Assessment"
+      },
+      "operational_fit_assessment": {
+        "anyOf": [
+          {
+            "type": "string"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "default": null,
+        "description": "Detailed explanation of the company's operational capabilities (B2B focus, certifications, wholesale channels) and fit with Yilong's bulk purchasing model",
+        "title": "Operational Fit Assessment"
+      },
+      "red_flags": {
+        "anyOf": [
+          {
+            "items": {
+              "type": "string"
+            },
+            "type": "array"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "default": null,
+        "description": "List of any concerns or disqualifying factors (e.g., residential-only, no certifications, retail-only sales, scrap metal focus)",
+        "title": "Red Flags"
+      },
+      "recommendation": {
+        "anyOf": [
+          {
+            "type": "string"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "default": null,
+        "description": "Action recommendation: 'Reach out', 'Skip', or 'Research further'",
+        "title": "Recommendation"
+      },
+      "reasoning": {
+        "anyOf": [
+          {
+            "type": "string"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "default": null,
+        "description": "Clear explanation of why you recommend reaching out or skipping this vendor, based on the evaluation criteria",
+        "title": "Reasoning"
+      }
+    },
+    "title": "CompanyAnalysis",
+    "type": "object"
+  },
+  "content_sent": "# URL: https://www.trinityitrecycling.com\n Schedule A Pickup\n## Who We Are..............!!!!\n**Trinity IT Recycling** is an **R2v3 and ISO-certified** electronics recycling company proudly serving the **Dallas-Fort Worth Metroplex and beyond**. We provide secure, sustainable, and fully compliant solutions for managing retired IT assets, helping organizations reduce e-waste while ensuring data security and environmental responsibility.\nOur core services include **secure data destruction** , **e-waste recycling** , **IT asset disposition (ITAD)** , **IT asset buyback** , **data center decommissioning** , and **hard drive shredding** —available both on-site and off-site. We also offer **free pickup services for businesses** , making the process efficient and hassle-free.\nTrinity IT Recycling serves a wide range of industries, including **hospitals** , **government agencies** , **businesses of all sizes** , **schools** , **data centers** , **IT leasing companies** , **retailers** , **banks** , **distributors** , and **bio-tech companies**. Whether you’re a small office or a large enterprise, we tailor our services to meet your unique needs while ensuring the highest standards of compliance and security.\nWith a strong commitment to environmental stewardship and data protection, Trinity IT Recycling is your trusted partner for responsible IT asset management. Contact us today to learn more or to schedule a free business pickup.\n## Who We Serve.............!!!!\n## Hospital\n## Government\n## Businesses\n## School\n## Bank\n## Offices\n## Data Centers\n## Operators\n## Retailers\n# URL: https://trinityitrecycling.com/certification\n**Certification**\n### R2V3 (Responsible Recycling)\nTrinity IT Recycling is an R2v3-certified company, which means we meet the internationally recognized standard for responsible e-waste recycling and refurbishment.\nAchieving this certification required us to demonstrate full compliance with all standards set by the certification body, including responsible electronics recycling, data security, worker health and safety, environmental protection, as well as core and process-specific requirements.\nOur systems and practices were thoroughly audited by an independent third-party auditor, and our efforts were then reviewed and approved by Sustainable Electronics Recycling International (SERI)—the organization that oversees the R2v3 standard.\n## ISO 9001:2015\n  * Trinity IT Recycling is an ISO 9001:2015 certified company, the current version of the internationally recognized standard for Quality Management Systems (QMS).\nThis certification provides a structured framework that enables organizations like ours to consistently deliver products and services that meet both customer expectations and regulatory requirements. It reflects our ongoing commitment to quality, continuous improvement, and customer satisfaction.\n### ISO 14001:2015\nTrinity IT Recycling is an ISO 14001:2015 certified company, meeting the internationally recognized standard for Environmental Management Systems (EMS). This certification provides a structured framework that allows us to establish, implement, maintain, and continually improve our environmental practices.\nBy following this standard, we are able to effectively manage our environmental responsibilities, reduce our environmental impact, and ensure compliance with all relevant legal and regulatory requirements. ISO 14001:2015 helps us identify and control environmental risks in our operations, supporting our commitment to sustainability and responsible recycling.\n## ISO 45001:2018\n  * Trinity IT Recycling is an ISO 45001:2018 certified company, adhering to the international standard for Occupational Health and Safety (OH&S) management systems.\nThis certification provides a framework for identifying and managing workplace risks, improving safety performance, and promoting a healthier work environment. It reflects our commitment to reducing work-related injuries, illnesses, and ensuring the well-being of our employees.\n# URL: https://trinityitrecycling.com/contact-us\n###  Office Address\n7564 Sand St Fort Worth, TX 76118\n###  Phone Number\n817-616-3064\n817-616-3064\n###  Office Email\ninfo@trinityitrecycling.com\ninfo@trinityitrecycling.com\n###  Working Hour\n9 AM - 5 PM , Monday - Saturday\n## Contact Us\n## Get in Touch with Us!\n## Greatest properly off ham exercise all. Unsatiable invitation its possession nor off. All difficulty estimating unreserved increasing the solicitude.\n###  Main Office\nTrinity IT Recycling, 7564 Sand St, Fort Worth, TX 76118, United States\n# URL: https://trinityitrecycling.com/data-center-deco\n# Data Center Decommissioning Services\n### Our Data Center Decommissioning Services Include:\nAt **Trinity IT Recycling** , we specialize in providing **efficient, secure, and hassle-free data center decommissioning services** for businesses of all sizes. Whether you’re consolidating, relocating, upgrading, or closing down a facility, our expert team ensures a seamless process from start to finish.\nWe understand the complexity and sensitivity involved in decommissioning mission-critical IT infrastructure. That’s why we offer a **turnkey solution** designed to minimize downtime, protect data, and maximize the value of your retired assets.\n  * **On-site evaluation and planning**\n  * **Safe removal of all IT equipment** (servers, switches, racks, cabling, etc.)\n  * **Secure data destruction** (NIST 800-88 data wiping or NSA/CSS-approved physical destruction)\n  * **Asset inventory and detailed reporting**\n  * **IT asset buyback for remarket able equipment**\n  * **Environmentally responsible recycling for end-of-life gear**\n  * **Logistics and transportation** with full chain-of-custody tracking\n  * **Certificates of Data Destruction and Recycling**\nWe handle every step with professionalism, discretion, and full compliance with **industry regulations** , including **HIPAA** where applicable.\nOur goal is to provide you with **peace of mind** , knowing that your data is secure, your equipment is responsibly managed, and your project stays on time and on budget\n## Our Solutions\n###### We offer companies and organizations extensive recycling solutions, industry-specific waste management, quality control & sustainability solutions.\n### Environmental\nWe help you achieve disposal of your E-waste without causing any damage to the environment.\n###  E-Waste Picking\nWe arrange a pick-up for your IT E-waste and help you dispose it responsibly.\n### Recycling Services\nWe collect your e-waste in a more hassle-free way and provide best in class solutions\n# Schedule Pickup\n_If you have any questions about services, feel free to contact us by telephone, email, or request a quote. We’ll be happy to assist you._\n# URL: https://trinityitrecycling.com/data-destruction\n# Data Destruction\n##### Method one: Data Sanitization through industry standard software and method.\nAs an R2v3 and ISO-certified recycler, Trinity IT Recycling adheres to the highest industry standards for secure and responsible electronics recycling. We follow the NIST 800-88 standard for data sanitization, ensuring that all sensitive information is thoroughly and permanently wiped from your devices. Our commitment to excellence means you’ll receive detailed certificates and reports for every service we provide, giving you the security, compliance, and peace of mind you need. Whether you’re disposing of outdated equipment or managing a full-scale IT asset retirement, we’re here to help you do it responsibly, securely, and in full compliance with environmental and data protection regulations. Let us partner with you in creating a cleaner, safer, and more sustainable future through responsible e-waste management.\n##### Method Two: Physical HDD Destruction using NSA/CSS approved products.\nAt **Trinity IT Recycling** , we take data security seriously. In addition to industry-standard data wiping procedures, we offer **physical data destruction** using **NSA/CSS-approved equipment** to ensure the complete and irreversible destruction of data-bearing devices.\nWe utilize the a high-security, NSA/CSS-listed device specifically designed to physically crush and destroy hard drives beyond recovery. This machine applies **40,000 pounds of crushing force** , rendering drives completely inoperable and data unrecoverable—meeting and exceeding government standards for physical data destruction.\nThis process is ideal for:\n  * **Sensitive or classified data**\n  * **Damaged or non-functioning drives**\n  * **Clients requiring physical verification of destruction**\n  * **Organizations bound by strict data compliance laws (HIPAA, GLBA, etc.)**\nUpon request, we provide **Certificates of Physical Destruction** along with optional photo or video documentation for added transparency and audit support.\nWith Trinity IT Recycling, your data doesn’t just disappear—it is **destroyed with verified precision** using the highest level of approved technology.\n# Schedule Pickup\n# URL: https://trinityitrecycling.com/e-waste-recyling\n# E-waste Recycling\n### Ensuring E-waste Recycling are done as per the Regulations\n## What is E-waste ?\nAs per E-Waste (Management) Rules, 2016.\n‘E-waste’ means electrical and electronic equipment, whole or in part discarded as waste by the consumer or bulk consumer as well as rejects from manufacturing, refurbishment and repair processes.\nE-waste is a popular, informal name for electronic products nearing the end of their “useful life.” Computers, televisions, VCR’s, stereos, copiers, and fax machines are common electronic products. Many of these products can be reused, refurbished, or recycled.\n## E-waste Recycling\nOnce these materials were found, There was a need to test each E-waste component to see how long they lasted. As per the Study, the components lasted much longer than expected. Then It was concluded that this is a serious issue to the Environment and it has to be fixed in a proper way.\nWhile this procedure is underway, There was a need to do more than throwing the things away. There exists the Recycling process and methods.\n## Offering secure Recycling services for\n## E-waste & Old IT Assets\n#####  Keep your Data Secure, Protect Yourself with the right choice for handling E-waste\n## Importance of E-waste Recycling\nThere is a paramount importance for the E-waste recycling systems in today’s situation. These systems were designed to get all the valuable electronic components out of our landfills.\nOne of the major issues we are faced with today is finding a way to provide the highest quality of life for all of our next Generations. This is why there was a need for Testing, which developed an option for examining every material that is produced today.\n### Key Indications need to be followed prior Recycling Process\n* Before starting the process of recycling, the electronics need to be classified according to their use. This helps in making the process of sorting easier.\n* One should need to find out what materials these electronics are made of, What type of metals are used for the manufacture of the product.\n* When one takes electronic products for . If they are not, it’s essential to file them away. Make sure One does this to avoid the possibility of them getting lost.\n#### E-waste Recycling Process\nE-waste is nothing but the waste products that come from electrical equipment that is bought and reused, and the process used for its recycling is called E-waste recycling.\nElectronic Products are one among the most available options when compared to other forms of waste. However, it’s important to remember that not all electronic products have to be recycled. Different types of products need specific programs & processes to be accepted as recyclable.\nThere are various sources which provide the raw materials, where these devices are assembled and then operated or maintained.\n# Schedule Pickup\n# URL: https://trinityitrecycling.com/free-business-pickup\n# Free Business Pickup\n## Free Business Pickup:\nAt **Trinity IT Recycling** , we make IT asset disposal easy and convenient for our business clients by offering **free pickup services** under qualifying conditions.\nWe provide **free local pickup within a 20-mile radius** of our facility for businesses with a **minimum of one pallet of equipment** or **at least 50 qualifying items**.\nFor larger quantities, we proudly extend our **free pickup service throughout the DFW metroplex—and even beyond** , depending on the volume and type of materials scheduled for collection.\n**Need help determining if your pickup qualifies?**\nContact us today with your inventory details, and we’ll be happy to assess eligibility and schedule your free pickup.\nOur logistics team will coordinate directly with your staff to ensure a smooth and timely pickup. All equipment is handled securely and in accordance with **environmental and data security standards**.\n## Items Associated with Recycling Fees.\nAlthough **most items are accepted free of charge** , certain electronics require a **small disposal fee** to cover the cost of responsible recycling through our certified downstream vendors and manufacturers. These fees help ensure that we continue to meet strict environmental and safety standards. **Items with associated recycling fees include:**\n  * **Televisions** – $20 each\n  * **Printers or fax machines** (more than one) – $5 each\n  * **PDUs (Power Distribution Units)** – $10 each\n  * **Batteries** – $10 each\n  * **NO CRT TVS AND NO CRT MONITORS**\nWe strive to keep these fees as low as possible while ensuring all materials are handled responsibly and in compliance with regulatory guidelines. For any questions about specific items or pricing, please contact our team—we’re happy to help.\n# Schedule Pickup\n# URL: https://trinityitrecycling.com/it-asset-buys-back\n# IT Asset Buy Back!\n## WHAT WE BUY BACK\nAt **Trinity IT Recycling** , we understand that IT equipment represents a significant investment for any organization. That’s why we offer a dedicated **IT Asset Buyback Program** —designed to help our valued clients **recover value** from their retired or surplus technology.\nOur buyback program allows businesses to **recoup a portion of their original investment** by selling back eligible IT assets. This not only supports responsible e-waste practices but also provides a **return on investment (ROI)** that can be reinvested into future technological upgrades or initiatives.\n##  We offer competitive market value assessments for a wide range of equipment, including:\n  * Laptops and desktops\n  * Servers and networking gear\n  * Storage devices and peripherals\n  * Mobile devices\n  * Office electronics in good working condition\nOur Process Is Simple, Secure, And Transparent:\n## 1. Assessment\n  1. We evaluate your equipment based on make, model, condition, and market value.\n## 2. Quote\n  1. You receive a fair, no-obligation buyback offers.\n## 3.Data Security\nAll data is securely wiped or physically destroyed in compliance with NIST and NSA/CSS standards.\n## 4. Payment\nOnce approved, payment is issued promptly, and a detailed asset report is provided for your records.\n## Whether you’re upgrading infrastructure, downsizing, or liquidating assets, Trinity IT Recycling helps you turn outdated equipment into valuable capital. Contact us today to find out how much your retired IT equipment could be worth.\n# Schedule Pickup\n# URL: https://trinityitrecycling.com/it-asset-disposition\n# IT Asset Disposition\n## Why Trinity IT Recycling for IT Asset Disposition?\nTrinity IT Recycling is a certified RV3 recycler committed to exceeding compliance and meeting our clients’ goals. We prioritize responsible recycling practices to ensure that your electronic waste is handled safely and sustainably. Trust us to manage your IT recycling needs with professionalism and care. Let us help you make a positive impact on the environment while achieving your recycling objectives.\n## Certified Compliance & Reporting\nTrinity IT Recycling provides certificates and detailed reports for all data sanitizations, ensuring compliance with data security regulations. This documentation supports your organization’s audit and compliance requirements, offering peace of mind that all processes meet industry standards.\n## Convenient and Cost-Effective Services\nThey offer free business pickup services, making it convenient for organizations to dispose of their IT assets without incurring additional transportation costs. This service is particularly beneficial for businesses looking to streamline their asset disposition process.\n## Local Presence in Fort Worth, TX\nLocated at 7564 Sand St, Fort Worth, TX 76118, Trinity IT Recycling serves the local community and surrounding areas, providing accessible ITAD services to businesses in the region.\n# Schedule Pickup\n# URL: https://trinityitrecycling.com/item_we\n**Item We Accept**\nAs an **R2v3 and ISO-certified** company, **Trinity IT Recycling** is committed to providing **secure, compliant, and environmentally responsible** solutions for the disposal and retirement of IT assets.\nWhether it’s a **small household electronic device** or **large-scale equipment containing sensitive data** , we handle each item with equal care and responsibility. Every piece of equipment we receive is processed with a focus on **data confidentiality** , **regulatory compliance** , and **sustainability**.\nWe welcome a wide range of electronics for recycling at our warehouse. Below are some examples of items we accept:\n### Items Associated With Recycling Fees\n  * While **most items are accepted free of charge** , certain electronics require a **small disposal fee** to cover the cost of responsible recycling through our certified downstream vendors and manufacturers. These fees help ensure that we continue to meet strict environmental and safety standards.\n**Items with associated recycling fees include:**\n    * **Televisions** – $20 each\n    * **Printers or fax machines** (more than one) – $5 each\n    * **PDUs (Power Distribution Units)** – $10 each\n    * **Batteries** – $10 each\nWe strive to keep these fees as low as possible while ensuring all materials are handled responsibly and in compliance with regulatory guidelines. For any questions about specific items or pricing, please contact our team—we’re happy to help.\n###  Computers/Peripherals listed below and more.\n  * Computers and laptops\n  * Notebooks and tablets\n  * Servers and servers’ blades\n  * Server Racks and chassis\n  * Monitors and displays (LCD, LED)\n  * Switches and routers\n  * Networking chassis and sfp’s\n  * Printers, scanners, and copiers- FEES APPLICABLE\n  * Hard drives and storage devices\n  * Motherboards, RAMs and CPUs\n  * Graphic cards and network cards\n  * Keyboards, mice, and other peripherals\n  * Power cords, ethernet cables and more.\n  * Routers, modems, and other communication devices\n  * Small household electronics\n###  Telecom and Industrial equipment :\n  * Fax Machines\n  * Video & Audio Equipment\n  * PBX Systems,Scanners\n  * Projection Equipment\n  * Printers,Tablets\n  * Security Equipment\n  * Receivers & Transmitters\n  * Mobile Phones\n  * Copiers & Multifunction Devices\n  * Phones & Communication Devices\n  * Cables, CDs & DVD Media\n# URL: https://trinityitrecycling.com/who-we-serve\n# Who We Serve\n## Our Clients\n### Hospital​\nAs an **R2v3 and ISO-certified** electronics recycler, **Trinity IT Recycling** is proud to partner with **hospitals, clinics, and healthcare organizations** to provide **secure, compliant, and environmentally responsible** solutions for retiring IT assets.\nWe understand the unique challenges the healthcare industry faces when disposing of electronic equipment that may contain **sensitive patient data** and **regulated medical information**. Our services are designed to meet and exceed the stringent requirements of **HIPAA** , **HITECH** , and other data privacy laws governing the healthcare sector.\n**Our Healthcare IT Recycling Services Include:**\n**Secure data destruction** using NIST 800-88 and NSA/CSS-approved methods\n**Chain-of-custody documentation and Certificates of Data Destruction**\n**Recycling of a wide range of equipment** , including computers, servers, medical monitors, imaging devices, and more\n**Convenience** : Free pickup and end-to-end handling reduce administrative burden for busy IT and compliance teams.\nOur experienced team works closely with your IT and compliance departments to ensure all assets are processed safely and securely, without disrupting your operations\n### Government Agencies\nAs an R2v3 and ISO-certified company, Trinity IT Recycling offers government and state agencies a comprehensive, secure, and environmentally responsible solution for retiring IT assets.\n**Robust Data Destruction (FISMA & NIST Aligned):** Trinity implements secure data sanitization—including wiping, shredding, and on-site destruction—that meets federal standards like NIST SP 800-88 and supports FISMA requirements, safeguarding sensitive national and citizen data.\n**Comprehensive Audit Trail:** Every retired IT asset is tagged, tracked, and processed with a fully documented chain-of-custody and Certificates of Destruction, ensuring accountability and audit readiness for legal oversight.\n**Operational Efficiency with Free Pickup:** Offering end-to-end logistics—from secure pickup to final certification—Trinity frees up IT staff to focus on core missions and supports budget-conscious planning through predictable, centralized IT asset disposition.\nIn short, Trinity IT Recycling supports public-sector mandates by delivering secure, transparent, compliant, and sustainable disposal of IT assets—exactly what state and federal agencies require\n### Businesses\nBusinesses and corporations benefit from Trinity IT Recycling’s secure, compliant, and efficient IT asset disposition services. Trinity employs certified data destruction methods—including secure wiping, degaussing, and physical shredding—to permanently erase sensitive information, ensuring protection against data breaches and compliance with regulations like GDPR, HIPAA, and SOX. They provide comprehensive documentation, including Certificates of Destruction and chain-of-custody records, facilitating audit readiness and legal compliance. Additionally, Trinity responsibly recycles a wide range of electronics, preventing hazardous materials from entering landfills and supporting sustainability goals. With free business pickup and end-to-end handling, Trinity reduces logistical burdens, allowing businesses to focus on core operations while ensuring secure and environmentally responsible disposal of IT assets.\n## Our Solutions\n### Hospital​\nAs an R2v3 and ISO-certified company, Trinity IT Recycling offers government and state agencies a comprehensive, secure, and environmentally responsible solution for retiring IT assets.\n### Goverment\nFar far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast\n### Businesses\nBusinesses and corporations benefit from Trinity IT Recycling’s secure, compliant, and efficient IT asset disposition services.\n### School​\nAs a R2v3 and ISO-certified company, **Trinity IT Recycling** offers educational institutions a secure, compliant, and environmentally responsible solution for retiring IT assets.\n**Data Security & Compliance**: Trinity adheres to stringent data sanitization protocols, including secure wiping, degaussing, and physical destruction, to ensure complete erasure of sensitive information. Their processes comply with regulations such as FERPA, safeguarding student and staff data.\n**Operational Efficiency** : Trinity offers comprehensive IT asset disposition services, including secure pickup, inventory management, and detailed reporting, streamlining the retirement process for educational institutions.\nBy partnering with Trinity IT Recycling, schools and educational institutions can ensure secure, compliant, and sustainable management of their IT asset lifecycle.\n### Bank\nAs an R2v3 and ISO-certified company, **Trinity IT Recycling** offers banks and financial institutions a secure, compliant, and environmentally responsible solution for retiring IT assets.\n**Secure Data Destruction** : Trinity employs certified data sanitization methods, including secure wiping and physical destruction, to ensure that sensitive information is permanently erased from retired devices. This helps organizations comply with data protection regulations and mitigate the risk of data breaches.\n**Operational Efficiency** : Trinity offers comprehensive IT asset disposition services, including secure pickup, inventory management, and detailed reporting, streamlining the retirement process for organizations.\nBy partnering with Trinity IT Recycling, banks and offices can ensure secure, compliant, and sustainable management of their IT asset lifecycle.\n### Data centers\nData centers should choose **Trinity IT Recycling** —an R2v3- and ISO-certified provider—for retiring IT assets used by clients and customers because it delivers a secure, compliant, and sustainable process tailored to the high-stakes environment of data infrastructure:\nIn short, Trinity ensures that retiring IT assets is **secure** , **auditable** , **eco-conscious** , and **operationally effortless** making it the ideal partner for data centers that serve clients and customers with high expectations.\n### Offices​\nFar far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast\n### Residential\nResidents are welcome to bring their unwanted or end-of-life electronics to our facility during **regular business hours**. Please ensure that items are brought in **clean and safely packed** and note that we **do not offer residential pickup services**. Our knowledgeable team will ensure that all materials received are handled in accordance with the most stringent environmental and data destruction protocols.\n### Retailers\nFar far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast",
+  "content_length_stats": {
+    "characters": 26283,
+    "estimated_tokens": 6570,
+    "estimated_cost_input_usd": 0.00184
+  }
+}

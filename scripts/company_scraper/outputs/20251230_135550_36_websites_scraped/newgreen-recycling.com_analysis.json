@@ -1,0 +1,38 @@
+[
+  {
+    "company_name": "New Green Recycling",
+    "website_url": "https://www.newgreen-recycling.com",
+    "main_business": "IT Asset Disposition (ITAD) and Electronics Recycling",
+    "description": "New Green Recycling is an R2-certified company specializing in secure, responsible, and eco-friendly electronics recycling and IT Asset Disposition (ITAD). They help businesses and individuals manage end-of-life electronics through services including data destruction, data center decommissioning, remarketing, refurbishment, and secure logistics. Their focus is on maximizing value recovery, ensuring data security, and supporting sustainability goals.",
+    "products_services": [
+      "Electronics Recycling",
+      "Data Destruction (Certified Data Wiping & Hard Drive Shredding)",
+      "IT Asset Disposition (ITAD)",
+      "Data Center Decommissioning",
+      "Secure Pickup & Logistics",
+      "Remarketing & Refurbishment"
+    ],
+    "contact_emails": [
+      "recycle@newgreen-recycling.com"
+    ],
+    "contact_phones": [
+      "+1 (925) 436-9365"
+    ],
+    "physical_address": "1300 Galaxy Way, Unit 18 Concord, CA 94520, US",
+    "year_founded": null,
+    "certifications": [
+      "R2 Certified"
+    ],
+    "service_areas": null,
+    "summary": "New Green Recycling is an ITAD and electronics recycling company headquartered in Concord, California. They provide a comprehensive suite of services for businesses and individuals, focusing on secure data destruction, responsible recycling, and value recovery through refurbishment. Their offerings include IT Asset Disposition (ITAD), data center decommissioning, certified data wiping and hard drive shredding, secure GPS-tracked logistics, and remarketing of refurbished electronics. The company is R2 certified, indicating adherence to high standards for environmental responsibility, data security, and worker safety. They emphasize a B2B model, serving corporate offices, healthcare facilities, educational institutions, and data centers with secure, documented processes.",
+    "is_good_fit": true,
+    "inventory_fit_assessment": "Excellent fit. The company explicitly handles the core enterprise IT assets Yilong requires: laptops, desktops, servers, storage arrays, and networking equipment (switches, routers). Their 'Remarketing & Refurbishment' service indicates they test, sanitize, and refurbish devices for resale, which aligns with Yilong's need for 'Tested Functional' (Grade C or better) assets. They list harvesting reusable parts ('Component Recovery'), which is a bonus for high-value components. There is no mention of a residential/curbside focus; their services are tailored for corporate IT refresh cycles, office closures, and data centers, confirming the inventory is enterprise-grade.",
+    "operational_fit_assessment": "Strong operational fit. New Green Recycling operates as a B2B-focused ITAD processor and asset recovery firm, explicitly serving corporate, government, healthcare, and data center clients. They hold R2 certification, which is highly preferred and confirms they have processes for proper testing, data wiping, and responsible downstream management—critical for Yilong's 'High-Quality Refurbishment' model. Their services are built for bulk handling (data center teardowns, corporate IT refresh cycles) and they offer 'Secure Pickup & Logistics' for pallet/truckload quantities, indicating wholesale capabilities. They provide full documentation (Certificates of Destruction, asset reports), which is essential for audit and compliance in bulk transactions.",
+    "red_flags": [
+      "The website contains a stray, inconsistent phone number (+62 281 7318) attributed to 'Dewey Palmer' on several service pages, which may indicate outdated or incorrect content."
+    ],
+    "recommendation": "Reach out",
+    "reasoning": "New Green Recycling is a highly promising vendor that meets or exceeds Yilong's core criteria. They specialize in enterprise IT assets, have a clear B2B/ITAD focus, are R2 certified, and their business model revolves around bulk collection, secure processing, and value recovery through refurbishment—all aligning perfectly with Yilong's need for a reliable source of tested functional equipment for export. The minor red flag of an inconsistent international phone number does not outweigh their strong operational and inventory fit. They are a prime candidate for a wholesale partnership.",
+    "error": false
+  }
+]

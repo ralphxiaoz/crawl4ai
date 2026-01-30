@@ -1,0 +1,51 @@
+[
+  {
+    "company_name": "Baytech Recovery",
+    "website_url": "https://baytechrecovery.com",
+    "main_business": "IT Asset Disposition (ITAD) and IT Hardware Services",
+    "description": "Baytech Recovery is an ITAD (IT Asset Disposition) and IT hardware services company that transforms the ITAD process into a profit center for enterprises by maximizing ROI on hardware. They provide secure ITAD services, IT hardware sourcing, buyback, refurbishing, maintenance, and data destruction, with a focus on environmental responsibility and data security.",
+    "products_services": [
+      "ITAD (IT Asset Disposition & Data Destruction)",
+      "IT Hardware Sourcing",
+      "IT Hardware Buyback",
+      "Equipment Refurbishing",
+      "Hardware Maintenance & Software Troubleshooting",
+      "Data Center Decommissioning",
+      "Secure Data Destruction",
+      "Sustainable Electronic Recycling",
+      "Secure End-to-End Reporting",
+      "Value Recovery/Revenue Share Programs"
+    ],
+    "contact_emails": [
+      "contact@baytechrecovery.com"
+    ],
+    "contact_phones": [
+      "1(866) 575-4333"
+    ],
+    "physical_address": "1236 San Luis Obispo Ave, Hayward, CA 94544",
+    "year_founded": null,
+    "certifications": [
+      "R2v3",
+      "ISO 9001",
+      "ISO 14001",
+      "ISO 45001"
+    ],
+    "service_areas": [
+      "Nationwide and Global Services",
+      "Direct presence in India and Europe",
+      "Network of partners across Americas, EMEA, and APAC",
+      "Bay Area (California)"
+    ],
+    "summary": "Baytech Recovery is a US-based ITAD (IT Asset Disposition) and IT hardware services company that aims to revolutionize the IT hardware lifecycle by converting ITAD into a profit center for enterprises. They provide comprehensive services including secure IT asset disposal, data destruction, IT hardware sourcing, buyback, equipment refurbishing, and maintenance. The company emphasizes maximizing return on investment for clients through value recovery programs and certified, environmentally responsible recycling processes. Baytech Recovery holds R2v3 and multiple ISO certifications, operates with on-site expertise, and offers customized solutions for businesses. They have a global presence with direct operations in India and Europe and partner networks across the Americas, EMEA, and APAC regions. Their focus is exclusively B2B, serving corporate clients with enterprise IT assets like servers, networking equipment, storage, and laptops.",
+    "is_good_fit": true,
+    "inventory_fit_assessment": "Excellent fit for Yilong's inventory needs. Baytech Recovery handles exactly the enterprise IT assets Yilong requires: Data Center Servers (Dell PowerEdge R730XD), Networking Equipment (Cisco Catalyst switches), Storage, Laptops (Apple MacBook Pro, Dell Precision), and components like Memory (Hynix DDR3). Their online shop shows they sell individual tested units, indicating they handle functional equipment. They explicitly mention 'Tested Functional' equipment and have a 'Revenue Share Program' for maximum ROI, which aligns with Yilong's 'Tested Functional' (R2v3 F2/C3 or better) requirement. They focus on remarketing and refurbishing (giving hardware 'a second life') rather than shredding/scrap metal.",
+    "operational_fit_assessment": "Strong operational fit. Baytech Recovery is clearly an ITAD Processor/Asset Recovery Firm with a B2B focus, serving corporate and data center clients. They hold the highly preferred R2v3 certification and multiple ISO certifications (9001, 14001, 45001). They support wholesale/bulk sales through programs like 'Buyback provides Maximum ROI / Value Recovery' for selling 'IT asset inventory all at once' and 'Revenue Share Program' for customers seeking maximum ROI. They offer nationwide and global services, indicating capability to handle large volumes. Their services include on-site decommissioning of data centers, which typically yields pallet/truckload quantities of enterprise equipment.",
+    "red_flags": [
+      "No explicit mention of selling harvested components (CPU, RAM, SSD/HDD) separately, though they handle these items",
+      "Online shop appears to sell single units, but this is likely a retail channel supplementing their core B2B wholesale operations"
+    ],
+    "recommendation": "Reach out",
+    "reasoning": "Baytech Recovery is a highly qualified vendor that meets all critical criteria for Yilong Business Limited. They specialize in enterprise ITAD with the exact asset types Yilong needs (servers, networking, storage, laptops), hold the crucial R2v3 certification for proper testing and data wiping, operate as a B2B-focused asset recovery firm, and have wholesale/bulk sales channels. Their focus on value recovery and refurbishment aligns perfectly with Yilong's high-quality refurbishment model. The minor concerns (retail shop, no explicit component sales) do not outweigh their strong core business model as an ITAD processor serving corporate clients with bulk equipment from data center decommissioning and enterprise refresh cycles.",
+    "error": false
+  }
+]

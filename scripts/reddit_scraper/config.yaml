@@ -1,0 +1,112 @@
+# Reddit Scraper Configuration
+# General-purpose Reddit scraper with optional LLM analysis
+
+# Reddit Search Settings
+reddit:
+  # Subreddit to search (without r/ prefix)
+  subreddit: "ProductManagement"
+
+  # Keywords to filter posts (OR logic - matches any keyword in title)
+  # Set to empty list [] to get all posts
+  keywords:
+    - "AI"
+    - "LLM"
+    - "artificial intelligence"
+
+  # Search options
+  sort_by: "hot"  # Options: hot, new, top, rising, controversial
+  time_filter: "month"  # For 'top' and 'controversial': hour, day, week, month, year, all
+  limit: 10  # Maximum number of posts to retrieve
+
+  # What to extract
+  extract_comments: true
+  max_comments: 50  # Max comments per post (null = all)
+  comment_sort: "best"  # Options: best, top, new, controversial, old, qa
+
+# Scraping Method
+scraper:
+  # Strategy: "api", "web", or "hybrid"
+  # - api: Use Reddit API (PRAW) - requires credentials
+  # - web: Use crawl4ai web scraping - no credentials needed (RECOMMENDED)
+  # - hybrid: Try API first, fallback to web scraping
+  strategy: "web"
+
+  # Fallback behavior when API fails
+  fallback_enabled: true
+
+# LLM Analysis (optional)
+llm:
+  # Enable LLM analysis of posts
+  enabled: true
+
+  # LLM provider and model
+  # Options: "openai/gpt-4", "openai/gpt-3.5-turbo", "deepseek/deepseek-chat", "anthropic/claude-3-sonnet"
+  provider: "deepseek/deepseek-chat"
+
+  # LLM settings
+  temperature: 0.7
+  max_tokens: 4000
+
+  # System prompt for LLM analysis
+  # This is where you define what you want the LLM to extract/analyze
+  system_prompt: |
+    You are analyzing a Reddit post and its comments.
+
+    Your task is to:
+    1. Summarize the main topic and key points discussed in the post
+    2. Identify the main themes or concerns raised by the author
+    3. Extract insights from the top comments
+    4. Identify any actionable takeaways or recommendations
+    5. Rate the overall sentiment (positive, neutral, negative)
+
+    Be concise but comprehensive. Focus on practical insights.
+
+  # Output schema - defines what fields the LLM should return
+  # Customize this based on what you want to extract
+  output_schema:
+    summary:
+      type: "string"
+      description: "A 2-3 sentence summary of the post and discussion"
+
+    main_themes:
+      type: "array"
+      description: "List of main themes or topics discussed"
+
+    key_insights:
+      type: "array"
+      description: "Key insights or takeaways from the post and comments"
+
+    sentiment:
+      type: "string"
+      description: "Overall sentiment: positive, neutral, or negative"
+
+    actionable_recommendations:
+      type: "array"
+      description: "Practical recommendations or actions suggested in the discussion"
+
+    controversial_points:
+      type: "array"
+      description: "Any controversial or debated points in the comments"
+
+# Content Processing
+content:
+  # Enable content consolidation (deduplication, cleanup)
+  consolidation_enabled: false  # Reddit posts are typically unique
+
+  # Clean markdown (remove images, strip URLs)
+  clean_markdown: true
+
+# Output Settings
+output:
+  # Output directory (relative to script location)
+  output_dir: "outputs"
+
+  # What to save
+  save_raw_posts: true  # Raw post data (JSON)
+  save_comments: true  # Comment threads (JSON)
+  save_llm_analysis: true  # LLM analysis results (JSON)
+  save_summary: true  # Human-readable summary (txt/md)
+  save_combined: true  # All posts in one JSON file
+
+  # Verbose output during scraping
+  verbose: true

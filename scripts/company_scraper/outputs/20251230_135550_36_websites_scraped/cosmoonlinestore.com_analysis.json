@@ -1,0 +1,54 @@
+[
+  {
+    "company_name": "My Store",
+    "website_url": "https://www.cosmoonlinestore.com",
+    "main_business": "E-commerce / Dropshipping Retail",
+    "description": "An online dropshipping store selling a wide variety of consumer goods including home and kitchen products, pet supplies, sports and fitness equipment, toys, and baby products. The store operates on the Shopify platform and ships products worldwide directly from suppliers.",
+    "products_services": [
+      "High Pressure Power Washer Spray Nozzle",
+      "Actionclub Thick Non-woven Double Row Multi-layer Shoe Cabinet Shoe Rack",
+      "5 In 1 Wardrobe Hanger Multi-functional Clothes Hangers",
+      "Creative Salad Cutter Fruit and Vegetable Cutter",
+      "8 In 1 Mandoline Slicer Vegetable Slicer",
+      "Air Conditioner Air Cooler Fan",
+      "Sunscreen For Pets",
+      "Anti-lost device for the elderly, children and pets",
+      "Food Supplements For Pets",
+      "Multifunctional Dog Leash For Pets",
+      "Yoga Foam Roller",
+      "Sports Knee Pads Knitted Sports Knee Pads",
+      "Spine Bending Posture Corrector",
+      "Silicone Grip Device Finger Exercise Stretcher",
+      "Electronic dog toy",
+      "Domino Train Toys Baby Toys Car Puzzle",
+      "Baby Carrier Waist Stool Multifunctional Baby Child Sitting Carrier Bag"
+    ],
+    "contact_emails": [
+      "info.madiioutreach@gmail.com"
+    ],
+    "contact_phones": [],
+    "physical_address": "Pakistan",
+    "year_founded": null,
+    "certifications": [],
+    "service_areas": [
+      "Worldwide"
+    ],
+    "summary": "My Store is an online dropshipping retailer operating on the Shopify platform, selling a diverse range of consumer products across multiple categories including home and kitchen, pets, sports and fitness, and toys/kids/babies. The store appears to be a general merchandise dropshipping operation with products sourced from various international suppliers. The business model involves processing orders within 1-3 business days and shipping directly from suppliers to customers worldwide, with estimated delivery times varying by region from 7-30 business days. The company offers free shipping on most items and has a 30-day return policy. The physical address listed is in Pakistan, and all customer service inquiries are directed to a single Gmail address. The store does not appear to have any physical retail presence and operates entirely as an e-commerce platform.\n\nThis is clearly a consumer-focused retail operation rather than a B2B enterprise. The product catalog consists entirely of new consumer goods rather than used IT assets. There is no mention of IT equipment, enterprise hardware, asset recovery services, or any certifications relevant to IT asset disposition. The business model is retail sales to individual consumers rather than wholesale or bulk B2B transactions.",
+    "is_good_fit": false,
+    "inventory_fit_assessment": "This company sells only new consumer goods (home products, pet supplies, toys, etc.) and has ZERO enterprise IT assets. They do not offer laptops, desktops, servers, networking equipment, or storage devices. Their entire product catalog consists of retail consumer products, which completely fails to match Yilong's requirements for used enterprise IT equipment. This is a complete mismatch for our inventory needs.",
+    "operational_fit_assessment": "This is a consumer-focused dropshipping retail store, not an ITAD processor or asset recovery firm. They operate on Shopify with a B2C model, selling single units to consumers. There is no mention of B2B capabilities, wholesale/bulk sales, or any ITAD certifications (R2v3, e-Stewards). Their operational model is the opposite of what Yilong requires - they sell new products retail rather than buying used equipment wholesale.",
+    "red_flags": [
+      "Sells only consumer goods, not enterprise IT assets",
+      "No IT equipment whatsoever in product catalog",
+      "Consumer-focused retail business (B2C)",
+      "No B2B or wholesale capabilities mentioned",
+      "No ITAD certifications (R2v3, e-Stewards)",
+      "Dropshipping model focused on new products",
+      "Only sells single units through Shopify store",
+      "No mention of testing, grading, or asset recovery services"
+    ],
+    "recommendation": "Skip",
+    "reasoning": "This company is completely unsuitable for Yilong's procurement needs. They are a consumer-focused dropshipping retailer selling new home goods, pet supplies, and toys - not an ITAD processor or asset recovery firm. They have no enterprise IT assets, no B2B capabilities, no relevant certifications, and operate on a retail model that is the opposite of our wholesale bulk purchasing requirements. This is not an IT equipment vendor in any capacity.",
+    "error": false
+  }
+]

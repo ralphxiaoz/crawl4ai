@@ -1,0 +1,39 @@
+[
+  {
+    "company_name": "Green Star Services Group",
+    "website_url": "https://www.greenstarewaste.com",
+    "main_business": "Sustainable Electronics Lifecycle Management / IT Asset Disposition (ITAD)",
+    "description": "A leader in sustainable electronics lifecycle management and IT Asset Disposition (ITAD) based in the Bay Area. The company provides comprehensive recycling solutions, secure data destruction, and advanced ITAD services, prioritizing environmental standards and data security. They focus on maximizing value recovery from IT assets while ensuring compliance with global environmental and data security protocols.",
+    "products_services": [
+      "Full Recycling Solutions",
+      "Data Destruction",
+      "Advanced ITAD Services",
+      "Focus on ESG Protocols Integration"
+    ],
+    "contact_emails": [
+      "help@greenstarewaste.com"
+    ],
+    "contact_phones": [],
+    "physical_address": "557 Clark Ave, Pittsburg CA 94565",
+    "year_founded": null,
+    "certifications": [
+      "E-Stewards (in process)",
+      "RIOS (in process)",
+      "R2v3 (in process)"
+    ],
+    "service_areas": [
+      "Bay Area"
+    ],
+    "summary": "Green Star Services Group is a Bay Area-based company specializing in sustainable technology lifecycle management, with a core focus on IT Asset Disposition (ITAD), data destruction, and electronics recycling. They position themselves as a B2B service provider, offering tailored solutions for companies needing to manage end-of-life IT assets securely and responsibly. Their services are designed to maximize value recovery through refurbishment and remarketing while adhering to high environmental (ESG) and data security standards. The company mentions certifications like R2v3 and e-Stewards are 'in process,' indicating they are pursuing but may not yet hold formal certification. Their stated capabilities align well with the needs of a bulk IT asset purchaser, though the 'in process' certification status requires verification.",
+    "is_good_fit": true,
+    "inventory_fit_assessment": "Strong fit. The company explicitly handles the core enterprise IT assets Yilong requires: servers, laptops, computers, switches, and storage devices. They mention a process that includes sorting, value assessment, and remarketing, which indicates they identify and resell functional equipment rather than solely recycling for scrap. Their service descriptions of 'maximizing value recovery' and 'refurbishing' align with Yilong's need for Tested Functional (Grade C or better) assets. They do not mention harvested components specifically, but their handling of a wide range of devices suggests access to the necessary inventory.",
+    "operational_fit_assessment": "Good potential fit with a key caveat. Operationally, they are clearly a B2B ITAD processor and asset recovery firm, not a consumer recycler. Their services are described as 'customized' for client needs, which implies wholesale/bulk capabilities. The most significant factor is their pursuit of R2v3 certification, which is Yilong's preferred standard for ensuring proper testing and data wiping. However, noting that certifications are 'in process' is a yellow flag—it means they may not be fully certified yet, which could impact compliance assurances. Their Bay Area location is suitable for logistics. The lack of explicitly mentioned phone numbers or detailed sales channels is a minor gap but not a disqualifier.",
+    "red_flags": [
+      "Certifications (R2v3, e-Stewards, RIOS) are listed as 'in process' or 'All certifications are in Process'. This is a major concern as it indicates they may not currently hold the formal certifications required for high-confidence compliance in Yilong's supply chain.",
+      "No specific mention of 'bulk sales' or 'wholesale' terminology, though their B2B and ITAD focus strongly implies it."
+    ],
+    "recommendation": "Research further",
+    "reasoning": "Green Star Services Group's service offerings, target assets, and B2B/ITAD business model align very well with Yilong's needs. They are a promising candidate. However, the primary recommendation is 'Research further' due to the ambiguous certification status. The 'in process' designation for R2v3 and e-Stewards requires immediate clarification before proceeding with a significant procurement relationship. A direct inquiry should confirm: 1) Current certification status, 2) Their typical asset grades and testing processes, and 3) Willingness and capability to sell pallet/truckload quantities EXW. If certifications are confirmed, they would be a strong 'Reach out' candidate.",
+    "error": false
+  }
+]

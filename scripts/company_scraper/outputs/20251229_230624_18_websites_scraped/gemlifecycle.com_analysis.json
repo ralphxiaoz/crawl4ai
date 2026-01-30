@@ -1,0 +1,41 @@
+[
+  {
+    "company_name": "Gem Lifecycle Solutions",
+    "main_business": "Electronics Lifecycle Management / IT Asset Disposition (ITAD)",
+    "description": "Gem Lifecycle Solutions is a fully integrated electronics lifecycle management and IT Asset Disposition (ITAD) company. They provide a holistic, start-to-finish solution for managing IT assets through their entire lifecycle, focusing on data security, value recovery, and environmental sustainability. Their services include secure data destruction, IT asset remarketing, decommissioning, and certified recycling, all guided by a 'Zero-Landfill Promise.'",
+    "products_services": [
+      "IT Recycling (E-Recycling)",
+      "IT Asset Management (ITAM)",
+      "Data Erasure/Sanitation",
+      "Data Destruction",
+      "Data Security Services",
+      "Refurbished IT Sales & Remarketing",
+      "Decommissioning Services (for Data Centers, Corporate IT, etc.)",
+      "Logistics & Chain of Custody Tracking",
+      "Component Harvesting & Recovery",
+      "Lifecycle Optimization Consulting"
+    ],
+    "contact_emails": [
+      "infosw@gem.us.com"
+    ],
+    "contact_phones": [
+      "(214) 333-5055"
+    ],
+    "physical_address": "3950 Platinum Way, Dallas, TX 75237",
+    "year_founded": "2002",
+    "certifications": [
+      "R2v3",
+      "ISO 9001:2018",
+      "ISO 14001:2018",
+      "NIST 800-88 compliant",
+      "DoD 5220.22M compliant"
+    ],
+    "service_areas": [
+      "United States (49 states)",
+      "Canada",
+      "Mexico"
+    ],
+    "summary": "Gem Lifecycle Solutions is a minority-owned IT Asset Disposition (ITAD) and electronics lifecycle management company founded in 2002. They operate with a core mission to minimize environmental impact while maximizing the financial return for their clients' retired technology. The company provides a comprehensive '360° solution' that encompasses secure data destruction (via wiping or physical shredding), detailed asset auditing, testing, repair, and global remarketing of IT equipment. A key differentiator is their 'Zero-Landfill Promise,' ensuring all materials are either reused, repurposed, or responsibly recycled down to the component level.\n\nGem Lifecycle serves a diverse client base, including Fortune 500 companies, data centers, telecommunications firms, government agencies, educational institutions, and corporate IT departments. They operate a high-security facility in Dallas, TX, with additional partner locations in Ontario, CA, and a national network of vetted facilities across 49 U.S. states, Canada, and Mexico. The company is certified to leading industry standards like R2v3, ISO 9001, and ISO 14001, underscoring their commitment to quality, data security, and environmental responsibility. Their process is designed to help clients meet ESG goals by recovering value from old equipment and ensuring nothing ends up in a landfill.",
+    "error": false
+  }
+]

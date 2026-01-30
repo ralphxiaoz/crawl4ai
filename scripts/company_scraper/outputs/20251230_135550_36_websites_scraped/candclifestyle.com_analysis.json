@@ -1,0 +1,45 @@
+[
+  {
+    "company_name": "C & C Lifestyle Inc",
+    "website_url": "https://candclifestyle.com",
+    "main_business": "IT Asset Disposition (ITAD) and Electronics Recycling",
+    "description": "An R2V3 certified company dedicated to repurposing used or retired electronics and materials by bringing them back to life and extracting surplus value. They provide custom solutions for companies, including data sanitization, asset recovery, reverse logistics, and recycling, with a focus on wireless devices and office equipment.",
+    "products_services": [
+      "Custom Tailored Solutions for corporate ITAD programs",
+      "Diverse Sales Network through R2V3 certified partners",
+      "Asset Recovery for excess inventory",
+      "Reverse Logistics and downstream supply chain management",
+      "Data Sanitization using industry-accredited solutions",
+      "Recycling and refurbishment services",
+      "Sale of refurbished Fitbit devices (e.g., Versa 4, Charge 6, Sense)"
+    ],
+    "contact_emails": [
+      "sales@candclifestyle.com"
+    ],
+    "contact_phones": [
+      "+1 (408) 372-7685"
+    ],
+    "physical_address": null,
+    "year_founded": null,
+    "certifications": [
+      "R2V3"
+    ],
+    "service_areas": [
+      "United States (partners in different states)",
+      "International (partners in other countries)"
+    ],
+    "summary": "C & C Lifestyle Inc is an R2V3 certified IT Asset Disposition (ITAD) and electronics recycling company. Their core service is repurposing used or retired electronics by refurbishing them for reuse or responsibly recycling components. They emphasize data security through certified sanitization processes and work with manufacturers, companies, and schools to handle unwanted equipment like computers, mobile phones, and office accessories. The company has been in business since the release of the iPhone 3, giving them over a decade of experience in the wireless device industry. They operate a B2B model, designing custom programs for companies to eliminate data breach risks and increase profits through asset recovery. Their downstream network includes R2V3 certified partners across different states and countries, facilitating reverse logistics and maximizing value recovery from excess inventory.",
+    "is_good_fit": false,
+    "inventory_fit_assessment": "Poor fit for Yilong's inventory needs. The website explicitly lists products (Fitbit models) and mentions handling 'computers, mobile phones, accessories and other office equipments.' Their demonstrated specialization is in consumer electronics (wearables, phones) and general office equipment, not the core enterprise IT assets Yilong requires (Laptops, Desktops, Data Center Servers, Networking Equipment, Storage). There is no mention of harvesting high-value components like CPUs or RAM. While they mention 'Tested Functional' as part of R2V3, their primary product focus is a significant red flag.",
+    "operational_fit_assessment": "Moderate operational fit in some areas but critically lacking in others. Positively, they are an R2V3 certified processor, indicating proper data wipe and testing procedures aligned with a B2B, asset recovery focus. They mention custom programs for companies and a wholesale-oriented 'Diverse Sales Network' and 'Asset Recovery' for excess inventory, suggesting bulk/B2B capabilities. However, a major red flag is their sales channel: they list specific refurbished consumer products (Fitbits) for sale on their website, which strongly indicates a retail/reseller model alongside their B2B services. This dual focus on retail sales is a disqualifying factor for Yilong's pure wholesale procurement model.",
+    "red_flags": [
+      "Primary demonstrated inventory is consumer electronics (Fitbits, phones, accessories), not enterprise IT assets.",
+      "Appears to operate a retail sales channel (selling individual Fitbit models on their website), which conflicts with a pure wholesale/B2B supplier model.",
+      "No mention of handling core enterprise IT assets like servers, networking gear, or storage systems.",
+      "Lacks detail on asset grading (A/B/C), though R2V3 implies testing standards."
+    ],
+    "recommendation": "Skip",
+    "reasoning": "While C & C Lifestyle Inc has the preferred R2V3 certification and mentions B2B services, they are not a good fit for Yilong Business Limited. The primary reason is a severe inventory mismatch: their website showcases consumer electronics (Fitbits) as products and mentions phones/computers, but not the high-volume enterprise IT assets (servers, networking, storage) that form the core of Yilong's business. Furthermore, their operation of what appears to be a retail product catalog suggests they are not a dedicated bulk wholesaler. For a procurement budget of $1.5M/month, Yilong needs suppliers focused exclusively on the B2B enterprise ITAD stream with proven volume in laptops, desktops, and data center gear, which this vendor does not demonstrate.",
+    "error": false
+  }
+]

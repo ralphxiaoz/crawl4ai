@@ -1,0 +1,67 @@
+[
+  {
+    "company_name": "Reconext",
+    "website_url": "https://www.reconext.com",
+    "main_business": "IT Asset Disposition (ITAD) and Electronics Recovery",
+    "description": "A global ITAD company offering end-to-end IT Asset Disposition services that prioritize data security and sustainability. Reconext provides lifecycle services including repair, refurbishment, testing, grading, asset recovery, trade-in, buyback, and returns management to extend the life of electronics and reduce e-waste.",
+    "products_services": [
+      "Returns Management & Fulfillment",
+      "Testing & Grading",
+      "Asset Recovery",
+      "Repair & Refurbishment",
+      "Trade-in & Buyback",
+      "ITAD Services",
+      "Lifecycle Services",
+      "Data Center Decommissioning",
+      "Consumer Electronics Recovery",
+      "Customer Premises Equipment (CPE) Recovery",
+      "Enterprise Network & Data Storage Recovery",
+      "Point-of-Sale Equipment Recovery",
+      "Mobile Device Recovery",
+      "IoT Device Recovery"
+    ],
+    "contact_emails": [],
+    "contact_phones": [
+      "+1 331 310 0259",
+      "+1 972 525 7352",
+      "+1 956 843 6828",
+      "+52 686 159 3100",
+      "+52 899 954 2003",
+      "+852 3904 3850",
+      "+6221 28088242",
+      "+604-377 9200",
+      "+86 512 65930908",
+      "+48 52 3112 390",
+      "+420 323 209 811"
+    ],
+    "physical_address": "2250 William D Tate Ave, Grapevine, TX 76051, USA",
+    "year_founded": "1983",
+    "certifications": [
+      "R2v3",
+      "ISO 27001",
+      "ISO 9001",
+      "ISO 14001",
+      "ISO 45001",
+      "WEEELABEX",
+      "PCI PIN",
+      "P2PE",
+      "CTPAT",
+      "ANSI S20.20",
+      "IPC A-610",
+      "ADISA Product Claims Tested"
+    ],
+    "service_areas": [
+      "The Americas",
+      "Europe, Middle East, Africa",
+      "Asia Pacific"
+    ],
+    "summary": "Reconext is a global IT Asset Disposition (ITAD) and electronics recovery company with over four decades of experience. Founded in 1983 as a TV repair shop in Frankfurt, the company has evolved through Teleplan, Valutech, and Clover Wireless to become Reconext in 2020. The company operates a global network of facilities across the Americas, Europe, and Asia, providing comprehensive lifecycle services including testing, grading, repair, refurbishment, asset recovery, and data center decommissioning. Reconext specializes in enterprise IT assets such as servers, storage, networking equipment, laptops, and mobile devices, with a strong focus on data security, sustainability, and circular economy principles. They hold multiple certifications including R2v3, ISO 27001, and various regional compliance standards, making them a qualified partner for secure electronics recovery.",
+    "is_good_fit": true,
+    "inventory_fit_assessment": "Excellent fit. Reconext handles all of Yilong's 'Must Have' enterprise IT assets: Laptops & Mobile Devices, Enterprise Network & Data Storage (servers, HDDs/SSDs, storage arrays, routers, switches), and Networking Equipment. They also process Consumer Electronics (including laptops, desktops, tablets, game consoles) which aligns with Yilong's needs. Their services explicitly include 'Testing & Grading' with proprietary equipment to ensure devices pass stringent requirements, and they mention objective functional, cosmetic, and diagnostic evaluations. They achieve high recovery yields (e.g., 90-92% in Memphis, 96%+ in Penang for storage) and prioritize reuse, indicating assets are processed to 'Tested Functional' grade or better. Bonus: They specialize in component harvesting and high-value part recovery (CPU, RAM, SSD/HDD) through platforms like Maya (NAND testing), Bujang (DRAM testing), and Phoenix (DDR memory testing).",
+    "operational_fit_assessment": "Strong operational fit. Reconext is a pure B2B ITAD processor and asset recovery firm serving OEMs, telecom operators, data centers, and enterprises—not consumers. They have R2v3 certification explicitly mentioned across multiple facility pages (Bydgoszcz, Memphis, Mexicali, Penang, Reynosa), which is Yilong's highly preferred certification for correct testing and data wiping. Their business model is built for wholesale/bulk processing, with facilities handling millions of devices annually and designed for high-volume automation (e.g., 'Built for Volume. Designed for Flexibility'). They have major facilities in the US (Texas, California, Tennessee) ideal for EXW purchases. They offer 'Asset Recovery' services to 'maximize the sales value of your used devices' and have 'global resale channels,' indicating they sell recovered assets in bulk. Their scale and global network support large monthly volumes matching Yilong's $1.5M budget.",
+    "red_flags": [],
+    "recommendation": "Reach out",
+    "reasoning": "Reconext is an ideal vendor candidate for Yilong Business Limited. They are a large, certified, global ITAD processor with a strong US presence, directly matching Yilong's need for a bulk supplier of tested functional enterprise IT assets. Their inventory alignment is perfect, covering all required asset categories with a focus on testing, grading, and high-yield recovery. Operationally, they possess the critical R2v3 certification, operate as a B2B wholesale provider, and have the scale to support Yilong's monthly purchasing volume. No red flags were identified; they do not focus on residential recycling, scrap metal, or retail sales. The primary next step is to contact them via their provided phone numbers or contact form to inquire about their bulk sales (EXW) process for enterprise assets.",
+    "error": false
+  }
+]

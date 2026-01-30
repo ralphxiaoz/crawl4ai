@@ -1,0 +1,54 @@
+[
+  {
+    "company_name": "Dataknox Solutions, Inc.",
+    "website_url": "https://www.dataknox.io",
+    "main_business": "IT Infrastructure and Asset Disposition",
+    "description": "Dataknox Solutions is a full-spectrum IT infrastructure partner and managed service provider (MSP) offering end-to-end IT lifecycle services. Their services range from hardware procurement, AI hardware rental, and custom server builds to cloud migration, third-party maintenance, and comprehensive IT Asset Disposition (ITAD). They specialize in AI/ML infrastructure, providing GPU servers and hardware trials, while also managing the secure and environmentally responsible disposal, recycling, and remarketing of retired IT equipment.",
+    "products_services": [
+      "IT Asset Disposition (ITAD)",
+      "Third-Party Maintenance (TPM)",
+      "AI Hardware Rental (NVIDIA, Intel, AMD GPUs)",
+      "Custom Server Builds (in partnership with Jabil)",
+      "Cloud Managed Services & Migration",
+      "Data Center Services (Decommissioning, Asset Recovery)",
+      "Secure Data Destruction",
+      "Tech Trade-In Program (TIP)",
+      "Cybersecurity Services (Assessments, vCISO)",
+      "Base Camp Asset Management Portal",
+      "GPU Free Trials",
+      "Server Management",
+      "Warranty & Support Services",
+      "Wasabi Cloud Backup Solutions"
+    ],
+    "contact_emails": [
+      "info@dataknox.io"
+    ],
+    "contact_phones": [
+      "(833) 328-2362"
+    ],
+    "physical_address": "38505 Cherry St Unit A, Newark, CA 94560",
+    "year_founded": null,
+    "certifications": [
+      "R2:V3",
+      "ISO 14001:2015",
+      "ISO 9001",
+      "NIST 800-88",
+      "OHSAS 45001:2018",
+      "HIPAA Compliance",
+      "SOX Compliance",
+      "DoD 5220.22 Standards",
+      "GLBA Compliance"
+    ],
+    "service_areas": [
+      "Global (31+ locations worldwide)"
+    ],
+    "summary": "Dataknox Solutions is a global IT infrastructure and services company based in Newark, California. They operate as a full-lifecycle partner, providing services from the initial deployment of IT hardware—including specialized AI servers and GPU clusters—through to its secure end-of-life disposition. Their core business model is B2B, serving enterprises with complex IT needs. A significant portion of their operations is dedicated to IT Asset Disposition (ITAD), featuring a dedicated remarketing director, a client portal (Base Camp) for asset tracking, and certified processes for data wiping, recycling, and asset recovery. They highlight processing 55,000 assets and redeploying 3,000 devices monthly, indicating substantial volume handling. The company holds key certifications like R2v3, ISO 14001, and NIST 800-88, underscoring their commitment to responsible recycling and data security. Their service footprint is global, with operations in over 30 countries.",
+    "is_good_fit": true,
+    "inventory_fit_assessment": "EXCELLENT FIT. Dataknox explicitly deals in the exact enterprise IT assets Yilong requires. Their services include IT Asset Disposition (ITAD), Data Center Decommissioning, and a Tech Trade-In Program focused on liquidating server assets and other IT equipment. They mention processing 55,000 assets and redeploying 3,000 devices each month, demonstrating high-volume capability suitable for bulk (pallet/truckload) purchases. Their product focus includes data center servers, networking equipment, and storage from major brands (Dell, HPE, Cisco, etc.). They have a Director of Remarketing, indicating an active wholesale sales channel for refurbished assets. Their condition grading aligns with Yilong's needs, as they mention 'redeploying' devices and offering 'Tested Functional' assets through their ITAD services, which complies with R2v3 F2/C3 or better standards.",
+    "operational_fit_assessment": "STRONG FIT. Dataknox is a classic B2B ITAD processor and asset recovery firm, not a consumer-focused recycler. They hold the highly preferred R2v3 certification, along with other relevant standards (NIST 800-88, ISO 14001), proving their capability for proper testing, data wiping, and responsible recycling. Their business model is built for wholesale; they have a dedicated trade-in program for bulk asset liquidation, offer site decommissioning services, and operate a global logistics network. Their Base Camp portal is designed for enterprise clients to manage bulk asset disposal. There is no indication of a primary retail (eBay/Amazon) sales channel; their focus is on corporate clients and large-scale IT projects.",
+    "red_flags": [],
+    "recommendation": "Reach out",
+    "reasoning": "Dataknox Solutions is a near-ideal vendor candidate for Yilong Business Limited. They perfectly match both critical pillars: 1) INVENTORY FIT: They specialize in enterprise-grade IT assets (servers, networking, storage) from data center decommissioning and trade-ins, handle high monthly volumes, and operate a remarketing/wholesale channel for functional equipment. 2) OPERATIONAL FIT: They are a certified (R2v3) ITAD processor with a clear B2B focus, global logistics for bulk handling, and services tailored for corporate asset recovery. No red flags were identified; they are not a consumer recycler, scrap-focused, or retail reseller. Their established processes, certifications, and volume make them a prime target for a bulk procurement partnership.",
+    "error": false
+  }
+]

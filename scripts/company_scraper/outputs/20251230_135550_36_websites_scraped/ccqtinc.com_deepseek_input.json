@@ -1,0 +1,278 @@
+{
+  "metadata": {
+    "timestamp": "2025-12-30 13:59:28",
+    "website_url": "https://ccqtinc.com",
+    "model": "deepseek/deepseek-chat",
+    "temperature": 0.7,
+    "max_tokens": 4000,
+    "content_filtered": true,
+    "original_size_chars": 53426,
+    "sent_size_chars": 26866,
+    "reduction_percent": 49.7
+  },
+  "system_prompt": "## YOUR ROLE\nYou are a Senior Procurement Consultant for Yilong Business Limited, a high-volume IT Asset Disposition (ITAD) trading firm.\nYour goal is to evaluate potential US-based vendors to see if they fit our supply chain requirements.\n\n## CONTEXT - WHO WE ARE (THE BUYER)\n- Company: Yilong Business Limited (Hong Kong-based with US operations)\n- Business Model: We purchase used IT assets in bulk (Ex Works - EXW) from US facilities and export them to established downstream markets in Hong Kong, Mainland China, and Southeast Asia\n- Volume: We have a purchasing budget of ~$1.5M per month ($10M–$20M annually)\n- Compliance: We operate a strict \"High-Quality Refurbishment\" model. We do NOT export e-waste. We require assets to be \"Tested Functional\" (R2v3 F2/C3 or better)\n\n## YOUR TASK\nYou are analyzing a company website. The provided content belongs to ONE SINGLE company.\nAll URLs are under the same root domain.\nThe content contains text from multiple pages, separated by \"# URL: \".\n\nCRITICAL INSTRUCTIONS:\n1. The crawl covers multiple pages (Home, About, Contact, etc.).\n2. There is significant overlapping/duplicate information across these pages.\n3. You MUST consolidate all information into a SINGLE company profile.\n4. Do NOT output a list of companies. Extract exactly ONE company object.\n5. Ignore minor differences in descriptions across pages; synthesize them into a comprehensive summary.\n\n## INFORMATION TO EXTRACT\n\n1. **Company Information:**\n   - Company name\n   - Main website URL (the root domain, e.g., https://example.com)\n   - Main business/industry\n   - Brief description of what they do\n\n2. **Products/Services:**\n   - List all products or services offered\n   - Key capabilities or specializations\n\n3. **Contact Information:**\n   - ALL email addresses found (support, sales, info, contact, etc.)\n   - Phone numbers\n   - Physical address/location\n   - Contact page URLs\n\n4. **Additional Details:**\n   - Company size (if mentioned)\n   - Year founded (if mentioned)\n   - Certifications or awards (especially R2v3, e-Stewards)\n   - Geographic coverage/service areas\n\n## VENDOR QUALIFICATION CRITERIA\n\nEvaluate if this company is a good fit for Yilong based on these 2 pillars:\n\n### PILLAR 1: INVENTORY FIT\n**Must Have:**\n- Enterprise IT assets: Laptops, Desktops, Data Center Servers, Networking Equipment, Storage\n\n**Bonus Points:**\n- Harvested components (high-value CPU, RAM, SSD/HDD)\n\n**Condition Requirements:**\n- Grade A/B (Ready for Retail) - Preferred\n- Tested Functional Grade C (Ready for Refurbishment) - Acceptable\n\n**RED FLAGS:**\n- Only handles residential recycling (curbside pickup)\n- Focuses primarily on shredding/scrap metal\n- No mention of testing or grading\n- Only handles consumer electronics (phones, tablets, TVs)\n\n### PILLAR 2: OPERATIONAL FIT\n**Business Type:**\n- Must be an ITAD Processor or Asset Recovery Firm (B2B focus)\n- NOT a retail reseller or consumer-focused recycler\n\n**Certification:**\n- R2v3 certification is highly preferred (indicates they can test/wipe data correctly)\n- e-Stewards is also acceptable\n\n**Sales Channel:**\n- Must support Wholesale / Bulk sales (Pallet/Truckload quantities)\n- If they only sell single units on eBay/Amazon to consumers, they are a BAD fit\n\n**RED FLAGS:**\n- Only residential/consumer services\n- No B2B capabilities mentioned\n- No certifications\n- Only retail sales channels\n\n## EVALUATION OUTPUT\nBased on the above criteria, provide:\n- is_good_fit: true/false - Is this company worth reaching out to?\n- inventory_fit_assessment: Detailed explanation of how they match our inventory needs\n- operational_fit_assessment: Detailed explanation of their operational capabilities\n- red_flags: List of any concerns or disqualifying factors\n- recommendation: \"Reach out\", \"Skip\", or \"Research further\"\n- reasoning: Clear explanation of why you recommend reaching out or skipping\n\nBe thorough and extract ALL contact emails you can find.\nIf information is not available, use null for that field.\n",
+  "json_schema": {
+    "properties": {
+      "company_name": {
+        "anyOf": [
+          {
+            "type": "string"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "default": null,
+        "description": "Name of the company",
+        "title": "Company Name"
+      },
+      "website_url": {
+        "anyOf": [
+          {
+            "type": "string"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "default": null,
+        "description": "Main website URL of the company (the root domain, e.g., https://example.com)",
+        "title": "Website Url"
+      },
+      "main_business": {
+        "anyOf": [
+          {
+            "type": "string"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "default": null,
+        "description": "Primary business or industry",
+        "title": "Main Business"
+      },
+      "description": {
+        "anyOf": [
+          {
+            "type": "string"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "default": null,
+        "description": "Brief description of what the company does",
+        "title": "Description"
+      },
+      "products_services": {
+        "anyOf": [
+          {
+            "items": {
+              "type": "string"
+            },
+            "type": "array"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "default": null,
+        "description": "List of products or services offered",
+        "title": "Products Services"
+      },
+      "contact_emails": {
+        "anyOf": [
+          {
+            "items": {
+              "type": "string"
+            },
+            "type": "array"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "default": null,
+        "description": "All email addresses found on the website",
+        "title": "Contact Emails"
+      },
+      "contact_phones": {
+        "anyOf": [
+          {
+            "items": {
+              "type": "string"
+            },
+            "type": "array"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "default": null,
+        "description": "All phone numbers found",
+        "title": "Contact Phones"
+      },
+      "physical_address": {
+        "anyOf": [
+          {
+            "type": "string"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "default": null,
+        "description": "Physical address or location",
+        "title": "Physical Address"
+      },
+      "year_founded": {
+        "anyOf": [
+          {
+            "type": "string"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "default": null,
+        "description": "Year the company was founded",
+        "title": "Year Founded"
+      },
+      "certifications": {
+        "anyOf": [
+          {
+            "items": {
+              "type": "string"
+            },
+            "type": "array"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "default": null,
+        "description": "Any certifications or awards mentioned",
+        "title": "Certifications"
+      },
+      "service_areas": {
+        "anyOf": [
+          {
+            "items": {
+              "type": "string"
+            },
+            "type": "array"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "default": null,
+        "description": "Geographic areas served",
+        "title": "Service Areas"
+      },
+      "summary": {
+        "anyOf": [
+          {
+            "type": "string"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "default": null,
+        "description": "A 2-3 paragraph human-readable summary of the company",
+        "title": "Summary"
+      },
+      "is_good_fit": {
+        "anyOf": [
+          {
+            "type": "boolean"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "default": null,
+        "description": "Overall assessment - Is this company worth reaching out to for Yilong's procurement needs?",
+        "title": "Is Good Fit"
+      },
+      "inventory_fit_assessment": {
+        "anyOf": [
+          {
+            "type": "string"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "default": null,
+        "description": "Detailed explanation of how the company's inventory (product types, grades, volumes) matches Yilong's requirements for enterprise IT assets",
+        "title": "Inventory Fit Assessment"
+      },
+      "operational_fit_assessment": {
+        "anyOf": [
+          {
+            "type": "string"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "default": null,
+        "description": "Detailed explanation of the company's operational capabilities (B2B focus, certifications, wholesale channels) and fit with Yilong's bulk purchasing model",
+        "title": "Operational Fit Assessment"
+      },
+      "red_flags": {
+        "anyOf": [
+          {
+            "items": {
+              "type": "string"
+            },
+            "type": "array"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "default": null,
+        "description": "List of any concerns or disqualifying factors (e.g., residential-only, no certifications, retail-only sales, scrap metal focus)",
+        "title": "Red Flags"
+      },
+      "recommendation": {
+        "anyOf": [
+          {
+            "type": "string"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "default": null,
+        "description": "Action recommendation: 'Reach out', 'Skip', or 'Research further'",
+        "title": "Recommendation"
+      },
+      "reasoning": {
+        "anyOf": [
+          {
+            "type": "string"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "default": null,
+        "description": "Clear explanation of why you recommend reaching out or skipping this vendor, based on the evaluation criteria",
+        "title": "Reasoning"
+      }
+    },
+    "title": "CompanyAnalysis",
+    "type": "object"
+  },
+  "content_sent": "# URL: https://ccqtinc.com\n CCQT Inc. Quality Trading\nHome\nServices\nR2v3 ProcessIT Asset DispositionData SecurityAsset BuybackAsset GradingScrap Collection\nMinerals\nCertifications\nAbout\nGet QuoteContact Us\nCanadian Corporation of Quality Trading\n# Global Leader in Electronics\nDistribution & Recycling\nR2v3 certified international wholesaler providing comprehensive ITAD services, data security solutions, and sustainable electronics trading worldwide.\nStart PartnershipLearn More\n### Certified by Industry Leaders\nTrusted by global organizations and certified to the industry's most recognized standards for environmental compliance and data security.\n## Trusted Worldwide\nOur global reach and commitment to excellence speaks for itself\n2\n### Facilities\nStrategic locations in Canada and the USA\n22+\n### Countries\nGlobal reach and distribution\n200K+\n### Units\nElectronics exported worldwide\n500K+\n### Pounds\nElectronic scrap processed in 2025\nOur Services\n## Complete Electronics Lifecycle Solutions\nFrom responsible recycling to asset recovery, we provide comprehensive services that maximize value while ensuring environmental and data security compliance.\n### R2v3 Process\nIndustry Standard Compliance\nCertified to the R2v3 responsible recycling standard, ensuring environmental protection and data security across all operations.\n### IT Asset Disposition\nComplete Lifecycle Management\nEnd-to-end ITAD services from pickup to final disposition with full documentation and compliance reporting.\n### Data Security\nNIST SP 800-88 Compliant\nData destruction compliant with NIST SP 800-88, backed by unique device tracking, verification, and certificates of destruction.\n### Asset Buyback\nMaximum Value Recovery\nCompetitive pricing through our global network of wholesalers and resellers for maximum asset value recovery.\n### Asset Grading\nTransparent Classification\nProfessional A, B, C grading system providing transparent asset classification and market-based pricing.\n### Scrap Collection\nResponsible Processing\nComprehensive collection and processing of electronic scrap materials with environmental compliance.\n## CCQT Minerals\n### Global Mineral Trading Division\nExpanding beyond electronics, CCQT Minerals provides structured global sourcing, trading, and logistics for essential minerals; including sulfur, phosphate rock, and iron ore.\nExplore Minerals Division\n#### Industries We Serve\n  * Agriculture - Fertilizer production\n  * Chemical Manufacturing\n  * Steel & Metals - Iron Ore sourcing\n  * Energy & Petrochemicals\n  * Commodity Trading Firms\n### Ready to Partner with Us?\nJoin our network and partner with a trusted global distributor for electronics recycling and wholesale\nGet Started Today\n### Stay Informed\nSubscribe to receive updates on industry insights, regulatory changes, and new service offerings.\nSubscribe\nStay updated with industry insights, regulatory changes, and promotional updates. Unsubscribe anytime.\n### Services\n  * R2v3 Process\n  * IT Asset Disposition\n  * Data Security\n  * Asset Buyback\n### Company\n  * About Us\n  * Asset Grading\n  * Scrap Collection\n  * Contact\n### Contact us\n  * US Office[310-730-7779](tel:310-730-7779)\nCanada Office[403-475-7779](tel:403-475-7779)\n  * sales@ccqtinc.com\n  * Headquarters2915 21 ST NE, Suite 112, T2E 7T1, Calgary, Alberta, Canada\n  * 66 E Escalon Ave, Fresno, CA, 93710\nTerms & ConditionsPrivacy Policy\n© Copyright 2025, CCQT Inc. All Rights Reserved\n# URL: https://www.ccqtinc.com/about\n CCQT Inc. Quality Trading\nHome\nServices\nMinerals\nCertifications\nAbout\nGet QuoteContact Us\n# How It All Started\nAt CCQT Inc., we began with a vision to revolutionize the electronics recycling and wholesale industry. Over the years, we've expanded our operations across North America and now serve clients in over 22 countries. Our dedicated team, united by a shared commitment to quality and sustainability, propels us ahead. We take pride in our unity and teamwork, which fuel our continuous growth and success. Our focus remains steadfast on creating a greener future through sustainable practices. Together, we are building a legacy of environmental stewardship and global impact.\n## Our Core Values\n### Trust & Security\nWe prioritize data security and maintain the highest industry standards.\n### Customer Focus\nOur clients' success drives every decision we make.\n### Sustainability\nCommitted to environmental responsibility in all operations.\n### Excellence\nStriving for perfection in every transaction and interaction.\n## Our Team\nOur team at CCQT Inc. is driven by expertise and passion for the tech industry. As a family-run business, we bring unparalleled commitment to the wholesale and distribution of consumer technology goods. Our journey began in Canada in early 2021, and by 2023, CCQT Inc. had already exported 50,000 units of used electronics worldwide. We expanded our footprint by opening our first facility in California in 2023. This rapid growth reflects our team's dedication to excellence and innovation in serving our global clientele.\n### Wathiq Mousa\nChairman\n### Ali Saheb-Mousa\nCEO/Founder\n### Mohammed Talib\nCIO/Co-Founder\n### Zahrah Saheb-Mousa\nCOO\n### Hassan Saheb-Mousa\nCTO\n### Bassam Jamal Al-Deen\nSales Manager\n### Rahul Rajeev\nSenior Business Development Manager\n### Hashim Al-Musawi\nSenior Software Engineer\n### Ready to Partner with Us?\nGet Started Today\n### Stay Informed\nSubscribe\n### Services\n  * R2v3 Process\n  * IT Asset Disposition\n  * Data Security\n  * Asset Buyback\n### Company\n  * About Us\n  * Asset Grading\n  * Scrap Collection\n  * Contact\n### Contact us\n  * US Office[310-730-7779](tel:310-730-7779)\nCanada Office[403-475-7779](tel:403-475-7779)\n  * sales@ccqtinc.com\n  * 66 E Escalon Ave, Fresno, CA, 93710\nTerms & ConditionsPrivacy Policy\n© Copyright 2025, CCQT Inc. All Rights Reserved\n# URL: https://www.ccqtinc.com/buyback\n CCQT Inc. Quality Trading\nHome\nServices\nMinerals\nCertifications\nAbout\nGet QuoteContact Us\nBuyback Program\n# Turn Your Old Tech Into Value\nOur secure and environmentally responsible buyback program helps you unlock value from outdated technology while earning cash or credit toward future purchases.\n## Eligible Devices\nSmartphones and tablets\nLaptops and desktops\nServers and networking equipment\nComponents such as hard drives, RAM, GPUs\nOther electronic devices, depending on condition and model\n## Buyback Process\n1\n### Initial Inquiry\nClients submit a list or inventory of assets intended for buyback.\n2\n### Assessment\nCCQT evaluates the devices based on grade, model, and market value. If required, photos or physical inspection may be requested.\n3\n### Offer\nA formal buyback quote is provided within 2-3 business days.\n4\n### Logistics\nCCQT coordinates pickup or shipping (labels provided where applicable).\n5\n### Testing and Validation\nUpon receiving the assets, CCQT verifies the condition and functionality.\n6\n### Payment\nFinal payment or store credit is issued within 5-7 business days after validation.\n## Data Security Assurance\nAll devices received through our buyback program are handled in strict compliance with data privacy regulations. We provide certified data destruction upon request, and all storage devices are wiped or destroyed using NIST-compliant procedures. Certificates of data destruction are available for corporate and institutional clients.\n## Why Choose CCQT's Buyback Program?\nUnlock hidden value from unused or aging tech\nSimplify your upgrade cycle by offsetting costs\nEnsure compliant and secure disposition of sensitive devices\nReduce environmental impact by supporting electronics reuse and recycling\nGet fast quotes and prompt payment from a trusted global electronics partner\n## Contact & Submissions\nTo submit a buyback inquiry or receive more information, contact us at:\npurchasing@ccqtinc.com\n+1 (289)-497-7779\n### Ready to Partner with Us?\nGet Started Today\n### Stay Informed\nSubscribe\n### Services\n  * R2v3 Process\n  * IT Asset Disposition\n  * Data Security\n  * Asset Buyback\n### Company\n  * About Us\n  * Asset Grading\n  * Scrap Collection\n  * Contact\n### Contact us\n  * US Office[310-730-7779](tel:310-730-7779)\nCanada Office[403-475-7779](tel:403-475-7779)\n  * sales@ccqtinc.com\n  * 66 E Escalon Ave, Fresno, CA, 93710\nTerms & ConditionsPrivacy Policy\n© Copyright 2025, CCQT Inc. All Rights Reserved\n# URL: https://www.ccqtinc.com/certifications\n CCQT Inc. Quality Trading\nHome\nServices\nMinerals\nCertifications\nAbout\nGet QuoteContact Us\nCertified Excellence\n# Our Certifications & Compliance Standards\nWe maintain the highest industry standards through rigorous certifications and compliance programs, ensuring environmental responsibility, data security, and quality management across all operations.\n## Why Our Certifications Matter\nOur certifications represent more than compliance—they're a commitment to excellence, transparency, and responsible business practices.\n### Data Security\nIndustry-leading standards for protecting sensitive information throughout the asset lifecycle.\n### Environmental Compliance\nCertified processes ensuring responsible recycling and environmental stewardship.\n### Quality Management\nRigorous quality control systems meeting international ISO standards.\n## Our Certifications\nRecognized by leading industry organizations and regulatory bodies worldwide.\nData Security\n### NIST SP 800-88\nCompliance with National Institute of Standards and Technology guidelines for media sanitization and data destruction.\nEnvironmental\n### R2v3 Certification\nThird-party certified to the Responsible Recycling (R2) v3 standard for electronics recyclers, ensuring environmental responsibility and data security.\nUSA RegistrationCanada Registration\nQuality Standards\n### PJR\nPartnership for Joint Research certification demonstrating commitment to industry best practices.\nEnvironmental\n### RIOS\nRecycling Industry Operating Standard certification ensuring quality management systems and environmental compliance.\nUSA RegistrationCanada RegistrationUSA MembershipCanada Membership\nAccreditation\n### ANAB\nAccredited by ANSI-ASQ National Accreditation Board, the largest multi-disciplinary ISO/IEC 17011 accreditation body in North America.\nProfessional Training\n### Blackbelt\nCertified training and expertise in professional electronics asset management and disposition.\nClick the links below each certificate to view official documentation.\n## Questions About Our Certifications?\nOur team is ready to discuss how our certified processes can meet your compliance requirements and provide peace of mind.\nContact Our Team\n### Ready to Partner with Us?\nGet Started Today\n### Stay Informed\nSubscribe\n### Services\n  * R2v3 Process\n  * IT Asset Disposition\n  * Data Security\n  * Asset Buyback\n### Company\n  * About Us\n  * Asset Grading\n  * Scrap Collection\n  * Contact\n### Contact us\n  * US Office[310-730-7779](tel:310-730-7779)\nCanada Office[403-475-7779](tel:403-475-7779)\n  * sales@ccqtinc.com\n  * 66 E Escalon Ave, Fresno, CA, 93710\nTerms & ConditionsPrivacy Policy\n© Copyright 2025, CCQT Inc. All Rights Reserved\n# URL: https://www.ccqtinc.com/contact\n CCQT Inc. Quality Trading\nHome\nServices\nMinerals\nCertifications\nAbout\nGet QuoteContact Us\n# How Can We Help You?\n## General Contact General inquiries, support, and information ## Trading Partnership Apply to become a trading partner\n## Global Presence\n### Calgary Headquarters\n2915 21 ST NE, Suite 112, T2E 7T1, Calgary, Alberta, Canada\n### Fresno Operations\n66 E Escalon Ave, Fresno, CA, 93710\n### Ready to Partner with Us?\nGet Started Today\n### Stay Informed\nSubscribe\n### Services\n  * R2v3 Process\n  * IT Asset Disposition\n  * Data Security\n  * Asset Buyback\n### Company\n  * About Us\n  * Asset Grading\n  * Scrap Collection\n  * Contact\n### Contact us\n  * US Office[310-730-7779](tel:310-730-7779)\nCanada Office[403-475-7779](tel:403-475-7779)\n  * sales@ccqtinc.com\n  * 66 E Escalon Ave, Fresno, CA, 93710\nTerms & ConditionsPrivacy Policy\n© Copyright 2025, CCQT Inc. All Rights Reserved\n# URL: https://www.ccqtinc.com/contact/general\n CCQT Inc. Quality Trading\nHome\nServices\nMinerals\nCertifications\nAbout\nGet QuoteContact Us\n← Back\n# Contact Us\nWe'll get back to you as soon as possible.\nFirst Name *\nLast Name *\nEmail *\nMessage *\nSend Message\n### Ready to Partner with Us?\nGet Started Today\n### Stay Informed\nSubscribe\n### Services\n  * R2v3 Process\n  * IT Asset Disposition\n  * Data Security\n  * Asset Buyback\n### Company\n  * About Us\n  * Asset Grading\n  * Scrap Collection\n  * Contact\n### Contact us\n  * US Office[310-730-7779](tel:310-730-7779)\nCanada Office[403-475-7779](tel:403-475-7779)\n  * sales@ccqtinc.com\n  * 66 E Escalon Ave, Fresno, CA, 93710\nTerms & ConditionsPrivacy Policy\n© Copyright 2025, CCQT Inc. All Rights Reserved\n# URL: https://www.ccqtinc.com/data-security\n CCQT Inc. Quality Trading\nHome\nServices\nMinerals\nCertifications\nAbout\nGet QuoteContact Us\nData Security Policies\n# Your Data's Security is Our Responsibility\nAs an R2v3 Certified and NIST-compliant organization, we operate at the highest standards of data handling and destruction, providing secure, ethical, and verifiable services.\n## Our Commitment\n### R2v3 Certified\nLeading global certification for responsible electronics recycling\n### NIST Compliant\nFollowing NIST 800-88 and internationally recognized protocols\n### Complete Transparency\nEvery device tracked, verified, and accompanied by detailed reports\n## R2v3 Certification & Compliance\nCCQT Inc. is fully certified under the R2v3 standard, the leading global certification for responsible electronics recycling. This certification guarantees that our data destruction processes meet the most stringent industry regulations and sustainability practices. We also follow guidelines set by NIST 800-88 and other internationally recognized data sanitization protocols.\n## Data Destruction Process\n1\n### Device Intake & Registration\nEach asset is catalogued and assigned a unique tracking ID.\n2\n### Data Sanitization or Physical Destruction\nDepending on client needs, data is either wiped using secure erasure tools or physically destroyed.\n3\n### Verification & Quality Check\nOur technicians ensure that all data has been successfully removed or destroyed.\n4\n### Certificate of Data Destruction\nClients receive a formal certificate detailing the destruction process and asset information.\n5\n### Environmentally Responsible Disposal\nFollowing data removal, assets are either refurbished or responsibly recycled in compliance with R2v3 standards.\n## Services for All Clients\nWhether you're a small business, large corporation, school, government agency, or nonprofit, CCQT Inc. delivers tailored data security services designed to meet your unique needs. Our secure handling infrastructure ensures consistent, high-quality service for clients of every size and industry.\n## Trust Through Transparency\nWe believe in complete transparency and accountability. That's why every device processed through CCQT's facilities is tracked, verified, and accompanied by a detailed report. Our clients can rest assured knowing that their sensitive data is destroyed safely, ethically, and in accordance with legal and environmental obligations.\n## Connect With Us\nFor more information on our data security services or to schedule a pickup, contact our team:\ndata@ccqtinc.com\nYour data's security is our responsibility - and we take that seriously.\n### Ready to Partner with Us?\nGet Started Today\n### Stay Informed\nSubscribe\n### Services\n  * R2v3 Process\n  * IT Asset Disposition\n  * Data Security\n  * Asset Buyback\n### Company\n  * About Us\n  * Asset Grading\n  * Scrap Collection\n  * Contact\n### Contact us\n  * US Office[310-730-7779](tel:310-730-7779)\nCanada Office[403-475-7779](tel:403-475-7779)\n  * sales@ccqtinc.com\n  * 66 E Escalon Ave, Fresno, CA, 93710\nTerms & ConditionsPrivacy Policy\n© Copyright 2025, CCQT Inc. All Rights Reserved\n# URL: https://www.ccqtinc.com/documents/privacy.pdf\n# URL: https://www.ccqtinc.com/documents/r2v3-canada-registration-certificate.pdf\n# URL: https://www.ccqtinc.com/documents/r2v3-usa-registration-certificate.pdf\n# URL: https://www.ccqtinc.com/documents/rios-canada-membership-certificate.pdf\n# URL: https://www.ccqtinc.com/documents/rios-canada-registration-certificate.pdf\n# URL: https://www.ccqtinc.com/documents/rios-usa-membership-certificate.pdf\n# URL: https://www.ccqtinc.com/documents/rios-usa-registration-certificate.pdf\n# URL: https://www.ccqtinc.com/documents/terms.pdf\n# URL: https://www.ccqtinc.com/grading\n CCQT Inc. Quality Trading\nHome\nServices\nMinerals\nCertifications\nAbout\nGet QuoteContact Us\nAsset Grading Standards\n# Simple, Transparent Asset Classification\nOur standardized A, B, C grading system ensures consistent, fair evaluation of all electronic assets\n## Mobile Phones Grading\nA\n### Excellent Condition\nA product in excellent condition with no signs of wear, no cosmetic faults and no scratches on screen. This product has been fully tested and is 100% functional.\nB\n### Very Good Condition\nA product in very good condition. Signs of wear might be visible. Light to moderate scratches on screen. Light to moderate signs of wear on cosmetic features. This product has been tested and is 100% functional.\nC\n### Good for Refurbishment\nThis product will show signs of wear. Moderate to heavy scratches on screen. Moderate to heavy markings/etches/dents on its cosmetic features. This product has been tested for basic functions and is ideal for companies looking to refurbish the phones.\n## Laptops Grading\nA\n### Excellent Condition\nA product in excellent condition with no signs of wear, no scratches on screen, no cosmetic damage. This product has been fully tested and is 100% functional.\nB\n### Very Good Condition\nA product in very good condition, with light to moderate signs of wear. Light to moderate scratches on casing and cosmetic features. Screen will be in very good shape with little to no signs of use. This product has been fully tested and is 100% functional.\nC\n### Suitable for Refurbishment\nA product that shows moderate to heavy signs of use. Moderate to heavy scratches on housing, markings on cosmetic features. Light to moderate scratches, prints or dots on screens. Could have a chipped corner in housing or lower end plastic panel below the screen. This product has been tested for basic functions only and is very suitable for refurbishment before use or resale.\n### Ready to Partner with Us?\nGet Started Today\n### Stay Informed\nSubscribe\n### Services\n  * R2v3 Process\n  * IT Asset Disposition\n  * Data Security\n  * Asset Buyback\n### Company\n  * About Us\n  * Asset Grading\n  * Scrap Collection\n  * Contact\n### Contact us\n  * US Office[310-730-7779](tel:310-730-7779)\nCanada Office[403-475-7779](tel:403-475-7779)\n  * sales@ccqtinc.com\n  * 66 E Escalon Ave, Fresno, CA, 93710\nTerms & ConditionsPrivacy Policy\n© Copyright 2025, CCQT Inc. All Rights Reserved\n# URL: https://www.ccqtinc.com/itad\n CCQT Inc. Quality Trading\nHome\nServices\nMinerals\nCertifications\nAbout\nGet QuoteContact Us\nITAD process\n# Reshape, Renew, Recycle: Empowering Tomorrow's Technology Today\n1\n## Pick Up\nHave us pick up your assets or send them in\n2\n## Asset Auditing\nIn this stage we evaluate the assets for any hardware that may contain data.\n3\n## Data Destruction\nFrom here your sensitive data will be logically destroyed with NIST approved and compliant software. A-Data Wipe. Learn more about our steps and procedures to keep your data safe.\n4\n## Asset Evaluation\nOur qualified team will determine if an asset is restorable for reuse or recycle.\nA-Reuse. Assets that passed our grading procedures are now ready to be sold to consumers. Learn more about our grading process.\nB-Recycle. From here products will move on to be disposed of safely, learn more about our standards and procedures.\nGo to R2v3 Page\n5\n## Refurbish\nMany devices can be renewed and restored with some effort, at CCQT our trained professionals follow industry standards in repair and analysis.\n6\n## Sales\nOur large network of international sales experts are strategically located worldwide, enabling us to provide you with competitive prices from various markets.\n7\n## Deliver\nOur logistics department can coordinate the transportation of all assets to their new owners by utilizing a variety of transportation methods through our partnerships with freight companies and airline cargo services. CCQT is committed to offering guidance and consultation to our registered clients as needed, particularly during the shipping process.\n### Ready to Partner with Us?\nGet Started Today\n### Stay Informed\nSubscribe\n### Services\n  * R2v3 Process\n  * IT Asset Disposition\n  * Data Security\n  * Asset Buyback\n### Company\n  * About Us\n  * Asset Grading\n  * Scrap Collection\n  * Contact\n### Contact us\n  * US Office[310-730-7779](tel:310-730-7779)\nCanada Office[403-475-7779](tel:403-475-7779)\n  * sales@ccqtinc.com\n  * 66 E Escalon Ave, Fresno, CA, 93710\nTerms & ConditionsPrivacy Policy\n© Copyright 2025, CCQT Inc. All Rights Reserved\n# URL: https://www.ccqtinc.com/minerals\n CCQT Inc. Quality Trading\nHome\nServices\nMinerals\nCertifications\nAbout\nGet QuoteContact Us\n# CCQT Minerals\nGlobal Mineral Trading Division\nCCQT proudly introduces CCQT Minerals — our dedicated division for structured global mineral sourcing, trading, and logistics. This expansion builds on years of handling high-value commodities through our electronics recycling and resale operations, naturally evolving into strategic supply lines for essential minerals.\n## Minerals We Trade\n  * Raw Sulfur\n  * Lump Sulfur\n  * Granular Sulfur\n  * Phosphate Rock\n  * Iron Ore\n## Industries We Serve\n### Agriculture\nFertilizer production (Sulfur & Phosphate)\n### Chemical Manufacturing\nSulfur-based compounds & processing\n### Steel & Metals\nIron Ore sourcing & raw material supply\n### Energy & Petrochemicals\nRefinery feedstock & processing inputs\n### Commodity Trading Firms\nStructured supply chain partnerships\n## Why CCQT Minerals?\nProven international trading and logistics experience\nRecurring supply programs with global buyers\nBulk vessel & container shipping expertise\nTransparent quality control and sourcing compliance\nEthical trade, sustainability & customer reliability\n## Contact for Trade & Supply\nCCQT Minerals Division\nMinerals@ccqtinc.com\n[+1-213-797-7779](tel:+12137977779)\n### Ready to Partner with Us?\nGet Started Today\n### Stay Informed\nSubscribe\n### Services\n  * R2v3 Process\n  * IT Asset Disposition\n  * Data Security\n  * Asset Buyback\n### Company\n  * About Us\n  * Asset Grading\n  * Scrap Collection\n  * Contact\n### Contact us\n  * US Office[310-730-7779](tel:310-730-7779)\nCanada Office[403-475-7779](tel:403-475-7779)\n  * sales@ccqtinc.com\n  * 66 E Escalon Ave, Fresno, CA, 93710\nTerms & ConditionsPrivacy Policy\n© Copyright 2025, CCQT Inc. All Rights Reserved\n# URL: https://www.ccqtinc.com/r2v3\n CCQT Inc. Quality Trading\nHome\nServices\nMinerals\nCertifications\nAbout\nGet QuoteContact Us\nR2v3 process\n# Reshape, Renew, Recycle: Empowering Tomorrow's Technology Today\n1\n## Pick Up\nOur team can arrange for pickup with our qualified downstream partners, emphasizing on safety and accuracy.\n2\n## Receiving\nOur trained employees will evaluate and sort your assets upon arrival, letting you follow your sensitive data along the way.\n3\n## Sorting\nAt this stage we can determine if an asset will be recycled or sent to our asset disposition process, giving a product a chance of new life.\n4\n## Removal of Hazardous Material\nEmployee health and environmental safety is our top priority, that is why CCQT is RIOS/R2v3 certified, and is dedicated to uphold industry standards.\n5\n## Processing\nWe work closely with our downstream certified partners to ensure hazardous waste is categorized, documented and recycled safely.\n6\n## Final Resolution\nOur sales experts and tracking systems will update you on the final outcome and send you proof. Thank you for recycling!\n### Ready to Partner with Us?\nGet Started Today\n### Stay Informed\nSubscribe\n### Services\n  * R2v3 Process\n  * IT Asset Disposition\n  * Data Security\n  * Asset Buyback\n### Company\n  * About Us\n  * Asset Grading\n  * Scrap Collection\n  * Contact\n### Contact us\n  * US Office[310-730-7779](tel:310-730-7779)\nCanada Office[403-475-7779](tel:403-475-7779)\n  * sales@ccqtinc.com\n  * 66 E Escalon Ave, Fresno, CA, 93710\nTerms & ConditionsPrivacy Policy\n© Copyright 2025, CCQT Inc. All Rights Reserved\n# URL: https://www.ccqtinc.com/scrap-collection\n CCQT Inc. Quality Trading\nHome\nServices\nMinerals\nCertifications\nAbout\nGet QuoteContact Us\nScrap Collection Program\n# Responsible Resource Management for a Greener Future\nOur Scrap Collection Program is a key component of our commitment to sustainable electronics lifecycle management. We actively acquire all types of electronic scrap from partners across industries.\n## Types of Electronic Scrap We Accept\nLaptops, desktops, and tablets\nSmartphones and mobile devices\nNetwork equipment and server components\nCircuit boards, CPUs, GPUs, and RAM\nPower supplies, adapters, and Printers\nMixed electronics and miscellaneous components\n## Volume Handling Capacity\nCCQT Inc. is equipped to purchase and process up to 200,000 pounds of electronic scrap each month. This capacity makes us an ideal partner for:\nGovernment and corporate IT asset disposition\nElectronics manufacturers and resellers\nRecycling centers and bulk scrap collectors\nEducational and healthcare institutions\nWe welcome both one-time bulk loads and ongoing, recurring collections.\n## How to Partner with Us\n1\n### Submit Your Scrap Inventory\nProvide details on the type and estimated volume of scrap.\n2\n### Receive a Tailored Offer\nBased on current commodity values and demand, we present a competitive quote.\n3\n### Arrange Pickup or Delivery\nWe coordinate logistics based on your preference, offering pickup options or drop-off guidelines.\n4\n### Prompt Processing and Payment\nAfter inspection and weight verification, we initiate timely payment.\n## Why Choose CCQT Inc.\nCompetitive pricing for all grades and categories of electronics scrap\nFlexibility in handling any size and type of load\nTransparent reporting and professional service\nContribution to a greener, more sustainable planet\n## Contact Us\nReady to partner with us or learn more about our Scrap Collection Program?\nscrap@ccqtinc.com\n[+1 (289) 497-7779](tel:+12894977779)\nLet's work together toward a cleaner future and give your scrap a new purpose!\n### Ready to Partner with Us?\nGet Started Today\n### Stay Informed\nSubscribe\n### Services\n  * R2v3 Process\n  * IT Asset Disposition\n  * Data Security\n  * Asset Buyback\n### Company\n  * About Us\n  * Asset Grading\n  * Scrap Collection\n  * Contact\n### Contact us\n  * US Office[310-730-7779](tel:310-730-7779)\nCanada Office[403-475-7779](tel:403-475-7779)\n  * sales@ccqtinc.com\n  * 66 E Escalon Ave, Fresno, CA, 93710\nTerms & ConditionsPrivacy Policy\n© Copyright 2025, CCQT Inc. All Rights Reserved",
+  "content_length_stats": {
+    "characters": 26866,
+    "estimated_tokens": 6716,
+    "estimated_cost_input_usd": 0.00188
+  }
+}

@@ -1,0 +1,43 @@
+[
+  {
+    "company_name": "CEAR, LLC",
+    "website_url": "https://www.cearinc.com",
+    "main_business": "IT Asset Disposition (ITAD) and Electronics Recycling",
+    "description": "CEAR is a certified electronics recycler and IT asset disposition provider offering secure, sustainable, and customized solutions for businesses, government, and institutions. They provide full-service ITAD, secure data destruction, and recycling, focusing on creating a circular economy for electronics while ensuring data security and environmental responsibility.",
+    "products_services": [
+      "IT Asset Disposition (ITAD)",
+      "Secure Data Destruction (wiping & physical destruction)",
+      "Electronics Recycling (demanufacturing & material recovery)",
+      "Destruction and Decommissioning of proprietary equipment",
+      "Recyclability Assessments for product design",
+      "Bulk collection via E-Cages or onsite packing"
+    ],
+    "contact_emails": [
+      "info@cearinc.com"
+    ],
+    "contact_phones": [
+      "916.388.1777"
+    ],
+    "physical_address": "3678 LeMay Street, Mather, California 95655",
+    "year_founded": "2000",
+    "certifications": [
+      "R2v3 Responsible Recycling",
+      "NAID AAA",
+      "ISO 9001",
+      "ISO 45001",
+      "ISO 14001",
+      "TRUE (Total Resource Use and Efficiency)"
+    ],
+    "service_areas": [
+      "United States"
+    ],
+    "summary": "CEAR, LLC is a Sacramento-based IT Asset Disposition (ITAD) and electronics recycling company founded in 2000. For over 25 years, they have served businesses, manufacturing, finance, education, healthcare, and government organizations with secure and sustainable hardware lifecycle solutions. Their core services include ITAD, secure data destruction (NAID AAA certified), and advanced electronics recycling, all performed in-house at their secure facility in Mather, California. CEAR emphasizes a circular economy, recovering valuable materials like rare earth elements from hard drives and employing innovative technologies such as centrifugal force processing that uses 30% less energy than traditional shredders. They hold key industry certifications including R2v3, NAID AAA, and multiple ISO standards, demonstrating a strong commitment to environmental responsibility, data security, and quality management. The company operates on a B2B model, providing customized, bulk solutions for enterprise clients.",
+    "is_good_fit": true,
+    "inventory_fit_assessment": "CEAR's services are an excellent match for Yilong's inventory needs. Their core business is IT Asset Disposition (ITAD), which explicitly involves processing enterprise IT assets like laptops, desktops, servers, and networking equipment from Fortune 500 companies, government agencies, and institutions. Their process includes sorting, data sanitization, market analysis, and refurbishment for resale or redeployment, indicating they handle assets in various conditions suitable for refurbishment. They specifically mention recovering high-value components like CPUs, RAM, and hard drives, and have a specialized focus on recovering rare earth elements (e.g., neodymium magnets) from hard disk drives—a strong bonus. Their R2v3 certification and NAID AAA standards confirm they perform proper testing, data wiping, and grading, aligning with Yilong's requirement for 'Tested Functional' (R2v3 F2/C3 or better) assets. There is no indication they focus solely on residential recycling, shredding/scrap metal, or only consumer electronics.",
+    "operational_fit_assessment": "CEAR is a strong operational fit for Yilong's wholesale model. They are a certified ITAD processor with a clear B2B focus, serving large organizations and emphasizing customized, bulk solutions. Their R2v3 certification is explicitly listed and is highly preferred, indicating robust processes for testing, data wiping, and downstream accountability. They support wholesale/bulk sales, as evidenced by their work with large clients, use of pallets and E-Cages for collection, and transportation of assets in truckload quantities (GPS-tracked). Their services are designed for bulk asset recovery, not retail consumer sales. They operate a secure, in-house facility capable of handling large volumes, which aligns with Yilong's need for Ex Works (EXW) bulk purchases from US facilities.",
+    "red_flags": [],
+    "recommendation": "Reach out",
+    "reasoning": "CEAR is a highly qualified vendor that meets or exceeds all of Yilong's core criteria. They are an R2v3 and NAID AAA certified ITAD processor with a 25-year track record serving enterprise and government clients—the exact B2B profile required. Their service offerings directly align with procuring enterprise IT assets (laptops, desktops, servers, networking) in bulk, and their certification ensures proper testing and grading. They have demonstrated capabilities in component recovery and advanced material reclamation, adding value. There are no red flags regarding residential focus, lack of certifications, or retail-only sales. Their operational model supports wholesale transactions, making them an ideal candidate for a bulk purchasing partnership. Initial contact should verify their current volume capacity and interest in EXW sales to an export-focused firm like Yilong.",
+    "error": false
+  }
+]

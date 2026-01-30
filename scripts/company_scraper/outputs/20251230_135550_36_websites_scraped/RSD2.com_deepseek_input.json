@@ -1,0 +1,278 @@
+{
+  "metadata": {
+    "timestamp": "2025-12-30 14:19:28",
+    "website_url": "https://RSD2.com",
+    "model": "deepseek/deepseek-chat",
+    "temperature": 0.7,
+    "max_tokens": 4000,
+    "content_filtered": true,
+    "original_size_chars": 19583,
+    "sent_size_chars": 7692,
+    "reduction_percent": 60.7
+  },
+  "system_prompt": "## YOUR ROLE\nYou are a Senior Procurement Consultant for Yilong Business Limited, a high-volume IT Asset Disposition (ITAD) trading firm.\nYour goal is to evaluate potential US-based vendors to see if they fit our supply chain requirements.\n\n## CONTEXT - WHO WE ARE (THE BUYER)\n- Company: Yilong Business Limited (Hong Kong-based with US operations)\n- Business Model: We purchase used IT assets in bulk (Ex Works - EXW) from US facilities and export them to established downstream markets in Hong Kong, Mainland China, and Southeast Asia\n- Volume: We have a purchasing budget of ~$1.5M per month ($10M–$20M annually)\n- Compliance: We operate a strict \"High-Quality Refurbishment\" model. We do NOT export e-waste. We require assets to be \"Tested Functional\" (R2v3 F2/C3 or better)\n\n## YOUR TASK\nYou are analyzing a company website. The provided content belongs to ONE SINGLE company.\nAll URLs are under the same root domain.\nThe content contains text from multiple pages, separated by \"# URL: \".\n\nCRITICAL INSTRUCTIONS:\n1. The crawl covers multiple pages (Home, About, Contact, etc.).\n2. There is significant overlapping/duplicate information across these pages.\n3. You MUST consolidate all information into a SINGLE company profile.\n4. Do NOT output a list of companies. Extract exactly ONE company object.\n5. Ignore minor differences in descriptions across pages; synthesize them into a comprehensive summary.\n\n## INFORMATION TO EXTRACT\n\n1. **Company Information:**\n   - Company name\n   - Main website URL (the root domain, e.g., https://example.com)\n   - Main business/industry\n   - Brief description of what they do\n\n2. **Products/Services:**\n   - List all products or services offered\n   - Key capabilities or specializations\n\n3. **Contact Information:**\n   - ALL email addresses found (support, sales, info, contact, etc.)\n   - Phone numbers\n   - Physical address/location\n   - Contact page URLs\n\n4. **Additional Details:**\n   - Company size (if mentioned)\n   - Year founded (if mentioned)\n   - Certifications or awards (especially R2v3, e-Stewards)\n   - Geographic coverage/service areas\n\n## VENDOR QUALIFICATION CRITERIA\n\nEvaluate if this company is a good fit for Yilong based on these 2 pillars:\n\n### PILLAR 1: INVENTORY FIT\n**Must Have:**\n- Enterprise IT assets: Laptops, Desktops, Data Center Servers, Networking Equipment, Storage\n\n**Bonus Points:**\n- Harvested components (high-value CPU, RAM, SSD/HDD)\n\n**Condition Requirements:**\n- Grade A/B (Ready for Retail) - Preferred\n- Tested Functional Grade C (Ready for Refurbishment) - Acceptable\n\n**RED FLAGS:**\n- Only handles residential recycling (curbside pickup)\n- Focuses primarily on shredding/scrap metal\n- No mention of testing or grading\n- Only handles consumer electronics (phones, tablets, TVs)\n\n### PILLAR 2: OPERATIONAL FIT\n**Business Type:**\n- Must be an ITAD Processor or Asset Recovery Firm (B2B focus)\n- NOT a retail reseller or consumer-focused recycler\n\n**Certification:**\n- R2v3 certification is highly preferred (indicates they can test/wipe data correctly)\n- e-Stewards is also acceptable\n\n**Sales Channel:**\n- Must support Wholesale / Bulk sales (Pallet/Truckload quantities)\n- If they only sell single units on eBay/Amazon to consumers, they are a BAD fit\n\n**RED FLAGS:**\n- Only residential/consumer services\n- No B2B capabilities mentioned\n- No certifications\n- Only retail sales channels\n\n## EVALUATION OUTPUT\nBased on the above criteria, provide:\n- is_good_fit: true/false - Is this company worth reaching out to?\n- inventory_fit_assessment: Detailed explanation of how they match our inventory needs\n- operational_fit_assessment: Detailed explanation of their operational capabilities\n- red_flags: List of any concerns or disqualifying factors\n- recommendation: \"Reach out\", \"Skip\", or \"Research further\"\n- reasoning: Clear explanation of why you recommend reaching out or skipping\n\nBe thorough and extract ALL contact emails you can find.\nIf information is not available, use null for that field.\n",
+  "json_schema": {
+    "properties": {
+      "company_name": {
+        "anyOf": [
+          {
+            "type": "string"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "default": null,
+        "description": "Name of the company",
+        "title": "Company Name"
+      },
+      "website_url": {
+        "anyOf": [
+          {
+            "type": "string"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "default": null,
+        "description": "Main website URL of the company (the root domain, e.g., https://example.com)",
+        "title": "Website Url"
+      },
+      "main_business": {
+        "anyOf": [
+          {
+            "type": "string"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "default": null,
+        "description": "Primary business or industry",
+        "title": "Main Business"
+      },
+      "description": {
+        "anyOf": [
+          {
+            "type": "string"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "default": null,
+        "description": "Brief description of what the company does",
+        "title": "Description"
+      },
+      "products_services": {
+        "anyOf": [
+          {
+            "items": {
+              "type": "string"
+            },
+            "type": "array"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "default": null,
+        "description": "List of products or services offered",
+        "title": "Products Services"
+      },
+      "contact_emails": {
+        "anyOf": [
+          {
+            "items": {
+              "type": "string"
+            },
+            "type": "array"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "default": null,
+        "description": "All email addresses found on the website",
+        "title": "Contact Emails"
+      },
+      "contact_phones": {
+        "anyOf": [
+          {
+            "items": {
+              "type": "string"
+            },
+            "type": "array"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "default": null,
+        "description": "All phone numbers found",
+        "title": "Contact Phones"
+      },
+      "physical_address": {
+        "anyOf": [
+          {
+            "type": "string"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "default": null,
+        "description": "Physical address or location",
+        "title": "Physical Address"
+      },
+      "year_founded": {
+        "anyOf": [
+          {
+            "type": "string"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "default": null,
+        "description": "Year the company was founded",
+        "title": "Year Founded"
+      },
+      "certifications": {
+        "anyOf": [
+          {
+            "items": {
+              "type": "string"
+            },
+            "type": "array"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "default": null,
+        "description": "Any certifications or awards mentioned",
+        "title": "Certifications"
+      },
+      "service_areas": {
+        "anyOf": [
+          {
+            "items": {
+              "type": "string"
+            },
+            "type": "array"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "default": null,
+        "description": "Geographic areas served",
+        "title": "Service Areas"
+      },
+      "summary": {
+        "anyOf": [
+          {
+            "type": "string"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "default": null,
+        "description": "A 2-3 paragraph human-readable summary of the company",
+        "title": "Summary"
+      },
+      "is_good_fit": {
+        "anyOf": [
+          {
+            "type": "boolean"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "default": null,
+        "description": "Overall assessment - Is this company worth reaching out to for Yilong's procurement needs?",
+        "title": "Is Good Fit"
+      },
+      "inventory_fit_assessment": {
+        "anyOf": [
+          {
+            "type": "string"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "default": null,
+        "description": "Detailed explanation of how the company's inventory (product types, grades, volumes) matches Yilong's requirements for enterprise IT assets",
+        "title": "Inventory Fit Assessment"
+      },
+      "operational_fit_assessment": {
+        "anyOf": [
+          {
+            "type": "string"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "default": null,
+        "description": "Detailed explanation of the company's operational capabilities (B2B focus, certifications, wholesale channels) and fit with Yilong's bulk purchasing model",
+        "title": "Operational Fit Assessment"
+      },
+      "red_flags": {
+        "anyOf": [
+          {
+            "items": {
+              "type": "string"
+            },
+            "type": "array"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "default": null,
+        "description": "List of any concerns or disqualifying factors (e.g., residential-only, no certifications, retail-only sales, scrap metal focus)",
+        "title": "Red Flags"
+      },
+      "recommendation": {
+        "anyOf": [
+          {
+            "type": "string"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "default": null,
+        "description": "Action recommendation: 'Reach out', 'Skip', or 'Research further'",
+        "title": "Recommendation"
+      },
+      "reasoning": {
+        "anyOf": [
+          {
+            "type": "string"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "default": null,
+        "description": "Clear explanation of why you recommend reaching out or skipping this vendor, based on the evaluation criteria",
+        "title": "Reasoning"
+      }
+    },
+    "title": "CompanyAnalysis",
+    "type": "object"
+  },
+  "content_sent": "# URL: https://RSD2.com\n# Welcome to\nYour trusted partner for secure and reliable data destruction services. We specialize in ensuring that your sensitive data is completely and irreversibly destroyed, protecting your business and customer privacy.\nMore content coming soon.\n###### Who we are\nRSD2 offers specialized IT asset disposition (ITAD) services, focusing on data sanitization, hard drive destruction, disposal, and shredding, all certified with data destruction certificates. We aim to provide top-tier ITAD services, prioritizing sustainability, data security, and compliance.\nWith processing facilities and international offices across the globe, RSD2 is trusted by large organizations worldwide for secure data disposal. Our data destruction equipment is capable of handling highly sensitive data.\n###### R2V3 Certified\nRSD2 is now an R2V3 Certified Recycler, demonstrating their commitment to sustainability, data security, and environmental responsibility.\nThis certification ensures that their processes meet the highest standards for responsible recycling and reuse of hardware. It reflects their dedication to protecting the environment while delivering exceptional service to their clients.\nISO Certifications\nServices Offered\n### IT Asset Disposition (ITAD)\n  * Equipment Buyback Program\n  * Certified Audit Reporting For Regulatory Compliance & Company Records\n  * Asset Decommission Services\n### Data Sanitization\n  * Data Destruction via Software Wiping\n  * Hardware Restored To Factory OEM Standards For REUSE (Highest Level of Green Initiative)\n### Physical Data Destruction\n  * Hard Drive Shredding\n  * Hard Drive Crushing\n  * Asset Recycling\nWhy Choose RSD2?\nYour browser does not support the video tag.\n## We put innovation\nfirst with RSD2\nWe are positioned to serve clients worldwide. Our certified processes ensure your data is handled with the utmost security. Operating on a circular economy model with a zero-landfill policy, we reduce costs and minimize e-waste. Trusted by large organizations, we are committed to secure data disposal.\n## Stay Compliant with\nData Protection Laws\nWe understand the importance of compliance with data protection laws. Our services are designed to help your business meet regulatory requirements and avoid costly fines. We follow best practices to ensure the highest level of compliance and security.\nCertified Destruction\nSecure Chain of Custody\nRegulatory Expertise\nFeel free to contact us via our form or email for assistance. info@rsd2.com or call us at 888-333-1330\n# URL: https://rsd2.com/articles\n# Latest News on Data Destruction and E-Waste Recycling\n###### CHECK OUT WHAT RSD2 HAS TO SAY\nAs part of our commitment to the community to providing ultra-secure data destruction and environmentally-friendly IT asset disposal, check out some of our articles below on the latest technology and research on electronic recycling, deguassing, hard-drive shredding and more!\nSearch Articles in\nAll Categories Products Articles Services\nSearch\n###### Recent Post\n### On-Site or Off-Site?\nby Nari Chiong | Nov 20, 2025\nWhen it comes to data destruction, how and where it happens makes all the difference.\n### Secure Data Destruction On Your Terms.\nby Nari Chiong | Nov 20, 2025\nWhether it's on-site or off-site, one thing is certain: your old devices can’t just sit around.\n### Data Compliance Starts with the Right Disposal Method\nby Nari Chiong | Nov 20, 2025\nChoosing between on-site and off-site data destruction? It's more than logistics.\n# URL: https://rsd2.com/contact-us\nFeel free to contact us via our form or email for assistance. info@rsd2.com or call us at 888-333-1330\n# URL: https://rsd2.com/login\nLog in to your account\nor continue with\nSign in with Google\nDon’t have an account? Register\n# URL: https://rsd2.com/our-executive-team\n# Executive Team\nTrusted leaders in secure and sustainable IT asset Disposition\nSteve Blanchard\nCEO/Co-Founder\n Linkedin ProfileView Profile\n# URL: https://rsd2.com/our-products\n# Refurbished Server & Computer Parts\nAffordable, reliable, and fully tested components sourced from certified ITAD processes.\nShop Now\nAcquire Servers, Storage, Networking, Cloud, and ITAD Equipment and Services.\n###### Refurbished Servers\nExplore our selection of professionally restored servers, offering reliable performance at cost-effective prices\n###### Storage\nDiscover our versatile storage options tailored to meet your data storage needs efficiently and security.\n###### Networking\nBrowse our range of networking equipment designed to optimize connectivity and enhance network performance.\n###### CPU\nExplore our diverse range of central processing units (CPUs), offering high-speed processing power to meet the demands of your computing tasks.\nWhy Choose RSD2?\nYour browser does not support the video tag.\n## We put innovation\nfirst with RSD2\nWe are positioned to serve clients worldwide. Our certified processes ensure your data is handled with the utmost security. Operating on a circular economy model with a zero-landfill policy, we reduce costs and minimize e-waste. Trusted by large organizations, we are committed to secure data disposal.\n## Stay Compliant with\nData Protection Laws\nWe understand the importance of compliance with data protection laws. Our services are designed to help your business meet regulatory requirements and avoid costly fines. We follow best practices to ensure the highest level of compliance and security.\nCertified Destruction\nSecure Chain of Custody\nRegulatory Expertise\n# URL: https://rsd2.com/register\nRegister your account\nor continue with\nRegister with Google\nAlready have an account? Login\n# URL: https://rsd2.com/services\n# Our Services\nAt RSD2, we offer a comprehensive range of IT asset disposition (ITAD) services designed to ensure secure data management, sustainable asset reprocessing, and industry-leading compliance\nWith our global reach and state-of the-art facilities, we are committed to helping businesses securely and responsibly manage their end-of-life IT assets.\nExplore Our Solutions\n###### IT Asset Disposition (ITAD)\nOur advance data erasure solutions ensure complete removal of sensitive information, backed by detailed audits and verification. Through our customer portal, you can track the process real time. what sets us apart is our commitment to transparancy and thoroughness, guaranteeing full data security at every step.\nEquipment\nBuyback Program\nCertified Audit\nReporting for\nRegulatory\nCompliance &\nCompany Records\nAsset\nDecommission\nServices\n###### Physical Data  Destruction\nWe provide certified physical data destruction, including hard drive shredding and other media destruction services, ensuring that all data is rendered irrecoverable. Our processes adhere to the highest industry standards, guaranteeing secure disposal of sensitive information while offering detailed destruction certificates for compliance and audit purposes. Whether it's on-site or off-site, you can trust that your data is permanently eliminated, safeguarding your business from potential breach.\nHard Drive\nShredding\nHard Drive\nCrushing\nAsset Recycling\n###### Data Sanitization\nProtect your business and sensitive information with our professional data sanitization services. We ensure that all your digital data is securely erased from storage devices, making it completely unrecoverable. From hard drives to servers and mobile devices, our process follows industry-standard protocols to safeguard your privacy, reduce security risks, and maintain compliance with data protection regulations.\nData Destruction\nvia Software Wiping\nHardware restored\nto Factory OEM\nStandard for REUSE\n(Highest Level of\nGreen Initiative)\nData Sanitization",
+  "content_length_stats": {
+    "characters": 7692,
+    "estimated_tokens": 1923,
+    "estimated_cost_input_usd": 0.000538
+  }
+}

@@ -1,0 +1,145 @@
+[
+  {
+    "company_name": "Clean Earth",
+    "website_url": "https://www.cleanearthinc.com",
+    "main_business": "Environmental and Waste Services",
+    "description": "Clean Earth is a specialty waste company providing comprehensive hazardous and non-hazardous waste disposal, recycling, and environmental remediation solutions. They offer a full-service approach for contaminated soil, dredged material, hazardous waste, and electronic waste, with a focus on recycling and beneficial reuse. They operate a national network of Treatment, Storage, and Disposal Facilities (TSDFs).",
+    "products_services": [
+      "Hazardous & Non-Hazardous Waste Disposal",
+      "Contaminated Soil Remediation",
+      "Dredged Material Processing & Beneficial Reuse",
+      "Electronic Waste Recycling & IT Asset Management (ITAD)",
+      "Aerosols, Paint, & Consumer Commodities Recycling",
+      "DEA & Pharmaceutical Waste Disposal",
+      "Universal Waste Recycling (lamps, batteries, ballasts)",
+      "Lab Packing Services",
+      "Emergency Response",
+      "Environmental Support & Professional Services",
+      "On-Site Soil Solutions",
+      "Transportation Services",
+      "Household Hazardous Waste Services",
+      "Wastewater Solutions",
+      "Fullcircle™ (Advanced Waste Lifecycle Program)",
+      "AssetSure (IT Asset Ship Direct Recycling & Data Destruction)",
+      "RecycleKits (prepaid recycling kits for small quantity generators)"
+    ],
+    "contact_emails": [
+      "recyclekits@cleanearthinc.com"
+    ],
+    "contact_phones": [
+      "877.577.2669",
+      "886.303.7344",
+      "972.627.3224",
+      "713.679.2300",
+      "866.447.5177"
+    ],
+    "physical_address": "405 Powell Street, Avalon, TX 76623, United States (One of many facility locations)",
+    "year_founded": null,
+    "certifications": [
+      "R2/RIOS Certified Electronics Recycler ™",
+      "NAID AAA Certification"
+    ],
+    "service_areas": [
+      "United States (nationwide network)"
+    ],
+    "summary": "Clean Earth is a major US-based environmental services company specializing in the treatment, recycling, and disposal of a wide range of waste streams. With over 30 years in business, they operate one of the largest networks of hazardous waste TSDFs in the country, serving industries such as construction, manufacturing, chemical, pharmaceutical, retail, and aerospace. Their services span from soil and dredge remediation to comprehensive IT Asset Disposition (ITAD) and data destruction through their AssetSure and IT Asset Management programs. They emphasize recycling and beneficial reuse, reporting that 93% of material processed in 2021 was recycled. The company holds R2/RIOS and NAID AAA certifications for its electronics recycling operations, indicating a structured, compliant approach to IT asset handling.",
+    "is_good_fit": true,
+    "inventory_fit_assessment": "Clean Earth explicitly offers IT Asset Management (ITAM) and IT Asset Disposal (ITAD) services, which aligns with Yilong's core need for enterprise IT assets. Their services include decommissioning, diagnostics, refurbishment, and certified data destruction for electronics. They mention handling 'electronics' and 'IT assets' broadly, which likely includes laptops, desktops, servers, and networking equipment from commercial sources. Their R2 certification and focus on data security suggest they test and process assets to a standard that could meet Yilong's 'Tested Functional' requirement (R2v3 F2/C3 or better). The AssetSure program is designed for remote companies and small retail locations, indicating they handle bulk shipments from business clients. A potential bonus is their mention of 'harvested components' not being explicit, but their refurbishment process includes testing key functions and could involve component-level recovery.",
+    "operational_fit_assessment": "Clean Earth operates as a B2B environmental services and ITAD processor, not a consumer reseller. Their entire service model is built around serving businesses across multiple industries (construction, manufacturing, pharmaceutical, retail, etc.). They possess the highly preferred R2/RIOS certification for electronics recycling, which is a strong indicator of proper testing, data wiping, and downstream management practices. They support wholesale/bulk operations: their transportation services handle full truckloads, they have a nationwide network for consolidation, and their AssetSure program is built for shipping company-owned electronic assets from anywhere in the US. They mention providing 'customized waste volume and costing reports' and handling projects for clients, which aligns with a B2B, volume-based sales channel.",
+    "red_flags": [
+      "ITAD is one of many service lines within a much broader environmental waste business. Their primary focus is hazardous/non-hazardous waste and soil remediation, which could mean IT assets are not their core volume driver.",
+      "No explicit mention of 'wholesale' or 'bulk sales' of tested IT assets in the context Yilong seeks (i.e., EXW purchases). Their model appears to be service-fee based for recycling/disposal, not necessarily asset resale.",
+      "The website does not explicitly detail asset grading (A/B/C) or a resale marketplace for functional units, which is central to Yilong's procurement model."
+    ],
+    "recommendation": "Research further",
+    "reasoning": "Clean Earth is a certified, nationwide B2B operator with a legitimate ITAD service arm (R2/RIOS certified), making them a potentially strong fit on paper. However, key uncertainties require clarification before a procurement outreach. It is not clear if they sell tested, functional assets in bulk (EXW) or if their business model is purely service-based (charging for recycling/destruction). A direct inquiry is needed to confirm: 1) if they sell graded, functional IT assets in pallet/truckload quantities, 2) the primary source and volume of their IT asset stream, and 3) their standard sales terms for asset recovery. Their certifications and scale make them worth investigating, but their core environmental business model means the ITAD division might not operate as a traditional wholesale asset supplier.",
+    "error": false
+  },
+  {
+    "company_name": "Arrow Green Electronics, Inc.",
+    "website_url": "https://www.e2used.com",
+    "main_business": "IT Asset Disposition (ITAD) and Data Center Equipment Recycling",
+    "description": "Arrow Green Electronics Corporation is an R2V3-certified professional company specializing in the recycling of data center equipment and Apple devices. They provide comprehensive ITAD services, including secure data erasure, asset buyback, and environmentally responsible processing. The company is equipped with professional data-erasure equipment and a dedicated team to ensure no data leakage occurs.",
+    "products_services": [
+      "ITAD Services",
+      "Data Erasure (Hard Drive Data Erasure, Physical Destruction, Data Security Verification)",
+      "Buyback/Recycling of Used IT Equipment",
+      "Data Center Equipment (Storage Systems, Servers, CPUs, Memory/RAM, LTO7-LTO8 Tape)",
+      "Apple Devices (MacBook, iPad, iPhone, iMac)",
+      "Hard Drives (SSD and Mechanical)",
+      "Networking Equipment (implied from ITAD services)"
+    ],
+    "contact_emails": [
+      "salesE2used@gmail.com"
+    ],
+    "contact_phones": [
+      "(001)831-288-3808"
+    ],
+    "physical_address": "25509 Industrial Blvd #F14 Hayward, CA 94545",
+    "year_founded": null,
+    "certifications": [
+      "R2V3"
+    ],
+    "service_areas": [],
+    "summary": "Arrow Green Electronics, Inc. is an R2V3-certified IT Asset Disposition (ITAD) and recycling company based in Hayward, California. Their core business is the professional recycling of enterprise data center equipment (servers, storage, CPUs, memory, tape drives) and Apple devices. They emphasize secure data destruction through both software erasure and physical methods, and they operate with a focus on environmental responsibility and regulatory compliance. The company presents itself as a B2B service provider, offering asset buyback, recycling, and full ITAD solutions to businesses. Contact is centralized through a single email (salesE2used@gmail.com) and phone number, with a physical address provided.",
+    "is_good_fit": true,
+    "inventory_fit_assessment": "Excellent fit. The company's primary focus is on enterprise IT assets, which aligns perfectly with Yilong's 'Must Have' criteria. They explicitly list and purchase: Data Center Servers (IBM, Lenovo, Dell EMC, HPE), Storage Systems (NetApp, Dell EMC, HP, IBM), high-value components (CPU, Memory/RAM, SSD/HDD), and LTO Tape drives. They also handle Apple devices, which are a high-value commodity. Their business model is centered on buying used equipment from businesses, indicating the inventory is sourced from enterprise environments, not consumers. While specific grading (A/B/C) is not detailed, their R2v3 certification implies a structured process for testing and data sanitization, which is a strong indicator they can provide 'Tested Functional' assets.",
+    "operational_fit_assessment": "Strong operational fit. The company is clearly a B2B-focused ITAD processor and asset recovery firm, not a retail reseller. Their R2v3 certification is a major positive, demonstrating compliance with industry standards for testing, data wiping, and environmental responsibility—this directly supports Yilong's 'High-Quality Refurbishment' model. Their service descriptions (IT asset recycling/buyback, data security destruction, environmental processing, asset management) are tailored for corporate clients. The website encourages contact for quotes and project evaluation, which is consistent with a wholesale/bulk sales channel, though explicit mention of pallet/truckload quantities is not present. The lack of retail marketplace links (eBay/Amazon) is a good sign.",
+    "red_flags": [
+      "No explicit mention of wholesale/bulk sales terminology (e.g., pallet, truckload, LTL).",
+      "Single point of contact (one email, one phone number) for a company potentially handling large volumes.",
+      "Website content has significant duplication and some formatting issues, which may indicate a less sophisticated operation."
+    ],
+    "recommendation": "Reach out",
+    "reasoning": "Arrow Green Electronics is a highly promising vendor candidate for Yilong. They meet the critical criteria: 1) They specialize in the exact enterprise IT assets Yilong purchases (servers, storage, components). 2) They hold the preferred R2v3 certification, ensuring proper testing and data sanitization processes. 3) Their business model is explicitly B2B/ITAD, not consumer-focused. The red flags are minor and typical of smaller-to-midsize operators; they do not disqualify the company. A direct conversation is needed to confirm their capacity for monthly volumes matching Yilong's $1.5M budget, their grading standards, and their willingness to sell in EXW bulk quantities. The strong inventory and certification alignment makes them worth pursuing.",
+    "error": false
+  },
+  {
+    "company_name": "Apple Fix Pros",
+    "website_url": "https://www.applefixpros.com",
+    "main_business": "Apple Device Sales, Repair, and Parts Wholesale",
+    "description": "Apple Fix Pros is a one-stop shop specializing in new and refurbished Apple Mac computers, genuine parts, repairs, and device recycling/trade-ins. They operate as both a retail/online store and a B2B wholesale supplier of genuine Apple parts to repair businesses. The company emphasizes certified technicians, same-day repairs, and operates an R2V3 certified facility.",
+    "products_services": [
+      "New Mac Sales (MacBook Air, MacBook Pro, iMac, Mac mini, Mac Studio)",
+      "Certified Refurbished Mac Sales",
+      "Open Box and Used Mac Sales",
+      "Genuine Apple Parts Wholesale (Logic Boards, Displays, Batteries, Power Supplies, etc.)",
+      "Mac Repair Services (Mail-in and In-store)",
+      "Device Trade-in / Buyback Program",
+      "Parts Finder Tool and Serial Lookup Service",
+      "Bulk/Wholesale Parts for Businesses"
+    ],
+    "contact_emails": [],
+    "contact_phones": [
+      "+1 (916) 735-5966",
+      "+1 (279) 599-0139",
+      "+1 (916) 771 0672",
+      "+1 (279) 465-7132",
+      "+1 (415) 646-5031"
+    ],
+    "physical_address": "500 Cirby Way, Suite D, Roseville, CA 95678",
+    "year_founded": "2019",
+    "certifications": [
+      "R2V3 Facility",
+      "ISO 9001",
+      "ISO 45001",
+      "ISO 14001"
+    ],
+    "service_areas": [
+      "United States",
+      "South America"
+    ],
+    "summary": "Apple Fix Pros LLC is a Roseville, California-based company specializing in the Apple ecosystem. Founded in 2019, they serve as a comprehensive provider of new, refurbished, and used Mac computers, genuine Apple parts, and repair services. They cater to both consumers and businesses, operating a significant wholesale division that supplies genuine parts to over 7,000 Apple service providers and repair centers across the United States and South America. The company highlights its certifications, including R2V3, ISO 9001, 45001, and 14001, and employs Apple Certified and CompTIA A+ certified technicians. Their business model integrates retail sales, B2B parts wholesale, and a device buyback/trade-in program, positioning them as a potential source for tested functional Apple IT assets.",
+    "is_good_fit": true,
+    "inventory_fit_assessment": "The company's inventory is a strong but specialized fit. Their primary focus is on Apple laptops (MacBook Air, MacBook Pro) and desktops (iMac, Mac mini, Mac Studio, Mac Pro), which aligns with Yilong's need for enterprise IT assets, though it excludes other brands and data center equipment. They sell devices in various conditions: 'New', 'Certified Refurb', 'Open Box', 'Premium', 'Refurbished', 'Renewed', and 'Used'. The 'Certified Refurb' and 'Tested Functional' grades (implied by their R2v3 certification and repair process) meet Yilong's acceptable condition of Grade C (Ready for Refurbishment). Their trade-in program is a direct source of used Apple devices. A bonus is their extensive inventory of harvested, high-value components like logic boards, displays, and batteries, sold as genuine parts.",
+    "operational_fit_assessment": "Operational fit is mixed but shows strong B2B potential. They are an R2v3 certified facility, which is highly preferred and indicates proper testing, data wiping, and environmental standards. They explicitly serve B2B clients, wholesaling genuine parts to thousands of repair businesses and offering bulk pricing and expedited shipping for distributors. This demonstrates wholesale/bulk sales capability. However, a significant portion of their website is dedicated to direct-to-consumer (D2C) retail sales of single units, which is a common model but doesn't preclude B2B operations. Their core services (repair, parts wholesale, buyback) are inherently B2B-focused. The lack of explicit mention of pallet/truckload sales for whole devices is a gap, but their wholesale parts operation and asset intake via trade-ins suggest scalable procurement is possible.",
+    "red_flags": [
+      "Inventory is exclusively Apple-branded (Macs and accessories), lacking diversity in other enterprise IT assets (Dell, HP, Lenovo, servers, networking).",
+      "Strong retail/D2C sales presence alongside B2B operations may indicate a primary focus on lower-volume transactions.",
+      "No explicit mention of selling bulk lots of whole devices (pallets/truckloads); bulk sales are confirmed for parts only."
+    ],
+    "recommendation": "Research Further",
+    "reasoning": "Apple Fix Pros is a qualified R2v3 certified processor with a clear B2B wholesale channel for parts and a device intake stream via trade-ins. Their specialization in Apple products is a double-edged sword: it provides a high-quality, branded inventory stream but lacks the breadth of other enterprise IT assets Yilong typically deals with. The recommendation is to 'Research Further' to clarify their capacity and willingness to sell bulk quantities of whole, tested functional Apple devices (not just parts) via EXW terms. A direct inquiry could determine if they can consistently supply pallet quantities of MacBooks and iMacs from their trade-in and refurbishment pipeline, which would make them a valuable niche supplier within Yilong's portfolio.",
+    "error": false
+  }
+]

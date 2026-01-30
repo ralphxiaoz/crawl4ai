@@ -1,0 +1,56 @@
+[
+  {
+    "company_name": "CCQT Inc.",
+    "website_url": "https://ccqtinc.com",
+    "main_business": "Electronics Distribution & Recycling / IT Asset Disposition (ITAD)",
+    "description": "CCQT Inc. is an R2v3 certified international wholesaler providing comprehensive ITAD services, data security solutions, and sustainable electronics trading worldwide. They offer a complete electronics lifecycle solution, from responsible recycling and asset recovery to global mineral trading through their CCQT Minerals division. The company operates with a B2B focus, serving clients in over 22 countries from strategic facilities in Canada and the USA.",
+    "products_services": [
+      "R2v3 Process (Responsible Recycling)",
+      "IT Asset Disposition (ITAD)",
+      "Data Security (NIST SP 800-88 Compliant Destruction)",
+      "Asset Buyback Program",
+      "Asset Grading (A, B, C System)",
+      "Scrap Collection",
+      "Minerals Trading (Sulfur, Phosphate Rock, Iron Ore)"
+    ],
+    "contact_emails": [
+      "sales@ccqtinc.com",
+      "purchasing@ccqtinc.com",
+      "data@ccqtinc.com",
+      "scrap@ccqtinc.com",
+      "Minerals@ccqtinc.com"
+    ],
+    "contact_phones": [
+      "310-730-7779",
+      "403-475-7779",
+      "289-497-7779",
+      "213-797-7779"
+    ],
+    "physical_address": "2915 21 ST NE, Suite 112, T2E 7T1, Calgary, Alberta, Canada (Headquarters); 66 E Escalon Ave, Fresno, CA, 93710 (US Operations)",
+    "year_founded": "2021",
+    "certifications": [
+      "R2v3 Certification",
+      "NIST SP 800-88 Compliance",
+      "PJR (Partnership for Joint Research) Certification",
+      "RIOS (Recycling Industry Operating Standard) Certification",
+      "ANAB Accreditation",
+      "Blackbelt Certified Training"
+    ],
+    "service_areas": [
+      "United States",
+      "Canada",
+      "Global (22+ countries)"
+    ],
+    "summary": "CCQT Inc. is a Canadian corporation and global leader in electronics distribution and recycling, founded in 2021. As an R2v3 certified wholesaler, they provide comprehensive IT Asset Disposition (ITAD) services, data security, asset buyback, and scrap collection. They operate with a strong B2B focus, serving enterprise clients worldwide from facilities in Calgary, Alberta, and Fresno, California. Their services are built around a transparent asset grading system (A, B, C) and strict compliance with environmental and data security standards like NIST SP 800-88. In 2023, they expanded into global mineral trading through their CCQT Minerals division, sourcing and trading sulfur, phosphate rock, and iron ore. The company is led by a family-run team and has demonstrated rapid growth, exporting 50,000 units of used electronics worldwide by 2023.",
+    "is_good_fit": true,
+    "inventory_fit_assessment": "Excellent fit. CCQT Inc. explicitly handles the core enterprise IT assets Yilong requires: laptops, desktops, servers, networking equipment, and components (hard drives, RAM, GPUs). They have a structured, transparent asset grading system (A, B, C) for both mobile phones and laptops, which aligns perfectly with Yilong's 'Tested Functional' requirement (Grade C is defined as 'Suitable for Refurbishment'). Their buyback program and ITAD services confirm they source these assets in bulk from corporate clients. They also process harvested components and have the volume capacity, handling 200,000+ pounds of electronic scrap monthly and exporting 200,000+ units worldwide.",
+    "operational_fit_assessment": "Strong operational fit. CCQT is a certified ITAD processor with a clear B2B focus, serving corporate, government, and institutional clients. They hold the highly preferred R2v3 certification, along with NIST SP 800-88 compliance for data destruction, indicating proper testing and wiping procedures. Their business model is built on wholesale and bulk transactions, as evidenced by their global distribution network, bulk scrap purchasing capacity (200K lbs/month), and coordination of pallet/truckload logistics for pickups. They are not a retail reseller; their sales channel is through a 'large network of international sales experts' and wholesale partners.",
+    "red_flags": [
+      "The company has a significant secondary business division (CCQT Minerals) unrelated to ITAD, which might indicate divided focus or resources.",
+      "While they have a US facility, their headquarters and primary registration are in Canada, which may add complexity to US-based EXW transactions."
+    ],
+    "recommendation": "Reach out",
+    "reasoning": "CCQT Inc. is a highly qualified vendor that meets or exceeds all of Yilong's core criteria. They are an R2v3 certified ITAD processor with a B2B wholesale model, handling the exact enterprise asset types and grades (A/B/C) Yilong requires in bulk quantities. Their certifications guarantee proper testing and data wiping, and their operational scale matches Yilong's purchasing budget. The minor red flags (minerals division, Canadian HQ) do not outweigh their strong alignment with Pillar 1 (Inventory Fit) and Pillar 2 (Operational Fit). They are a prime candidate for a bulk purchasing partnership.",
+    "error": false
+  }
+]

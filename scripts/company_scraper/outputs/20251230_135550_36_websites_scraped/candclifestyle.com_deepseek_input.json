@@ -1,0 +1,278 @@
+{
+  "metadata": {
+    "timestamp": "2025-12-30 13:58:52",
+    "website_url": "https://candclifestyle.com",
+    "model": "deepseek/deepseek-chat",
+    "temperature": 0.7,
+    "max_tokens": 4000,
+    "content_filtered": true,
+    "original_size_chars": 13323,
+    "sent_size_chars": 6371,
+    "reduction_percent": 52.2
+  },
+  "system_prompt": "## YOUR ROLE\nYou are a Senior Procurement Consultant for Yilong Business Limited, a high-volume IT Asset Disposition (ITAD) trading firm.\nYour goal is to evaluate potential US-based vendors to see if they fit our supply chain requirements.\n\n## CONTEXT - WHO WE ARE (THE BUYER)\n- Company: Yilong Business Limited (Hong Kong-based with US operations)\n- Business Model: We purchase used IT assets in bulk (Ex Works - EXW) from US facilities and export them to established downstream markets in Hong Kong, Mainland China, and Southeast Asia\n- Volume: We have a purchasing budget of ~$1.5M per month ($10M–$20M annually)\n- Compliance: We operate a strict \"High-Quality Refurbishment\" model. We do NOT export e-waste. We require assets to be \"Tested Functional\" (R2v3 F2/C3 or better)\n\n## YOUR TASK\nYou are analyzing a company website. The provided content belongs to ONE SINGLE company.\nAll URLs are under the same root domain.\nThe content contains text from multiple pages, separated by \"# URL: \".\n\nCRITICAL INSTRUCTIONS:\n1. The crawl covers multiple pages (Home, About, Contact, etc.).\n2. There is significant overlapping/duplicate information across these pages.\n3. You MUST consolidate all information into a SINGLE company profile.\n4. Do NOT output a list of companies. Extract exactly ONE company object.\n5. Ignore minor differences in descriptions across pages; synthesize them into a comprehensive summary.\n\n## INFORMATION TO EXTRACT\n\n1. **Company Information:**\n   - Company name\n   - Main website URL (the root domain, e.g., https://example.com)\n   - Main business/industry\n   - Brief description of what they do\n\n2. **Products/Services:**\n   - List all products or services offered\n   - Key capabilities or specializations\n\n3. **Contact Information:**\n   - ALL email addresses found (support, sales, info, contact, etc.)\n   - Phone numbers\n   - Physical address/location\n   - Contact page URLs\n\n4. **Additional Details:**\n   - Company size (if mentioned)\n   - Year founded (if mentioned)\n   - Certifications or awards (especially R2v3, e-Stewards)\n   - Geographic coverage/service areas\n\n## VENDOR QUALIFICATION CRITERIA\n\nEvaluate if this company is a good fit for Yilong based on these 2 pillars:\n\n### PILLAR 1: INVENTORY FIT\n**Must Have:**\n- Enterprise IT assets: Laptops, Desktops, Data Center Servers, Networking Equipment, Storage\n\n**Bonus Points:**\n- Harvested components (high-value CPU, RAM, SSD/HDD)\n\n**Condition Requirements:**\n- Grade A/B (Ready for Retail) - Preferred\n- Tested Functional Grade C (Ready for Refurbishment) - Acceptable\n\n**RED FLAGS:**\n- Only handles residential recycling (curbside pickup)\n- Focuses primarily on shredding/scrap metal\n- No mention of testing or grading\n- Only handles consumer electronics (phones, tablets, TVs)\n\n### PILLAR 2: OPERATIONAL FIT\n**Business Type:**\n- Must be an ITAD Processor or Asset Recovery Firm (B2B focus)\n- NOT a retail reseller or consumer-focused recycler\n\n**Certification:**\n- R2v3 certification is highly preferred (indicates they can test/wipe data correctly)\n- e-Stewards is also acceptable\n\n**Sales Channel:**\n- Must support Wholesale / Bulk sales (Pallet/Truckload quantities)\n- If they only sell single units on eBay/Amazon to consumers, they are a BAD fit\n\n**RED FLAGS:**\n- Only residential/consumer services\n- No B2B capabilities mentioned\n- No certifications\n- Only retail sales channels\n\n## EVALUATION OUTPUT\nBased on the above criteria, provide:\n- is_good_fit: true/false - Is this company worth reaching out to?\n- inventory_fit_assessment: Detailed explanation of how they match our inventory needs\n- operational_fit_assessment: Detailed explanation of their operational capabilities\n- red_flags: List of any concerns or disqualifying factors\n- recommendation: \"Reach out\", \"Skip\", or \"Research further\"\n- reasoning: Clear explanation of why you recommend reaching out or skipping\n\nBe thorough and extract ALL contact emails you can find.\nIf information is not available, use null for that field.\n",
+  "json_schema": {
+    "properties": {
+      "company_name": {
+        "anyOf": [
+          {
+            "type": "string"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "default": null,
+        "description": "Name of the company",
+        "title": "Company Name"
+      },
+      "website_url": {
+        "anyOf": [
+          {
+            "type": "string"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "default": null,
+        "description": "Main website URL of the company (the root domain, e.g., https://example.com)",
+        "title": "Website Url"
+      },
+      "main_business": {
+        "anyOf": [
+          {
+            "type": "string"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "default": null,
+        "description": "Primary business or industry",
+        "title": "Main Business"
+      },
+      "description": {
+        "anyOf": [
+          {
+            "type": "string"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "default": null,
+        "description": "Brief description of what the company does",
+        "title": "Description"
+      },
+      "products_services": {
+        "anyOf": [
+          {
+            "items": {
+              "type": "string"
+            },
+            "type": "array"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "default": null,
+        "description": "List of products or services offered",
+        "title": "Products Services"
+      },
+      "contact_emails": {
+        "anyOf": [
+          {
+            "items": {
+              "type": "string"
+            },
+            "type": "array"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "default": null,
+        "description": "All email addresses found on the website",
+        "title": "Contact Emails"
+      },
+      "contact_phones": {
+        "anyOf": [
+          {
+            "items": {
+              "type": "string"
+            },
+            "type": "array"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "default": null,
+        "description": "All phone numbers found",
+        "title": "Contact Phones"
+      },
+      "physical_address": {
+        "anyOf": [
+          {
+            "type": "string"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "default": null,
+        "description": "Physical address or location",
+        "title": "Physical Address"
+      },
+      "year_founded": {
+        "anyOf": [
+          {
+            "type": "string"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "default": null,
+        "description": "Year the company was founded",
+        "title": "Year Founded"
+      },
+      "certifications": {
+        "anyOf": [
+          {
+            "items": {
+              "type": "string"
+            },
+            "type": "array"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "default": null,
+        "description": "Any certifications or awards mentioned",
+        "title": "Certifications"
+      },
+      "service_areas": {
+        "anyOf": [
+          {
+            "items": {
+              "type": "string"
+            },
+            "type": "array"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "default": null,
+        "description": "Geographic areas served",
+        "title": "Service Areas"
+      },
+      "summary": {
+        "anyOf": [
+          {
+            "type": "string"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "default": null,
+        "description": "A 2-3 paragraph human-readable summary of the company",
+        "title": "Summary"
+      },
+      "is_good_fit": {
+        "anyOf": [
+          {
+            "type": "boolean"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "default": null,
+        "description": "Overall assessment - Is this company worth reaching out to for Yilong's procurement needs?",
+        "title": "Is Good Fit"
+      },
+      "inventory_fit_assessment": {
+        "anyOf": [
+          {
+            "type": "string"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "default": null,
+        "description": "Detailed explanation of how the company's inventory (product types, grades, volumes) matches Yilong's requirements for enterprise IT assets",
+        "title": "Inventory Fit Assessment"
+      },
+      "operational_fit_assessment": {
+        "anyOf": [
+          {
+            "type": "string"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "default": null,
+        "description": "Detailed explanation of the company's operational capabilities (B2B focus, certifications, wholesale channels) and fit with Yilong's bulk purchasing model",
+        "title": "Operational Fit Assessment"
+      },
+      "red_flags": {
+        "anyOf": [
+          {
+            "items": {
+              "type": "string"
+            },
+            "type": "array"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "default": null,
+        "description": "List of any concerns or disqualifying factors (e.g., residential-only, no certifications, retail-only sales, scrap metal focus)",
+        "title": "Red Flags"
+      },
+      "recommendation": {
+        "anyOf": [
+          {
+            "type": "string"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "default": null,
+        "description": "Action recommendation: 'Reach out', 'Skip', or 'Research further'",
+        "title": "Recommendation"
+      },
+      "reasoning": {
+        "anyOf": [
+          {
+            "type": "string"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "default": null,
+        "description": "Clear explanation of why you recommend reaching out or skipping this vendor, based on the evaluation criteria",
+        "title": "Reasoning"
+      }
+    },
+    "title": "CompanyAnalysis",
+    "type": "object"
+  },
+  "content_sent": "# URL: https://candclifestyle.com\nSkip to content\n# Home\n  * Products\n  * Certiflcate\n## **Our Service**\n**As a R2V3 certified company, C & C Lifestyle Inc is dedicated to repurpose used or retired electronics and materials by bringing them back to life and extracting it’s surplus-value. **\n### Custom Tailoled Solutions\nAllow**C & C Lifestyle Inc** design a program for your company that eliminates the risk of data breaches while increasing your profits. We have established partnerships with R2V3 certified downstream companies to develop solutions to ensure your recycling processes run more efficiently and safely.\n### Driverse Sales Network\nThe team at **C &C Lifestyle Inc** has built a unique collaborative supply chain, including R2V3 certified partners in different states. This supply chain allows us to provide your company with the most profitable solutions.\n### Asset Recovery\nExcess inventory is a key component of our company. Partnering with sellers in other countries, we are able to create the highest value for your company’s excess product, and we emphasize consistency and accuracy in all steps of our process.\n### Reverse Logistics\n**C & C Lifestyle Inc**‘s downstream supply chain is very complete. Devices can be safely and effectively guaranteed, while ensuring our customer to generate maximum revenue. Our streamlined processes ensure less equipment errors, and we monitor the final step until the waste enters the furnace.\n### Data Sanitization\nMaintaining a variety of proven processes and the most advanced technology available, **C & C Lifestyle Inc** ensures all existing data is sanitized from devices in the most secure way. Records are kept in each step of the erasure process and we only use industry accredited sanitization and verification solutions.\n### Recycling\nC & C Lifestyle Inc** will rationally extract maximum value while avoiding environmental impact and minimizing waste. By cooperating with downstream recyclers that comply with R2V3, the process of refurbishment, repair and recycling of equipment is within control.\n## **Our Products**\n### ****Who We Are****\nMembers in C & C Lifestyle Inc has been in the business since the relase of iPhone 3. We evolved through many digital transitions, continuing to stay one step ahead. Our team has witnessed numerous changes in the industry throughout the years and has become an integral part, while ensuring limited environmental impact. Our leadership team brings decades of experience in the wireless business and we’re proud to say that we’ve renewed and removed data from millions of devices. Throughout our combined years in business, we’ve stood the test of time and have fostered relationships in all aspects of the wireless business. Today, we’re grateful to have industry partners that trust and rely on us. Thanks to a uniquely diverse team, we are able to constantly educate our team on the most environmentally efficient practices with the utmost value placed on their health and safety.\nThe impacts of electronic waste on the environment transcend communities throughout the world. That is why we have a responsibility to safely repurpose products that would otherwise be discarded. Through our relationships with our partners, we have the ability to reclaim and repurpose most wireless devices. Devices that are unusable are stripped of their components and the individual pieces can be reused or recycled. We believe every device we divert from landfills makes an impact and reinforces our core beliefs to our team, partners and customers. Each repurposed device in the hands of a new owner, enriches global connectivity while contributing to sustainable change.\nOur legacy is important to us. Sustainability, experience, quality, and adaptability strengthen that legacy and drive our business forward.\n### **What We Do**\nWe work with different manufacturers, companies, and schools to help handle their unwanted equipments: including computers, mobile phones, accessories and other office equipments. Customer data security is extreamly important. We have been strictly abiding by and implementing the R2 V3 procedures to clear data from all devices, protect all sensitive information for customers, repaire/renew hardwares as many as possible, and use the most environmentally friendly and scientific methods. Our downsteam will recycle materials from non working equipments to avoid contamination and waste. Our company also attaches great importance to the safety of team employees. They’re all precious assets of the company. We grow and work together for the health of the earth.\nEMail:sales@candclifestyle.com\nPhone:[+1 (408) 372-7685](tel:+1%20\\(408\\)%20372-7685)\n### Leave a Reply Cancel reply\nYour email address will not be published. Required fields are marked *\nComment *\nName *\nEmail *\nWebsite\nSave my name, email, and website in this browser for the next time I comment.\n# URL: https://candclifestyle.com/index.php/certiflcate\nSkip to content\n# Home\n  * Products\n  * Certiflcate\n# Certiflcate\n# URL: https://candclifestyle.com/index.php/products\nSkip to content\n# Home\n  * Products\n  * Certiflcate\n# Products\nFitbit Versa 4 Pink Fitbit charge 2 Fitbit Versa Fitbit Versa Lite .pdf)Fitbit Charge 5.pdf) Fitbit Sense Fitbit alta HR Fitbit Charge 4 Fitbit Versa 3 Fitbit Versa 2 Fitbit LuxeFitbit Luxe Fitbit Sense 2 Fitbit Inspire2 Fitbit Inspire3 Fitbit charge 6\n# URL: https://candclifestyle.com/pdf/Fitbit%20Charge%204.pdf\n# URL: https://candclifestyle.com/pdf/Fitbit%20Sense%20User%20Manual.pdf\n# URL: https://candclifestyle.com/pdf/Fitbit%20Versa%202%20User%20Manual.pdf\n# URL: https://candclifestyle.com/pdf/Luxe%20User%20Manual%20-%20Version%201.10.pdf\n# URL: https://candclifestyle.com/pdf/Versa%204%20User%20Manual%20-%20Version%202.1.pdf\n# URL: https://candclifestyle.com/pdf/charge-6.pdf\n# URL: https://candclifestyle.com/pdf/fitbit%20Alta%20HR.pdf\n# URL: https://candclifestyle.com/pdf/fitbit%20sense%202%20manual.pdf\n# URL: https://candclifestyle.com/pdf/inspire-2.pdf\n# URL: https://candclifestyle.com/pdf/inspire-3.pdf\n# URL: https://candclifestyle.com/pdf/manual_charge_2_en_US.pdf\n# URL: https://candclifestyle.com/pdf/manual_charge_5_en_US%20(4).pdf\n# URL: https://candclifestyle.com/pdf/manual_versa%201_US.pdf\n# URL: https://candclifestyle.com/pdf/manual_versa_lite_en_US.pdf\n# URL: https://www.candclifestyle.com/pdf/versa3.pdf",
+  "content_length_stats": {
+    "characters": 6371,
+    "estimated_tokens": 1592,
+    "estimated_cost_input_usd": 0.000446
+  }
+}

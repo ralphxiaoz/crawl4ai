@@ -1,0 +1,278 @@
+{
+  "metadata": {
+    "timestamp": "2025-12-30 14:23:18",
+    "website_url": "https://www.tuveinc.com",
+    "model": "deepseek/deepseek-chat",
+    "temperature": 0.7,
+    "max_tokens": 4000,
+    "content_filtered": true,
+    "original_size_chars": 20564,
+    "sent_size_chars": 8977,
+    "reduction_percent": 56.3
+  },
+  "system_prompt": "## YOUR ROLE\nYou are a Senior Procurement Consultant for Yilong Business Limited, a high-volume IT Asset Disposition (ITAD) trading firm.\nYour goal is to evaluate potential US-based vendors to see if they fit our supply chain requirements.\n\n## CONTEXT - WHO WE ARE (THE BUYER)\n- Company: Yilong Business Limited (Hong Kong-based with US operations)\n- Business Model: We purchase used IT assets in bulk (Ex Works - EXW) from US facilities and export them to established downstream markets in Hong Kong, Mainland China, and Southeast Asia\n- Volume: We have a purchasing budget of ~$1.5M per month ($10M–$20M annually)\n- Compliance: We operate a strict \"High-Quality Refurbishment\" model. We do NOT export e-waste. We require assets to be \"Tested Functional\" (R2v3 F2/C3 or better)\n\n## YOUR TASK\nYou are analyzing a company website. The provided content belongs to ONE SINGLE company.\nAll URLs are under the same root domain.\nThe content contains text from multiple pages, separated by \"# URL: \".\n\nCRITICAL INSTRUCTIONS:\n1. The crawl covers multiple pages (Home, About, Contact, etc.).\n2. There is significant overlapping/duplicate information across these pages.\n3. You MUST consolidate all information into a SINGLE company profile.\n4. Do NOT output a list of companies. Extract exactly ONE company object.\n5. Ignore minor differences in descriptions across pages; synthesize them into a comprehensive summary.\n\n## INFORMATION TO EXTRACT\n\n1. **Company Information:**\n   - Company name\n   - Main website URL (the root domain, e.g., https://example.com)\n   - Main business/industry\n   - Brief description of what they do\n\n2. **Products/Services:**\n   - List all products or services offered\n   - Key capabilities or specializations\n\n3. **Contact Information:**\n   - ALL email addresses found (support, sales, info, contact, etc.)\n   - Phone numbers\n   - Physical address/location\n   - Contact page URLs\n\n4. **Additional Details:**\n   - Company size (if mentioned)\n   - Year founded (if mentioned)\n   - Certifications or awards (especially R2v3, e-Stewards)\n   - Geographic coverage/service areas\n\n## VENDOR QUALIFICATION CRITERIA\n\nEvaluate if this company is a good fit for Yilong based on these 2 pillars:\n\n### PILLAR 1: INVENTORY FIT\n**Must Have:**\n- Enterprise IT assets: Laptops, Desktops, Data Center Servers, Networking Equipment, Storage\n\n**Bonus Points:**\n- Harvested components (high-value CPU, RAM, SSD/HDD)\n\n**Condition Requirements:**\n- Grade A/B (Ready for Retail) - Preferred\n- Tested Functional Grade C (Ready for Refurbishment) - Acceptable\n\n**RED FLAGS:**\n- Only handles residential recycling (curbside pickup)\n- Focuses primarily on shredding/scrap metal\n- No mention of testing or grading\n- Only handles consumer electronics (phones, tablets, TVs)\n\n### PILLAR 2: OPERATIONAL FIT\n**Business Type:**\n- Must be an ITAD Processor or Asset Recovery Firm (B2B focus)\n- NOT a retail reseller or consumer-focused recycler\n\n**Certification:**\n- R2v3 certification is highly preferred (indicates they can test/wipe data correctly)\n- e-Stewards is also acceptable\n\n**Sales Channel:**\n- Must support Wholesale / Bulk sales (Pallet/Truckload quantities)\n- If they only sell single units on eBay/Amazon to consumers, they are a BAD fit\n\n**RED FLAGS:**\n- Only residential/consumer services\n- No B2B capabilities mentioned\n- No certifications\n- Only retail sales channels\n\n## EVALUATION OUTPUT\nBased on the above criteria, provide:\n- is_good_fit: true/false - Is this company worth reaching out to?\n- inventory_fit_assessment: Detailed explanation of how they match our inventory needs\n- operational_fit_assessment: Detailed explanation of their operational capabilities\n- red_flags: List of any concerns or disqualifying factors\n- recommendation: \"Reach out\", \"Skip\", or \"Research further\"\n- reasoning: Clear explanation of why you recommend reaching out or skipping\n\nBe thorough and extract ALL contact emails you can find.\nIf information is not available, use null for that field.\n",
+  "json_schema": {
+    "properties": {
+      "company_name": {
+        "anyOf": [
+          {
+            "type": "string"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "default": null,
+        "description": "Name of the company",
+        "title": "Company Name"
+      },
+      "website_url": {
+        "anyOf": [
+          {
+            "type": "string"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "default": null,
+        "description": "Main website URL of the company (the root domain, e.g., https://example.com)",
+        "title": "Website Url"
+      },
+      "main_business": {
+        "anyOf": [
+          {
+            "type": "string"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "default": null,
+        "description": "Primary business or industry",
+        "title": "Main Business"
+      },
+      "description": {
+        "anyOf": [
+          {
+            "type": "string"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "default": null,
+        "description": "Brief description of what the company does",
+        "title": "Description"
+      },
+      "products_services": {
+        "anyOf": [
+          {
+            "items": {
+              "type": "string"
+            },
+            "type": "array"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "default": null,
+        "description": "List of products or services offered",
+        "title": "Products Services"
+      },
+      "contact_emails": {
+        "anyOf": [
+          {
+            "items": {
+              "type": "string"
+            },
+            "type": "array"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "default": null,
+        "description": "All email addresses found on the website",
+        "title": "Contact Emails"
+      },
+      "contact_phones": {
+        "anyOf": [
+          {
+            "items": {
+              "type": "string"
+            },
+            "type": "array"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "default": null,
+        "description": "All phone numbers found",
+        "title": "Contact Phones"
+      },
+      "physical_address": {
+        "anyOf": [
+          {
+            "type": "string"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "default": null,
+        "description": "Physical address or location",
+        "title": "Physical Address"
+      },
+      "year_founded": {
+        "anyOf": [
+          {
+            "type": "string"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "default": null,
+        "description": "Year the company was founded",
+        "title": "Year Founded"
+      },
+      "certifications": {
+        "anyOf": [
+          {
+            "items": {
+              "type": "string"
+            },
+            "type": "array"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "default": null,
+        "description": "Any certifications or awards mentioned",
+        "title": "Certifications"
+      },
+      "service_areas": {
+        "anyOf": [
+          {
+            "items": {
+              "type": "string"
+            },
+            "type": "array"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "default": null,
+        "description": "Geographic areas served",
+        "title": "Service Areas"
+      },
+      "summary": {
+        "anyOf": [
+          {
+            "type": "string"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "default": null,
+        "description": "A 2-3 paragraph human-readable summary of the company",
+        "title": "Summary"
+      },
+      "is_good_fit": {
+        "anyOf": [
+          {
+            "type": "boolean"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "default": null,
+        "description": "Overall assessment - Is this company worth reaching out to for Yilong's procurement needs?",
+        "title": "Is Good Fit"
+      },
+      "inventory_fit_assessment": {
+        "anyOf": [
+          {
+            "type": "string"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "default": null,
+        "description": "Detailed explanation of how the company's inventory (product types, grades, volumes) matches Yilong's requirements for enterprise IT assets",
+        "title": "Inventory Fit Assessment"
+      },
+      "operational_fit_assessment": {
+        "anyOf": [
+          {
+            "type": "string"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "default": null,
+        "description": "Detailed explanation of the company's operational capabilities (B2B focus, certifications, wholesale channels) and fit with Yilong's bulk purchasing model",
+        "title": "Operational Fit Assessment"
+      },
+      "red_flags": {
+        "anyOf": [
+          {
+            "items": {
+              "type": "string"
+            },
+            "type": "array"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "default": null,
+        "description": "List of any concerns or disqualifying factors (e.g., residential-only, no certifications, retail-only sales, scrap metal focus)",
+        "title": "Red Flags"
+      },
+      "recommendation": {
+        "anyOf": [
+          {
+            "type": "string"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "default": null,
+        "description": "Action recommendation: 'Reach out', 'Skip', or 'Research further'",
+        "title": "Recommendation"
+      },
+      "reasoning": {
+        "anyOf": [
+          {
+            "type": "string"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "default": null,
+        "description": "Clear explanation of why you recommend reaching out or skipping this vendor, based on the evaluation criteria",
+        "title": "Reasoning"
+      }
+    },
+    "title": "CompanyAnalysis",
+    "type": "object"
+  },
+  "content_sent": "# URL: https://www.tuveinc.com\n#  Sustainable, Responsible, Ethical Device Management\nA recommerce company specializing in returning cellphones to the device life-cycle.\n## Who we are\nWe are a leading provider of sustainable and innovative solutions for the disposition of used electronics. Our mission is to create value for our clients while promoting a circular economy and protecting the environment. With our state-of-the-art facility, experienced technicians, and rigorous testing and grading processes, we ensure that our clients receive the highest level of service and quality. We are committed to ethical and responsible practices, adhering to local and international environmental regulations, and promoting transparency and accountability in all of our operations.\n## Our Process\n### Procurement\nDevices are sourced from trusted suppliers; the industries largest carriers, retailers and OEMs.\n####  Distribution\nDevices are distributed globally to businesses, following strict guidelines for ethical and responsible transactions.\n####  Repair/Refurbish/Recycle\nDevices that have reached their end of life are responsibly recycled, redirecting electronic waste from the environment..\n####  Data Sanitization\nAll personal information is securely erased using strict procedures.\n####  Diagnostics and Grading\nDevices are diagnosed and graded based on a 60-point issue identification system.\n##  Our Certifications\n  R2V3\nRIO2016\n# URL: https://tuveinc.com/about-us.html\n#  About Us\n##  Who We Are\nTUVE is a recommerce company with over a decade of experience in the procurement and refurbishment of cellphones. Our focus is on providing sustainable and innovative solutions for the disposition of used electronics while promoting environmental sustainability, responsible data management, and ethical business practices.\n##  Our Method\nAs a Seri R2v3 certified company, we adhere to the industry's highest standards for responsible recycling and environmental stewardship. Our state-of-the-art facilities and experienced team of technicians thoroughly inspect, test, and erase each device to ensure it meets our rigorous quality and performance requirements.\nWe work closely with trusted carriers, distributors, and manufacturers to source devices, prioritizing the recovery of value from their assets while tailoring solutions to our suppliers' specific needs. Upon receiving devices, we immediately begin the data sanitization process, following strict procedures to securely erase all personal information from each device using industry-leading data sanitization software. If software sanitization is not possible, we perform physical data destruction to ensure complete data security.\nOur experienced technicians then use a 60-point issue identification system to diagnose devices and grade them based on functional and cosmetic condition. After grading, devices are repaired to our standards of quality and performance. Those that have reached their end of life are responsibly recycled in accordance with our Downstream Recycling Chain Procedure and local and international environmental regulations.\nOur experienced technicians then use a 60-point issue identification system to diagnose devices and grade them based on functional and cosmetic condition. After grading, devices are repaired to our standards of quality and performance. Those that have reached their end of life are responsibly recycled in accordance with our Downstream Recycling Chain Procedure and local and international environmental regulations.\n##  Our Mission\nOur focus on restoring each device to working condition helps to reduce electronic waste and extend the lifespan of valuable technology. We conduct all transactions ethically and responsibly, adhering to international trade requirements, and follow strict guidelines in determining who we sell to. Our global sales channels ensure that our inventory is distributed to businesses worldwide.\nTUVE is committed to promoting a circular economy, protecting the environment, and providing the highest level of service and quality to our customers and partners.\n# URL: https://tuveinc.com/contact-us.html\n#  Contact Us\n##  Get in touch with us\n# URL: https://tuveinc.com/policies.html\n#  Policies\n####  Code of Conduct and Ethics\n####  Data Sanitization Plan and Procedure\n####  Downstream Recycling Chain Procedure\n####  Environmental & Social Impact\n####  QEH&S Policy\n####  Universal Waste Procedure\n####  Vendor Code of Conduct\n# URL: https://tuveinc.com/solutions.html\n# Solutions\n##  Device Life-Cycle Management\nWe specialize in managing each stage of the device life-cycle, tailoring the process to your specific needs at each step. We work closely with our partners to ensure their unique standards for proper device management are adhered to, and the maximum value is recovered from their devices.\n##  Boutique Services at Scale\nWe provide boutique device lifecycle management services at scale, which means we cater to the specific needs of each of our customers while still maintaining the ability to handle large volumes of devices. Our personalized approach ensures that each device is handled with care and attention to detail, from the moment it arrives until its final disposition.\n##  High Industry Standards\nWe adhere to the highest industry standards in device lifecycle management, including responsible recycling and environmental stewardship. Our processes are designed to maximize the value of each device while minimizing the environmental impact. We are certified as a Seri R2v3 company, which means we follow the industry's highest standards for responsible recycling and environmental stewardship.\n##  Specialized and Experienced\nOur team of specialized and experienced professionals is dedicated to providing the best possible device lifecycle management solutions. Our experts have years of experience in the industry and are trained to handle all types of devices. We use the latest tools and technologies to ensure that each device is processed efficiently and effectively. We are committed to providing our customers with the highest level of service and support throughout the device lifecycle management process.\n##  Data Management\nWe take data management seriously and offer comprehensive solutions for secure erasure of sensitive information from all devices. We utilize logical data sanitization and physical data destruction techniques, following strict protocols set forth by industry standards. Our cloud reporting system captures all destruction activities, ensuring complete and transparent data destruction.\n##  Logical Data Sanitization\nOur logical data sanitization process follows strict industry-leading procedures to securely erase all personal information from each device. Our experienced technicians use advanced data sanitization software to ensure complete data security. We also provide a Certificate of Data Sanitization, documenting the erasure of all data from each device.\n##  Physical Data Destruction\nWhen logical data sanitization is not possible, we provide physical data destruction services to ensure complete data security. Our experienced technicians use specialized equipment and techniques to physically destroy the devices, rendering them unusable and ensuring the complete destruction of any personal data.\n##  Cloud Reporting\nOur cloud reporting services enable our customers to securely access and manage their device inventory and data sanitization reports from anywhere in the world. This cloud-based platform provides real-time reporting and inventory tracking, as well as detailed audit logs and compliance reporting.\n##  Test, Grade, and Repair\nOur experienced team of technicians thoroughly inspects and tests each device to ensure it meets our standards for cosmetic and functional grading. Repairs are performed on devices to restore key functionalities.\n##  Testing\nOur device testing process is comprehensive, covering both hardware and software functionality. Our experienced technicians analyze the performance of key components, replaced parts or manufacturer equipment, and run a full suite of software diagnostics to ensure the device is operating at optimal levels.\n##  Grading\nWe are committed to providing transparent and accurate grading of all devices. Our device grading process combines hardware and software functionality testing with 360-degree cosmetic standards. This allows our customers and partners to maximize asset recovery. By incorporating detailed grading and inspection standards, we ensure that our inventory is accurately represented and meets the needs of our buyers.\n##  Repairing\nRepairs are performed by experienced technicians, allowing us to restore key functionalities and extend the life of each device. We prioritize the repair of components that impact the overall functionality and performance of the device. With this approach, we are able to confidently provide 45-day functionality warranties on all devices.",
+  "content_length_stats": {
+    "characters": 8977,
+    "estimated_tokens": 2244,
+    "estimated_cost_input_usd": 0.000628
+  }
+}

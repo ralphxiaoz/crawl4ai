@@ -1,0 +1,184 @@
+{
+  "metadata": {
+    "timestamp": "2025-12-29 23:08:29",
+    "website_url": "https://airlinkdistribution.com/",
+    "model": "deepseek/deepseek-chat",
+    "temperature": 0.7,
+    "max_tokens": 4000,
+    "content_filtered": true,
+    "original_size_chars": 18449,
+    "sent_size_chars": 8739,
+    "reduction_percent": 52.6
+  },
+  "system_prompt": "You are analyzing a company website. The provided content belongs to ONE SINGLE company.\nAll URLs are under the same root domain.\nThe content contains text from multiple pages, separated by \"# URL: \".\n\nCRITICAL INSTRUCTIONS:\n1. The crawl covers multiple pages (Home, About, Contact, etc.).\n2. There is significant overlapping/duplicate information across these pages.\n3. You MUST consolidate all information into a SINGLE company profile.\n4. Do NOT output a list of companies. Extract exactly ONE company object.\n5. Ignore minor differences in descriptions across pages; synthesize them into a comprehensive summary.\n\nExtract the following information:\n\n1. **Company Information:**\n   - Company name\n   - Main business/industry\n   - Brief description of what they do\n\n2. **Products/Services:**\n   - List all products or services offered\n   - Key capabilities or specializations\n\n3. **Contact Information:**\n   - ALL email addresses found (support, sales, info, contact, etc.)\n   - Phone numbers\n   - Physical address/location\n   - Contact page URLs\n\n4. **Additional Details:**\n   - Company size (if mentioned)\n   - Year founded (if mentioned)\n   - Certifications or awards\n   - Geographic coverage/service areas\n\nBe thorough and extract ALL contact emails you can find.\nIf information is not available, use null for that field.\n",
+  "json_schema": {
+    "properties": {
+      "company_name": {
+        "anyOf": [
+          {
+            "type": "string"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "default": null,
+        "description": "Name of the company",
+        "title": "Company Name"
+      },
+      "main_business": {
+        "anyOf": [
+          {
+            "type": "string"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "default": null,
+        "description": "Primary business or industry",
+        "title": "Main Business"
+      },
+      "description": {
+        "anyOf": [
+          {
+            "type": "string"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "default": null,
+        "description": "Brief description of what the company does",
+        "title": "Description"
+      },
+      "products_services": {
+        "anyOf": [
+          {
+            "items": {
+              "type": "string"
+            },
+            "type": "array"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "default": null,
+        "description": "List of products or services offered",
+        "title": "Products Services"
+      },
+      "contact_emails": {
+        "anyOf": [
+          {
+            "items": {
+              "type": "string"
+            },
+            "type": "array"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "default": null,
+        "description": "All email addresses found on the website",
+        "title": "Contact Emails"
+      },
+      "contact_phones": {
+        "anyOf": [
+          {
+            "items": {
+              "type": "string"
+            },
+            "type": "array"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "default": null,
+        "description": "All phone numbers found",
+        "title": "Contact Phones"
+      },
+      "physical_address": {
+        "anyOf": [
+          {
+            "type": "string"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "default": null,
+        "description": "Physical address or location",
+        "title": "Physical Address"
+      },
+      "year_founded": {
+        "anyOf": [
+          {
+            "type": "string"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "default": null,
+        "description": "Year the company was founded",
+        "title": "Year Founded"
+      },
+      "certifications": {
+        "anyOf": [
+          {
+            "items": {
+              "type": "string"
+            },
+            "type": "array"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "default": null,
+        "description": "Any certifications or awards mentioned",
+        "title": "Certifications"
+      },
+      "service_areas": {
+        "anyOf": [
+          {
+            "items": {
+              "type": "string"
+            },
+            "type": "array"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "default": null,
+        "description": "Geographic areas served",
+        "title": "Service Areas"
+      },
+      "summary": {
+        "anyOf": [
+          {
+            "type": "string"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "default": null,
+        "description": "A 2-3 paragraph human-readable summary of the company",
+        "title": "Summary"
+      }
+    },
+    "title": "CompanyAnalysis",
+    "type": "object"
+  },
+  "content_sent": "# URL: https://airlinkdistribution.com/\n\n+1 714.338.0975 sales@airlinkdistribution.com\n$\n#### Company Overview\nAirlink Distribution is a full service cellular device procurement company. We are cost effective and offer high quality end results that meet carrier specifications.\n$\n#### Service Portfolio\nWe have strategic relationships with carriers and distributors that allows us to procure like new, new and used devices. Our content clearing is done in house. We have liquidation centers where we can sell EOL, BER and locked devices. We service you from two secure locations, 1 in Hong Kong and the other in Santa Ana, California.\n$\n#### R & D Lab\nOur research and development lab offer our customers a full range of testing capabilities to meet all the qualifications needs. Our highly trained engineers can simulate in field usage to reduce failures and ensure that your devices work as promised. With over US$1 million invested in the lab, we are confident that we can meet any customer’s requirements.\n\n#### Mission Statement\nOur goal is to provide the highest quality products through excellence in design and solutions.\nThrough our culture, our drive and the expertise of each individual employee, we are uniquely positioned to provide best-in-class product and services to a global customer base.\n### Carlos Toro  \n _Founder and CEO of Airlink Distribution_\n#### What we do\nAirlink Distribution has evolved from a traditional value added reseller and distributor into an engineering and manufacturing enterprise. Airlink has developed a unique portfolio of value added and value salvage services for traditional OEMs, Carriers, Retailers, and Insurance Providers.\n\n#### Sales of CPO   \nProduct\n\n#### Buyback Program\n\n#### Accessories &   \nBatteries\n# Our Team\n\n## Carlos Toro\nCEO\n\n## Jennifer Toro\nVice President\n\n## Susan Coggins\nVice President of Sales\n\n## Robin Leder\nController\n\n## Connie Smith\nHR Manager\nPreviousNext\n\n#### Facilities\nUSA and Dominican Republic with Strategic relationship with China.\n\n#### Employees\nOver 40 employees worldwide\n\n#### Revenues\n$50 million in revenues\n\n#### Debt\nMinimal, self and bank financed\n#### Operations\n\n### Global Supply Chains\nOver the past 20 years, our executive team developed the most extensive and robust supply chain network in the industry. This network started in HK when we realized that in our industry, the way to procure parts and subcomponents was almost impossible. First, the manufacturer doesn’t want to sell any of these parts, and the market is filled with counterfeit and sub-quality goods.\nWe used our global engineering team to understand how the manufacturer makes the product. During this process, we developed our own rework procedure. This rework process involved many sub-parts components.\nWe then sourced these components from the market, and through this process developed our supply chain network\n## Certifications\n[](https://airlinkdistribution.com/wp-content/uploads/2025/09/R2v3-Amtivo-USA-Inc.-Certificate.pdf)\n[](https://airlinkdistribution.com/wp-content/uploads/2025/09/ISO-14001-Amtivo-USA-Inc.-Certificate.pdf)\n[](https://airlinkdistribution.com/wp-content/uploads/2025/09/ISO-9001-Amtivo-USA-Inc.-Certificate-1.pdf)\n[](https://airlinkdistribution.com/wp-content/uploads/2025/09/ISO-45001-Amtivo-USA-Inc.-Certificate.pdf)\nSign Up for our Latest Deals\n\n================================================================================\n\n# URL: https://airlinkdistribution.com/about\n\n+1 714.338.0975 sales@airlinkdistribution.com\n# About\nHeadquartered in Orange County, CA, **Airlink** is a full solution provider for all your mobility and consumer electronics products needs.\nAs an industry leader in after-sales services and product distribution of telecommunication and consumer electronics products, we offer safe, secure and reliable “re-purposing solutions” on a global scale.\nWorking on behalf of leading manufacturers, wireless carriers, telecommunication providers and retailers, Airlink is able to utilize our global network to effectively assume operational responsibility for the complete supply chain, including reverse logistics.\nAirlink will not only be your re-purpose partner, but also your environmentally responsible partner. The environment matters, and we know how to help you avoid environmental problems before they occur. Rest assured that all electronic devices and components are handled in a safe, secure manner not only complying with state, federal and international regulations, but also exceeding the EPA minimum standards..\n**R2 Certified**\nAs an R2 certified company, Airlink gives a “contractual guarantee” holding harmless both you and your clients from liability against environmental compliance risk. Together we can ensure that every product can be recycled at the end of its useful life.\nWhether your needs are asset recovery, quality control, reclamation, liquidations or beyond, contact Airlink today to see how we can become your stress free re-purpose partner.\n\n================================================================================\n\n# URL: https://airlinkdistribution.com/contact\n\n+1 714.338.0975 sales@airlinkdistribution.com\n# Contact\n### Address\n**Airlink Distribution**  \n3031 South Orange Avenue, Building B  \nSanta Ana  \nCA 92707\nTelephone  \n**714 338 0975**\nEmail  \n**sales@airlinkdistribution.com**\nFor RMA’s please contact  \n**(714) 338-0975 ext. 304**\n### Map\n\n================================================================================\n\n# URL: https://airlinkdistribution.com/project/apple-internal-batteries\n\n+1 714.338.0975 sales@airlinkdistribution.com\n## Apple Internal Batteries\n\n  * 100% chain of custody compliant – furnished upon request\n  * All batteries are vigorously tested, which includes scanning and matching of internal serial numbers, QR codes and manufacturer date codes.\n  * All customer’s lots go thru a 10% Cadex qualification but can be increased to customer’s standards.\n  * Cadex testing includes SOH & capacity discharge.\n  * All batteries go thru 100% in house x-ray testing. All x-ray records are cataloged with pictures and are available upon request.\n  * .05% of all battery lots are electronically certified to validate workmanship and authenticity.\n  * Airlink adds a unique QR code to all of our batteries. This label can track the following: original SOH levels, shipping serial number and the date of test. We email these data records with every shipment. Custom fields can be added upon customer’s request.\n\n================================================================================\n\n# URL: https://airlinkdistribution.com/project/engineering-consulting-services\n\n+1 714.338.0975 sales@airlinkdistribution.com\n\n================================================================================\n\n# URL: https://airlinkdistribution.com/project/samsung\n\n+1 714.338.0975 sales@airlinkdistribution.com\n\n  * Samsung direct distributor. We sell and distribute OEM accessories and batteries.\n  * We hold stock on OEM sealed master cartons, cables, charging heads and batteries.\n  * We can provide chain of custody upon request.\n\n================================================================================\n\n# URL: https://airlinkdistribution.com/service-portfolio\n\n+1 714.338.0975 sales@airlinkdistribution.com\n## We are an experienced company ready to serve you anytime, anywhere.\nEffective. Efficient. Expeditious.\n[](https://airlinkdistribution.com/service-portfolio/#ServicePortfolio)\n## Our Service Portfolio\n  * We have strategic relationships with carriers and distributors that allows us to procure like new, new and used devices.\n  * Content clearing services in house.\n  * Hong Kong liquidation centers where we can sell EOL, BER and locked devices.\n  * Secure locations in Hong Kong and Santa Ana, CA.\n\n  \n## Engineering Consulting Services\n  \n## Apple Internal Batteries\n  \n## Samsung\n$#\n\n================================================================================\n\n# URL: https://airlinkdistribution.com/wp-content/uploads/2025/09/ISO-14001-Amtivo-USA-Inc.-Certificate.pdf\n\n================================================================================\n\n# URL: https://airlinkdistribution.com/wp-content/uploads/2025/09/ISO-45001-Amtivo-USA-Inc.-Certificate.pdf\n\n================================================================================\n\n# URL: https://airlinkdistribution.com/wp-content/uploads/2025/09/ISO-9001-Amtivo-USA-Inc.-Certificate-1.pdf\n\n================================================================================\n\n# URL: https://airlinkdistribution.com/wp-content/uploads/2025/09/R2v3-Amtivo-USA-Inc.-Certificate.pdf\n\n================================================================================",
+  "content_length_stats": {
+    "characters": 8739,
+    "estimated_tokens": 2184,
+    "estimated_cost_input_usd": 0.000612
+  }
+}

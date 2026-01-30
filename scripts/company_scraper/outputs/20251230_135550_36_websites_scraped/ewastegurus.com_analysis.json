@@ -1,0 +1,46 @@
+[
+  {
+    "company_name": "E-Waste Gurus",
+    "website_url": "https://ewastegurus.com",
+    "main_business": "Electronics Recycling and IT Asset Disposition",
+    "description": "E-Waste Gurus is a sustainable electronics recycling and refurbishment company based in Sacramento, California. They provide responsible and environmentally-friendly solutions for the disposal and repurposing of outdated electronics. Their services include e-waste recycling, IT asset liquidation, secure data destruction, and the refurbishment and resale of used IT equipment. They operate as licensed participants in California's Covered Electronic Waste Recovery program and hold R2V3 certification.",
+    "products_services": [
+      "E-Waste Recycling",
+      "IT Asset Disposition / Liquidation",
+      "Data Destruction (Hard Drive Shredding, Wiping/Sanitization)",
+      "Refurbished Computer Store (Laptops, Desktops, Workstations, Servers, LED Monitors)",
+      "Recurring E-Waste Pickups (Business & Residential)",
+      "Drop-Off Services"
+    ],
+    "contact_emails": [
+      "recycle@ewastegurus.com"
+    ],
+    "contact_phones": [
+      "916-258-5835"
+    ],
+    "physical_address": "201 Harris Ave #10, Sacramento CA 95838",
+    "year_founded": null,
+    "certifications": [
+      "R2V3 Certification",
+      "ISO 9001:2015",
+      "ISO 14001:2015",
+      "ISO 45001:2018",
+      "CalRecycle Participant",
+      "DTSC / EPA Regulated (Hazardous Waste Identification Number)"
+    ],
+    "service_areas": [
+      "Sacramento, California",
+      "Northern California (up to 250 miles radius from Sacramento)"
+    ],
+    "summary": "E-Waste Gurus is a certified electronics recycling and IT asset disposition company headquartered in Sacramento, California. Their core mission is to combat electronic waste through responsible recycling, secure data destruction, and the refurbishment of used IT equipment. They serve government agencies, large businesses, and private sectors, offering services like bulk pickups, asset liquidation, and a retail store for refurbished products. The company holds key certifications including R2V3, ISO 9001, 14001, and 45001, and is a licensed participant in California's Covered Electronic Waste Recovery program. Their online store sells a variety of tested and graded enterprise IT assets, including desktops, workstations, servers, and LED monitors, indicating a B2B wholesale capability alongside consumer sales.",
+    "is_good_fit": true,
+    "inventory_fit_assessment": "Excellent fit. The company's primary inventory aligns perfectly with Yilong's needs for enterprise IT assets. Their product listings and inventory filters explicitly include Laptops, Desktops, Workstations, Servers, and Networking Equipment. They list detailed specifications for enterprise-grade components (high-value CPUs like Xeon and Core i7/i9, server RAM, SSDs/HDDs). Their products are sold with R2 condition grading (e.g., 'Hardware Functional - F4', 'Cosmetic condition: C5'), demonstrating they test and grade assets. The inventory list shows they handle bulk quantities from businesses, which is the source of their refurbished stock. No red flags regarding inventory type.",
+    "operational_fit_assessment": "Strong operational fit. The company is clearly an ITAD processor and asset recovery firm with a B2B focus, serving government agencies and large businesses for recycling and liquidation. They hold the highly preferred R2V3 certification, along with multiple ISO certifications, confirming professional processes for testing, data wiping, and environmental compliance. They explicitly offer wholesale/bulk services: 'IT Asset Disposition / Liquidation' for businesses with 'large volumes', offering upfront quotes and commissions. They provide free pickups for qualifying business clients within a 250-mile radius, which is a classic B2B/wholesale operational model. Their sales channel includes both a retail shop and implied bulk sales, making them suitable for pallet/truckload quantities.",
+    "red_flags": [
+      "Potential dual focus on retail consumer sales through their online store, which might compete with or complicate wholesale relationships. However, this is common for ITADs and does not negate their B2B capabilities."
+    ],
+    "recommendation": "Reach out",
+    "reasoning": "E-Waste Gurus meets or exceeds all critical qualification criteria for Yilong Business Limited. They possess the required enterprise IT asset inventory (servers, workstations, etc.) in tested and graded conditions. Operationally, they are a certified (R2V3) ITAD firm with explicit B2B services, bulk liquidation offerings, and geographic coverage in Northern California. Their certifications ensure proper data sanitization and asset handling. The minor concern about a retail storefront is outweighed by their clear wholesale capabilities and business model focused on asset recovery from corporations. They are a prime candidate for a bulk purchasing partnership.",
+    "error": false
+  }
+]

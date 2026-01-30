@@ -1,0 +1,57 @@
+[
+  {
+    "company_name": "ERI",
+    "website_url": "https://www.eridirect.com",
+    "main_business": "IT Asset Disposition (ITAD) and Electronics Recycling",
+    "description": "ERI is the largest fully integrated IT and electronics asset disposition provider and cybersecurity-focused hardware destruction company in the United States. They provide secure, compliant, and environmentally responsible services for retiring, recycling, and reusing electronic assets, with a focus on data destruction, asset recovery, and sustainability.",
+    "products_services": [
+      "IT and Electronics Asset Disposition (ITAD)",
+      "Electronics Recycling (E-Waste)",
+      "Data Destruction and Cybersecurity Services",
+      "Data Center Decommissioning",
+      "Remarketing and Asset Recovery",
+      "Logistics (National and International)",
+      "Recycling Kits (Secure Mail-Back Boxes)",
+      "Specialty Programs (Custom Initiatives, Reverse Logistics)",
+      "On-Site Shredding",
+      "Redeployment Services",
+      "Lease Return Services",
+      "Alkaline Battery Recycling and Management",
+      "Lithium-Ion Battery Recycling",
+      "PV/Solar Panel Recycling",
+      "OEM & Producer Responsibility/Compliance Programs"
+    ],
+    "contact_emails": [
+      "paul.williams@eridirect.com",
+      "info@ERIdirect.com"
+    ],
+    "contact_phones": [
+      "1-800-ERI-DIRECT (374-3473)"
+    ],
+    "physical_address": null,
+    "year_founded": null,
+    "certifications": [
+      "NAID AAA",
+      "e-Stewards",
+      "R2",
+      "ISO 9001",
+      "ISO 14001",
+      "ISO 45001",
+      "ISO 27001",
+      "SOC 2 Type I and Type II",
+      "GSA Contract GS-10F-0051Y"
+    ],
+    "service_areas": [
+      "United States (all 50 states, every ZIP code)",
+      "International (46 countries)"
+    ],
+    "summary": "ERI (Electronic Recyclers International) is the largest fully integrated IT Asset Disposition (ITAD) and electronics recycling company in the United States. Founded on the principle of 'People. Planet. Privacy.™', ERI offers a comprehensive suite of services including secure data destruction, ITAD, electronics recycling, data center decommissioning, and remarketing. They operate eight certified facilities across the U.S. with the capacity to process over a billion pounds of electronic waste annually, serving every ZIP code and maintaining an international network in 46 countries. ERI is uniquely certified to the highest industry standards, holding NAID AAA, e-Stewards, R2, and multiple ISO certifications, and was the first in its industry to achieve SOC 2 Type II compliance and carbon neutrality. Their client base includes Fortune 500 companies, federal, state, and local governments, healthcare, banking, retail, and other major industries, providing B2B-focused solutions for secure and responsible end-of-life asset management.",
+    "is_good_fit": true,
+    "inventory_fit_assessment": "Excellent fit. ERI explicitly processes the exact enterprise IT assets Yilong requires: data center hardware (servers, switches, routers), desktops, laptops, tablets, networking/telecom equipment, and storage devices (hard drives, solid-state drives). Their core ITAD service includes identifying, sanitizing, testing, refurbishing, and reselling devices, which aligns with Yilong's need for 'Tested Functional' (R2v3 F2/C3 or better) assets. They offer remarketing services focused on maximizing the value of intact, tested, and working devices, indicating they grade and sort inventory. There is no mention of a scrap-only or shredding-only focus for functional assets.",
+    "operational_fit_assessment": "Exceptional fit. ERI is a pure B2B ITAD processor and asset recovery firm, not a consumer reseller. They are highly certified, including R2v3 (mentioned as 'R2'), e-Stewards, and NAID AAA at all eight facilities, which is a strong indicator of proper testing, data wiping, and chain-of-custody processes. Their business model is built on wholesale/B2B services for large organizations, supporting bulk logistics via full truckload (FTL), less than truckload (LTL), palletized shipments, and trailer staging—perfect for Yilong's ~$1.5M monthly bulk purchases. They have a nationwide infrastructure and global partner network, facilitating Ex Works (EXW) pickups from their multiple U.S. facilities.",
+    "red_flags": [],
+    "recommendation": "Reach out",
+    "reasoning": "ERI is a premier, large-scale US-based ITAD processor that perfectly matches Yilong's procurement profile. They have the required enterprise IT inventory, the operational scale and certifications (R2, e-Stewards) to provide tested, graded, and data-sanitized assets in bulk quantities. Their explicit B2B focus, wholesale logistics capabilities, and nationwide facility footprint make them an ideal candidate for a high-volume supply relationship. No red flags were identified; their services align precisely with Yilong's 'High-Quality Refurbishment' model.",
+    "error": false
+  }
+]

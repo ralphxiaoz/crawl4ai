@@ -1,0 +1,184 @@
+{
+  "metadata": {
+    "timestamp": "2025-12-29 23:10:51",
+    "website_url": "https://www.aemrecycling.com",
+    "model": "deepseek/deepseek-chat",
+    "temperature": 0.7,
+    "max_tokens": 4000,
+    "content_filtered": true,
+    "original_size_chars": 48030,
+    "sent_size_chars": 26742,
+    "reduction_percent": 44.3
+  },
+  "system_prompt": "You are analyzing a company website. The provided content belongs to ONE SINGLE company.\nAll URLs are under the same root domain.\nThe content contains text from multiple pages, separated by \"# URL: \".\n\nCRITICAL INSTRUCTIONS:\n1. The crawl covers multiple pages (Home, About, Contact, etc.).\n2. There is significant overlapping/duplicate information across these pages.\n3. You MUST consolidate all information into a SINGLE company profile.\n4. Do NOT output a list of companies. Extract exactly ONE company object.\n5. Ignore minor differences in descriptions across pages; synthesize them into a comprehensive summary.\n\nExtract the following information:\n\n1. **Company Information:**\n   - Company name\n   - Main business/industry\n   - Brief description of what they do\n\n2. **Products/Services:**\n   - List all products or services offered\n   - Key capabilities or specializations\n\n3. **Contact Information:**\n   - ALL email addresses found (support, sales, info, contact, etc.)\n   - Phone numbers\n   - Physical address/location\n   - Contact page URLs\n\n4. **Additional Details:**\n   - Company size (if mentioned)\n   - Year founded (if mentioned)\n   - Certifications or awards\n   - Geographic coverage/service areas\n\nBe thorough and extract ALL contact emails you can find.\nIf information is not available, use null for that field.\n",
+  "json_schema": {
+    "properties": {
+      "company_name": {
+        "anyOf": [
+          {
+            "type": "string"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "default": null,
+        "description": "Name of the company",
+        "title": "Company Name"
+      },
+      "main_business": {
+        "anyOf": [
+          {
+            "type": "string"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "default": null,
+        "description": "Primary business or industry",
+        "title": "Main Business"
+      },
+      "description": {
+        "anyOf": [
+          {
+            "type": "string"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "default": null,
+        "description": "Brief description of what the company does",
+        "title": "Description"
+      },
+      "products_services": {
+        "anyOf": [
+          {
+            "items": {
+              "type": "string"
+            },
+            "type": "array"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "default": null,
+        "description": "List of products or services offered",
+        "title": "Products Services"
+      },
+      "contact_emails": {
+        "anyOf": [
+          {
+            "items": {
+              "type": "string"
+            },
+            "type": "array"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "default": null,
+        "description": "All email addresses found on the website",
+        "title": "Contact Emails"
+      },
+      "contact_phones": {
+        "anyOf": [
+          {
+            "items": {
+              "type": "string"
+            },
+            "type": "array"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "default": null,
+        "description": "All phone numbers found",
+        "title": "Contact Phones"
+      },
+      "physical_address": {
+        "anyOf": [
+          {
+            "type": "string"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "default": null,
+        "description": "Physical address or location",
+        "title": "Physical Address"
+      },
+      "year_founded": {
+        "anyOf": [
+          {
+            "type": "string"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "default": null,
+        "description": "Year the company was founded",
+        "title": "Year Founded"
+      },
+      "certifications": {
+        "anyOf": [
+          {
+            "items": {
+              "type": "string"
+            },
+            "type": "array"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "default": null,
+        "description": "Any certifications or awards mentioned",
+        "title": "Certifications"
+      },
+      "service_areas": {
+        "anyOf": [
+          {
+            "items": {
+              "type": "string"
+            },
+            "type": "array"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "default": null,
+        "description": "Geographic areas served",
+        "title": "Service Areas"
+      },
+      "summary": {
+        "anyOf": [
+          {
+            "type": "string"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "default": null,
+        "description": "A 2-3 paragraph human-readable summary of the company",
+        "title": "Summary"
+      }
+    },
+    "title": "CompanyAnalysis",
+    "type": "object"
+  },
+  "content_sent": "# URL: https://www.aemrecycling.com\n\ntop of page\n\nWe help businesses retire IT equipment with full data security, transparent documentation, and environmentally responsible recycling.\n# Responsible E-Waste Solution for a Sustainable Future\nRequest a Quote\n## R2 Certified IT Asset Disposition and Secure Electronics Recycling\n1\n### IT Asset Disposition (ITAD)\nAEM provides complete IT asset disposition services for businesses upgrading or retiring equipment. Our team handles everything from asset collection to secure data wiping and recycling.\nOur team handles:\n  * Corporate IT refresh programs\n  * Bulk pallet pickup\n  * On-site removal and packing\n  * Server room and data center decommissioning\n  * Serialized asset tracking\n  * Refurbishing and resale channels\n  * Certificates of Data Wipe or Destruction\n\nBenefits:\n  * Reduce liability from improper disposal\n  * Lower costs by capturing resale value\n  * Ensure compliance with industry and regulatory requirements\n\n2\n### Secure Data Wiping & Destruction\nProtecting your data is our highest priority. We follow strict procedures to ensure all data-bearing devices are wiped or destroyed according to industry guidelines.\n  * NIST 800‑88, HIPAA, GLBA, PCI, and other regulatory compliance protocols.\n  * NAID‑AAA certification for data destruction compliance and audited destruction procedures\n  * Receive a fully itemized Certificate of Destruction, including drive serial numbers, asset identifiers, and timestamps.\n\nWhy it matters:  \nImproper handling of hard drives, phones, or SSDs can lead to data breaches, legal issues, and financial loss.\nWe help eliminate this risk through secure processes and traceable documentation.\n3\n### Electronics Recycling\nWe recycle electronics responsibly and work with vetted downstream partners who align with environmental and safety standards.\n  * R2 downstream management\n  * Separation of metals, plastics, PCBs\n  * Zero-landfill policy for hazardous components\n  * CRT / battery handling (state rules disclaimer)\n  * Responsible material recovery partners\n\nOur recycling approach:\n  * Maximize material recovery\n  * Reduce landfill waste\n  * Follow environmentally responsible processes\n\n## Why Businesses Choose AEM\nR2 Certified Facility\nOur processes follow strict industry standards. We maintain audit-ready documentation, downstream transparency, and responsible material handling.\nSecure Data Wiping and Destruction\nWe offer NIST 800-88 compliant data wiping and destruction for end-of-life devices. Certificates of Data Wipe or Destruction are provided for every project.\nNationwide Pickup and Logistics\nWe manage palletized freight, warehouse receiving, and bulk corporate pickups. Chain-of-custody is documented from pickup through final processing.\nZero Waste Focus\nWe work with vetted downstream partners to maximize material recovery and support environmentally responsible recycling.\n## Industries We Serve\n  * Corporate Offices (IT refresh, laptop retirement)\n  * Data Centers\n  * OEM and manufacturer returns\n  * Insurance claims and DOA programs\n  * Government agencies\n  * Schools and universities\n  * Medical facilities\n  * Logistics and liquidation partners\n  * E-waste export hubs and refurbishing centers\n\n## Common Client Projects We Support\n  * Bulk corporate laptop refresh (100–25,000 units)\n  * Data center shutdown and removal\n  * Hard drive and SSD data destruction\n  * Mobile device buyback and processing\n  * Telecom and networking equipment decommission\n\n## ​\n###### ​\n[](https://rioscertification.org/)\n[](https://members.isigmaonline.org/certifications/directorynaidaaa)\n[](https://sustainableelectronics.org/)\nbottom of page\n\n================================================================================\n\n# URL: https://www.aemrecycling.com/_files/ugd/475a94_6ac112773f2749599aa1da1a7bce9c65.pdf\n\n================================================================================\n\n# URL: https://www.aemrecycling.com/about-5\n\ntop of page\n## AEM accepts a wide range of electronics for secure processing and recycling.\nComputer Equipment\nLaptops  \nDesktops  \nAll-in-one units  \nMini PCs\nServers and Enterprise Hardware\nRack servers  \nBlades  \nStorage arrays  \nSAN/NAS equipment  \nNetworking equipment\nMobile and Portable Devices\nPhones  \nTablets  \nRugged devices  \nBarcode scanners  \nHandheld terminals\nOffice and Telecom Equipment\nVoIP phones  \nPBX systems  \nSwitches  \nRouters  \nFirewalls  \nModems\nConsumer Electronics\nAudio devices  \nGaming consoles  \nSmart home electronics\nE-Scrap and Components\nTelecom boards\nServer boards  \nMixed scrap boards\nCPUs, IC CHIPS, RAM, HDD/SSD\nAC adapters\nItems Not Accepted\nWe do not accept household appliances, hazardous materials, or liquids.\n✅\n​​​\n✅\n​ \n​\n​\n​\n✅\n​\n✅\n​\n​\n​\n​\n​\n​\n✅\n​\n✅\n​✅\n\nbottom of page\n\n================================================================================\n\n# URL: https://www.aemrecycling.com/about-us\n\ntop of page\n\nWho We Are\n  * Company History: Founded on the principles of sustainability and data security, AEM Recycling has been providing responsible e-waste management solutions for businesses and individuals.\n  * Our Mission: To ensure that electronic waste is handled responsibly while protecting sensitive data and recovering valuable materials for a circular economy.\n  * Commitment to Sustainability & Security:\n    * Strict adherence to R2v3 and NAID AAA guidelines.\n    * Use of state-of-the-art destruction and recycling technologies.\n    * Transparent reporting and compliance tracking.\n\nWhy Clients Choose Us\n✔ Certified & Compliant: R2v3 & NAID AAA Certified, ensuring industry-best standards.  \n✔ 100% Secure Data Destruction: All data-bearing devices are processed securely with full compliance.  \n✔ Environmentally Responsible: Ethical disposal practices that reduce landfill waste and recover valuable resources.  \n✔ Transparent communication.\n✔Responsible downstream vendor management.\n\n> \"AEM Recycling provided a seamless, secure, and professional service for our IT asset disposal needs. Their compliance and transparency exceeded our expectations!\"\nAlexa Young, CA\nbottom of page\n\n================================================================================\n\n# URL: https://www.aemrecycling.com/blank-1\n\ntop of page\n\n## Why Should Businesses Prioritize Data Destruction?\nIn today's digital landscape, data serves as a vital asset for businesses, influencing strategies and driving operational success....\nMar 2\n\n## Efficient Data Center Decommissioning by AEM Recycling in South El Monte\nIn today's fast-paced world, where technology is constantly evolving, the need for efficient data center decommissioning services has...\nJan 20\n\n## Environmentally Friendly E-Waste Recycling Services in South El Monte\nIn today’s digital age, the rate at which electronic devices become obsolete is accelerating, leading to a significant increase in...\nJan 20\nbottom of page\n\n================================================================================\n\n# URL: https://www.aemrecycling.com/blank-2\n\ntop of page\n\nbottom of page\n\n================================================================================\n\n# URL: https://www.aemrecycling.com/contact-us\n\ntop of page\n\n# Contact\nHave questions about our services or products? Reach out to us today for a free consultation. Our team is here to assist you with all your e-waste recycling and IT asset needs.\n### Address\n1431 Potrero Ave, Ste b, South El Monte, CA 91733\n### Hours for Accepting Drop-Offs\nBy appointment only.\n### Hours\n10am-4:30pm Monday-Friday\n### Phone\n(949) 549-5191\n### Email\ninfo@aemrecycling.com\nbottom of page\n\n================================================================================\n\n# URL: https://www.aemrecycling.com/post/efficient-data-center-decommissioning-by-aem-recycling-in-south-el-monte\n\ntop of page\nSearch\nIn today's fast-paced world, where technology is constantly evolving, the need for efficient data center decommissioning services has never been more critical. AEM Recycling, a leading company based in South El Monte, specializes in eco-friendly e-waste recycling services, including IT asset disposition, data center decommissioning, and data destruction.\n\nWith a strong commitment to environmental sustainability, AEM Recycling offers essential solutions for the proper disposal and recycling of electronic waste. Their team of experienced professionals ensures that all materials are managed in a sustainable and efficient manner, reducing the impact on the environment. Data center decommissioning is a complex process that requires careful planning and execution to ensure that all data is securely destroyed and that all equipment is properly recycled. AEM Recycling understands the importance of this process and has the expertise to handle it with precision and efficiency. By choosing AEM Recycling for your data center decommissioning needs, you can rest assured that your electronic waste will be disposed of responsibly, contributing to a cleaner and healthier environment. Their commitment to environmentally responsible practices sets them apart as a leader in the industry, providing businesses with peace of mind knowing that their e-waste is being handled in a sustainable manner. In conclusion, AEM Recycling in South El Monte is the go-to company for efficient and sustainable data center decommissioning services. Their dedication to environmental responsibility and commitment to proper e-waste disposal make them a trusted partner for businesses looking to make a positive impact on the environment. To learn more about their services, visit their website today.\n[](https://www.aemrecycling.com/post/why-should-businesses-prioritize-data-destruction)\n[](https://www.aemrecycling.com/post/environmentally-friendly-e-waste-recycling-services-in-south-el-monte)\n[](https://www.aemrecycling.com/post/sustainable-it-asset-disposition-solutions-in-south-el-monte)\nbottom of page\n\n================================================================================\n\n# URL: https://www.aemrecycling.com/post/environmentally-friendly-e-waste-recycling-services-in-south-el-monte\n\ntop of page\nSearch\nIn today’s digital age, the rate at which electronic devices become obsolete is accelerating, leading to a significant increase in electronic waste, or e-waste, that needs to be properly managed and recycled. This has paved the way for companies like AEM Recycling, based in South El Monte, to offer environmentally friendly e-waste recycling services.\n\nAt AEM Recycling, the focus is on providing efficient and sustainable solutions for recycling various materials, such as IT assets and data center equipment. They specialize in IT asset disposition, data center decommissioning, and data destruction, all while adhering to environmentally responsible practices. One of the key features that sets AEM Recycling apart is their commitment to environmental sustainability. By offering essential services for the proper disposal and recycling of e-waste, they play a crucial role in reducing the environmental impact of electronic waste. Proper recycling of e-waste helps prevent hazardous materials from ending up in landfills, where they can pose a threat to the environment and human health. For businesses and organizations in South El Monte looking to dispose of their electronic waste responsibly, AEM Recycling provides a convenient and eco-friendly solution. By choosing to partner with AEM Recycling, companies can confidently ensure that their e-waste is being handled in a sustainable manner, in line with the highest environmental standards. In conclusion, AEM Recycling is a trusted provider of environmentally friendly e-waste recycling services in South El Monte. Their dedication to sustainability and responsible waste management makes them a valuable partner for businesses looking to dispose of electronic waste in an eco-conscious way. By choosing AEM Recycling, businesses can contribute to a greener, more sustainable future for our planet.\n[](https://www.aemrecycling.com/post/why-should-businesses-prioritize-data-destruction)\n[](https://www.aemrecycling.com/post/efficient-data-center-decommissioning-by-aem-recycling-in-south-el-monte)\n[](https://www.aemrecycling.com/post/sustainable-it-asset-disposition-solutions-in-south-el-monte)\nbottom of page\n\n================================================================================\n\n# URL: https://www.aemrecycling.com/post/sustainable-it-asset-disposition-solutions-in-south-el-monte\n\ntop of page\nSearch\nIn an increasingly digital world, the management and disposal of electronic waste (e-waste) have become a pressing issue that requires sustainable solutions. Companies are constantly upgrading their IT assets, leading to a surplus of outdated electronics that need to be properly disposed of to minimize environmental impact. This is where AEM Recycling comes in - a South El Monte-based company that specializes in e-waste recycling services, including IT asset disposition.\n\nAEM Recycling prioritizes environmental sustainability by offering services such as data center decommissioning and data destruction. Their dedication to eco-friendly practices ensures that electronic waste is recycled efficiently and responsibly. By providing essential services for the proper disposal and recycling of e-waste, AEM Recycling contributes to environmental sustainability and helps reduce the harmful effects of electronic waste on the environment. When it comes to IT asset disposition, AEM Recycling employs a comprehensive and sustainable approach to managing electronic waste. They understand the importance of securely disposing of data and equipment while also ensuring that materials are recycled in an environmentally friendly manner. Their commitment to environmentally responsible practices sets them apart as a leader in e-waste recycling services in South El Monte and beyond. By choosing AEM Recycling for IT asset disposition services, companies can rest assured that their electronic waste will be handled with care and in accordance with the highest environmental standards. AEM Recycling's expertise in e-waste recycling, data center decommissioning, and data destruction make them a reliable partner for businesses looking to responsibly dispose of their IT assets. In conclusion, AEM Recycling offers sustainable IT asset disposition solutions in South El Monte that prioritize environmental responsibility and efficiency. By choosing AEM Recycling for e-waste recycling services, businesses can contribute to environmental sustainability while ensuring that their electronic waste is managed in a secure and eco-friendly manner.\n[](https://www.aemrecycling.com/post/why-should-businesses-prioritize-data-destruction)\n[](https://www.aemrecycling.com/post/efficient-data-center-decommissioning-by-aem-recycling-in-south-el-monte)\n[](https://www.aemrecycling.com/post/environmentally-friendly-e-waste-recycling-services-in-south-el-monte)\nbottom of page\n\n================================================================================\n\n# URL: https://www.aemrecycling.com/post/why-should-businesses-prioritize-data-destruction\n\ntop of page\nSearch\nIn today's digital landscape, data serves as a vital asset for businesses, influencing strategies and driving operational success. However, the sensitive nature of this information puts it at risk of exploitation. While collecting and managing data is fundamental, knowing how and when to securely destroy it is just as essential. This post explores why data destruction is crucial for businesses, emphasizing its role in enhancing security, ensuring regulatory compliance, and upholding a company's reputation.\n  \n\n## Understanding Data Destruction\n  \n\nData destruction refers to the complete erasure or destruction of data stored on electronic devices. Techniques include physical destruction, data wiping, and degaussing, each designed to render data irretrievable. The stakes are high; a study from Ponemon Institute found that 75% of organizations have experienced at least one data breach, underscoring the value of having robust data destruction practices in place.\n  \n\n## The Security Risks of Inadequate Data Destruction\n  \n\nInsufficient data destruction opens the door to potential breaches, which can be devastating for organizations. For instance, a 2021 report indicated that 44% of data breaches were caused by human error—often linked to improper data disposal. Discarded devices or poorly deleted files can be an easy target for cybercriminals. In fact, over 60% of data breaches are linked to incidents involving old hardware. By prioritizing data destruction, businesses can significantly reduce their vulnerability and mitigate the risks posed by these threats.\n  \n\n## Regulatory Compliance\n  \n\nMany sectors face strict regulations surrounding data management and destruction, including GDPR in Europe, HIPAA for healthcare in the U.S., and PCI DSS for payment card information. Non-compliance can lead to fines reaching up to 4% of annual global turnover under GDPR. Beyond financial penalties, legal repercussions can severely damage a company's reputation. For example, in 2022, a hospital in the U.S. faced a $1.5 million penalty for failing to securely dispose of patient data. Proper data destruction not only helps organizations adhere to these laws but also limits their liability and protects their brand image.\n  \n\n## Protecting Client Trust\n  \n\nClient trust is invaluable, and businesses that mishandle sensitive information risk losing more than just data. A data breach can result in a 30% loss in customer trust on average, leading to long-term effects on customer relationships and future business opportunities. According to a study by PwC, 87% of consumers will not engage with a company if they feel their data is at risk. Demonstrating a commitment to secure data destruction reassures clients that their information is safe, fostering loyalty and confidence in the brand.\n  \n\nClose-up view of a hard drive undergoing destruction\n  \n\n## Financial Implications of Poor Data Management\n  \n\nThe cost of neglecting data destruction can be staggering. Beyond fines and legal fees, companies can face losses from contract terminations and reputational damage. IBM's Cost of a Data Breach Report noted that the average total cost of a data breach in 2023 was $4.45 million. Investing in effective data destruction strategies represents a proactive approach that can save companies from significant financial setbacks down the line.\n  \n\n## Best Practices for Data Destruction\n  \n\nTo prioritize data destruction effectively, businesses should adopt these essential practices:\n  \n\n  * **Develop a Data Disposal Policy:** Establish a clear policy outlining when and how data should be destroyed within the organization to provide a structured approach.\n  * **Utilize Certified Data Destruction Services:** Engaging with certified providers ensures compliance with industry standards and reliable destruction of data.\n  \n\nAdditionally, employing secure data wiping software that meets recognized standards guarantees that deleted data cannot be recovered. Regular audits to identify unnecessary data for destruction also play a key role in maintaining a secure data environment. Finally, employee training on data destruction guidelines can foster a culture of security within the organization.\n  \n\n## The Future of Data Destruction\n  \n\nAs technology evolves, so too will data storage and destruction methods. Businesses must stay informed about innovative solutions to enhance data security. Emerging technologies such as artificial intelligence and blockchain hold promise for improving data management practices. These advancements could offer stronger encryption and more secure avenues for data destruction, helping organizations navigate future challenges.\n  \n\n## Safeguarding Your Business\n  \n\nIn conclusion, data destruction is a critical aspect of responsible data management that businesses cannot afford to overlook. The evolving threats to data security necessitate a robust approach to data disposal. Neglecting data destruction can lead to severe risks, ranging from data breaches to legal penalties and a devastating loss of client trust. By adopting effective data destruction practices, companies can protect their valuable information, remain compliant with regulations, and sustain their reputations in an increasingly data-driven world.\n  \n\nIn a landscape where data is a prized asset, ensuring its timely and secure destruction is not just prudent—it's essential for any business striving for longevity and trust.\n[](https://www.aemrecycling.com/post/efficient-data-center-decommissioning-by-aem-recycling-in-south-el-monte)\n[](https://www.aemrecycling.com/post/environmentally-friendly-e-waste-recycling-services-in-south-el-monte)\n[](https://www.aemrecycling.com/post/sustainable-it-asset-disposition-solutions-in-south-el-monte)\nbottom of page\n\n================================================================================\n\n# URL: https://www.aemrecycling.com/services-7\n\ntop of page\n# Our Company\nAEM Recycling is a certified electronics recycler and IT asset disposition specialist serving businesses across the United States. Our mission is to provide secure, compliant, and environmentally responsible services while making the IT asset retirement process simple, safe, and transparent for our clients.\n​\nOur team has deep expertise in:\n​\n  * IT asset recovery and resale\n  * Corporate mobility programs\n  * Enterprise electronics processing\n  * Data destruction workflows\n  * Material recovery and precious metal recycling\n  * Export logistics\n  * Compliance and environmental reporting\n\n# Our Facility\nOur Southern California processing facility includes:\n  * Secure receiving area with monitored CCTV\n  * Controlled access data-wiping lab\n  * Testing and refurbishment stations\n  * Warehouse racking and pallet staging zones\n  * Shredding and dismantling areas\n  * Locked storage for sensitive assets\n  * Climate-controlled environment for resale-ready inventory\n\n# Our Commitment\nSecurity\nData protection is our first priority. Every device passes through our controlled chain-of-custody workflow.\n​\nCompliance\nOur processes align with R2, NIST, EPA, and local/state regulatory guidelines.\n​\nSustainability\nWe minimize landfill impact through reuse, refurbishing, and responsible material recovery.\n​\nTransparency\nWe provide detailed reporting and open communication throughout every project.\nE-Waste Recycling & IT Asset Disposition (ITAD)\nITAD Service Scope\n  * Asset audit and serial capture\n  * On-site packing and palletizing\n  * Equipment removal from offices, labs, or data centers\n  * Local pickup or national freight coordination\n  * Full chain-of-custody documentation\n  * Serialized tracking from pickup to final disposition\n  * Refurbishing and value recovery\n  * Responsible recycling for non-reusable hardware\n  * Certificates of Data Wipe or Destruction\n\nLifecycle Process\n  1. Pre-Project Assessment  \nWe review asset types, volumes, security needs, and deadlines.\n  2. On-Site Collection and Packing  \nTrained AEM staff packs, labels, and secures equipment.\n  3. Secure Transport  \nWe maintain chain-of-custody through sealed pallets, barcodes, and tracking logs.\n  4. Receiving and Inspection  \nEach asset is verified, scanned, and logged into our system.\n  5. Data Wiping and Testing  \nAll devices undergo NIST-compliant wiping and functional testing.\n  6. Value Recovery  \nReusable assets are refurbished for resale or redeployment.\n  7. Recycling  \nEnd-of-life items are processed for responsible material recovery.\n  8. Reporting and Certification  \nClients receive complete documentation including serial reports and COD/CODW.\n\nData Wiping & Logistics Services\nWhat We Offer:\n  * Secure data wiping using industry-leading software that passed ADPC252 at Assurance Level 4, meeting top security standards for SSDs and embedded storage.\n\nRegulatory Compliance:\nOur processes follow NIST 800-88, NAID AAA, HIPAA, and GDPR guidelines for secure data destruction.\nWhy It Matters:\nProtecting sensitive information is critical to preventing data breaches, identity theft, and regulatory fines.\n​\nHow it works:\n  * You ship your devices to us using your preferred freight account.\n  * We securely wipe all data from the devices using certified software.\n  * After wiping, we provide you with a detailed wiping report for your records.\n  * We then ship the wiped devices back to you or to your designated destination, using your freight account for seamless logistics.\n  * This turnkey solution helps you maintain data security while simplifying device handling and logistics.\n\nElectronics Recycling\nRecycling Workflow\n  1. Sorting and classification\n  2. Reuse determination\n  3. Component harvesting\n  4. Board-level processing\n  5. Material separation\n  6. Downstream vendor allocation\n\nDownstream Vendor Management\nWe only work with vendors who:\n  * Are audited regularly\n  * Meet environmental and safety standards\n  * Follow responsible material management\n  * Provide full documentation on request\n\nMaterials Recovered\n  * Aluminum\n  * Copper\n  * Steel\n  * Plastics\n  * Circuit boards with precious metals\n  * Batteries (handled separately per regulation)\n\n## Email Us\nRequest a Quote\nbottom of page\n\n================================================================================\n\n# URL: https://www.aemrecycling.com/team-3\n\ntop of page\nR2 Certified Facility​\nAEM is R2 certified under Test and Repair, Logical Data Erasure, and Downstream Recycling Chain. This certification ensures our processes follow strict industry standards for safety, environmental responsibility, and data security.\nThis certification ensures:\n  * Strict environmental responsibility\n  * Data security compliance\n  * Controlled processes with documented outcomes\n  * Verified downstream material handling\n  * Annual audits and continuous improvement\n\nSecurity Standards\nWe align with:\n  * NIST SP 800-88 Rev. 1\n  * DoD wiping equivalents\n  * NAID best practices\n  * EPA e-waste handling guidelines\n  * ISO environmental and safety principles\n\nCompliance Documentation Provided\n  * Certificate of Data Wipe (with serial/IMEI)\n  * Certificates of Destruction\n  * Asset serial report\n  * Environmental impact summary\n  * Recycling material breakdown (if requested)\n\nReal device wiping performed at our facility using NIST 800-88 compliant tools.\n\n[](https://sustainableelectronics.org/find-an-r2-certified-facility/)\n[](https://www.aemrecycling.com/_files/ugd/475a94_6ac112773f2749599aa1da1a7bce9c65.pdf)\n\n_tif.png)\nbottom of page\n\n================================================================================",
+  "content_length_stats": {
+    "characters": 26742,
+    "estimated_tokens": 6685,
+    "estimated_cost_input_usd": 0.001872
+  }
+}

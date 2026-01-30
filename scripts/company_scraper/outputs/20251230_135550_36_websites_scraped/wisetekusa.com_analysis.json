@@ -1,0 +1,72 @@
+[
+  {
+    "company_name": "Iron Mountain",
+    "website_url": "https://www.ironmountain.com",
+    "main_business": "Secure data management and IT asset lifecycle services",
+    "description": "Iron Mountain is a global leader in secure data management, offering services including data center colocation, IT asset lifecycle management (ALM), digital transformation, and information governance. They help organizations protect, connect, and activate their information across physical and digital formats.",
+    "products_services": [
+      "Data center colocation and solutions",
+      "IT asset lifecycle management (ALM)",
+      "Data center decommissioning",
+      "IT asset disposition (ITAD) for corporate end-user devices",
+      "Hardware asset management for end-user devices",
+      "Iron Cloud Cyber Recovery (ransomware recovery)",
+      "Iron Cloud Data Backup",
+      "Iron Cloud Storage and Migration",
+      "Digital platform and solutions (InSight DXP, content management)",
+      "Inventory management and logistics",
+      "Records and document storage",
+      "Media and entertainment services",
+      "Fine arts storage",
+      "Heritage preservation and media conversion"
+    ],
+    "contact_emails": [
+      "datacenters@ironmountain.com"
+    ],
+    "contact_phones": [
+      "800-899-4766",
+      "1-833-IRM-COLO (1-833-476-2656)",
+      "8000503817",
+      "+65-31-576839"
+    ],
+    "physical_address": "Multiple global locations including Northborough, MA; Boyers, PA; Edison, NJ; Manassas, VA; Phoenix, AZ; Denver, CO; and international facilities",
+    "year_founded": "1951",
+    "certifications": [
+      "R2v3",
+      "e-Stewards",
+      "ISO 9001 (Quality Management)",
+      "ISO 14001 (Environmental Management)",
+      "ISO 45001 (Occupational Health & Safety)",
+      "ISO 27001 (Information Security)",
+      "ISO 50001 (Energy Management)",
+      "ISO 22301 (Business Continuity)",
+      "NAID AAA Certification",
+      "TIA-942",
+      "NIST 800-53",
+      "FISMA HIGH",
+      "FedRAMP",
+      "PCI-DSS",
+      "HIPAA",
+      "HITRUST",
+      "SOC 2 Type II/SOC 3",
+      "LEED Gold",
+      "EPA Energy Star",
+      "BREEAM",
+      "ADISA Certified Data Sanitization"
+    ],
+    "service_areas": [
+      "North America",
+      "Europe, Middle East & Africa (EMEA)",
+      "Asia-Pacific (APAC)",
+      "61 countries globally"
+    ],
+    "summary": "Iron Mountain is a global enterprise founded in 1951, specializing in secure data management and IT asset lifecycle services. With over 240,000 customers in 61 countries, including 95% of Fortune 1000 companies, the company operates a massive network of data centers, storage facilities, and ITAD processing centers worldwide. Their core services include data center colocation, IT asset lifecycle management (ALM), hardware asset management, and secure IT asset disposition (ITAD). They process enterprise IT assets including servers, storage systems, networking gear, laptops, and desktops through certified data sanitization and remarketing programs. Iron Mountain holds numerous certifications including R2v3, e-Stewards, and multiple ISO standards, making them a highly compliant B2B partner for large-scale IT asset management and disposition.",
+    "is_good_fit": true,
+    "inventory_fit_assessment": "Excellent fit. Iron Mountain processes exactly the enterprise IT assets Yilong requires: servers, storage systems, networking gear, laptops, and desktops. They specifically mention processing 'Servers, Storage systems and devices, Networking gear, Computer tapes, Racking' for data center decommissioning, and 'laptops and peripherals' for end-user device ITAD. Their Teraware data sanitization platform provides '100% sector verified erasure guaranteed' for drives, indicating proper testing and wiping. They process '1M+ servers and 3M+ drives annually' and have '10M+ drives sanitized' historically, demonstrating massive volume capacity that matches Yilong's $1.5M monthly budget. Their remarketing program focuses on 'maximized value recovery' with 'higher returns vs. alternatives,' suggesting they grade and test assets for resale rather than just recycling.",
+    "operational_fit_assessment": "Excellent operational fit. Iron Mountain is a pure B2B enterprise-focused ITAD processor and asset recovery firm, not a consumer recycler. They hold both R2v3 and e-Stewards certifications across multiple facilities globally, with specific mentions of R2v3 facilities in Olathe, KS; Front Royal, VA; Drogheda, Ireland; Lulea, Sweden; and Singapore. Their business model is wholesale/bulk oriented, processing '150 million pounds of e-waste annually' and handling 'large-scale IT hardware deployments and retrievals.' They offer 'secure chain of custody' with 'vetted employees and sealed transportation' and have 'API integration into your existing ITSM platform' for enterprise clients. Their global remarketing network includes '80% of worldwide IT resellers,' indicating established wholesale channels. They are recognized by Gartner as a 'Representative Provider in the IT Asset Disposition Market Guide' for five consecutive years.",
+    "red_flags": [],
+    "recommendation": "Reach out",
+    "reasoning": "Iron Mountain is an ideal vendor candidate for Yilong Business Limited. They are a global, enterprise-focused ITAD processor with R2v3 and e-Stewards certifications, massive processing capacity that matches Yilong's volume requirements, and exactly the right inventory mix of enterprise servers, storage, networking equipment, and end-user devices. Their focus on value recovery through remarketing rather than just recycling aligns with Yilong's 'High-Quality Refurbishment' model. The company's B2B orientation, wholesale capabilities, and established global remarketing network make them a perfect operational fit. No red flags were identified - they are not consumer-focused, not scrap-metal oriented, and have comprehensive testing and grading processes. Their $1B+ in remarketing value returned to customers demonstrates their capability to handle Yilong's scale.",
+    "error": false
+  }
+]

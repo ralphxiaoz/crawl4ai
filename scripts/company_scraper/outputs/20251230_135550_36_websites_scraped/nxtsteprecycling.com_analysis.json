@@ -1,0 +1,26 @@
+[
+  {
+    "company_name": null,
+    "website_url": "https://www.nxtsteprecycling.com/",
+    "main_business": null,
+    "description": null,
+    "products_services": [],
+    "contact_emails": [],
+    "contact_phones": [],
+    "physical_address": null,
+    "year_founded": null,
+    "certifications": [],
+    "service_areas": [],
+    "summary": "The website for NxtStep Recycling is inaccessible, returning a 403 Forbidden error. No company information, services, contact details, or operational specifics could be extracted from the provided content.",
+    "is_good_fit": false,
+    "inventory_fit_assessment": "No information is available to assess inventory fit. The website is blocked, so it is impossible to determine if the company deals in enterprise IT assets like laptops, desktops, servers, or networking equipment, or if they offer tested functional grades suitable for refurbishment.",
+    "operational_fit_assessment": "No information is available to assess operational fit. The website is blocked, preventing verification of the company's business type (B2B ITAD vs. consumer recycler), certifications (R2v3, e-Stewards), or sales channels (wholesale/bulk capabilities).",
+    "red_flags": [
+      "Website is inaccessible (403 Forbidden), preventing any due diligence.",
+      "Complete lack of verifiable information on business model, inventory, or certifications."
+    ],
+    "recommendation": "Skip",
+    "reasoning": "The company's website is completely inaccessible, returning a 403 Forbidden error. This is a major red flag for a potential B2B vendor, as it prevents any verification of their business model, inventory, certifications, or operational capabilities. Without this basic information, it is impossible to determine if they meet Yilong's critical requirements for enterprise IT asset volume, testing/grading, R2v3 certification, and wholesale sales channels. Attempting to proceed would be speculative and inefficient. The recommendation is to skip this vendor and focus on companies with transparent, accessible operations.",
+    "error": false
+  }
+]

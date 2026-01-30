@@ -1,0 +1,50 @@
+[
+  {
+    "company_name": "Renoo, Inc.",
+    "website_url": "https://www.renooinc.com",
+    "main_business": "IT Asset Disposition (ITAD)",
+    "description": "A Bay Area ITAD partner that helps organizations securely retire old laptops, desktops, and mobile devices with certified data destruction, compliance reporting, and value recovery. They focus on serving school districts, mid-sized businesses, and ITAD partners, handling everything from pickup to payout.",
+    "products_services": [
+      "Secure ITAD for enterprises",
+      "Certified data destruction (NIST 800.88)",
+      "Device pickup and logistics",
+      "Device testing and refurbishment",
+      "Resale and value recovery",
+      "Audit-ready reporting and certificates",
+      "White-label services for ITAD partners",
+      "Client portal with live asset tracking"
+    ],
+    "contact_emails": [
+      "info@renooinc.com",
+      "info@renoo.com",
+      "privacy@renooinc.com"
+    ],
+    "contact_phones": [
+      "+1 510 391 5600",
+      "+1 507 214 3550"
+    ],
+    "physical_address": "2020 Dennison St, Ste 13, Oakland, CA, 94606",
+    "year_founded": null,
+    "certifications": [
+      "R2v3 Certified",
+      "ISO 9001",
+      "ISO 14001",
+      "ISO 45001"
+    ],
+    "service_areas": [
+      "Bay Area (California)"
+    ],
+    "summary": "Renoo, Inc. is an IT Asset Disposition (ITAD) company based in Oakland, California. They specialize in providing secure, certified ITAD services for businesses, educational institutions, and ITAD partners. Their core offering includes scheduling pickups, performing NIST 800.88 standard data wipes, testing and refurbishing devices for resale, and providing detailed, audit-ready reports and payouts. They emphasize a white-glove, hassle-free service with a strong focus on compliance, transparency, and maximizing value recovery for their clients. Their operations are certified under R2v3 and multiple ISO standards, and they have processed over 15,000 devices.",
+    "is_good_fit": true,
+    "inventory_fit_assessment": "Excellent fit. Renoo explicitly handles the enterprise IT assets Yilong requires: laptops, desktops, and mobile devices. Their entire business model is based on testing, refurbishing, and reselling these devices through direct channels to capture higher returns, which aligns perfectly with Yilong's 'High-Quality Refurbishment' model. They mention processing over 15,000 devices, indicating volume capability. Their service is designed for bulk pickups from organizations (50+ devices), and they provide asset-level reports, confirming they test and grade individual units. There is no mention of scrap metal focus or residential recycling.",
+    "operational_fit_assessment": "Strong operational fit. Renoo is a B2B-focused ITAD processor serving Education, Enterprise, and other ITAD partners, which matches Yilong's required vendor type. They hold the highly preferred R2v3 certification, along with ISO 9001, 14001, and 45001, demonstrating a compliant and auditable process. Their sales channel is inherently wholesale/bulk, as they collect devices in volume from organizations and resell them through 'direct channels.' They offer white-label services to other ITAD firms, proving they are accustomed to B2B wholesale relationships. They provide detailed serialized reports and payout tracking, which is essential for a bulk trading partner like Yilong.",
+    "red_flags": [
+      "Minor typo/error in content ('Zero Rick' instead of 'Zero Risk')",
+      "Service area appears primarily focused on the Bay Area, which may limit national bulk sourcing for Yilong",
+      "No explicit mention of harvesting components (CPU, RAM, SSD) as a separate service"
+    ],
+    "recommendation": "Reach out",
+    "reasoning": "Renoo is a highly qualified candidate that meets or exceeds all critical Must-Have criteria. They are an R2v3-certified ITAD processor handling enterprise-grade laptops and desktops in bulk quantities with a tested functional/refurbishment model. Their operational focus on B2B clients, certified data wiping, and value recovery through resale directly aligns with Yilong's procurement needs. The primary limitation is their geographic service area, but as a source of quality-tested inventory, they are an excellent potential vendor. The recommendation is to initiate contact to discuss their available inventory volumes, grading standards (F2/C3), and their willingness to sell bulk lots Ex Works.",
+    "error": false
+  }
+]

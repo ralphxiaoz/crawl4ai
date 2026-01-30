@@ -1,0 +1,52 @@
+[
+  {
+    "company_name": "ITAD Solutions",
+    "website_url": "https://www.itadsolutions.com",
+    "main_business": "IT Asset Disposition (ITAD)",
+    "description": "A global leader in creating and managing enterprise-level IT Asset Disposition (ITAD) programs. They provide full e-waste and asset management services, specializing in data security, value recovery, and responsible recycling. They operate a global network of over 120 partners managed through a centralized portal, offering a single point of contact and standardized reporting for end-of-life IT assets.",
+    "products_services": [
+      "IT Asset Disposition (ITAD) Program Management",
+      "E-waste and Asset Management",
+      "Data Destruction (NIST & DoD Standards)",
+      "Value Recovery (Refurbishing, Remarketing, Reselling)",
+      "Logistics Planning and Freighting",
+      "Local E-waste Pickups (San Francisco Bay Area)",
+      "Out-of-State and International Pickups",
+      "Online Asset Reporting",
+      "Equipment Refurbishment",
+      "Data Center Pull Out",
+      "Mobile Asset Capture and Data Erasure",
+      "Warehousing and Redeployment of Assets",
+      "Sustainability Reporting and Carbon Savings Analysis",
+      "Wholesale/Bulk Sales of Refurbished Equipment"
+    ],
+    "contact_emails": [
+      "webmaster@itadsolutions.com"
+    ],
+    "contact_phones": [
+      "(650) 869-7000"
+    ],
+    "physical_address": "340 Harbor Way, South San Francisco, CA 94080, USA",
+    "year_founded": null,
+    "certifications": [
+      "R2v3",
+      "ISO 9001",
+      "ISO 14001",
+      "ISO 45001",
+      "NAID AAA Certified"
+    ],
+    "service_areas": [
+      "San Francisco Bay Area (Headquarters)",
+      "Nationwide (USA)",
+      "International/Global"
+    ],
+    "summary": "ITAD Solutions is a global IT Asset Disposition (ITAD) firm headquartered in South San Francisco, California, with an additional facility in Dallas, Texas. The company has over 25 years of industry experience and specializes in managing the end-of-life process for enterprise IT assets. Their core services encompass data security using NIST/DoD standards, value recovery through refurbishment and resale, and responsible recycling with a zero-landfill, zero-e-waste export policy. They operate a vast network of over 120 partners worldwide, managed via their 'myITAD' portal, providing clients with a single, standardized global solution. The company is certified to R2v3, ISO 9001, ISO 14001, ISO 45001, and NAID AAA standards, underscoring their commitment to quality, environmental responsibility, and data security. They offer wholesale/bulk sales and are explicitly seeking new wholesale customers, indicating a B2B and bulk-sales focus.",
+    "is_good_fit": true,
+    "inventory_fit_assessment": "Excellent fit. ITAD Solutions explicitly handles enterprise IT assets, including data center servers (mentioned in 'Data Center Pull Out'), networking equipment, storage, desktops, and laptops. Their core service is 'Value Recovery' via refurbishing, remarketing, and reselling equipment, which aligns perfectly with Yilong's 'High-Quality Refurbishment' model. They have a 25-year customer network and nationwide sales channels for this purpose. While specific grading (A/B/C) is not detailed, their R2v3 certification and focus on 'refurbishing' and 'reselling' strongly imply they test and grade assets. Their service list includes 'Equipment Refurbishment,' confirming they prepare assets for the secondary market. No red flags regarding residential recycling or scrap metal focus.",
+    "operational_fit_assessment": "Strong operational fit. The company is a pure B2B ITAD processor and asset recovery firm, as stated in their mission to serve 'enterprise level' clients. They hold the critical R2v3 certification, which validates their processes for testing, data wiping, and responsible recycling. They also have NAID AAA certification for data destruction. Their sales model explicitly supports wholesale/bulk transactions, with a dedicated page ('Looking to buy?') inviting wholesale customers and requests for proposals (RFPs) for bulk purchases. They manage logistics for pallet/truckload quantities nationally and internationally. Their global partner network and centralized management system demonstrate scalability suitable for Yilong's high-volume needs.",
+    "red_flags": [],
+    "recommendation": "Reach out",
+    "reasoning": "ITAD Solutions meets or exceeds all critical qualification criteria for Yilong Business Limited. They are a certified (R2v3), enterprise-focused ITAD processor that specializes in value recovery through refurbishment and resale of enterprise IT equipment—exactly the inventory Yilong seeks. They operate a wholesale/bulk sales channel and have the logistical capability for national and international shipments. Their certifications and stated processes ensure assets are properly tested and data-wiped. There are no apparent red flags; they are not a consumer recycler, scrap operation, or retail reseller. They are a prime candidate for a bulk supplier relationship.",
+    "error": false
+  }
+]

@@ -1,0 +1,53 @@
+[
+  {
+    "company_name": "Modern Waste Solutions",
+    "website_url": "https://www.modernwastesolutions.com",
+    "main_business": "IT Asset Disposition (ITAD) and Environmental Waste Management",
+    "description": "Modern Waste Solutions is a California-based, full-service environmental compliance and logistics provider specializing in secure, compliant recycling and waste management. Since 1999, they have helped organizations manage e-waste, batteries, lighting, and other universal waste streams. Their services emphasize data security, regulatory compliance, and environmental responsibility, offering a streamlined solution for businesses, government agencies, schools, and healthcare providers. They operate with a 'Today's waste, tomorrow's resources' philosophy, focusing on reuse, component recovery, and responsible recycling.",
+    "products_services": [
+      "Electronic Waste (E-Waste) Recycling",
+      "Battery Recycling",
+      "Secure Data Destruction",
+      "On-Site Hard Drive Shredding",
+      "Data Center & UPS Decommissioning and Removal",
+      "X-Ray Equipment Deinstallation",
+      "Asset Tracking and Recovery",
+      "De-manufacturing and Component Salvage",
+      "Compliance and Logistics Consulting",
+      "Equipment Provision and Staff Training",
+      "Scheduled and On-Demand Pickup Services",
+      "Certification and Reporting"
+    ],
+    "contact_emails": [
+      "support@modernwastesolutions.com"
+    ],
+    "contact_phones": [
+      "(916) 339-3676",
+      "(916) 333-0268"
+    ],
+    "physical_address": "3921 Pell Circle, Sacramento, CA 95838",
+    "year_founded": "1999",
+    "certifications": [
+      "R2v3 (Responsible Recycling Version 3)",
+      "ISO 14001:2015 (Environmental Management Systems)",
+      "ISO 45001:2018 (Occupational Health and Safety Management)",
+      "ISO 9001:2015 (Quality Management Systems)"
+    ],
+    "service_areas": [
+      "California (Statewide coverage from San Diego to Redding)",
+      "Nevada (Reno, Sparks, Washoe County, Churchill County, Lyon County, Douglas County, Storey County)"
+    ],
+    "summary": "Modern Waste Solutions is a seasoned ITAD and environmental services company founded in 1999, headquartered in Sacramento, California. They provide comprehensive, B2B-focused solutions for electronic waste recycling, battery recycling, and secure data destruction, serving a wide range of industries including government, healthcare, finance, and technology. The company holds key certifications like R2v3 and multiple ISO standards, underscoring their commitment to data security, environmental management, and quality processes. Their operational model includes providing equipment, training, statewide pickup services, detailed tracking, and audit-ready reports, making them a full-service partner for organizations needing compliant waste management.\n\nTheir service philosophy is built on a '6 Steps to Success' framework, ensuring client compliance and operational efficiency. They explicitly handle enterprise-level IT assets like computers, servers, and networking equipment, with processes for data sanitization, asset recovery, and component reuse. With a strong emphasis on sustainability and maximizing material value, they prioritize reuse over recycling, aligning with high-quality refurbishment models. Their geographic coverage spans nearly all of California and parts of Nevada, supported by their own fleet and personnel, not subcontractors.",
+    "is_good_fit": true,
+    "inventory_fit_assessment": "Modern Waste Solutions demonstrates a strong inventory fit for Yilong's needs. Their services explicitly include processing 'Computer Equipment – Desktops, laptops, servers, monitors, and peripherals' and 'Industrial Equipment,' which aligns with the required enterprise IT assets (laptops, desktops, data center servers, networking equipment). They have a dedicated 'Data Center & UPS Decommissioning' service, confirming direct access to data center hardware. Their process emphasizes 'Asset Recovery – Resale or redeployment of working assets for cost recovery' and 'Component Reuse,' indicating they salvage and test high-value components like CPUs, RAM, and storage. Their R2v3 certification requires them to test and grade assets (F2/C3 or better for reuse), meeting Yilong's condition requirement for 'Tested Functional' Grade C assets ready for refurbishment. They focus on B2B and institutional clients, not residential recycling, which is a positive sign for volume.",
+    "operational_fit_assessment": "Operational fit is excellent. The company is a certified ITAD processor with a clear B2B focus, serving businesses, government agencies, schools, and healthcare organizations. Their possession of R2v3 certification is a critical advantage, as it mandates secure data wiping, testing, and responsible downstream management—directly supporting Yilong's 'High-Quality Refurbishment' model. Their business model is built around wholesale/bulk services: they provide equipment (bins, pallets), offer route-based and on-call pickups across California, and handle materials by weight and serial number, which is conducive to pallet/truckload quantities. They have their own fleet and do not subcontract pickups, suggesting control over logistics and volume handling. Their 'Client Portal' for reports and certificates indicates a scalable, systematic approach suitable for large-volume partners like Yilong.",
+    "red_flags": [
+      "The website heavily emphasizes 'recycling' and 'disposal' services, which could indicate a primary scrap/recycling revenue stream rather than asset resale, though their asset recovery and R2v3 reuse focus mitigates this.",
+      "No explicit mention of 'wholesale sales' or 'bulk sales' of tested assets on their public-facing pages; the sales channel is implied through their B2B service model.",
+      "Some service descriptions (e.g., 'shredding,' 'landfilling' for product destruction) cater to pure waste streams, but these are separate from their ITAD asset recovery services."
+    ],
+    "recommendation": "Reach out",
+    "reasoning": "Modern Waste Solutions is a highly qualified candidate for Yilong's supply chain. They meet all critical must-haves: they are an R2v3-certified ITAD processor handling enterprise IT assets with testing and grading capabilities (implied by R2v3). Their 20+ years of experience, statewide logistics, and full-service B2B model align perfectly with bulk procurement needs. The minor red flags are overshadowed by their strong certifications, explicit asset recovery services, and operational scale. A direct inquiry can clarify their wholesale sales process for tested functional assets, which is highly likely given their certification and service offerings. They represent a potential reliable source for volume purchases of Grade A/B/C enterprise IT equipment.",
+    "error": false
+  }
+]

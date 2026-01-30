@@ -1,0 +1,43 @@
+[
+  {
+    "company_name": "TUVE",
+    "website_url": "https://www.tuveinc.com",
+    "main_business": "Recommerce / IT Asset Disposition (ITAD)",
+    "description": "A recommerce company specializing in sustainable, responsible, and ethical device management, focusing on returning cellphones and used electronics to the device life-cycle. They provide solutions for procurement, refurbishment, data sanitization, and recycling, promoting a circular economy.",
+    "products_services": [
+      "Device Life-Cycle Management",
+      "Boutique Services at Scale",
+      "Data Management (Logical Data Sanitization & Physical Data Destruction)",
+      "Cloud Reporting",
+      "Test, Grade, and Repair Services",
+      "Procurement of used devices",
+      "Distribution of refurbished devices",
+      "Repair/Refurbishment",
+      "Responsible Recycling",
+      "Diagnostics and Grading (60-point system)"
+    ],
+    "contact_emails": [],
+    "contact_phones": [],
+    "physical_address": null,
+    "year_founded": null,
+    "certifications": [
+      "R2V3",
+      "RIO2016",
+      "Seri R2v3"
+    ],
+    "service_areas": [
+      "Global"
+    ],
+    "summary": "TUVE is a US-based recommerce and ITAD company with over a decade of experience, specializing in the sustainable management of used electronics, primarily cellphones. Their mission is to create value for clients while promoting a circular economy and protecting the environment. They operate a state-of-the-art facility where they procure devices from major carriers, retailers, and OEMs, then process them through rigorous data sanitization, a 60-point diagnostic and grading system, repair, and responsible recycling. They are R2v3 certified, adhere to high industry standards for environmental stewardship and data security, and distribute refurbished devices globally to businesses. Their services are tailored for B2B clients, offering device lifecycle management at scale.",
+    "is_good_fit": false,
+    "inventory_fit_assessment": "POOR FIT. The company's primary and explicitly stated focus is on cellphones. While they mention 'used electronics' and 'devices' broadly, all specific examples, specializations, and process descriptions center on cellphones. There is no mention of handling the core enterprise IT assets required by Yilong (Laptops, Desktops, Servers, Networking, Storage). Their 60-point grading system and repair services are tailored for mobile devices. This is a major red flag against the 'Inventory Fit' pillar.",
+    "operational_fit_assessment": "STRONG OPERATIONAL PROFILE. Operationally, the company is an excellent fit. They are a B2B-focused ITAD/asset recovery firm, sourcing from enterprise suppliers (carriers, retailers, OEMs) and distributing globally to businesses. They hold the preferred R2v3 certification, indicating proper testing and data wiping procedures. Their model supports wholesale/bulk transactions, as they handle large volumes from major suppliers and have global sales channels. Their processes for data sanitization, grading, and reporting are professional and aligned with industry standards.",
+    "red_flags": [
+      "Primary product focus is consumer electronics (cellphones), not enterprise IT assets (laptops, desktops, servers, networking).",
+      "No mention of handling the specific device types Yilong requires."
+    ],
+    "recommendation": "Skip",
+    "reasoning": "Despite having strong operational credentials (R2v3 certified, B2B wholesale model, professional processes), the company is not a fit for Yilong's core inventory needs. Yilong's business requires suppliers of enterprise IT hardware like laptops, desktops, and servers. TUVE's website clearly and repeatedly identifies its specialization as cellphones and mobile devices. This fundamental mismatch in inventory type makes them an unsuitable vendor, even though their operational model is otherwise aligned. A vendor must meet both Pillar 1 (Inventory) and Pillar 2 (Operations) to be a good fit.",
+    "error": false
+  }
+]

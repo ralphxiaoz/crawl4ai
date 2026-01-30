@@ -1,0 +1,278 @@
+{
+  "metadata": {
+    "timestamp": "2025-12-30 13:57:08",
+    "website_url": "https://www.e2used.com",
+    "model": "deepseek/deepseek-chat",
+    "temperature": 0.7,
+    "max_tokens": 4000,
+    "content_filtered": true,
+    "original_size_chars": 80929,
+    "sent_size_chars": 20979,
+    "reduction_percent": 74.1
+  },
+  "system_prompt": "## YOUR ROLE\nYou are a Senior Procurement Consultant for Yilong Business Limited, a high-volume IT Asset Disposition (ITAD) trading firm.\nYour goal is to evaluate potential US-based vendors to see if they fit our supply chain requirements.\n\n## CONTEXT - WHO WE ARE (THE BUYER)\n- Company: Yilong Business Limited (Hong Kong-based with US operations)\n- Business Model: We purchase used IT assets in bulk (Ex Works - EXW) from US facilities and export them to established downstream markets in Hong Kong, Mainland China, and Southeast Asia\n- Volume: We have a purchasing budget of ~$1.5M per month ($10M–$20M annually)\n- Compliance: We operate a strict \"High-Quality Refurbishment\" model. We do NOT export e-waste. We require assets to be \"Tested Functional\" (R2v3 F2/C3 or better)\n\n## YOUR TASK\nYou are analyzing a company website. The provided content belongs to ONE SINGLE company.\nAll URLs are under the same root domain.\nThe content contains text from multiple pages, separated by \"# URL: \".\n\nCRITICAL INSTRUCTIONS:\n1. The crawl covers multiple pages (Home, About, Contact, etc.).\n2. There is significant overlapping/duplicate information across these pages.\n3. You MUST consolidate all information into a SINGLE company profile.\n4. Do NOT output a list of companies. Extract exactly ONE company object.\n5. Ignore minor differences in descriptions across pages; synthesize them into a comprehensive summary.\n\n## INFORMATION TO EXTRACT\n\n1. **Company Information:**\n   - Company name\n   - Main website URL (the root domain, e.g., https://example.com)\n   - Main business/industry\n   - Brief description of what they do\n\n2. **Products/Services:**\n   - List all products or services offered\n   - Key capabilities or specializations\n\n3. **Contact Information:**\n   - ALL email addresses found (support, sales, info, contact, etc.)\n   - Phone numbers\n   - Physical address/location\n   - Contact page URLs\n\n4. **Additional Details:**\n   - Company size (if mentioned)\n   - Year founded (if mentioned)\n   - Certifications or awards (especially R2v3, e-Stewards)\n   - Geographic coverage/service areas\n\n## VENDOR QUALIFICATION CRITERIA\n\nEvaluate if this company is a good fit for Yilong based on these 2 pillars:\n\n### PILLAR 1: INVENTORY FIT\n**Must Have:**\n- Enterprise IT assets: Laptops, Desktops, Data Center Servers, Networking Equipment, Storage\n\n**Bonus Points:**\n- Harvested components (high-value CPU, RAM, SSD/HDD)\n\n**Condition Requirements:**\n- Grade A/B (Ready for Retail) - Preferred\n- Tested Functional Grade C (Ready for Refurbishment) - Acceptable\n\n**RED FLAGS:**\n- Only handles residential recycling (curbside pickup)\n- Focuses primarily on shredding/scrap metal\n- No mention of testing or grading\n- Only handles consumer electronics (phones, tablets, TVs)\n\n### PILLAR 2: OPERATIONAL FIT\n**Business Type:**\n- Must be an ITAD Processor or Asset Recovery Firm (B2B focus)\n- NOT a retail reseller or consumer-focused recycler\n\n**Certification:**\n- R2v3 certification is highly preferred (indicates they can test/wipe data correctly)\n- e-Stewards is also acceptable\n\n**Sales Channel:**\n- Must support Wholesale / Bulk sales (Pallet/Truckload quantities)\n- If they only sell single units on eBay/Amazon to consumers, they are a BAD fit\n\n**RED FLAGS:**\n- Only residential/consumer services\n- No B2B capabilities mentioned\n- No certifications\n- Only retail sales channels\n\n## EVALUATION OUTPUT\nBased on the above criteria, provide:\n- is_good_fit: true/false - Is this company worth reaching out to?\n- inventory_fit_assessment: Detailed explanation of how they match our inventory needs\n- operational_fit_assessment: Detailed explanation of their operational capabilities\n- red_flags: List of any concerns or disqualifying factors\n- recommendation: \"Reach out\", \"Skip\", or \"Research further\"\n- reasoning: Clear explanation of why you recommend reaching out or skipping\n\nBe thorough and extract ALL contact emails you can find.\nIf information is not available, use null for that field.\n",
+  "json_schema": {
+    "properties": {
+      "company_name": {
+        "anyOf": [
+          {
+            "type": "string"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "default": null,
+        "description": "Name of the company",
+        "title": "Company Name"
+      },
+      "website_url": {
+        "anyOf": [
+          {
+            "type": "string"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "default": null,
+        "description": "Main website URL of the company (the root domain, e.g., https://example.com)",
+        "title": "Website Url"
+      },
+      "main_business": {
+        "anyOf": [
+          {
+            "type": "string"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "default": null,
+        "description": "Primary business or industry",
+        "title": "Main Business"
+      },
+      "description": {
+        "anyOf": [
+          {
+            "type": "string"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "default": null,
+        "description": "Brief description of what the company does",
+        "title": "Description"
+      },
+      "products_services": {
+        "anyOf": [
+          {
+            "items": {
+              "type": "string"
+            },
+            "type": "array"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "default": null,
+        "description": "List of products or services offered",
+        "title": "Products Services"
+      },
+      "contact_emails": {
+        "anyOf": [
+          {
+            "items": {
+              "type": "string"
+            },
+            "type": "array"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "default": null,
+        "description": "All email addresses found on the website",
+        "title": "Contact Emails"
+      },
+      "contact_phones": {
+        "anyOf": [
+          {
+            "items": {
+              "type": "string"
+            },
+            "type": "array"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "default": null,
+        "description": "All phone numbers found",
+        "title": "Contact Phones"
+      },
+      "physical_address": {
+        "anyOf": [
+          {
+            "type": "string"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "default": null,
+        "description": "Physical address or location",
+        "title": "Physical Address"
+      },
+      "year_founded": {
+        "anyOf": [
+          {
+            "type": "string"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "default": null,
+        "description": "Year the company was founded",
+        "title": "Year Founded"
+      },
+      "certifications": {
+        "anyOf": [
+          {
+            "items": {
+              "type": "string"
+            },
+            "type": "array"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "default": null,
+        "description": "Any certifications or awards mentioned",
+        "title": "Certifications"
+      },
+      "service_areas": {
+        "anyOf": [
+          {
+            "items": {
+              "type": "string"
+            },
+            "type": "array"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "default": null,
+        "description": "Geographic areas served",
+        "title": "Service Areas"
+      },
+      "summary": {
+        "anyOf": [
+          {
+            "type": "string"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "default": null,
+        "description": "A 2-3 paragraph human-readable summary of the company",
+        "title": "Summary"
+      },
+      "is_good_fit": {
+        "anyOf": [
+          {
+            "type": "boolean"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "default": null,
+        "description": "Overall assessment - Is this company worth reaching out to for Yilong's procurement needs?",
+        "title": "Is Good Fit"
+      },
+      "inventory_fit_assessment": {
+        "anyOf": [
+          {
+            "type": "string"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "default": null,
+        "description": "Detailed explanation of how the company's inventory (product types, grades, volumes) matches Yilong's requirements for enterprise IT assets",
+        "title": "Inventory Fit Assessment"
+      },
+      "operational_fit_assessment": {
+        "anyOf": [
+          {
+            "type": "string"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "default": null,
+        "description": "Detailed explanation of the company's operational capabilities (B2B focus, certifications, wholesale channels) and fit with Yilong's bulk purchasing model",
+        "title": "Operational Fit Assessment"
+      },
+      "red_flags": {
+        "anyOf": [
+          {
+            "items": {
+              "type": "string"
+            },
+            "type": "array"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "default": null,
+        "description": "List of any concerns or disqualifying factors (e.g., residential-only, no certifications, retail-only sales, scrap metal focus)",
+        "title": "Red Flags"
+      },
+      "recommendation": {
+        "anyOf": [
+          {
+            "type": "string"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "default": null,
+        "description": "Action recommendation: 'Reach out', 'Skip', or 'Research further'",
+        "title": "Recommendation"
+      },
+      "reasoning": {
+        "anyOf": [
+          {
+            "type": "string"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "default": null,
+        "description": "Clear explanation of why you recommend reaching out or skipping this vendor, based on the evaluation criteria",
+        "title": "Reasoning"
+      }
+    },
+    "title": "CompanyAnalysis",
+    "type": "object"
+  },
+  "content_sent": "# SITE-WIDE ELEMENTS (Navigation, Footer, etc.)\n\n*  CONTACT US\n*  ITAD &DataErasure\n*  Sell Used IT Equipment To US\n* Apple Devices\n* CONTACT US\n* Data Erasure\n* ITAD &DataErasure     ITAD Services     Data Erasure\n* ITAD Services\n* LTO7-LTO8 Tape\n* Memory(RAM)\n* Sell Used IT Equipment To US     Storage Systems     Apple Devices     Servers     cpu     Memory(RAM)     LTO7-LTO8 Tape\n* Storage Systems\n**Arrow Green Electronics, Inc.**\nAdd: 25509 Industrial Blvd #F14 Hayward, CA 94545\nContact: WhatsApp: (001)831-288-3808\nCopyright © 2024 Arrow Green Electronics All Rights Reserved.\nEmail: salesE2used@gmail.com\nFax: (001)831-288-3808\nLeave Message\nMobile: (001)831-288-3808\nPhone: (001)831-288-3808\nWe specialize in recycling IT equipment\n\n================================================================================\n\n# PAGE-SPECIFIC CONTENT\n\n# URL: https://www.e2used.com\n  * HOME\n  * ABOUT\n  * PICTURE\n  * MESSAGE\n  *  HOME\n  *  ABOUT\n    * Servers\n    * cpu\n  *  PICTURE\n  *  MESSAGE\n  1. 1\n  2. 2\n  3. 3\n  * Previous\n  * Next\nAbout Us\n Arrow Green Electronics Corporation is an R2V3 - certified professional company. It mainly engages in the recycling of data center equipment and Apple devices. Equipped with professional data - erasure equipment and a dedicated team, it ensures that no data leakage occurs. It has consistently received high praise from numerous customers. Customer friends are welcome to call for inquiries regarding relevant recycling matters.Introduction to the recycled products:1. Data center related equipment recovery: storage and hard disk cabinet, server, SSD hard dis···\nArrow Green Electronics, Inc.\nPICTURE\n  *   \")\n  \")\n  \")\nSell Used IT Equipment To US\nIf you are looking for a used IT equipment acquisition company, please choose our company, our company is a professional used IT equipment acquisition company.\n  *   LTO7-LTO8 Tape\n  *   Sell your Apple Mac\n  *   IBM Servers\n  *   Sell Your Memory(RAM) \")\n  *   Sell Your CPU\n  *   Sell Your ipad\n# URL: https://www.e2used.com/about\n  * HOME\n  * ABOUT\n  * PICTURE\n  * MESSAGE\n  *  HOME\n  *  ABOUT\n    * Servers\n    * cpu\n  *  PICTURE\n  *  MESSAGE\nABOUT\nHome > ABOUT\nArrow Green Electronics Corporation is an R2V3 - certified professional company. It mainly engages in the recycling of data center equipment and Apple devices. Equipped with professional data - erasure equipment and a dedicated team, it ensures that no data leakage occurs. It has consistently received high praise from numerous customers. Customer friends are welcome to call for inquiries regarding relevant recycling matters.\nIntroduction to the recycled products:\n1. Data center related equipment recovery: storage and hard disk cabinet, server, SSD hard disk, memory, CPU, etc.;\n2. Apple related recycling: MacBook Pro, MacBook Air, iMac, iPad, iPhone and other full range of Apple products.\n# URL: https://www.e2used.com/contact\n  * HOME\n  * ABOUT\n  * PICTURE\n  * MESSAGE\n  *  HOME\n  *  ABOUT\n    * Servers\n    * cpu\n  *  PICTURE\n  *  MESSAGE\nHome > CONTACT US\nArrow Green Electronics, Inc.\nContact：WhatsApp: (001)831-288-3808 Mobile：(001)831-288-3808 Email：salesE2used@gmail.com\n# URL: https://www.e2used.com/list_14/51.html\n  * HOME\n  * ABOUT\n  * PICTURE\n  * MESSAGE\n  *  HOME\n  *  ABOUT\n    * Servers\n    * cpu\n  *  PICTURE\n  *  MESSAGE\nLTO7-LTO8 Tape\nHome > Sell Used IT Equipment To US > LTO7-LTO8 Tape\nStorage Systems Apple Devices Servers cpu Memory(RAM) LTO7-LTO8 Tape\nLTO7-LTO8 Tape\nClick here for online message:\nDrop us a line\nsalesE2used@gmail.com\nDetail\nWe recycle LTO7 and LTO8 tape devices from various manufacturers.\nIf you have such devices for sale, please contact us.\nIBM TS2288 LTO7 Tape:\nIBM TS4500 LTO7 3588-F7C\nHP LTO7-LTO8 Tape:\n**Introduction:**\nWelcome to our LTO Tape Recycling Service, dedicated to responsible disposal\nof your outdated servers.\nWe prioritize eco-friendly practices while ensuring compliance with all regulations.\n**Key Features:**\n**1. **Compliance & Security**: **\n _We adhere to environmental regulations and ensure secure data destruction_ _._\n**2. **Efficient Logistics**:**\nStreamlined pickup, transportation, and recycling processes minimize disruption.\n**3. **Responsible Recycling**:**\nWe focus on component reuse and safe disposal of hazardous materials.\n**4. **Certification**:**\nReceive documentation and certificates of disposal for compliance assurance.\n**5. **Tailored Solutions**:**\nCustomized recycling plans to meet your organization's unique needs.\n**6. **Sustainability Commitment**:**\nJoin us in reducing electronic waste and promoting a greener future.\n**Conclusion:**\nChoose our LTO Tape Recycling Service for efficient, secure, and environmentally\nresponsible disposal of your servers. Partner with us to safeguard data, meet\nregulations, and contribute to sustainability.\n**Contact Information:**\nReach out to us for inquiries or consultation.\n# URL: https://www.e2used.com/lm1\n  * HOME\n  * ABOUT\n  * PICTURE\n  * MESSAGE\n  *  HOME\n  *  ABOUT\n    * Servers\n    * cpu\n  *  PICTURE\n  *  MESSAGE\nStorage Systems\nHome > Sell Used IT Equipment To US > Storage Systems\n  *  Sell Your Storage Sell Your Storage\n  *  Sell Your Hard Drives Sell Your Hard Drives\n< 1 1/1 >\n# URL: https://www.e2used.com/lm1-13/40.html\n  * HOME\n  * ABOUT\n  * PICTURE\n  * MESSAGE\n  *  HOME\n  *  ABOUT\n    * Servers\n    * cpu\n  *  PICTURE\n  *  MESSAGE\nITAD Services\nHome > ITAD &DataErasure > ITAD Services\nITAD Services Data Erasure\nLeading ITAD Services\nClick here for online message:\nDrop us a line\nsalesE2used@gmail.com\nDetail\n**The following are the certification certificates that our company has obtained:**\n**Introduction:** Our company is a company dedicated to providing comprehensive enterprise IT asset disposal services. We are committed to maximizing value recovery through sustainable methods while ensuring minimal impact on the environment. As industry leaders, we possess extensive experience and expertise in delivering efficient, secure, and regulatory-compliant IT asset disposal solutions for our clients.\n**Services Offered:**\n  1. **IT Asset Recycling and Buyback:** We offer services for the recycling and buyback of various IT assets including computers, servers, networking equipment, mobile devices, and more. By assessing asset value, we provide fair buyback quotes for clients and ensure the safe disposal of unused equipment.\n  2. **Data Security Destruction:** Data security is a top priority in our operations. We provide comprehensive data destruction services including physical destruction and software overwriting, ensuring that sensitive information remains secure and inaccessible to unauthorized parties.\n  3. **Environmental Processing:** We commit to environmentally responsible processing of all discarded IT equipment, including dismantling, sorting, recycling, and reuse. We employ regulatory-compliant methods for waste disposal and strive to maximize material recovery and reuse to minimize environmental impact.\n  4. **Asset Management and Reporting:** We offer comprehensive asset management services including inventorying, tagging, tracking, and reporting. Clients can stay informed about the status and progress of their assets, ensuring compliance and transparency.\n**Why Choose Us?**\n  1. **Professional Experience:** Our experienced team is capable of delivering the highest quality services and solutions for our clients.\n  2. **Data Security Assurance:** We utilize state-of-the-art data destruction technologies to ensure that clients' sensitive information remains confidential.\n  3. **Environmental Responsibility:** We are dedicated to reducing environmental impact through recycling and environmentally responsible processing, actively promoting sustainable development.\n  4. **Customer-Centric Approach:** We prioritize customer satisfaction and strive to deliver the best service experience for our clients.\nIf you are seeking a reliable partner for enterprise IT asset disposal, contact our company. We are committed to serving you with dedication and excellence.\n# URL: https://www.e2used.com/lm1-7\n  * HOME\n  * ABOUT\n  * PICTURE\n  * MESSAGE\n  *  HOME\n  *  ABOUT\n    * Servers\n    * cpu\n  *  PICTURE\n  *  MESSAGE\nData Erasure\nHome > ITAD &DataErasure > Data Erasure\nITAD Services Data Erasure\n  *  Professional Data Erasure Professional Data Erasure\n< 1 1/1 >\n# URL: https://www.e2used.com/lm1-7/41.html\n  * HOME\n  * ABOUT\n  * PICTURE\n  * MESSAGE\n  *  HOME\n  *  ABOUT\n    * Servers\n    * cpu\n  *  PICTURE\n  *  MESSAGE\nData Erasure\nHome > ITAD &DataErasure > Data Erasure\nITAD Services Data Erasure\nProfessional Data Erasure\nClick here for online message:\nDrop us a line\nsalesE2used@gmail.com\nDetail\n**Introduction:**\nOur company is a leading environmental recycling company specializing in ensuring data security after hard drive data erasure. We understand the critical importance of protecting sensitive information and are dedicated to providing sustainable solutions that minimize environmental impact while safeguarding data integrity.\n**Services Offered:**\n  * **Hard Drive Data Erasure:** We offer secure hard drive data erasure services using advanced techniques and software, ensuring that all data is permanently removed from the drives. Our methods comply with industry standards and regulatory requirements to guarantee data sanitization.\n  * **Data Security Verification:** Following data erasure, we conduct thorough verification processes to ensure that all data has been successfully wiped from the hard drives. This verification step provides peace of mind to our clients, knowing that their data is securely erased and cannot be recovered.\n  * **Physical Destruction:** For hard drives that are no longer in use or cannot be effectively erased, we offer physical destruction services. Our destruction methods render the drives irrecoverable, further ensuring data security and preventing any potential data breaches.\n  * **Environmental Responsibility:** We are committed to environmentally responsible practices in all aspects of our operations. After data erasure or destruction, we responsibly recycle the remaining hardware components, minimizing waste and reducing our carbon footprint.\n**Why Choose Us?**\n  * **Expertise in Data Security:** Our team consists of experienced professionals with expertise in data security and data erasure techniques, ensuring the highest level of protection for our clients' sensitive information.\n  * **Compliance and Certification:** We adhere to industry standards and regulations related to data security and environmental protection. Our certifications validate our commitment to excellence in both areas.\n  * **Customized Solutions:** We understand that each client's needs may vary, so we offer customized solutions tailored to meet specific requirements and preferences.\n  * **Customer Satisfaction:** At SecureData Solutions, customer satisfaction is our top priority. We strive to exceed expectations and provide exceptional service to every client.\nChoose Our company for environmentally friendly data erasure services that prioritize data security and environmental responsibility. With our expertise and dedication, you can trust us to protect your sensitive information while minimizing environmental impact.\nHard disk physical destruction:\nHard disk demagnetic:\n# URL: https://www.e2used.com/lm1/30.html\n  * HOME\n  * ABOUT\n  * PICTURE\n  * MESSAGE\n  *  HOME\n  *  ABOUT\n    * Servers\n    * cpu\n  *  PICTURE\n  *  MESSAGE\nStorage Systems\nHome > Sell Used IT Equipment To US > Storage Systems\nSell Your Storage\nClick here for online message:\nDrop us a line\nsalesE2used@gmail.com\nDetail\n**We purchased storage devices and expansion cabinets from various brands as listed below.**\n**1. NETAPP Storage**\n**Storage Device**\n**Hard disk extension cabinet**\n**2. DELL EMC Storage**\n**3. HP Storage**\n**4. IBM Storage**\n**Introduction:**\nWelcome to our equipment Recycling Service, dedicated to responsible disposal\nof your outdated servers.\nWe prioritize eco-friendly practices while ensuring compliance with all regulations.\n**Key Features:**\n**1. **Compliance & Security**: **\n _We adhere to environmental regulations and ensure secure data destruction_ _._\n**2. **Efficient Logistics**:**\nStreamlined pickup, transportation, and recycling processes minimize disruption.\n**3. **Responsible Recycling**:**\nWe focus on component reuse and safe disposal of hazardous materials.\n**4. **Certification**:**\nReceive documentation and certificates of disposal for compliance assurance.\n**5. **Tailored Solutions**:**\nCustomized recycling plans to meet your organization's unique needs.\n**6. **Sustainability Commitment**:**\nJoin us in reducing electronic waste and promoting a greener future.\n**Conclusion:**\nChoose our equipment Recycling Service for efficient, secure, and environmentally\nresponsible disposal of your equipment. Partner with us to safeguard data, meet\nregulations, and contribute to sustainability.\n**Contact Information:**\nReach out to us for inquiries or consultation.\n# URL: https://www.e2used.com/lm2\n  * HOME\n  * ABOUT\n  * PICTURE\n  * MESSAGE\n  *  HOME\n  *  ABOUT\n    * Servers\n    * cpu\n  *  PICTURE\n  *  MESSAGE\nApple Devices\nHome > Sell Used IT Equipment To US > Apple Devices\n  *  Sell your Apple Mac Sell your Apple Mac\n  *  Sell Your ipad Sell Your ipad\n  *  Sell Your Iphone Sell Your Iphone\n< 1 1/1 >\n# URL: https://www.e2used.com/lm3\n  * HOME\n  * ABOUT\n  * PICTURE\n  * MESSAGE\n  *  HOME\n  *  ABOUT\n    * Servers\n    * cpu\n  *  PICTURE\n  *  MESSAGE\nServers\nHome > Sell Used IT Equipment To US > Servers\n  *  IBM Servers IBM Servers\n  *  Lenovo Servers Lenovo Servers\n  *  DELL-EMC Servers DELL-EMC Servers\n  *  HPE Servers HPE Servers\n< 1 1/1 >\n# URL: https://www.e2used.com/picture\n  * HOME\n  * ABOUT\n  * PICTURE\n  * MESSAGE\n  *  HOME\n  *  ABOUT\n    * Servers\n    * cpu\n  *  PICTURE\n  *  MESSAGE\nPICTURE\nHome > PICTURE\n  *  LTO7-LTO8 Tape\n  *  Storage Systems\n  *  Apple Series\n  *  Servers\n  *  CPU\n  *  Memory(RAM)  \")\n< 12 1/2 >\n# URL: https://www.e2used.com/picture/22.html\n  * HOME\n  * ABOUT\n  * PICTURE\n  * MESSAGE\n  *  HOME\n  *  ABOUT\n    * Servers\n    * cpu\n  *  PICTURE\n  *  MESSAGE\nPICTURE\nHome > PICTURE\nHard Drives\nDec,29,2021\n**We purchased storage hard drives from various brands, including SSDs and mechanical hard drives.**\n**Hard Drives**\n**SSD\n**Introduction:**\nWelcome to our equipment Recycling Service, dedicated to responsible disposal\nof your outdated servers.\nWe prioritize eco-friendly practices while ensuring compliance with all regulations.\n**Key Features:**\n**1. **Compliance & Security**: **\n _We adhere to environmental regulations and ensure secure data destruction_ _._\n**2. **Efficient Logistics**:**\nStreamlined pickup, transportation, and recycling processes minimize disruption.\n**3. **Responsible Recycling**:**\nWe focus on component reuse and safe disposal of hazardous materials.\n**4. **Certification**:**\nReceive documentation and certificates of disposal for compliance assurance.\n**5. **Tailored Solutions**:**\nCustomized recycling plans to meet your organization's unique needs.\n**6. **Sustainability Commitment**:**\nJoin us in reducing electronic waste and promoting a greener future.\n**Conclusion:**\nChoose our equipment Recycling Service for efficient, secure, and environmentally\nresponsible disposal of your equipment. Partner with us to safeguard data, meet\nregulations, and contribute to sustainability.\n**Contact Information:**\nReach out to us for inquiries or consultation.\nPrev: No more\nNext: Memory(RAM)\")\n# URL: https://www.e2used.com/picture/31.html\n  * HOME\n  * ABOUT\n  * PICTURE\n  * MESSAGE\n  *  HOME\n  *  ABOUT\n    * Servers\n    * cpu\n  *  PICTURE\n  *  MESSAGE\nPICTURE\nHome > PICTURE\nServers\nDec,30,2021\nOur company purchases servers and minicomputers from various manufacturers.\nIf you have second-hand servers to sell, please contact us.\n1.IBM Servers\n2.Lenovo Servers\n3.DELL-EMC Servers\n4.HP Servers\n**Introduction:**\nWelcome to our Server Recycling Service, dedicated to responsible disposal\nof your outdated servers.\nWe prioritize eco-friendly practices while ensuring compliance with all regulations.\n**Key Features:**\n**1. **Compliance & Security**: **\n _We adhere to environmental regulations and ensure secure data destruction_ _._\n**2. **Efficient Logistics**:**\nStreamlined pickup, transportation, and recycling processes minimize disruption.\n**3. **Responsible Recycling**:**\nWe focus on component reuse and safe disposal of hazardous materials.\n**4. **Certification**:**\nReceive documentation and certificates of disposal for compliance assurance.\n**5. **Tailored Solutions**:**\nCustomized recycling plans to meet your organization's unique needs.\n**6. **Sustainability Commitment**:**\nJoin us in reducing electronic waste and promoting a greener future.\n**Conclusion:**\nChoose our Server Recycling Service for efficient, secure, and environmentally\nresponsible disposal of your servers. Partner with us to safeguard data, meet\nregulations, and contribute to sustainability.\n**Contact Information:**\nReach out to us for inquiries or consultation.\nPrev: CPU\nNext: Apple Series\n# URL: https://www.e2used.com/picture/32.html\n  * HOME\n  * ABOUT\n  * PICTURE\n  * MESSAGE\n  *  HOME\n  *  ABOUT\n    * Servers\n    * cpu\n  *  PICTURE\n  *  MESSAGE\nPICTURE\nHome > PICTURE\nApple Series\nDec,30,2021\n**Our company purchases various Apple electronic devices. If you have second-hand Apple devices to sell,**\n**please contact us.**\n**1.MacBook**\n****2.Ipad****\n**3.Iphones**\n**Introduction:**\nWelcome to our equipment Recycling Service, dedicated to responsible disposal\nof your outdated servers.\nWe prioritize eco-friendly practices while ensuring compliance with all regulations.\n**Key Features:**\n**1. **Compliance & Security**: **\n _We adhere to environmental regulations and ensure secure data destruction_ _._\n**2. **Efficient Logistics**:**\nStreamlined pickup, transportation, and recycling processes minimize disruption.\n**3. **Responsible Recycling**:**\nWe focus on component reuse and safe disposal of hazardous materials.\n**4. **Certification**:**\nReceive documentation and certificates of disposal for compliance assurance.\n**5. **Tailored Solutions**:**\nCustomized recycling plans to meet your organization's unique needs.\n**6. **Sustainability Commitment**:**\nJoin us in reducing electronic waste and promoting a greener future.\n**Conclusion:**\nChoose our equipment Recycling Service for efficient, secure, and environmentally\nresponsible disposal of your equipment. Partner with us to safeguard data, meet\nregulations, and contribute to sustainability.\n**Contact Information:**\nReach out to us for inquiries or consultation.\nPrev: Servers\nNext: Storage Systems\n# URL: https://www.e2used.com/product\n  * HOME\n  * ABOUT\n  * PICTURE\n  * MESSAGE\n  *  HOME\n  *  ABOUT\n    * Servers\n    * cpu\n  *  PICTURE\n  *  MESSAGE\nSell Used IT Equipment To US\nHome > Sell Used IT Equipment To US\nPlease click on the image below or the classification tab above for further details and contact us for a quotation, and we will have a professional engineer to evaluate your equipment and follow up on the project progress.\n  *  LTO7-LTO8 Tape LTO7-LTO8 Tape\n  *  Sell your Apple Mac Sell your Apple Mac\n  *  IBM Servers IBM Servers\n  *  Sell Your Memory(RAM) Sell Your Memory(RAM) \")\n  *  Sell Your CPU Sell Your CPU\n  *  Sell Your ipad Sell Your ipad\n  *  Sell Your Storage Sell Your Storage\n  *  Lenovo Servers Lenovo Servers\n  *  DELL-EMC Servers DELL-EMC Servers\n< 12 1/2 >\n# URL: https://www.e2used.com/product-5/21.html\n  * HOME\n  * ABOUT\n  * PICTURE\n  * MESSAGE\n  *  HOME\n  *  ABOUT\n    * Servers\n    * cpu\n  *  PICTURE\n  *  MESSAGE\nITAD &DataErasure\nHome > ITAD &DataErasure\nITAD Services Data Erasure\nleading ITAD services\nClick here for online message:\nDrop us a line\nsalesE2used@gmail.com\nDetail\nForeign trade is also called \"foreign trade\" or \"import and export trade\", It refers to the exchange of goods and services between one country (region) and another country (region). This trade consists of import and export. For the country (region) transporting goods or services, it is import; for the country (region) transporting goods or services, it is import In terms of (region), it means export. This began to emerge and develop in slave society and feudal society, and developed more rapidly in capitalist society. Its nature and function are determined by different social systems.\n# URL: https://www.e2used.com/product_2\n  * HOME\n  * ABOUT\n  * PICTURE\n  * MESSAGE\n  *  HOME\n  *  ABOUT\n    * Servers\n    * cpu\n  *  PICTURE\n  *  MESSAGE\nSell Used IT Equipment To US\nHome > Sell Used IT Equipment To US\nPlease click on the image below or the classification tab above for further details and contact us for a quotation, and we will have a professional engineer to evaluate your equipment and follow up on the project progress.\n  *  HPE Servers HPE Servers\n  *  Sell Your Iphone Sell Your Iphone\n  *  Sell Your Hard Drives Sell Your Hard Drives\n< 12 2/2 >",
+  "content_length_stats": {
+    "characters": 20979,
+    "estimated_tokens": 5244,
+    "estimated_cost_input_usd": 0.001468
+  }
+}

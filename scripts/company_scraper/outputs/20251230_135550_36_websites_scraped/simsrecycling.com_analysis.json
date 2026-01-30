@@ -1,0 +1,63 @@
+[
+  {
+    "company_name": "Sims Lifecycle Services (SLS)",
+    "website_url": "https://www.simslifecycle.com",
+    "main_business": "IT Asset Disposition (ITAD) and Electronics Recycling",
+    "description": "A global leader in IT asset disposition (ITAD), e-waste recycling, and data center services. They specialize in secure data destruction, refurbishment, redeployment, resale, and responsible recycling of enterprise IT assets and data center equipment, supporting the circular economy.",
+    "products_services": [
+      "IT Asset Disposition (ITAD)",
+      "Data Center Decommissioning",
+      "Data Destruction (On-site & Off-site)",
+      "E-waste Recycling",
+      "IT Asset Recovery (Refurbishment, Redeployment, Resale)",
+      "Parts Recovery (Memory, Processors, Circuit Boards)",
+      "Returns Management for OEMs",
+      "Refining",
+      "Certified Destruction",
+      "Extended Producer Responsibility (EPR) Programs",
+      "Logistics and Packing Services",
+      "Asset Tracking and Reporting via Sims Portal/The Link Portal",
+      "Sustainability Calculator"
+    ],
+    "contact_emails": [],
+    "contact_phones": [],
+    "physical_address": null,
+    "year_founded": "2002",
+    "certifications": [
+      "R2v3",
+      "ISO 9001",
+      "ISO 14001",
+      "ISO 45001",
+      "ISO 27001",
+      "SOC 1",
+      "SOC 2",
+      "NIST 800-88 r1 compliance",
+      "HMG IA Standard No. 5 compliance",
+      "ISO/IEC 21964 (formerly DIN-66399) compliance"
+    ],
+    "service_areas": [
+      "Global",
+      "Americas",
+      "EMEA",
+      "APAC",
+      "United States",
+      "United Kingdom",
+      "Germany",
+      "Ireland",
+      "Netherlands",
+      "Singapore",
+      "Australia",
+      "India",
+      "Mexico",
+      "and many others via subcontractor network"
+    ],
+    "summary": "Sims Lifecycle Services (SLS) is a global, B2B-focused IT Asset Disposition (ITAD) and electronics recycling provider founded in 2002. They operate 'Circular Centers' worldwide, offering end-to-end services for enterprise clients and data centers. Their core business revolves around securely managing retired IT assets through data destruction, value recovery via refurbishment and resale, and responsible recycling. They explicitly handle the enterprise-grade inventory Yilong seeks: data center equipment (servers, storage, networking), laptops, desktops, and harvested components. SLS holds key certifications like R2v3 and multiple ISO standards, operates a wholesale/bulk model, and has the global infrastructure to support large-scale programs, making them a strong potential vendor for a high-volume trader like Yilong.",
+    "is_good_fit": true,
+    "inventory_fit_assessment": "Excellent fit. SLS explicitly processes the exact enterprise IT assets Yilong requires. Their listed equipment includes: Data Center Equipment (servers, storage arrays, networking equipment, PDUs), Laptops and Desktops, Networking Equipment, and Storage Media. Crucially, they specialize in 'Purposeful Repurposing' and list harvested components like memory, processors, and circuit boards as high-return items. Their process involves testing, grading, repair, and refurbishment, indicating they can supply assets at 'Tested Functional' (Grade C) or better (Grade A/B) condition. They focus on maximizing reuse and resale, not just shredding/scrap.",
+    "operational_fit_assessment": "Strong operational fit. SLS is a pure B2B ITAD processor and asset recovery firm serving enterprise, data center, and OEM clients. They are R2v3 certified across their facilities, which is a core requirement for Yilong's 'Tested Functional' model. Their business is built on wholesale/bulk handling: they discuss pallet/truckload shipments, container logistics, and managing large-scale projects for hyperscale data centers and global corporations. They have a dedicated sales channel for bulk resale to brokers via auction portals and wholesale channels. Their global network of owned and audited subcontractor facilities is designed to support large, complex programs.",
+    "red_flags": [],
+    "recommendation": "Reach out",
+    "reasoning": "SLS is a near-ideal match for Yilong's procurement profile. They are a large, certified, global ITAD processor with a clear B2B/enterprise focus. They handle the precise inventory (enterprise servers, networking, laptops, components) in the required conditions (tested, graded, refurbished for resale). Their R2v3 certification and wholesale/bulk operational model directly align with Yilong's needs for reliable, compliant, high-volume supply. No red flags were identified; they are not a consumer recycler or scrap-focused operation. The primary next step is to contact them via their website form to inquire about their bulk sales (EXW) process and pricing for the specific asset categories Yilong targets.",
+    "error": false
+  }
+]

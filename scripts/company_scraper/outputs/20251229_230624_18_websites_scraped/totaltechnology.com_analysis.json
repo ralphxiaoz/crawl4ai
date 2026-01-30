@@ -1,0 +1,37 @@
+[
+  {
+    "company_name": "Total Technology",
+    "main_business": "IT Asset Disposition (ITAD) and Technology Lifecycle Management",
+    "description": "Total Technology provides sustainable technology disposal and lifecycle management solutions. They specialize in maximizing the return on decommissioned devices through buyback programs (TechCycling™), ensuring secure data destruction, managing responsible e-waste recycling, and handling program logistics. Their services help organizations maintain financial sustainability, data security, and environmental compliance when refreshing their technology.",
+    "products_services": [
+      "TechCycling™ (Device Buyback/Resale)",
+      "Data Destruction (NIST, DoD, NAID AAA compliant)",
+      "eRecycling (R2V3 certified)",
+      "Program Logistics (Secure shipping, white glove, box programs)",
+      "Deployment Services (Asset tagging, serial logging, device casing, delivery)",
+      "LeaseRelease (Lease buyout program)",
+      "Consultative Technology Program Management"
+    ],
+    "contact_emails": [
+      "info@totaltechnology.com"
+    ],
+    "contact_phones": [
+      "888-952-0011"
+    ],
+    "physical_address": "295 Hill St. San Marcos, CA 92078",
+    "year_founded": "2011",
+    "certifications": [
+      "R2V3 Certification",
+      "ISO 14001",
+      "ISO 45001",
+      "ISO 9001",
+      "NAID AAA Certification"
+    ],
+    "service_areas": [
+      "Nationwide (United States)",
+      "Global"
+    ],
+    "summary": "Total Technology is an IT Asset Disposition (ITAD) company founded in 2011, specializing in comprehensive, sustainable technology lifecycle solutions. Their core mission is to help organizations—including enterprises, K-12 schools, government, healthcare, and non-profits—responsibly manage end-of-life technology. They offer a suite of interconnected services designed to maximize financial return, ensure data security, and promote environmental stewardship. Their flagship service, TechCycling™, focuses on buying back and remarketing decommissioned devices to fund new technology deployments. They complement this with certified data destruction (following NIST, DoD, and NAID standards), responsible e-waste recycling through an R2V3-certified partner network, and secure logistics management. The company emphasizes a consultative, technology-driven approach, using proprietary software and analytics to provide transparency and efficiency. With over 14 years of industry experience, they have processed more than 6.8 million devices and returned over $352 million to clients, establishing themselves as a partner for financially sustainable and compliant technology programs.",
+    "error": false
+  }
+]

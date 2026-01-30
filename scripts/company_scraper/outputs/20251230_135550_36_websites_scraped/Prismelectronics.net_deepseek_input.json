@@ -1,0 +1,278 @@
+{
+  "metadata": {
+    "timestamp": "2025-12-30 14:18:05",
+    "website_url": "https://Prismelectronics.net",
+    "model": "deepseek/deepseek-chat",
+    "temperature": 0.7,
+    "max_tokens": 4000,
+    "content_filtered": true,
+    "original_size_chars": 209289,
+    "sent_size_chars": 30859,
+    "reduction_percent": 85.3
+  },
+  "system_prompt": "## YOUR ROLE\nYou are a Senior Procurement Consultant for Yilong Business Limited, a high-volume IT Asset Disposition (ITAD) trading firm.\nYour goal is to evaluate potential US-based vendors to see if they fit our supply chain requirements.\n\n## CONTEXT - WHO WE ARE (THE BUYER)\n- Company: Yilong Business Limited (Hong Kong-based with US operations)\n- Business Model: We purchase used IT assets in bulk (Ex Works - EXW) from US facilities and export them to established downstream markets in Hong Kong, Mainland China, and Southeast Asia\n- Volume: We have a purchasing budget of ~$1.5M per month ($10M–$20M annually)\n- Compliance: We operate a strict \"High-Quality Refurbishment\" model. We do NOT export e-waste. We require assets to be \"Tested Functional\" (R2v3 F2/C3 or better)\n\n## YOUR TASK\nYou are analyzing a company website. The provided content belongs to ONE SINGLE company.\nAll URLs are under the same root domain.\nThe content contains text from multiple pages, separated by \"# URL: \".\n\nCRITICAL INSTRUCTIONS:\n1. The crawl covers multiple pages (Home, About, Contact, etc.).\n2. There is significant overlapping/duplicate information across these pages.\n3. You MUST consolidate all information into a SINGLE company profile.\n4. Do NOT output a list of companies. Extract exactly ONE company object.\n5. Ignore minor differences in descriptions across pages; synthesize them into a comprehensive summary.\n\n## INFORMATION TO EXTRACT\n\n1. **Company Information:**\n   - Company name\n   - Main website URL (the root domain, e.g., https://example.com)\n   - Main business/industry\n   - Brief description of what they do\n\n2. **Products/Services:**\n   - List all products or services offered\n   - Key capabilities or specializations\n\n3. **Contact Information:**\n   - ALL email addresses found (support, sales, info, contact, etc.)\n   - Phone numbers\n   - Physical address/location\n   - Contact page URLs\n\n4. **Additional Details:**\n   - Company size (if mentioned)\n   - Year founded (if mentioned)\n   - Certifications or awards (especially R2v3, e-Stewards)\n   - Geographic coverage/service areas\n\n## VENDOR QUALIFICATION CRITERIA\n\nEvaluate if this company is a good fit for Yilong based on these 2 pillars:\n\n### PILLAR 1: INVENTORY FIT\n**Must Have:**\n- Enterprise IT assets: Laptops, Desktops, Data Center Servers, Networking Equipment, Storage\n\n**Bonus Points:**\n- Harvested components (high-value CPU, RAM, SSD/HDD)\n\n**Condition Requirements:**\n- Grade A/B (Ready for Retail) - Preferred\n- Tested Functional Grade C (Ready for Refurbishment) - Acceptable\n\n**RED FLAGS:**\n- Only handles residential recycling (curbside pickup)\n- Focuses primarily on shredding/scrap metal\n- No mention of testing or grading\n- Only handles consumer electronics (phones, tablets, TVs)\n\n### PILLAR 2: OPERATIONAL FIT\n**Business Type:**\n- Must be an ITAD Processor or Asset Recovery Firm (B2B focus)\n- NOT a retail reseller or consumer-focused recycler\n\n**Certification:**\n- R2v3 certification is highly preferred (indicates they can test/wipe data correctly)\n- e-Stewards is also acceptable\n\n**Sales Channel:**\n- Must support Wholesale / Bulk sales (Pallet/Truckload quantities)\n- If they only sell single units on eBay/Amazon to consumers, they are a BAD fit\n\n**RED FLAGS:**\n- Only residential/consumer services\n- No B2B capabilities mentioned\n- No certifications\n- Only retail sales channels\n\n## EVALUATION OUTPUT\nBased on the above criteria, provide:\n- is_good_fit: true/false - Is this company worth reaching out to?\n- inventory_fit_assessment: Detailed explanation of how they match our inventory needs\n- operational_fit_assessment: Detailed explanation of their operational capabilities\n- red_flags: List of any concerns or disqualifying factors\n- recommendation: \"Reach out\", \"Skip\", or \"Research further\"\n- reasoning: Clear explanation of why you recommend reaching out or skipping\n\nBe thorough and extract ALL contact emails you can find.\nIf information is not available, use null for that field.\n",
+  "json_schema": {
+    "properties": {
+      "company_name": {
+        "anyOf": [
+          {
+            "type": "string"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "default": null,
+        "description": "Name of the company",
+        "title": "Company Name"
+      },
+      "website_url": {
+        "anyOf": [
+          {
+            "type": "string"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "default": null,
+        "description": "Main website URL of the company (the root domain, e.g., https://example.com)",
+        "title": "Website Url"
+      },
+      "main_business": {
+        "anyOf": [
+          {
+            "type": "string"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "default": null,
+        "description": "Primary business or industry",
+        "title": "Main Business"
+      },
+      "description": {
+        "anyOf": [
+          {
+            "type": "string"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "default": null,
+        "description": "Brief description of what the company does",
+        "title": "Description"
+      },
+      "products_services": {
+        "anyOf": [
+          {
+            "items": {
+              "type": "string"
+            },
+            "type": "array"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "default": null,
+        "description": "List of products or services offered",
+        "title": "Products Services"
+      },
+      "contact_emails": {
+        "anyOf": [
+          {
+            "items": {
+              "type": "string"
+            },
+            "type": "array"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "default": null,
+        "description": "All email addresses found on the website",
+        "title": "Contact Emails"
+      },
+      "contact_phones": {
+        "anyOf": [
+          {
+            "items": {
+              "type": "string"
+            },
+            "type": "array"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "default": null,
+        "description": "All phone numbers found",
+        "title": "Contact Phones"
+      },
+      "physical_address": {
+        "anyOf": [
+          {
+            "type": "string"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "default": null,
+        "description": "Physical address or location",
+        "title": "Physical Address"
+      },
+      "year_founded": {
+        "anyOf": [
+          {
+            "type": "string"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "default": null,
+        "description": "Year the company was founded",
+        "title": "Year Founded"
+      },
+      "certifications": {
+        "anyOf": [
+          {
+            "items": {
+              "type": "string"
+            },
+            "type": "array"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "default": null,
+        "description": "Any certifications or awards mentioned",
+        "title": "Certifications"
+      },
+      "service_areas": {
+        "anyOf": [
+          {
+            "items": {
+              "type": "string"
+            },
+            "type": "array"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "default": null,
+        "description": "Geographic areas served",
+        "title": "Service Areas"
+      },
+      "summary": {
+        "anyOf": [
+          {
+            "type": "string"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "default": null,
+        "description": "A 2-3 paragraph human-readable summary of the company",
+        "title": "Summary"
+      },
+      "is_good_fit": {
+        "anyOf": [
+          {
+            "type": "boolean"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "default": null,
+        "description": "Overall assessment - Is this company worth reaching out to for Yilong's procurement needs?",
+        "title": "Is Good Fit"
+      },
+      "inventory_fit_assessment": {
+        "anyOf": [
+          {
+            "type": "string"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "default": null,
+        "description": "Detailed explanation of how the company's inventory (product types, grades, volumes) matches Yilong's requirements for enterprise IT assets",
+        "title": "Inventory Fit Assessment"
+      },
+      "operational_fit_assessment": {
+        "anyOf": [
+          {
+            "type": "string"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "default": null,
+        "description": "Detailed explanation of the company's operational capabilities (B2B focus, certifications, wholesale channels) and fit with Yilong's bulk purchasing model",
+        "title": "Operational Fit Assessment"
+      },
+      "red_flags": {
+        "anyOf": [
+          {
+            "items": {
+              "type": "string"
+            },
+            "type": "array"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "default": null,
+        "description": "List of any concerns or disqualifying factors (e.g., residential-only, no certifications, retail-only sales, scrap metal focus)",
+        "title": "Red Flags"
+      },
+      "recommendation": {
+        "anyOf": [
+          {
+            "type": "string"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "default": null,
+        "description": "Action recommendation: 'Reach out', 'Skip', or 'Research further'",
+        "title": "Recommendation"
+      },
+      "reasoning": {
+        "anyOf": [
+          {
+            "type": "string"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "default": null,
+        "description": "Clear explanation of why you recommend reaching out or skipping this vendor, based on the evaluation criteria",
+        "title": "Reasoning"
+      }
+    },
+    "title": "CompanyAnalysis",
+    "type": "object"
+  },
+  "content_sent": "# SITE-WIDE ELEMENTS (Navigation, Footer, etc.)\n\n## Got Questions?\n#### Navigation\n* Asset Recovery Services\n* Asset Reporting\n* Component Distribution\n* Contact Us\n* Customer Service\n* Disclaimers\n* Download Forms\n* E-Waste Recycling\n* Electronic Components\n* Electronic Test & Measurement\n* Environmental Commitment\n* Excess Inventory Solutions\n* IT Asset Recovery\n* Industrial\n* Network Equipment\n* Network Hardware\n* Online Catalog\n* Pick Up/Logistics\n* Privacy Policy\n* Products and Inventory\n* Proprietary Product/ Data Destruction\n* Registration\n* Remarketing\n* Request A Quote\n* Semiconductor\n* Terms & Conditions\n* info@prismelectronics.net\n**Prism Electronics**\n**welcome to Prism Electronics**\nOriginal text\nPlease contact us at:\nProud Partner of\nRate this translation\nYour feedback will be used to help improve Google Translate\n\n================================================================================\n\n# PAGE-SPECIFIC CONTENT\n\n# URL: http://prismelectronics.net\nSelect Language​▼\n1\n2\n3\n4\n5\n6\nPrism Electronics is dedicated to providing World Class Component Distribution and Comprehensive Asset Management Programs for your specific needs. Contact us today. We will be there for you tomorrow.\n**Prism Electronics is far more than your average independent distributor of integrated circuits. We offer a comprehensive solution for all of your sourcing requirements. We carry active, passive, memory and electromechanical components. We also carry a large selection of computer products, telecom parts and the latest in networking equipment. We currently stock over 700,000 line items. From IC’s to fully configured machines, we have what you need when you need it most.**\n**We are always looking for the opportunity to buy components, networking equipment and hardware of all kinds.** We want to buy your excess and obsolete inventory. Partner with Prism today and breathe new life into your End of Life products.\nLive Chat Offline\n# URL: http://prismelectronics.net/index.php/about-us.html\n​▼\n  * **About Us**\n# About Us\nPrism Electronics formed in 2002 for the purpose of providing Independent Component Distribution and Asset Recovery Services for a growing demand in the Silicon Valley and beyond. Prism is a family owned business dedicated to providing quality and comprehensive services to its customers and vendors alike.\nPrism Electronics is driven by a unified commitment to integrity, service and building solid relationships from the inside out. Our common goal is to exceed the expectations of those who depend on us. We challenge ourselves to be the Company you want to come back to every time you need us.\n## Integrity, Trust and Protection\nOur client relationships are built on integrity and trust. Your future and ours is dependent upon a partnership based on honesty, accuracy and quality. From Data security to Environmental liability, Prism is your trusted partner. We exist to protect your company and its future.\n## Add a Revenue Stream\nOur Reverse Logistics Program will actually provide your company with a revenue stream and maximize your ROI (Return on investment), while reducing your liability. Refurbishing and remarketing are also an important part of our zero-waste environmental policy.\n## Security is Top-Priority\nSecurity is of the utmost importance at Prism. We offer certified destruction and recycling on multiple levels. Whether it is sensitive data, propriety information or prototype equipment, we have a stringent process designed to protect you regardless of your criteria. Reports are available and all transportation and shipments are reliably tracked. Our facilities are monitored 24 hours per day utilizing current surveillance technology.\n## Facilities / Operations\nPrism currently operates three facilities to serve you **(combining over 100,000 square feet)**\nPrism Headquarters **Component Distribution** facility houses over 700,000 line items in stock ready to ship. The operation is ESD compliant.\nOur **Asset Recovery Division** operates two pneumatic de-manufacturing production lines, state of the art Tech Lab and over 50,000 square feet of finished goods warehousing. Prism has a zero landfill policy and is ISO 14001-2004 certified.\nPrism Electronics New York in association with **KAD Resources** offers a collection point for warehousing and distribution on the East Coast.\n# URL: http://prismelectronics.net/index.php/asset-recovery-services.html\nSelect Language​▼\n  * **Asset Recovery Services**\n# Asset Recovery Services\nPrism has an entire division dedicated to providing comprehensive Asset Management and recovery services. Reverse Logistics has become a vital role in managing End of Life and retired assets for all companies. When it comes to deriving value while focusing on reducing Environmental liability, Prism can help manage the complex balance of generating revenue and doing the right thing. Prism works hard to provide accurate, cost effective solutions for terminating your IT assets.\nOur state of the art 73,600 square foot warehouse has been specifically designed to process any size order. We are currently handling over a million pounds per month on average. We make every effort to process your material with a program specifically tailored to your individual requirements.\n### Prism offers the following services:\n  * Reverse Logistics\n  * Remarketing of electronic components and equipment\n  * End of life product remarketing\n  * Testing and custom configuration\n  * Liquidation, bankruptcy sales\n  * Asset tag & serial number accounting and reporting\n  * Hard Drive wiping to DOD specs\n  * Transportation and logistics\n  * Consignment\n  * (VMI) Vendor Managed Inventory\n  * Environmental management and consulting\n  * Facility clean outs\n  * White label re-marketing\n  * Asset re-deployment\n  * Precious metal refining services\n  * E-waste recycling with zero landfill policy\n  * Certified destruction available for sensitive and proprietary equipment\n  * 1 (408) 283-9000\nLive Chat Offline\n# URL: http://prismelectronics.net/index.php/asset-recovery-services/asset-reporting.html\n​▼\n  * **Asset Reporting**\n# Asset Reporting\nThe recent addition of a user friendly client based software system allows you to track all of your materials and the services we provide from anywhere in the world. Real time processing visibility allows you to follow each shipment with a comprehensive and detailed reporting structure for total accountability and transparency to our customers.\nWe provide as much detail as you want. Most of which can be viewed through a secure client user log in from any device with internet access. Here are just a few of the options we provide:\n  * Asset tag & serial number accounting and reporting.\n  * Console and Test Results for individual items\n  * Receiving Reports\n  * Processing Reports\n  * Recycling Reports\n  * 1 (408) 283-9000\nLive Chat Offline\n# URL: http://prismelectronics.net/index.php/asset-recovery-services/e-waste-recycling.html\n​▼\n  * **E-Waste Recycling**\n# E-Waste Recycling\nAs technology advances and better, faster more efficient devices replace older technology, the challenge of retiring obsolete and older assets can be a daunting task. With stringent and often cost prohibitive regulations in place, it is all too important that you choose a partner that has both experience and effective processing capabilities for ensuring safe and responsible recycling programs.\nOften, products that have reached the end of their useful life for your current needs, can be re-deployed into an application that will extend the life of the product. The best form of recycling is reuse. Prism is committed to channeling as many products as possible back into service.\nDespite all of our efforts, there are thousands of items big and small that simply cannot be re-used. Our de-manufacturing process is designed to minimize waste streams while maximizing returns. Everything we handle is evaluated, dismantled and separated into recyclable commodities. All of our employees are trained thoroughly in efficient handling techniques as well as comprehensive product identification for maximum efficiency.\nOur commitment to environmental liability are always at the forefront of our policies and procedures.\n### Some of the products we recycle are as follows:\n  * Printed Circuit Boards\n  * Precious Metals (Refining)\n  * Power Supplies\n  * CD / DVD Roms\n  * Hard Drives\n  * LCD’s\n  * Laptops\n  * Desktops\n  * Servers\n  * Semiconductors\n  * Floppy Drives\n  * Chassis\n  * Racks\n  * Network and telecom equipment\n  * Industrial equipment\n  * Computers, printers, and laptops\n  * Semiconductors\n  * UPS and Batteries\n  * Electromechanical Devices\n  * Cell phones\n  * Solar cell wafers\n  * Distribution equipment\n  * Plastic\n  * Metals (steel, copper, aluminum, etc.)\n  * Wire\n  * Appliances\n  * 1 (408) 283-9000\n# URL: http://prismelectronics.net/index.php/asset-recovery-services/environmental-commitment.html\n​▼\n  * **Environmental Commitment**\n# Environmental Commitment\nPrism Electronics has built a reputation based on integrity. It is our core values that drive and motivate us all to do the right thing everyday no matter what happens. A zero landfill policy and a commitment to the earth on which we live and thrive upon is our underlying mission. We divert millions of pounds of materials from landfills every year. We are ISO 14001-2004 Certified and our Environmental Management System is a solidification of what we have been practicing for years.\n  * 1 (408) 283-9000\n# URL: http://prismelectronics.net/index.php/asset-recovery-services/it-asset-recovery.html\nSelect Language​▼\n  * **IT Asset Recovery**\n# IT Asset Recovery\nOur experienced purchasing specialists, logistics experts, test, repair and refurbishment technicians in conjunction with our seasoned sales team allow us to provide you with a total solution for your IT asset management requirements. Our primary purpose is to maximize the return to you using our collective experience in the secondary equipment market.\nWe specialize in IT hardware. Networking equipment, servers, storage devices, and related products are dominating the world of IT opportunity. As the “Cloud” grows, we are positioned to service, repair and remarket everything supporting the backbone of information technology today.\nOur e-commerce sales force is top notch when it comes to marketing everything from new excess inventories of mainstream electronics to test equipment and an unlimited array of specialized items. We leave no stone unturned when it comes to finding sales channels to sell material.\n## Remarketing\nPrism Electronics has spent years developing sales channels and a comprehensive process to maximize returns on a variety of assets. We can generate revenue from your end of life IT equipment as well as thousands of computer related or industrial products.\nWhen IT equipment and other assets reach the end of their useful life in your business, it often has market value elsewhere, provided it can be refurbished, resold or redeployed. Through a wide variety of sales channels in our distribution network of wholesale, e-commerce and end user markets, there are multiple opportunities to re-sell products that would otherwise hit a landfill or scrap yard. We specialize in finding new and innovative uses and sales channels for products most companies would discount as waste.\nOur state of the art Tech labs employ highly trained personnel with the expertise to test, clean, and refurbish all types of equipment.\n## We offer spot pricing, lot processing and Vendor Managed Inventory programs depending on your needs.\n  * 1 (408) 283-9000\n# URL: http://prismelectronics.net/index.php/asset-recovery-services/pick-up-logistics.html\n​▼\n  * **Pick Up/Logistics**\n# Pick Up/Logistics\n  * Free Local Pick up\n  * De-installation services\n  * Domestic or international\n  * Professional packing services\n  * Facility relocation services\n  * Export Compliance\n## Re-Deployment\nIn some cases you might need assets retired from one department or location to be re-deployed to another department or location. We can provide valuable logistics, testing and re-configuring of a variety of products to be redeployed wherever you may need them for minimal cost compared to buying new.\n  * 1 (408) 283-9000\n# URL: http://prismelectronics.net/index.php/asset-recovery-services/proprietary-product-data-destruction.html\n​▼\n  * **Proprietary Product/ Data Destruction**\n# Proprietary Product/ Data Destruction\nPrism electronics provides several options for your secure data sanitization and destruction needs. Our services ensure the destruction of data and information stored on computers and related hardware. We can process a wide range of equipment but not limited to: Hard disk drives, Desktop computers, Servers, Storage arrays, Printers, Network equipment, Mobile phones and other Technology devices.\nOur number one priority is to protect the identity and data of our clients by providing several avenues of data destruction from Physical destruction to data overwriting. Prism electronics can safeguard against data recovery and reuse by completely destroying hardware to prevent any recovery of proprietary data, designs or other material. Physical destruction is the most secure but offers the lowest amount of return. Data destruction services through data sanitization methods do not require physical destruction. Hardware that is sanitized can be remarketed with piece of mind that the data is cleansed. Prism electronics provides several levels of data destruction based on client needs and budget.\nPart of our standard operating procedure is to provide clients with data sanitization and destruction reports that contain serial numbers of what was destroyed as well as the sanitization or physical destruction date. Our reports also provide the date, the name of the technician and the confirmation of services rendered.\nWe currently offer several levels of data destruction. Basic (single pass overwrite), Advanced (DOD wipe Standard) and Physical destruction (Disintegration pulverization).\n  * 1 (408) 283-9000\n# URL: http://prismelectronics.net/index.php/asset-recovery-services/remarketing.html\n​▼\n  * **Remarketing**\n# Remarketing\nPrism Electronics has spent years developing sales channels and a comprehensive process to maximize returns on a variety of assets. We can generate revenue from your end of life IT equipment as well as thousands of computer related or industrial products.\nWhen IT equipment and other assets reach the end of their useful life in your business, it often has market value elsewhere, provided it can be refurbished, resold or redeployed. Through a wide variety of sales channels in our distribution network of wholesale, e-commerce and end user markets, there are multiple opportunities to re-sell products that would otherwise hit a landfill or scrap yard. We specialize in finding new and innovative uses and sales channels for products most companies would discount as waste.\nOur state of the art Tech labs employ highly trained personnel with the expertise to test, clean, and refurbish all types of equipment.\n**We offer spot pricing, lot processing and Vendor Managed Inventory programs depending on your needs.**\n  * 1 (408) 283-9000\n# URL: http://prismelectronics.net/index.php/checkout\n​▼\n  * **Shopping Cart**\n# Shopping Cart is Empty\nYou have no items in your shopping cart.\nClick here to continue shopping.\n# URL: http://prismelectronics.net/index.php/component-distribution.html\nSelect Language​▼\n  * **Component Distribution**\n# Component Distribution\nSupply Chain Management is critical in electronic component sourcing. We take pride in providing quality products at competitive prices. Our staff is dedicated to ensuring accurate order processing with an emphasis on customer service. We are in business to build relationships.\nPrism Electronics also specializes in Obsolete and EOL components. We offer a large selection of hard-to-find components at excellent prices.\nAs a full service stocking distributor we own and operate facilities dedicated to stocking and distribution of electronic components and devices. Prism currently stocks over 700,000 line items in our inventory. All parts are available for same day shipping worldwide. We specialize in expedited orders with express shipping.\n## Prism offers the following services:\n  * Electronic Components Distribution\n  * Large inventory selection in stock over 700,000 line items and expanding\n  * ESD-compliant facility\n  * Full service kitting\n  * Sourcing and Brokering services\n  * Stringent quality control\n  * Product traceability\n  * Same-day shipping available\n## Excess Inventory Solutions\n  * Spot Pricing and lot processing\n  * Consignment programs\n  * (VMI) Vendor Managed Inventory\n  * 1 (408) 778 -7050\nLive Chat Offline\n# URL: http://prismelectronics.net/index.php/component-distribution/customer-service.html\n​▼\n  * **Customer Service**\n# Customer Service\n**We realize that you have a choice when it comes to sourcing your components. We pride ourselves on quick, friendly and accurate service. From quoting to shipping we are dedicated to ensuring that your experience with us is satisfying and professional. Our goal is to have you contact us with every requirement possible. Our staff is here to serve you!**\n  * 1 (408) 778-7050\n# URL: http://prismelectronics.net/index.php/component-distribution/excess-inventory-solutions.html\nSelect Language​▼\n  * **Excess Inventory Solutions**\n# Excess Inventory Solutions\n### Do you have inventory that your company no longer has use for?\n**For customers with excess electronic component inventory we can offer the following services:**\n***Lot purchasing**. There is no need to provide a detailed list. We will inventory, inspect and evaluate your material for you. We provide a detailed summary of all products and materials to you. On your approval, payments can be made immediately.\n***Line item purchasing** – We are happy to bid on your excess list or Bill of Materials. Just provide us with the Manufacturer part number, quantity and date code. We will give you an offer right away.\n***Consignment** – Prism will inventory, inspect, market and resell your excess inventory on a consignment basis. If time is on your side, allow us the opportunity to expose your products to a wider range of sales channels to increase the value of your products. Product can be stored in our ESD-safe warehouse. Payments are calculated monthly or quarterly depending on your preference.\n**For more information contact our purchasing department at:**\n**(408) 206-1272 or (408) 283-9000 or email** john@prismelectronics.net\n  * 1 (408) 206-1272\nLive Chat Offline\n# URL: http://prismelectronics.net/index.php/component-distribution/products-inventory.html\n​▼\n  * **Products and Inventory**\n# Products and Inventory\n### Products\nAll of the products we offer have gone through a stringent evaluation process for accurate identification and quality assurance. Every item we stock comes from a reliable source and has been qualified before stocking. We offer a wide variety of electronic components from passive and discreet to active and obsolete. Virtually every manufacturer known is represented in our diverse inventory. We even carry telecom, network, consumer, test and measurement, cell phone and computer parts. Everything we offer is fully guaranteed for functionality and quality.\n### Inventory\nPrism is a 100% Independent Stocking Distributor. There are no lead times or middle men to deal with. If it’s listed, we have it. We can ship same day in most cases. We stock over 700,000 line items in our secure ESD equipped facilities.\n### Quotes\nSearch database: (Search screen with criteria) Call, Fax, or E-mail your RFQ\n  * 1 (408) 778-7050\n# URL: http://prismelectronics.net/index.php/component-distribution/quality.html\n​▼\n  * **Quality**\n# Quality\nIn today’s market, there is no room for compromising quality. Counterfeit and sub standard parts are everywhere. We start by qualifying every vendor we purchase or source parts from. Our experienced team of qualified QA’s are trained and equipped with detailed inspection procedures and tools to ensure the quality of every circuit we handle. Prism stands behind every part it sells.\nEvery part we buy or sell goes through a rigorous inspection process which includes:\n  * Receiving Inspection / Delivery Verification.\n  * Packaging Inspection.\n  * Manufacturer Part # and Item # Verification.\n  * Date Code, Lot Code Verification.\n  * Authenticity / Counterfeit screening.\n  * Lead conformity Inspection.\n  * Complete Item Microscopy.\n  * Solvent testing: Marking permanency, Blacktop Testing.\n  * 1 (408) 778-7050\n# URL: http://prismelectronics.net/index.php/component-distribution/request-a-quote.html\nSelect Language​▼\n  * **Request A Quote**\n# Request A Quote\nLive Chat Offline\n# URL: http://prismelectronics.net/index.php/customer/account/create\n​▼\n# Create an Account\n# URL: http://prismelectronics.net/index.php/customer/account/login\nSelect Language​▼\n# Login or Create an Account\nLive Chat Offline\n### What's this?\nClose\nChecking \"Remember Me\" will let you access your shopping cart on this computer when you are logged out\nClose\n# URL: http://prismelectronics.net/index.php/e-store.html\n​▼\n  * **E-Store**\n# E-Store\nItems 1 to 9 of 44 total\nShow 9  15  30\n**Page:**\n  1. 1\n  2. 2\n  3. 3\n  4. 4\n  5. 5\n  6.\nView as: **Grid** List\nSort By Position  Name  Part #  Price  Manufacturer\n## TCP380\n$1,799.9900\n## AWG520\n$4,999.9900\n## 8560EC\n$4,799.9900\n## 5517A\n$999.9900\n## QPE HDD Quick Plug / Eject Mobile Rack\n$15.0000\n## HBS Equipment Manual Electrophoretic Plate Hood\n$24,999.0000\n## Ultrapointe 1000 Laser Imaging System\n$25,000.0000\n## Ecosys VSI-AAOY Vector Ultra SI Scrubber\n$6,000.0000\n## Nicolet Imaging Systems, Model No. MXT-160US\n$10,000.0000\nItems 1 to 9 of 44 total\nShow 9  15  30\n**Page:**\n  1. 1\n  2. 2\n  3. 3\n  4. 4\n  5. 5\n  6.\nView as: **Grid** List\n  * 1 (408) 283-9000\n# URL: http://prismelectronics.net/index.php/e-store/electronic-test-measurement.html\nSelect Language​▼\n  * **Electronic Test & Measurement**\n# Electronic Test & Measurement\n**1 Item(s)**\nShow 9  15  30\nView as: **Grid** List\n## HP / Agilent 81521B 900 to 1700 nm, +3 to -80 dBm, Optical Power Sensor Head\n$550.0000\n**1 Item(s)**\nShow 9  15  30\nView as: **Grid** List\n  * 1 (408) 283-9000\nLive Chat Offline\n# URL: http://prismelectronics.net/index.php/e-store/industrial.html\nSelect Language​▼\n  * **Industrial**\n# Industrial\nIndustrial Equipment\n**1 Item(s)**\nShow 9  15  30\nView as: **Grid** List\n## Invincible TurboFlow Air Mover 7121U6\n$4,999.9900\n**1 Item(s)**\nShow 9  15  30\nView as: **Grid** List\n  * 1 (408) 283-9000\nLive Chat Offline\n# URL: http://prismelectronics.net/index.php/e-store/network-hardware.html\n​▼\n  * **Network Hardware**\n# Network Hardware\n**6 Item(s)**\nShow 9  15  30\nView as: **Grid** List\n## HBS Equipment Manual Electrophoretic Plate Hood\n$24,999.0000\n## QPE HDD Quick Plug / Eject Mobile Rack\n$15.0000\n## 5517A\n$999.9900\n## TCP380\n$1,799.9900\n## AWG520\n$4,999.9900\n## 8560EC\n$4,799.9900\n**6 Item(s)**\nShow 9  15  30\nView as: **Grid** List\n  * 1 (408) 283-9000\n# URL: http://prismelectronics.net/index.php/e-store/semiconductor.html\nSelect Language​▼\n  * **Semiconductor**\n# Semiconductor\nSemiconductor Manufacturing Equipment\nItems 1 to 9 of 36 total\nShow 9  15  30\n**Page:**\n  1. 1\n  2. 2\n  3. 3\n  4. 4\n  5.\nView as: **Grid** List\n## RUDOLPH Vanguard Series MetaPulse 200 Opaque Film Metrology Tool\n$140,000.0000\n## HP Hewlett Packard 9495A Mixed Signal Test System\n$10,000.0000\n## Brinkmann WK3200 Lauda Chiller\n$3,000.0000\n## Nicolet Imaging Systems, Model No. MXT-160US\n$10,000.0000\n## Ultrapointe 1000 Laser Imaging System\n$25,000.0000\n## Donaldson Carbon Filter System\n$4,500.0000\n## TEL Unity EP, Ti, TiCl4, Process Chamber, Ti001\n$25,000.0000\n## KLA Tencor Prometrix FT700 Wafer Film Thickness Measurement System\n$10,000.0000\n## TEL a-6, Vertical Furnace\n$50,000.0000\nItems 1 to 9 of 36 total\nShow 9  15  30\n**Page:**\n  1. 1\n  2. 2\n  3. 3\n  4. 4\n  5.\nView as: **Grid** List\n  * 1 (408) 283-9000\nLive Chat Offline\n# URL: http://prismelectronics.net/index.php/online-catalog.html\nSelect Language​▼\n  * **Online Catalog**\n# Online Catalog\n  * 1 (408) 283-9000\nLive Chat Offline\n# URL: http://prismelectronics.net/index.php/online-catalog/electronic-components.html\nSelect Language​▼\n  * **Electronic Components**\n# Electronic Components\nThere has been an error processing your request\n# There has been an error processing your request\n```\nSELECT `e`.*, `cat_index`.`position` AS `cat_index_position`, `price_index`.`price`, `price_index`.`tax_class_id`, `price_index`.`final_price`, IF(price_index.tier_price IS NOT NULL, LEAST(price_index.min_price, price_index.tier_price), price_index.min_price) AS `minimal_price`, `price_index`.`min_price`, `price_index`.`max_price`, `price_index`.`tier_price` FROM `pri_catalog_product_entity` AS `e`\n INNER JOIN `pri_catalog_category_product_index` AS `cat_index` ON cat_index.product_id=e.entity_id AND cat_index.store_id=1 AND cat_index.visibility IN(2, 4, 5) AND cat_index.category_id='18'\n INNER JOIN `pri_catalog_product_index_price` AS `price_index` ON price_index.entity_id = e.entity_id AND price_index.website_id = '1' AND price_index.customer_group_id = 0 ORDER BY `cat_index`.`position` ASC LIMIT 50\n**Trace:**\n#0 /home/sfadmin/public_html/lib/Varien/Db/Statement/Pdo/Mysql.php(110): Zend_Db_Statement_Pdo->_execute(Array)\n#1 /home/sfadmin/public_html/lib/Zend/Db/Statement.php(300): Varien_Db_Statement_Pdo_Mysql->_execute(Array)\n#2 /home/sfadmin/public_html/lib/Zend/Db/Adapter/Abstract.php(479): Zend_Db_Statement->execute(Array)\n#3 /home/sfadmin/public_html/lib/Zend/Db/Adapter/Pdo/Abstract.php(238): Zend_Db_Adapter_Abstract->query('SELECT `e`.*, `...', Array)\n#4 /home/sfadmin/public_html/lib/Varien/Db/Adapter/Pdo/Mysql.php(419): Zend_Db_Adapter_Pdo_Abstract->query('SELECT `e`.*, `...', Array)\n#5 /home/sfadmin/public_html/lib/Zend/Db/Adapter/Abstract.php(734): Varien_Db_Adapter_Pdo_Mysql->query('SELECT `e`.*, `...', Array)\n#6 /home/sfadmin/public_html/lib/Varien/Data/Collection/Db.php(734): Zend_Db_Adapter_Abstract->fetchAll('SELECT `e`.*, `...', Array)\n#7 /home/sfadmin/public_html/app/code/core/Mage/Eav/Model/Entity/Collection/Abstract.php(1047): Varien_Data_Collection_Db->_fetchAll('SELECT `e`.*, `...')\n#8 /home/sfadmin/public_html/app/code/core/Mage/Eav/Model/Entity/Collection/Abstract.php(871): Mage_Eav_Model_Entity_Collection_Abstract->_loadEntities(false, false)\n#9 /home/sfadmin/public_html/app/code/core/Mage/Review/Model/Observer.php(78): Mage_Eav_Model_Entity_Collection_Abstract->load()\n#10 /home/sfadmin/public_html/app/code/core/Mage/Core/Model/App.php(1338): Mage_Review_Model_Observer->catalogBlockProductCollectionBeforeToHtml(Object(Varien_Event_Observer))\n#11 /home/sfadmin/public_html/app/code/core/Mage/Core/Model/App.php(1311): Mage_Core_Model_App->_callObserverMethod(Object(Mage_Review_Model_Observer), 'catalogBlockPro...', Object(Varien_Event_Observer))\n#12 /home/sfadmin/public_html/app/Mage.php(447): Mage_Core_Model_App->dispatchEvent('catalog_block_p...', Array)\n#13 /home/sfadmin/public_html/app/code/core/Mage/Catalog/Block/Product/List.php(163): Mage::dispatchEvent('catalog_block_p...', Array)\n#14 /home/sfadmin/public_html/app/code/core/Mage/Core/Block/Abstract.php(862): Mage_Catalog_Block_Product_List->_beforeToHtml()\n#15 /home/sfadmin/public_html/app/code/core/Mage/Core/Block/Abstract.php(582): Mage_Core_Block_Abstract->toHtml()\n#16 /home/sfadmin/public_html/app/code/core/Mage/Core/Block/Abstract.php(526): Mage_Core_Block_Abstract->_getChildHtml('product_list', true)\n#17 /home/sfadmin/public_html/app/code/core/Mage/Catalog/Block/Category/View.php(85): Mage_Core_Block_Abstract->getChildHtml('product_list')\n#18 /home/sfadmin/public_html/app/design/frontend/default/theme000/template/catalog/category/view.phtml(76): Mage_Catalog_Block_Category_View->getProductListHtml()\n#19 /home/sfadmin/public_html/app/code/core/Mage/Core/Block/Template.php(242): include('/home/sfadmin/p...')\n#20 /home/sfadmin/public_html/app/code/core/Mage/Core/Block/Template.php(273): Mage_Core_Block_Template->fetchView('frontend/defaul...')\n#21 /home/sfadmin/public_html/app/code/core/Mage/Core/Block/Template.php(287): Mage_Core_Block_Template->renderView()\n#22 /home/sfadmin/public_html/app/code/core/Mage/Core/Block/Abstract.php(863): Mage_Core_Block_Template->_toHtml()\n#23 /home/sfadmin/public_html/app/code/core/Mage/Core/Block/Text/List.php(43): Mage_Core_Block_Abstract->toHtml()\n#24 /home/sfadmin/public_html/app/code/core/Mage/Core/Block/Abstract.php(863): Mage_Core_Block_Text_List->_toHtml()\n#25 /home/sfadmin/public_html/app/code/core/Mage/Core/Block/Abstract.php(582): Mage_Core_Block_Abstract->toHtml()\n#26 /home/sfadmin/public_html/app/code/core/Mage/Core/Block/Abstract.php(526): Mage_Core_Block_Abstract->_getChildHtml('content', true)\n#27 /home/sfadmin/public_html/app/design/frontend/default/theme000/template/page/2columns-right.phtml(55): Mage_Core_Block_Abstract->getChildHtml('content')\n#28 /home/sfadmin/public_html/app/code/core/Mage/Core/Block/Template.php(242): include('/home/sfadmin/p...')\n#29 /home/sfadmin/public_html/app/code/core/Mage/Core/Block/Template.php(273): Mage_Core_Block_Template->fetchView('frontend/defaul...')\n#30 /home/sfadmin/public_html/app/code/core/Mage/Core/Block/Template.php(287): Mage_Core_Block_Template->renderView()\n#31 /home/sfadmin/public_html/app/code/core/Mage/Core/Block/Abstract.php(863): Mage_Core_Block_Template->_toHtml()\n#32 /home/sfadmin/public_html/app/code/core/Mage/Core/Model/Layout.php(555): Mage_Core_Block_Abstract->toHtml()\n#33 /home/sfadmin/public_html/app/code/core/Mage/Core/Controller/Varien/Action.php(390): Mage_Core_Model_Layout->getOutput()\n#34 /home/sfadmin/public_html/app/code/core/Mage/Catalog/controllers/CategoryController.php(159): Mage_Core_Controller_Varien_Action->renderLayout()\n#35 /home/sfadmin/public_html/app/code/core/Mage/Core/Controller/Varien/Action.php(419): Mage_Catalog_CategoryController->viewAction()\n#36 /home/sfadmin/public_html/app/code/core/Mage/Core/Controller/Varien/Router/Standard.php(250): Mage_Core_Controller_Varien_Action->dispatch('view')\n#37 /home/sfadmin/public_html/app/code/core/Mage/Core/Controller/Varien/Front.php(176): Mage_Core_Controller_Varien_Router_Standard->match(Object(Mage_Core_Controller_Request_Http))\n#38 /home/sfadmin/public_html/app/code/core/Mage/Core/Model/App.php(354): Mage_Core_Controller_Varien_Front->dispatch()\n#39 /home/sfadmin/public_html/app/Mage.php(683): Mage_Core_Model_App->run(Array)\n#40 /home/sfadmin/public_html/index.php(71): Mage::run('', 'store')\n#41 {main}\n```\nError log record number: 855287187027\nMagento is a trademark of Magento Inc. Copyright © 2012 Magento Inc.",
+  "content_length_stats": {
+    "characters": 30859,
+    "estimated_tokens": 7714,
+    "estimated_cost_input_usd": 0.00216
+  }
+}

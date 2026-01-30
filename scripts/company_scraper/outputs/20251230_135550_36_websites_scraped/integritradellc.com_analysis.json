@@ -1,0 +1,38 @@
+[
+  {
+    "company_name": "Integritrade",
+    "website_url": "http://www.integritradellc.com",
+    "main_business": "IT Asset Disposition (ITAD) & Electronic Recycling",
+    "description": "Provides secure, compliant, and environmentally responsible IT asset disposition and electronic recycling solutions for businesses of all sizes. Services include secure data destruction, asset recovery, and facility cleanouts.",
+    "products_services": [
+      "IT Asset Disposition (ITAD)",
+      "Electronic Recycling",
+      "Asset Recovery",
+      "Junk Removal & Facility Cleanouts",
+      "Commercial Liquidation & Asset Recovery"
+    ],
+    "contact_emails": [],
+    "contact_phones": [],
+    "physical_address": null,
+    "year_founded": null,
+    "certifications": [
+      "R2 Certified (Responsible Recycling)",
+      "ISO 9001 (Quality)",
+      "ISO 14001 (Environmental)",
+      "ISO 45001 (Health & Safety)",
+      "ISO 27001 (Information Security)"
+    ],
+    "service_areas": [],
+    "summary": "Integritrade is a professional ITAD and electronic recycling services provider focused on B2B clients. They offer comprehensive solutions including secure data destruction (DOD and NIST compliant), asset recovery, and environmental recycling. The company is R2 certified and holds multiple ISO certifications (9001, 14001, 45001, 27001), indicating strong operational standards for security, quality, and environmental management. They serve various enterprise sectors including data centers, financial institutions, healthcare organizations, and government agencies. While the website mentions they are trusted by Fortune 500 companies and federal agencies, specific contact details like email, phone, and physical address are not provided in the crawled content.",
+    "is_good_fit": true,
+    "inventory_fit_assessment": "The company's services are explicitly targeted at enterprise IT assets from sectors like Data Centers, Financial Institutions, Healthcare, and Government. Their core service of IT Asset Disposition (ITAD) and Asset Recovery strongly implies they handle the enterprise-grade inventory Yilong requires: servers, networking equipment, storage, and corporate laptops/desktops. Their focus on 'refurbishment and resale' and 'maximizing value recovery' aligns with Yilong's 'High-Quality Refurbishment' model. The mention of 'Tested Functional' assets is not explicit, but their R2v3 certification and data wiping services suggest they process assets that can be prepared for reuse. No red flags for residential recycling or scrap-only focus.",
+    "operational_fit_assessment": "Integritrade is a clear B2B ITAD processor, not a retail reseller. Their client list includes large enterprises and government agencies, confirming a wholesale/B2B model. They hold the critical R2v3 certification, which is highly preferred and indicates they have processes for proper testing, data wiping, and grading of assets—essential for Yilong's 'Tested Functional' requirement. Their multiple ISO certifications (including 27001 for information security) further demonstrate professional, audited operations suitable for a high-volume trading partner. While the sales channel (pallet/truckload) is not explicitly stated, their enterprise focus and service descriptions strongly imply capability for bulk transactions.",
+    "red_flags": [
+      "No explicit mention of wholesale/bulk sales channels (e.g., pallet, truckload quantities) on the provided content.",
+      "No contact information (email, phone, address) was found in the crawled content, which is unusual for a business website and requires further research."
+    ],
+    "recommendation": "Research further",
+    "reasoning": "Integritrade is a strong candidate based on their B2B enterprise focus, R2v3 and ISO certifications, and service alignment with ITAD and asset recovery. They pass both Pillar 1 (Inventory Fit) and Pillar 2 (Operational Fit) core assessments. However, the complete absence of contact details (email, phone, address) in the provided content is a significant hurdle. Furthermore, while their business model implies bulk sales, it is not explicitly confirmed. Therefore, the recommendation is to 'Research further' to locate their contact information (likely on a 'Contact Us' page not included in this crawl) and to verify their wholesale purchasing terms and typical asset volumes before initiating a procurement relationship.",
+    "error": false
+  }
+]

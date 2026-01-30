@@ -1,0 +1,41 @@
+[
+  {
+    "company_name": "Terabit Systems",
+    "website_url": "https://www.terabitsystems.com",
+    "main_business": "IT Asset Disposition (ITAD) / Network Hardware Resale",
+    "description": "Terabit Systems is a supplier of quality pre-owned networking hardware and an ITAD/cost recovery specialist. They sell refurbished enterprise networking equipment (routers, switches, optics, power supplies) and also offer asset recovery/hardware re-marketing services, buying surplus gear from clients. They emphasize customer service, rigorous testing, and a 'bullet proof' 1-year warranty.",
+    "products_services": [
+      "Refurbished/Used Networking Hardware (Arista, Juniper, Cisco, Brocade)",
+      "Asset Recovery / Hardware Re-marketing Services",
+      "ITAD Services",
+      "Cost Recovery Specialists",
+      "Buying/Selling Used Networking Equipment",
+      "Trade-in Services",
+      "Free Audit of Surplus Gear"
+    ],
+    "contact_emails": [
+      "info@terabitsystems.com"
+    ],
+    "contact_phones": [
+      "+1 415-230-4353"
+    ],
+    "physical_address": "San Francisco, CA 94107",
+    "year_founded": null,
+    "certifications": [],
+    "service_areas": [
+      "United States",
+      "International (based on testimonials from Japan, etc.)"
+    ],
+    "summary": "Terabit Systems, LLC is a San Francisco-based company specializing in the sale of pre-owned, refurbished enterprise networking hardware from major brands like Arista, Juniper, Cisco, and Brocade. They operate both as a B2B reseller and an ITAD/asset recovery firm, offering to purchase surplus networking equipment from clients, providing fair-market value or trade-in credits. The company highlights its customer-centric approach, rigorous testing procedures, and a strong 1-year replacement/refund warranty. They have been in business for at least 14 years, building trust with network engineers, procurement managers, and CTOs globally. Their primary sales channel appears to be direct B2B wholesale, though they also have an online shop for smaller orders.",
+    "is_good_fit": true,
+    "inventory_fit_assessment": "EXCELLENT FIT. Terabit Systems specializes exclusively in enterprise-grade networking equipment, which is a core category for Yilong. Their inventory includes high-value data center and campus networking gear: routers (Juniper MX, T, M series; Cisco ASR, CRS), switches (Arista 7000 series, Juniper QFX/EX, Cisco Catalyst/Nexus), and components (optics, power supplies, cables). They sell used/refurbished equipment in 'Used - Good' condition, which aligns with Yilong's requirement for 'Tested Functional' Grade C assets ready for refurbishment. Their focus is on enterprise B2B, not consumer electronics. A potential bonus is they may deal with harvested components like optics and power supplies, though CPUs/RAM are not explicitly mentioned.",
+    "operational_fit_assessment": "STRONG FIT. Terabit Systems operates as a B2B ITAD and asset recovery firm, not a consumer recycler. They explicitly offer bulk asset recovery services, buying 'surplus gear' and offering 'fair-market value or trade-in,' indicating wholesale/bulk purchasing capabilities. They mention 'rigorous testing procedures' and a 'bullet proof warranty,' suggesting a quality-focused process, though specific R2v3 or e-Stewards certification is not stated on the provided pages. Their sales model includes direct sales (with a dedicated sales associate) and an online shop, but their core messaging targets network operators and procurement managers, confirming a B2B wholesale orientation. Their 14 years in business and numerous B2B testimonials reinforce their operational maturity.",
+    "red_flags": [
+      "No explicit mention of R2v3, e-Stewards, or other ITAD certifications on the provided content.",
+      "The online shop suggests they also sell single units, but their core service offering clearly includes bulk asset recovery."
+    ],
+    "recommendation": "Reach out",
+    "reasoning": "Terabit Systems is a highly promising vendor for Yilong. They perfectly match the INVENTORY FIT, dealing exclusively in the high-value enterprise networking equipment Yilong seeks. Their OPERATIONAL FIT is also strong: they are a B2B-focused ITAD/asset recovery firm with clear wholesale/bulk purchasing services, a testing and warranty program, and a long track record. The lack of explicitly stated certifications is a minor concern that can be clarified during initial contact. Their business model of buying surplus gear aligns directly with Yilong's need for a reliable US-based source of bulk, tested-functional assets. The strong positive testimonials from other B2B clients further validate their suitability.",
+    "error": false
+  }
+]

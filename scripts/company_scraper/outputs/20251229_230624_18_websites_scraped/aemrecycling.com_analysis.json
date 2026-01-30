@@ -1,0 +1,35 @@
+[
+  {
+    "company_name": "AEM Recycling",
+    "main_business": "Electronics Recycling and IT Asset Disposition (ITAD)",
+    "description": "A certified electronics recycler and IT asset disposition specialist that provides secure, compliant, and environmentally responsible services for businesses retiring IT equipment. They handle everything from asset collection and secure data wiping to refurbishing, resale, and responsible material recycling.",
+    "products_services": [
+      "IT Asset Disposition (ITAD) - Corporate IT refresh programs, bulk pallet pickup, on-site removal and packing, server room and data center decommissioning, serialized asset tracking, refurbishing and resale",
+      "Secure Data Wiping & Destruction - NIST 800-88, HIPAA, GLBA, PCI compliant protocols, NAID-AAA certified, Certificates of Destruction",
+      "Electronics Recycling - R2 downstream management, separation of materials, zero-landfill policy for hazardous components, CRT/battery handling, responsible material recovery",
+      "Data Wiping & Logistics Services - Secure wiping with certified software, logistics coordination using client's freight account",
+      "Corporate mobility programs",
+      "Enterprise electronics processing",
+      "Material recovery and precious metal recycling",
+      "Export logistics",
+      "Compliance and environmental reporting"
+    ],
+    "contact_emails": [
+      "info@aemrecycling.com"
+    ],
+    "contact_phones": [
+      "(949) 549-5191"
+    ],
+    "physical_address": "1431 Potrero Ave, Ste b, South El Monte, CA 91733",
+    "year_founded": null,
+    "certifications": [
+      "R2 Certified (Test and Repair, Logical Data Erasure, and Downstream Recycling Chain)",
+      "NAID-AAA certification"
+    ],
+    "service_areas": [
+      "Nationwide (United States)"
+    ],
+    "summary": "AEM Recycling is a certified electronics recycler and IT asset disposition (ITAD) specialist based in South El Monte, California. The company provides comprehensive services for businesses looking to retire IT equipment securely and responsibly. Their core offerings include IT asset disposition, secure data wiping and destruction, and environmentally responsible electronics recycling. They serve a wide range of industries including corporate offices, data centers, government agencies, medical facilities, and educational institutions.\n\nThe company operates an R2 and NAID-AAA certified facility, ensuring strict adherence to industry standards for data security, environmental responsibility, and material handling. Their processes comply with NIST 800-88, HIPAA, GLBA, PCI, and other regulatory frameworks. AEM Recycling emphasizes transparency, providing clients with detailed documentation including serialized asset reports and certificates of data wipe or destruction. They offer nationwide pickup and logistics services, managing everything from on-site collection to final processing with a full chain-of-custody documented throughout.",
+    "error": false
+  }
+]

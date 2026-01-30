@@ -1,0 +1,69 @@
+[
+  {
+    "company_name": "AER Worldwide",
+    "website_url": "https://www.aerworldwide.com",
+    "main_business": "IT资产处置（ITAD）与逆向物流",
+    "description": "AER Worldwide是一家全球性的IT资产处置（ITAD）和逆向物流解决方案提供商。公司成立于1996年，专注于为企业的报废IT设备提供安全、环保且具有成本效益的处置方案。其核心服务包括IT资产管理、安全数据销毁、电子回收（E-Cycle）、再营销、供应链解决方案和过剩库存管理。AER在全球拥有多个自有及合作的处理设施，致力于通过R2/RIOS等认证流程，在保护数据安全的同时，实现资产价值的最大化回收和负责任的环保处理。",
+    "products_services": [
+      "IT资产管理（IT Asset Management）",
+      "安全销毁（Secure Destruction）",
+      "电子回收（E-Cycle）",
+      "ITAD与再营销服务（ITAD & Remarketing Services）",
+      "供应链解决方案（Supply Chain Solutions）",
+      "逆向物流管理（Reverse Logistics）",
+      "安全运输（Secure Transportation）",
+      "现场打包（On-site Pick-pack）",
+      "国际运输（International Transport）",
+      "数据安全（Data Security）",
+      "筛选与测试（Screen & Test）",
+      "数据捕获与报告（Data Capture / Reporting）",
+      "价值回收（Value Recovery）",
+      "过剩库存管理（Excess Inventory Management）",
+      "寄售服务（Consignment）",
+      "采购服务（Purchasing）",
+      "内部重用计划（Internal Reuse Programs）",
+      "合规管理/回收与报告（Compliance Management / Take-Back and Reporting）"
+    ],
+    "contact_emails": [
+      "sales@aerworldwide.com",
+      "ITAD@aerworldwide.com",
+      "apac@aerworldwide.com",
+      "emea@aerworldwide.com",
+      "latam@aerworldwide.com",
+      "NorthAmericaOperations@aerworldwide.com",
+      "it@aerworldwide.com"
+    ],
+    "contact_phones": [
+      "510.933.0500",
+      "510.933.0530",
+      "864.486.9950",
+      "915.877.2277",
+      "+52.33.3673.6581"
+    ],
+    "physical_address": "4603 Las Positas #E Livermore, CA 94551, United States",
+    "year_founded": "1996",
+    "certifications": [
+      "R2v3",
+      "RIOS:2016",
+      "ISO 9001:2015",
+      "ISO 14001:2015",
+      "ISO 45001:2018"
+    ],
+    "service_areas": [
+      "北美（美国、加拿大、墨西哥、哥斯达黎加）",
+      "南美（阿根廷、巴西、哥伦比亚、秘鲁）",
+      "欧洲（泛欧网络）",
+      "亚洲（中国、印度、马来西亚、越南、日本、菲律宾）",
+      "澳大利亚",
+      "以色列"
+    ],
+    "summary": "AER Worldwide是一家成立于1996年、总部位于美国加利福尼亚州利弗莫尔的全球性IT资产处置（ITAD）和逆向物流公司。公司核心业务是帮助企业安全、环保地处理报废IT设备，同时通过再营销和组件回收实现资产价值最大化。其服务涵盖完整的IT资产生命周期管理，包括IT资产管理、安全数据销毁、电子回收、再营销以及全球供应链解决方案。AER在全球多个战略要地拥有自有及认证的合作处理设施，业务网络遍布北美、南美、欧洲、亚洲和澳大利亚。公司高度重视数据安全、环境合规和下游透明度，持有R2v3、RIOS及多项ISO管理体系认证，是典型的B2B服务提供商。",
+    "is_good_fit": true,
+    "inventory_fit_assessment": "AER Worldwide完全符合Yilong的库存需求。其核心业务是处理企业级IT资产，服务描述中明确提及“IT资产”、“电子资产”、“服务器”、“硬件”和“外围设备”。公司提供“再营销完整设备”和“收获可用的子组件”服务，这直接对应Yilong对整机和高价值组件（CPU、RAM、SSD/HDD）的需求。AER的“筛选与测试”能力以及R2v3认证（明确提及印度和美国的设施持有）表明他们具备对资产进行功能测试和分级的能力，能够提供“测试功能”等级（R2v3 F2/C3或更高）的资产，满足Yilong对A/B级或C级可翻新资产的要求。没有发现任何专注于住宅回收、消费电子产品或仅进行粉碎/废金属处理的迹象。",
+    "operational_fit_assessment": "AER Worldwide在运营上非常适合Yilong的业务模式。首先，公司是典型的B2B ITAD处理器和资产回收公司，服务对象明确是“组织”、“客户”和“财富100强企业”，而非个人消费者。其次，公司在美国、印度等多地的设施明确持有R2v3和RIOS认证，这是Yilong高度偏好的认证，确保了数据处理和测试流程的规范性。第三，AER支持批量销售模式，其服务包括“采购过剩和过时的电子元件、硬件”、“寄售”以及处理“托盘/卡车装载量”的物流管理，这表明他们熟悉并支持批发/大宗交易。公司拥有全球物流网络，能够从客户处（EXW）接收资产并运至其处理设施，与Yilong的采购流程兼容。",
+    "red_flags": [],
+    "recommendation": "Reach out",
+    "reasoning": "AER Worldwide是一家高度匹配的潜在供应商，强烈建议联系。该公司完全满足Yilong的两大评估支柱：在库存方面，他们专业处理企业IT资产，具备测试、分级和组件回收能力，且持有关键的R2v3认证。在运营方面，他们是纯粹的B2B服务商，支持大宗交易，并拥有完善的全球物流和合规体系。未发现任何红色警报。其美国总部和多个处理设施（如加利福尼亚州、俄勒冈州、南卡罗来纳州、德克萨斯州）为Yilong在美国进行大批量（EXW）采购提供了便利的地理和运营基础。联系其销售团队（sales@aerworldwide.com）或北美运营团队（NorthAmericaOperations@aerworldwide.com）是合适的下一步。",
+    "error": false
+  }
+]

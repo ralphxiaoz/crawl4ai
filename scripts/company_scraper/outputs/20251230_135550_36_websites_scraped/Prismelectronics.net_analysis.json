@@ -1,0 +1,66 @@
+[
+  {
+    "company_name": "Prism Electronics",
+    "website_url": "http://prismelectronics.net",
+    "main_business": "Independent Component Distribution and Asset Recovery Services (ITAD)",
+    "description": "Prism Electronics is a family-owned business founded in 2002, providing world-class component distribution and comprehensive asset management programs. They offer a full-service solution for sourcing electronic components and managing end-of-life IT assets through reverse logistics, remarketing, and certified recycling, with a commitment to zero landfill and data security.",
+    "products_services": [
+      "Asset Recovery Services",
+      "Reverse Logistics",
+      "Remarketing of electronic components and equipment",
+      "End of life product remarketing",
+      "Testing and custom configuration",
+      "Liquidation, bankruptcy sales",
+      "Asset tag & serial number accounting and reporting",
+      "Hard Drive wiping to DOD specs",
+      "Transportation and logistics",
+      "Consignment",
+      "Vendor Managed Inventory (VMI)",
+      "Environmental management and consulting",
+      "Facility clean outs",
+      "White label re-marketing",
+      "Asset re-deployment",
+      "Precious metal refining services",
+      "E-waste recycling with zero landfill policy",
+      "Certified destruction for sensitive and proprietary equipment",
+      "Electronic Components Distribution",
+      "Excess Inventory Solutions (Lot purchasing, Line item purchasing, Consignment)",
+      "Full service kitting",
+      "Sourcing and Brokering services",
+      "De-installation services",
+      "Professional packing services",
+      "Facility relocation services",
+      "Export Compliance",
+      "Data Destruction (Physical destruction, Data sanitization)"
+    ],
+    "contact_emails": [
+      "info@prismelectronics.net",
+      "john@prismelectronics.net"
+    ],
+    "contact_phones": [
+      "1 (408) 283-9000",
+      "1 (408) 778-7050",
+      "1 (408) 206-1272"
+    ],
+    "physical_address": null,
+    "year_founded": "2002",
+    "certifications": [
+      "ISO 14001-2004 Certified"
+    ],
+    "service_areas": [
+      "Silicon Valley",
+      "East Coast (via partner KAD Resources in New York)"
+    ],
+    "summary": "Prism Electronics, founded in 2002, is a US-based, family-owned provider of independent electronic component distribution and comprehensive IT asset recovery services. They operate three facilities totaling over 100,000 square feet, including a component distribution warehouse stocking over 700,000 line items and an asset recovery division with de-manufacturing lines and a tech lab. Their core services are split into two divisions: Component Distribution (sourcing and selling new/excess electronic components) and Asset Recovery (managing end-of-life IT assets through remarketing, data destruction, and recycling). They emphasize integrity, security, and environmental responsibility, holding ISO 14001 certification and maintaining a zero-landfill policy. They process over a million pounds of material monthly and offer services like DOD-standard data wiping, serialized reporting, and bulk logistics.",
+    "is_good_fit": true,
+    "inventory_fit_assessment": "Excellent fit. Prism explicitly handles the core enterprise IT assets Yilong requires: Servers, Networking Equipment, Storage Devices, Desktops, Laptops, and Telecom/Network Hardware. They also deal with components like Semiconductors, Memory, and Hard Drives, which aligns with the 'bonus points' for harvested components. Their business model is centered on remarketing and refurbishing end-of-life equipment from businesses, indicating they handle assets in Tested Functional condition (Grade C or better). They have a state-of-the-art Tech Lab for testing, cleaning, and refurbishing, which directly supports the 'Tested Functional' requirement. There is no mention of residential recycling or a primary focus on shredding/scrap metal.",
+    "operational_fit_assessment": "Strong operational fit. Prism is a clear B2B ITAD/Asset Recovery firm, not a consumer recycler or retail reseller. They offer wholesale/bulk services like lot processing, consignment, Vendor Managed Inventory (VMI), and truckload logistics, which are ideal for Yilong's EXW bulk purchasing model. They mention handling 'over a million pounds per month,' demonstrating scale. A significant gap is the lack of explicit mention of R2v3 or e-Stewards certification; their only stated certification is ISO 14001:2004, which is an environmental management standard but not an ITAD-specific standard like R2. However, their processes (DOD wipes, serialized reporting, 24/7 monitored facilities) indicate a professional, security-focused operation.",
+    "red_flags": [
+      "No explicit mention of R2v3 or e-Stewards certification (only ISO 14001:2004 is listed).",
+      "Physical business address is not provided in the crawled content."
+    ],
+    "recommendation": "Reach out",
+    "reasoning": "Prism Electronics is a highly promising vendor that meets nearly all of Yilong's core criteria. They are a well-established, scaled B2B ITAD processor with a clear focus on the exact enterprise asset types Yilong buys (servers, networking, storage). Their operations are built for bulk processing and wholesale sales, and they have the testing/refurbishment capabilities needed. The primary concern is the lack of an explicitly stated R2v3 certification, which is a preferred standard for ensuring proper data sanitization and downstream responsibility. However, their detailed descriptions of DOD wipes, certified destruction, and robust reporting suggest they operate at a high standard. This makes them worth a direct inquiry to confirm certifications and discuss specific lot availability and pricing. They are not a 'skip' because they are not a consumer recycler or scrap-focused operation.",
+    "error": false
+  }
+]

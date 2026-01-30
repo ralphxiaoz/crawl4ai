@@ -1,0 +1,54 @@
+[
+  {
+    "company_name": "METech Recycling",
+    "website_url": "https://www.metechrecycling.com",
+    "main_business": "Electronics Recycling and IT Asset Disposition (ITAD)",
+    "description": "METech Recycling is a national R2v3-certified electronics recycling and IT Asset Disposition (ITAD) company. They provide end-to-end services including IT Asset Management (ITAM/ITAD), certified data destruction, electronics recycling, IT asset recovery, data center decommissioning, and specialized recycling for medical equipment, solar panels, and batteries. They focus on secure, compliant, and environmentally responsible handling of electronic equipment for businesses, government, healthcare, and technology clients.",
+    "products_services": [
+      "IT Asset Management (ITAM/ITAD)",
+      "Certified Data Destruction (software and physical)",
+      "Electronics Recycling",
+      "IT Asset Recovery",
+      "Data Center Recycling Solutions & Decommissioning",
+      "Medical Equipment Recycling",
+      "Solar Panel Recycling",
+      "Battery Recycling (including Lithium and BESS)",
+      "OEM Recycling Solutions",
+      "Defense and Government Electronic Recycling",
+      "Reverse Logistics and Redeployment",
+      "Reporting & Client Portal Access",
+      "e-Waste Recycling"
+    ],
+    "contact_emails": [
+      "rcheng@metechrecycling.com",
+      "customerservice@metechrecycling.com"
+    ],
+    "contact_phones": [
+      "408.848.3050",
+      "720.377.7700",
+      "508.795.1950",
+      "801.886.3022",
+      "1-866-479-4920"
+    ],
+    "physical_address": "6200 Engle Way, Gilroy, CA 95020",
+    "year_founded": "1875",
+    "certifications": [
+      "R2v3",
+      "ISO 9001:2015",
+      "ISO 14001:2015",
+      "ISO 45001:2018",
+      "ITAR Registered"
+    ],
+    "service_areas": [
+      "United States (Nationwide)"
+    ],
+    "summary": "METech Recycling is a well-established, R2v3-certified ITAD and electronics recycling company with over 50 years of industry history (tracing its roots to 1875). They operate five fully functioning R2v3-certified facilities across the United States (California, Colorado, Massachusetts, North Carolina, Utah) and partner with approved providers for nationwide coverage. Their core business is providing secure, compliant, and sustainable end-of-life management for enterprise IT assets, data center equipment, medical devices, and renewable energy components. They emphasize data security, asset recovery, and environmental responsibility, serving B2B clients in government, healthcare, technology, and corporate sectors.\n\nMETech offers a comprehensive suite of services tailored for business clients, including full diagnostic testing and grading of IT equipment, multi-pass software data destruction, physical shredding, and detailed reporting via a client portal. They explicitly handle enterprise IT assets like servers, switches, routers, storage systems, and networking equipment, which aligns with bulk procurement needs. Their operations are built on a wholesale/B2B model, with capabilities for pallet and truckload quantities, secure chain-of-custody tracking, and a focus on maximizing value recovery through resale and redeployment.",
+    "is_good_fit": true,
+    "inventory_fit_assessment": "Excellent fit. METech explicitly lists enterprise IT assets as core inventory: Servers, Switches, Routers, Telecom equipment, Load Balancers, Firewalls, NAS/SAN Storage Systems, Enterprise Storage, Hard Drives, CPUs, Laptops, Desktops, and Networking Equipment. Their ITAM/ITAD service includes 'full system diagnostic testing for functionality, grade' and refurbishment for resale, indicating they test and grade assets (meeting R2v3 F2/C3 or better requirement). They also mention 'harvested parts' as part of their storage and redeployment services, which is a bonus. There is no indication they focus only on consumer electronics or shredding/scrap; their process includes testing, grading, and resale.",
+    "operational_fit_assessment": "Strong operational fit. METech is clearly a B2B-focused ITAD processor and asset recovery firm, serving government, healthcare, and corporate clients. They are R2v3 certified (highly preferred) and also hold ISO and ITAR certifications. Their service model supports wholesale/bulk operations: they mention processing 'millions of pounds,' handling 'tractor-trailer loads,' and offering 'bulk drop-offs.' They have a dedicated private fleet for logistics and provide detailed chain-of-custody documentation suitable for bulk transactions. Their entire business model revolves around B2B services, with a clear statement that they 'no longer take residential materials.'",
+    "red_flags": [],
+    "recommendation": "Reach out",
+    "reasoning": "METech Recycling meets or exceeds all critical qualification criteria for Yilong Business Limited. They are a certified (R2v3) B2B ITAD processor that handles the exact enterprise IT asset types Yilong seeks (servers, networking, storage, etc.), with explicit testing and grading processes. They operate at scale with nationwide facilities, support bulk/wholesale transactions, and have a proven track record with corporate and government clients. No red flags were identified; they do not focus on residential recycling, retail sales, or mere shredding. Their capabilities in data destruction, asset recovery, and detailed reporting align perfectly with a high-volume procurement partner. They are a prime candidate for sourcing tested functional IT assets in bulk.",
+    "error": false
+  }
+]

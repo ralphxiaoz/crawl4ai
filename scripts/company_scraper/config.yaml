@@ -1,0 +1,277 @@
+# Crawl4AI + Deepseek Configuration
+# Edit this file to customize what information you want to extract from company websites
+
+# Deepseek LLM Configuration
+deepseek:
+  model: "deepseek/deepseek-chat"
+  temperature: 0.7
+  max_tokens: 4000
+  chunk_token_threshold: 50000  # Input chunking threshold - prevents splitting content into multiple chunks
+
+# Adaptive Crawler Settings
+crawl_settings:
+  # Strategy options: "statistical" (fast, keyword-based) or "embedding" (semantic, slower)
+  strategy: "statistical"
+
+  # Maximum number of pages to crawl per website
+  max_pages: 30
+
+  # Maximum depth to follow links (1 = homepage only, 2 = homepage + 1 level, etc.)
+  max_depth: 3
+
+  # Confidence threshold (0.0-1.0) - stops when this confidence is reached
+  confidence_threshold: 0.7 
+
+  # Number of top links to follow per page
+  top_k_links: 5
+
+# Custom Cleaning - Remove images and strip URLs to reduce token usage
+# NOTE: This is now handled by content_consolidation below (keep for backward compatibility)
+custom_cleaning:
+  enabled: false  # Disabled - content_consolidation replaces this
+
+# Universal Content Consolidation
+# Reduces token usage by removing cross-page duplication, boilerplate, and low-value content
+# These settings work for ANY website (not site-specific)
+content_consolidation:
+  # Enable/disable consolidation
+  enabled: true
+
+  # Boilerplate detection: lines appearing on X% of pages are considered boilerplate
+  # Examples: navigation menus, footers, site-wide CTAs
+  # Range: 0.0-1.0 (0.7 = 70% of pages)
+  boilerplate_threshold: 0.70
+
+  # Duplicate removal: paragraphs appearing X+ times are deduplicated
+  # Examples: repeated product descriptions, service lists
+  # Higher value = more conservative (only remove very common duplicates)
+  duplicate_min_occurrences: 6
+
+  # Low-value line removal: short lines (1-3 words) appearing X+ times
+  # Examples: "Learn more", "Back to menu", navigation items
+  # Higher value = more conservative (only remove very frequent items)
+  short_line_freq_threshold: 20
+
+  # Minimum content length to consider for deduplication (chars)
+  # Lines shorter than this are not considered for exact duplicate detection
+  min_content_length: 50
+
+# Content Filtering - Reduces API costs by filtering out navigation, ads, footers, etc.
+# This can reduce content sent to Deepseek by 70-90% while keeping important information
+content_filter:
+  # Enable/disable content filtering
+  enabled: true
+
+  # Threshold for content quality (0.0 - 1.0)
+  # Lower = more content kept (lenient), Higher = less content kept (strict)
+  # Recommended values:
+  #   0.3-0.4  = Lenient (keep most content, minimal filtering)
+  #   0.48     = Balanced (default, removes obvious junk)
+  #   0.5-0.6  = Moderate (stricter filtering)
+  #   0.7+     = Very strict (only highest quality content)
+  threshold: 0.15
+
+  # Threshold type: "fixed" or "dynamic"
+  # - fixed: Same threshold for all content
+  # - dynamic: Adjusts threshold based on tag importance (e.g., <article> tags get advantage)
+  threshold_type: "fixed"
+
+  # Minimum words per content block
+  # Blocks with fewer words are automatically removed (helps remove buttons, labels, etc.)
+  # Set to null to disable word threshold
+  min_word_threshold: null
+
+# System Prompt - Define what you want Deepseek to extract
+system_prompt: |
+  IMPORTANT: 请用中文回答所有文本字段。All text output must be in Chinese.
+
+  ## YOUR ROLE
+  You are a Senior Procurement Consultant for Yilong Business Limited, a high-volume IT Asset Disposition (ITAD) trading firm.
+  Your goal is to evaluate potential US-based vendors to see if they fit our supply chain requirements.
+
+  ## CONTEXT - WHO WE ARE (THE BUYER)
+  - Company: Yilong Business Limited (Hong Kong-based with US operations)
+  - Business Model: We purchase used IT assets in bulk (Ex Works - EXW) from US facilities and export them to established downstream markets in Hong Kong, Mainland China, and Southeast Asia
+  - Volume: We have a purchasing budget of ~$1.5M per month ($10M–$20M annually)
+  - Compliance: We operate a strict "High-Quality Refurbishment" model. We do NOT export e-waste. We require assets to be "Tested Functional" (R2v3 F2/C3 or better)
+
+  ## YOUR TASK
+  You are analyzing a company website. The provided content belongs to ONE SINGLE company.
+  All URLs are under the same root domain.
+  The content contains text from multiple pages, separated by "# URL: ".
+
+  CRITICAL INSTRUCTIONS:
+  1. The crawl covers multiple pages (Home, About, Contact, etc.).
+  2. There is significant overlapping/duplicate information across these pages.
+  3. You MUST consolidate all information into a SINGLE company profile.
+  4. Do NOT output a list of companies. Extract exactly ONE company object.
+  5. Ignore minor differences in descriptions across pages; synthesize them into a comprehensive summary.
+
+  ## INFORMATION TO EXTRACT
+
+  1. **Company Information:**
+     - Company name
+     - Main website URL (the root domain, e.g., https://example.com)
+     - Main business/industry
+     - Brief description of what they do
+
+  2. **Products/Services:**
+     - List all products or services offered
+     - Key capabilities or specializations
+
+  3. **Contact Information:**
+     - ALL email addresses found (support, sales, info, contact, etc.)
+     - Phone numbers
+     - Physical address/location
+     - Contact page URLs
+
+  4. **Additional Details:**
+     - Company size (if mentioned)
+     - Year founded (if mentioned)
+     - Certifications or awards (especially R2v3, e-Stewards)
+     - Geographic coverage/service areas
+
+  ## VENDOR QUALIFICATION CRITERIA
+
+  Evaluate if this company is a good fit for Yilong based on these 2 pillars:
+
+  ### PILLAR 1: INVENTORY FIT
+  **Must Have:**
+  - Enterprise IT assets: Laptops, Desktops, Data Center Servers, Networking Equipment, Storage
+
+  **Bonus Points:**
+  - Harvested components (high-value CPU, RAM, SSD/HDD)
+
+  **Condition Requirements:**
+  - Grade A/B (Ready for Retail) - Preferred
+  - Tested Functional Grade C (Ready for Refurbishment) - Acceptable
+
+  **RED FLAGS:**
+  - Only handles residential recycling (curbside pickup)
+  - Focuses primarily on shredding/scrap metal
+  - No mention of testing or grading
+  - Only handles consumer electronics (phones, tablets, TVs)
+
+  ### PILLAR 2: OPERATIONAL FIT
+  **Business Type:**
+  - Must be an ITAD Processor or Asset Recovery Firm (B2B focus)
+  - NOT a retail reseller or consumer-focused recycler
+
+  **Certification:**
+  - R2v3 certification is highly preferred (indicates they can test/wipe data correctly)
+  - e-Stewards is also acceptable
+
+  **Sales Channel:**
+  - Must support Wholesale / Bulk sales (Pallet/Truckload quantities)
+  - If they only sell single units on eBay/Amazon to consumers, they are a BAD fit
+
+  **RED FLAGS:**
+  - Only residential/consumer services
+  - No B2B capabilities mentioned
+  - No certifications
+  - Only retail sales channels
+
+  ## EVALUATION OUTPUT
+  Based on the above criteria, provide:
+  - is_good_fit: true/false - Is this company worth reaching out to?
+  - inventory_fit_assessment: Detailed explanation of how they match our inventory needs
+  - operational_fit_assessment: Detailed explanation of their operational capabilities
+  - red_flags: List of any concerns or disqualifying factors
+  - recommendation: "Reach out", "Skip", or "Research further"
+  - reasoning: Clear explanation of why you recommend reaching out or skipping
+
+  Be thorough and extract ALL contact emails you can find.
+  If information is not available, use null for that field.
+
+# Output Schema - Define the structure of JSON output
+# This schema tells Deepseek what fields to return
+output_schema:
+  company_name:
+    type: "string"
+    description: "Name of the company"
+
+  website_url:
+    type: "string"
+    description: "Main website URL of the company (the root domain, e.g., https://example.com)"
+
+  main_business:
+    type: "string"
+    description: "Primary business or industry"
+
+  description:
+    type: "string"
+    description: "Brief description of what the company does"
+
+  products_services:
+    type: "array"
+    description: "List of products or services offered"
+
+  contact_emails:
+    type: "array"
+    description: "All email addresses found on the website"
+
+  contact_phones:
+    type: "array"
+    description: "All phone numbers found"
+
+  physical_address:
+    type: "string"
+    description: "Physical address or location"
+
+  year_founded:
+    type: "string"
+    description: "Year the company was founded"
+
+  certifications:
+    type: "array"
+    description: "Any certifications or awards mentioned"
+
+  service_areas:
+    type: "array"
+    description: "Geographic areas served"
+
+  summary:
+    type: "string"
+    description: "A 2-3 paragraph human-readable summary of the company"
+
+  # Vendor Qualification Fields
+  is_good_fit:
+    type: "boolean"
+    description: "Overall assessment - Is this company worth reaching out to for Yilong's procurement needs?"
+
+  inventory_fit_assessment:
+    type: "string"
+    description: "Detailed explanation of how the company's inventory (product types, grades, volumes) matches Yilong's requirements for enterprise IT assets"
+
+  operational_fit_assessment:
+    type: "string"
+    description: "Detailed explanation of the company's operational capabilities (B2B focus, certifications, wholesale channels) and fit with Yilong's bulk purchasing model"
+
+  red_flags:
+    type: "array"
+    description: "List of any concerns or disqualifying factors (e.g., residential-only, no certifications, retail-only sales, scrap metal focus)"
+
+  recommendation:
+    type: "string"
+    description: "Action recommendation: 'Reach out', 'Skip', or 'Research further'"
+
+  reasoning:
+    type: "string"
+    description: "Clear explanation of why you recommend reaching out or skipping this vendor, based on the evaluation criteria"
+
+# Output Settings
+output:
+  # Directory to save results
+  output_dir: "outputs"
+
+  # Save raw crawled content (markdown)
+  save_raw_content: true
+
+  # Save structured JSON analysis
+  save_json: true
+
+  # Save human-readable summary
+  save_summary: true
+
+  # Verbose output during crawling
+  verbose: true

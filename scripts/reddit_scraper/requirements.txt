@@ -1,0 +1,14 @@
+# Reddit Scraper Dependencies
+
+# Reddit API (optional - only needed for API strategy)
+praw>=7.7.1
+
+# Web scraping
+crawl4ai>=0.7.0
+beautifulsoup4>=4.12.0
+
+# Configuration
+PyYAML>=6.0.1
+
+# Data handling
+pydantic>=2.0.0

@@ -1,0 +1,50 @@
+[
+  {
+    "company_name": "Digital Green Global Inc.",
+    "website_url": "https://www.dgglobal.net",
+    "main_business": "Information Technology Asset Disposition (ITAD) and Electronic Waste Recycling",
+    "description": "Digital Green Global Inc. provides IT Asset Disposition (ITAD) and Electronic Waste Recycling services with a focus on data security, environmental sustainability, and cost-effective solutions for enterprise clients. They offer services including data erasure, asset remarketing, facility closures, component harvesting, and reverse logistics, supported by proprietary software for asset tracking.",
+    "products_services": [
+      "Data Security (Data Erasure/Destruction)",
+      "IT Asset Disposition (ITAD)",
+      "Software Solution for ITAD Industry",
+      "Recycling (Zero Landfill Policy)",
+      "Remarketing/Resale (Revenue Share or Outright Purchase)",
+      "Facility Closures",
+      "Harvesting (High-Value Components)",
+      "Reverse Logistics (On-site Services)",
+      "Test and Refurbishment",
+      "Customized Software Solutions"
+    ],
+    "contact_emails": [],
+    "contact_phones": [],
+    "physical_address": null,
+    "year_founded": null,
+    "certifications": [
+      "ISO 9001:2015",
+      "ISO 14001:2015",
+      "ISO 45001",
+      "R2:2013 Certification",
+      "Cal Environmental Protection Agency",
+      "Cal Recycle",
+      "U.S. Environmental Protection Agency",
+      "U.S. Green Building Council",
+      "National Minority Supplier Development Council"
+    ],
+    "service_areas": [
+      "United States"
+    ],
+    "summary": "Digital Green Global Inc. is a US-based IT Asset Disposition (ITAD) and e-waste recycling company serving enterprise clients. Their core mission is to provide secure, environmentally sustainable, and cost-effective solutions for managing end-of-life IT assets. They offer a comprehensive suite of services including secure data erasure, IT asset disposition, remarketing/resale, facility closures, component harvesting, and reverse logistics, all supported by a proprietary software platform designed for the ITAD industry. The company holds multiple certifications including R2:2013, ISO 9001, ISO 14001, and ISO 45001, indicating a strong commitment to quality, environmental management, and occupational health and safety standards. Their business model is clearly B2B, focusing on corporate clients with services like facility closures and enterprise IT equipment management. While the website emphasizes data security, environmental sustainability, and maximizing client returns through extensive sales channels, specific contact details like email addresses, phone numbers, and physical addresses are not provided in the crawled content.",
+    "is_good_fit": true,
+    "inventory_fit_assessment": "The company's services strongly align with Yilong's inventory needs. They specialize in enterprise IT asset disposition, explicitly handling excess IT equipment and EOL (End-of-Life) products from corporations. Their services include 'Test and Refurbishment' performed by a dedicated lab and team of technicians for equipment with remaining market value, which directly matches Yilong's requirement for 'Tested Functional' assets (R2v3 F2/C3 or better). They also offer 'Harvesting' of high-value components (CPU, RAM, etc.), which is a bonus for Yilong. Their clientele is corporate, and they manage facility closures and enterprise IT equipment, confirming they deal with the enterprise-grade assets (servers, networking, storage, desktops, laptops) Yilong seeks. There is no mention of residential recycling or a primary focus on shredding/scrap metal.",
+    "operational_fit_assessment": "Operationally, Digital Green Global is an excellent fit. They are explicitly an ITAD processor with a B2B focus, serving corporations and handling facility closures. They hold the R2:2013 certification (the predecessor to R2v3), which is highly preferred and indicates established processes for testing, data wiping, and environmental responsibility. Their sales model includes 'Remarketing/Resale' with options for 'outright purchase' and leveraging 'extensive sales channels' to maximize returns, which strongly suggests they support wholesale/bulk sales to partners like Yilong. Their services like reverse logistics for enterprise IT equipment and customized software for asset tracking further demonstrate a scalable, B2B operational model capable of handling bulk volumes.",
+    "red_flags": [
+      "No specific contact information (email, phone, address) was found in the provided content, making initial outreach difficult.",
+      "The certification listed is R2:2013, not the current R2v3 standard. While this still indicates a certified operation, it's worth confirming their current certification status.",
+      "The website mentions 'Cal Environmental Protection Agency' and 'Cal Recycle', which may suggest a primary operational focus in California, though service areas are not explicitly limited."
+    ],
+    "recommendation": "Reach out",
+    "reasoning": "Digital Green Global Inc. is a strong candidate for Yilong's supply chain. They meet all critical 'Must Have' criteria: they are a B2B ITAD processor specializing in enterprise IT assets, they perform testing and refurbishment, hold R2 certification (2013 version), and their business model clearly supports wholesale/bulk sales and outright purchase of assets. Their services in component harvesting and facility closures align perfectly with Yilong's high-volume, bulk-purchase model. The lack of immediate contact details is a minor obstacle, not a disqualifier, as this information is likely on other website pages not included in the crawl. The recommendation is to proactively reach out via their website's general contact form or to search for their sales/contact details to initiate a conversation about bulk purchasing programs.",
+    "error": false
+  }
+]

@@ -1,0 +1,41 @@
+[
+  {
+    "company_name": "Arrow Green Electronics, Inc.",
+    "website_url": "https://www.e2used.com",
+    "main_business": "IT Asset Disposition (ITAD) and Data Center Equipment Recycling",
+    "description": "Arrow Green Electronics Corporation is an R2V3-certified professional company specializing in the recycling of data center equipment and Apple devices. They provide comprehensive ITAD services, including secure data erasure, asset buyback, and environmentally responsible processing. The company is equipped with professional data-erasure equipment and a dedicated team to ensure no data leakage occurs.",
+    "products_services": [
+      "ITAD Services",
+      "Data Erasure (Hard Drive Data Erasure, Physical Destruction, Data Security Verification)",
+      "Buyback/Recycling of Used IT Equipment",
+      "Data Center Equipment (Storage Systems, Servers, CPUs, Memory/RAM, LTO7-LTO8 Tape)",
+      "Apple Devices (MacBook, iPad, iPhone, iMac)",
+      "Hard Drives (SSD and Mechanical)",
+      "Networking Equipment (implied from ITAD services)"
+    ],
+    "contact_emails": [
+      "salesE2used@gmail.com"
+    ],
+    "contact_phones": [
+      "(001)831-288-3808"
+    ],
+    "physical_address": "25509 Industrial Blvd #F14 Hayward, CA 94545",
+    "year_founded": null,
+    "certifications": [
+      "R2V3"
+    ],
+    "service_areas": [],
+    "summary": "Arrow Green Electronics, Inc. is an R2V3-certified IT Asset Disposition (ITAD) and recycling company based in Hayward, California. Their core business is the professional recycling of enterprise data center equipment (servers, storage, CPUs, memory, tape drives) and Apple devices. They emphasize secure data destruction through both software erasure and physical methods, and they operate with a focus on environmental responsibility and regulatory compliance. The company presents itself as a B2B service provider, offering asset buyback, recycling, and full ITAD solutions to businesses. Contact is centralized through a single email (salesE2used@gmail.com) and phone number, with a physical address provided.",
+    "is_good_fit": true,
+    "inventory_fit_assessment": "Excellent fit. The company's primary focus is on enterprise IT assets, which aligns perfectly with Yilong's 'Must Have' criteria. They explicitly list and purchase: Data Center Servers (IBM, Lenovo, Dell EMC, HPE), Storage Systems (NetApp, Dell EMC, HP, IBM), high-value components (CPU, Memory/RAM, SSD/HDD), and LTO Tape drives. They also handle Apple devices, which are a high-value commodity. Their business model is centered on buying used equipment from businesses, indicating the inventory is sourced from enterprise environments, not consumers. While specific grading (A/B/C) is not detailed, their R2v3 certification implies a structured process for testing and data sanitization, which is a strong indicator they can provide 'Tested Functional' assets.",
+    "operational_fit_assessment": "Strong operational fit. The company is clearly a B2B-focused ITAD processor and asset recovery firm, not a retail reseller. Their R2v3 certification is a major positive, demonstrating compliance with industry standards for testing, data wiping, and environmental responsibility—this directly supports Yilong's 'High-Quality Refurbishment' model. Their service descriptions (IT asset recycling/buyback, data security destruction, environmental processing, asset management) are tailored for corporate clients. The website encourages contact for quotes and project evaluation, which is consistent with a wholesale/bulk sales channel, though explicit mention of pallet/truckload quantities is not present. The lack of retail marketplace links (eBay/Amazon) is a good sign.",
+    "red_flags": [
+      "No explicit mention of wholesale/bulk sales terminology (e.g., pallet, truckload, LTL).",
+      "Single point of contact (one email, one phone number) for a company potentially handling large volumes.",
+      "Website content has significant duplication and some formatting issues, which may indicate a less sophisticated operation."
+    ],
+    "recommendation": "Reach out",
+    "reasoning": "Arrow Green Electronics is a highly promising vendor candidate for Yilong. They meet the critical criteria: 1) They specialize in the exact enterprise IT assets Yilong purchases (servers, storage, components). 2) They hold the preferred R2v3 certification, ensuring proper testing and data sanitization processes. 3) Their business model is explicitly B2B/ITAD, not consumer-focused. The red flags are minor and typical of smaller-to-midsize operators; they do not disqualify the company. A direct conversation is needed to confirm their capacity for monthly volumes matching Yilong's $1.5M budget, their grading standards, and their willingness to sell in EXW bulk quantities. The strong inventory and certification alignment makes them worth pursuing.",
+    "error": false
+  }
+]

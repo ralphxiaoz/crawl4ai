@@ -1,0 +1,60 @@
+[
+  {
+    "company_name": "Iron Systems, Inc.",
+    "website_url": "https://www.ironsystems.com",
+    "main_business": "Global OEM Integration Services and IT Asset Disposition (ITAD)",
+    "description": "Iron Systems is a global leader in managed last-mile technology workforce and edge computing infrastructure supply chain services. They provide comprehensive OEM manufacturing, integration, supply chain management, global logistics, and IT Asset Disposition (ITAD) services. The company specializes in purpose-built server appliances, data center infrastructure, and end-to-end product lifecycle management for networking, storage, security, medical, and communications markets worldwide.",
+    "products_services": [
+      "Managed IT Asset Disposition (ITAD)",
+      "OEM Manufacturing Services",
+      "Global Logistics Services",
+      "Global Repair & Technical Support Services",
+      "Supply Chain Management",
+      "Turnkey Integration",
+      "Iron Cloud Integration Center",
+      "Service Global IOR (Importer of Record)",
+      "Data Center & Edge Computing Infrastructure Services",
+      "Field Workforce & Logistics",
+      "Last-Mile Service Delivery Platform",
+      "Hardware Integration & Configuration",
+      "Data Destruction (Software Erasure & Physical Destruction)",
+      "Asset Recovery",
+      "Remarketing & Recycling",
+      "Lifecycle Support Services",
+      "Field Services",
+      "ITSM Integration"
+    ],
+    "contact_emails": [
+      "compliance@ironsystems.com"
+    ],
+    "contact_phones": [
+      "+1 (408) 943-8000"
+    ],
+    "physical_address": "4309 Hacienda Dr, Suite 360, Pleasanton, CA 94588",
+    "year_founded": "2002",
+    "certifications": [
+      "ISO 9001:2015",
+      "R2 certified"
+    ],
+    "service_areas": [
+      "Americas",
+      "EMEA",
+      "Asia-Pacific (APAC)",
+      "90+ countries",
+      "150+ countries",
+      "180+ countries"
+    ],
+    "summary": "Iron Systems, Inc. is a global technology services company founded in 2002 with over 15 years of experience in OEM integration and supply chain management. The company operates as a strategic infrastructure services partner, offering comprehensive solutions including IT Asset Disposition (ITAD), OEM manufacturing, global logistics, and field support services. With operations in the USA, China, Germany, and India, Iron Systems serves over 90 countries with a network of 4,000+ field service engineers and 600+ warehouse stocking locations.\n\nThe company specializes in enterprise IT assets including data center servers, storage systems, networking equipment, and embedded systems. Their ITAD services include secure data destruction (both software erasure and physical destruction), asset recovery, remarketing, and compliant recycling. They maintain R2 certification and ISO 9001:2015 quality management certification, indicating professional B2B ITAD capabilities.\n\nIron Systems operates a global business model with significant B2B focus, serving OEMs, ISVs, enterprises, and data center operators. Their services are designed for wholesale/bulk operations rather than consumer retail, making them potentially suitable for Yilong's procurement needs. However, their primary business appears to be OEM manufacturing and integration services, with ITAD being one of several service offerings rather than their core focus.",
+    "is_good_fit": true,
+    "inventory_fit_assessment": "Iron Systems handles exactly the type of enterprise IT assets Yilong requires. They specifically mention data center servers, storage systems, networking equipment, and enterprise computing & storage assets throughout their content. They work with major hardware vendors including Dell, Supermicro, HP, Quanta, Intel, AMD, and NVIDIA. Their ITAD services explicitly cover enterprise and data center decommissioning, which aligns with Yilong's focus on bulk enterprise assets. They mention 'Tested Functional' equipment and have processes for refurbishment and remarketing, indicating they handle assets in conditions suitable for Yilong's high-quality refurbishment model.",
+    "operational_fit_assessment": "Iron Systems operates as a B2B-focused ITAD processor with R2 certification, which is highly preferred for Yilong's requirements. They have explicit wholesale/bulk capabilities, managing global programs for enterprise clients. Their services include secure logistics for asset pickup (SLAP) and transportation (SLT), indicating they can handle pallet/truckload quantities. They offer on-site and off-site ITAD processing at their R2 certified facility. The company has global operations in 90+ countries with established processes for bulk asset management. Their business model is clearly B2B, serving enterprises, data centers, and OEMs rather than consumers.",
+    "red_flags": [
+      "ITAD appears to be one service among many rather than their primary focus",
+      "No explicit mention of component harvesting (CPU, RAM, SSD/HDD)",
+      "Limited specific details about asset grading systems (A/B/C)"
+    ],
+    "recommendation": "Reach out",
+    "reasoning": "Iron Systems meets both Pillar 1 and Pillar 2 requirements for Yilong's vendor qualification. They handle enterprise IT assets (servers, storage, networking) with B2B focus, R2 certification, and wholesale capabilities. Their ITAD services include data destruction, asset recovery, and remarketing with tested functional equipment. While ITAD is not their only business, they have the necessary certifications, processes, and scale to potentially supply Yilong with bulk enterprise assets. The recommendation is to reach out to explore their specific ITAD asset streams, pricing, and available inventory volumes.",
+    "error": false
+  }
+]

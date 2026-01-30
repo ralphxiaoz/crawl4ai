@@ -1,0 +1,57 @@
+[
+  {
+    "company_name": "Reconext",
+    "main_business": "IT Asset Disposition (ITAD) and Electronics Recovery",
+    "description": "Reconext is a global ITAD company offering end-to-end IT Asset Disposition services that prioritize data security and sustainability. They help the world's most recognized brands extend the life of electronics through reverse logistics, repair, refurbishment, testing, and value recovery, keeping devices out of landfills and promoting a circular economy.",
+    "products_services": [
+      "Returns Management & Fulfillment",
+      "Testing & Grading",
+      "Asset Recovery",
+      "Repair & Refurbishment",
+      "Trade-in & Buyback",
+      "ITAD Services",
+      "Lifecycle Services",
+      "Logistics and Fulfillment",
+      "Data Center Decommissioning",
+      "Engineering and R&D for automation platforms"
+    ],
+    "contact_emails": [],
+    "contact_phones": [
+      "+1 331 310 0259",
+      "+1 972 525 7352",
+      "+1 956 843 6828",
+      "+52 686 159 3100",
+      "+52 899 954 2003",
+      "+852 3904 3850",
+      "+6221 28088242",
+      "+604-377 9200",
+      "+86 512 65930908",
+      "+48 52 3112 390",
+      "+420 323 209 811"
+    ],
+    "physical_address": "2250 William D Tate Ave, Grapevine, TX 76051, USA",
+    "year_founded": "1983",
+    "certifications": [
+      "ISO 27001",
+      "ISO 9001",
+      "ISO 14001",
+      "ISO 45001",
+      "R2v3",
+      "WEEELABEX",
+      "PCI PIN",
+      "P2PE",
+      "CTPAT",
+      "ADISA Product Claims Tested",
+      "BREEAM",
+      "ANSI S20.20",
+      "IPC A-610"
+    ],
+    "service_areas": [
+      "The Americas",
+      "Europe, Middle East, Africa",
+      "Asia Pacific"
+    ],
+    "summary": "Reconext is a global leader in IT Asset Disposition (ITAD) and electronics lifecycle services, founded in 1983. The company operates a worldwide network of facilities to help technology companies, OEMs, telecom operators, and retailers securely and sustainably manage the post-sale lifecycle of electronic devices. Their core services include returns management, testing and grading, repair and refurbishment, asset recovery, and trade-in programs, all designed to extend product life, recover value, and reduce e-waste.\n\nThe company distinguishes itself through significant in-house engineering and R&D, developing proprietary automation and testing platforms like Optiline (AI cosmetic grading), Titan (CPE testing), Proteus (storage testing/erasure), and Rackwipe (data center erasure). With major facilities across the U.S., Mexico, Europe, and Asia, Reconext processes millions of devices annually, adhering to high standards of data security, operational excellence, and environmental responsibility. Their mission is to enable 100% reuse of materials, transforming returned electronics into valuable assets for redeployment, remarketing, or responsible recycling.",
+    "error": false
+  }
+]

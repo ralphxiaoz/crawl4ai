@@ -1,0 +1,10 @@
+[
+  {
+    "index": 0,
+    "error": true,
+    "tags": [
+      "error"
+    ],
+    "content": "litellm.APIConnectionError: APIConnectionError: DeepseekException - HTTPSConnectionPool(host='openaipublic.blob.core.windows.net', port=443): Max retries exceeded with url: /encodings/cl100k_base.tiktoken (Caused by NameResolutionError(\"HTTPSConnection(host='openaipublic.blob.core.windows.net', port=443): Failed to resolve 'openaipublic.blob.core.windows.net' ([Errno -3] Temporary failure in name resolution)\"))"
+  }
+]

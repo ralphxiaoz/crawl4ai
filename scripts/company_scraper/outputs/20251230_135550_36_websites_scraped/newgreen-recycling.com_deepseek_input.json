@@ -1,0 +1,278 @@
+{
+  "metadata": {
+    "timestamp": "2025-12-30 14:15:58",
+    "website_url": "https://www.newgreen-recycling.com",
+    "model": "deepseek/deepseek-chat",
+    "temperature": 0.7,
+    "max_tokens": 4000,
+    "content_filtered": true,
+    "original_size_chars": 73501,
+    "sent_size_chars": 18239,
+    "reduction_percent": 75.2
+  },
+  "system_prompt": "## YOUR ROLE\nYou are a Senior Procurement Consultant for Yilong Business Limited, a high-volume IT Asset Disposition (ITAD) trading firm.\nYour goal is to evaluate potential US-based vendors to see if they fit our supply chain requirements.\n\n## CONTEXT - WHO WE ARE (THE BUYER)\n- Company: Yilong Business Limited (Hong Kong-based with US operations)\n- Business Model: We purchase used IT assets in bulk (Ex Works - EXW) from US facilities and export them to established downstream markets in Hong Kong, Mainland China, and Southeast Asia\n- Volume: We have a purchasing budget of ~$1.5M per month ($10M–$20M annually)\n- Compliance: We operate a strict \"High-Quality Refurbishment\" model. We do NOT export e-waste. We require assets to be \"Tested Functional\" (R2v3 F2/C3 or better)\n\n## YOUR TASK\nYou are analyzing a company website. The provided content belongs to ONE SINGLE company.\nAll URLs are under the same root domain.\nThe content contains text from multiple pages, separated by \"# URL: \".\n\nCRITICAL INSTRUCTIONS:\n1. The crawl covers multiple pages (Home, About, Contact, etc.).\n2. There is significant overlapping/duplicate information across these pages.\n3. You MUST consolidate all information into a SINGLE company profile.\n4. Do NOT output a list of companies. Extract exactly ONE company object.\n5. Ignore minor differences in descriptions across pages; synthesize them into a comprehensive summary.\n\n## INFORMATION TO EXTRACT\n\n1. **Company Information:**\n   - Company name\n   - Main website URL (the root domain, e.g., https://example.com)\n   - Main business/industry\n   - Brief description of what they do\n\n2. **Products/Services:**\n   - List all products or services offered\n   - Key capabilities or specializations\n\n3. **Contact Information:**\n   - ALL email addresses found (support, sales, info, contact, etc.)\n   - Phone numbers\n   - Physical address/location\n   - Contact page URLs\n\n4. **Additional Details:**\n   - Company size (if mentioned)\n   - Year founded (if mentioned)\n   - Certifications or awards (especially R2v3, e-Stewards)\n   - Geographic coverage/service areas\n\n## VENDOR QUALIFICATION CRITERIA\n\nEvaluate if this company is a good fit for Yilong based on these 2 pillars:\n\n### PILLAR 1: INVENTORY FIT\n**Must Have:**\n- Enterprise IT assets: Laptops, Desktops, Data Center Servers, Networking Equipment, Storage\n\n**Bonus Points:**\n- Harvested components (high-value CPU, RAM, SSD/HDD)\n\n**Condition Requirements:**\n- Grade A/B (Ready for Retail) - Preferred\n- Tested Functional Grade C (Ready for Refurbishment) - Acceptable\n\n**RED FLAGS:**\n- Only handles residential recycling (curbside pickup)\n- Focuses primarily on shredding/scrap metal\n- No mention of testing or grading\n- Only handles consumer electronics (phones, tablets, TVs)\n\n### PILLAR 2: OPERATIONAL FIT\n**Business Type:**\n- Must be an ITAD Processor or Asset Recovery Firm (B2B focus)\n- NOT a retail reseller or consumer-focused recycler\n\n**Certification:**\n- R2v3 certification is highly preferred (indicates they can test/wipe data correctly)\n- e-Stewards is also acceptable\n\n**Sales Channel:**\n- Must support Wholesale / Bulk sales (Pallet/Truckload quantities)\n- If they only sell single units on eBay/Amazon to consumers, they are a BAD fit\n\n**RED FLAGS:**\n- Only residential/consumer services\n- No B2B capabilities mentioned\n- No certifications\n- Only retail sales channels\n\n## EVALUATION OUTPUT\nBased on the above criteria, provide:\n- is_good_fit: true/false - Is this company worth reaching out to?\n- inventory_fit_assessment: Detailed explanation of how they match our inventory needs\n- operational_fit_assessment: Detailed explanation of their operational capabilities\n- red_flags: List of any concerns or disqualifying factors\n- recommendation: \"Reach out\", \"Skip\", or \"Research further\"\n- reasoning: Clear explanation of why you recommend reaching out or skipping\n\nBe thorough and extract ALL contact emails you can find.\nIf information is not available, use null for that field.\n",
+  "json_schema": {
+    "properties": {
+      "company_name": {
+        "anyOf": [
+          {
+            "type": "string"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "default": null,
+        "description": "Name of the company",
+        "title": "Company Name"
+      },
+      "website_url": {
+        "anyOf": [
+          {
+            "type": "string"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "default": null,
+        "description": "Main website URL of the company (the root domain, e.g., https://example.com)",
+        "title": "Website Url"
+      },
+      "main_business": {
+        "anyOf": [
+          {
+            "type": "string"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "default": null,
+        "description": "Primary business or industry",
+        "title": "Main Business"
+      },
+      "description": {
+        "anyOf": [
+          {
+            "type": "string"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "default": null,
+        "description": "Brief description of what the company does",
+        "title": "Description"
+      },
+      "products_services": {
+        "anyOf": [
+          {
+            "items": {
+              "type": "string"
+            },
+            "type": "array"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "default": null,
+        "description": "List of products or services offered",
+        "title": "Products Services"
+      },
+      "contact_emails": {
+        "anyOf": [
+          {
+            "items": {
+              "type": "string"
+            },
+            "type": "array"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "default": null,
+        "description": "All email addresses found on the website",
+        "title": "Contact Emails"
+      },
+      "contact_phones": {
+        "anyOf": [
+          {
+            "items": {
+              "type": "string"
+            },
+            "type": "array"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "default": null,
+        "description": "All phone numbers found",
+        "title": "Contact Phones"
+      },
+      "physical_address": {
+        "anyOf": [
+          {
+            "type": "string"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "default": null,
+        "description": "Physical address or location",
+        "title": "Physical Address"
+      },
+      "year_founded": {
+        "anyOf": [
+          {
+            "type": "string"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "default": null,
+        "description": "Year the company was founded",
+        "title": "Year Founded"
+      },
+      "certifications": {
+        "anyOf": [
+          {
+            "items": {
+              "type": "string"
+            },
+            "type": "array"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "default": null,
+        "description": "Any certifications or awards mentioned",
+        "title": "Certifications"
+      },
+      "service_areas": {
+        "anyOf": [
+          {
+            "items": {
+              "type": "string"
+            },
+            "type": "array"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "default": null,
+        "description": "Geographic areas served",
+        "title": "Service Areas"
+      },
+      "summary": {
+        "anyOf": [
+          {
+            "type": "string"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "default": null,
+        "description": "A 2-3 paragraph human-readable summary of the company",
+        "title": "Summary"
+      },
+      "is_good_fit": {
+        "anyOf": [
+          {
+            "type": "boolean"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "default": null,
+        "description": "Overall assessment - Is this company worth reaching out to for Yilong's procurement needs?",
+        "title": "Is Good Fit"
+      },
+      "inventory_fit_assessment": {
+        "anyOf": [
+          {
+            "type": "string"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "default": null,
+        "description": "Detailed explanation of how the company's inventory (product types, grades, volumes) matches Yilong's requirements for enterprise IT assets",
+        "title": "Inventory Fit Assessment"
+      },
+      "operational_fit_assessment": {
+        "anyOf": [
+          {
+            "type": "string"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "default": null,
+        "description": "Detailed explanation of the company's operational capabilities (B2B focus, certifications, wholesale channels) and fit with Yilong's bulk purchasing model",
+        "title": "Operational Fit Assessment"
+      },
+      "red_flags": {
+        "anyOf": [
+          {
+            "items": {
+              "type": "string"
+            },
+            "type": "array"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "default": null,
+        "description": "List of any concerns or disqualifying factors (e.g., residential-only, no certifications, retail-only sales, scrap metal focus)",
+        "title": "Red Flags"
+      },
+      "recommendation": {
+        "anyOf": [
+          {
+            "type": "string"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "default": null,
+        "description": "Action recommendation: 'Reach out', 'Skip', or 'Research further'",
+        "title": "Recommendation"
+      },
+      "reasoning": {
+        "anyOf": [
+          {
+            "type": "string"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "default": null,
+        "description": "Clear explanation of why you recommend reaching out or skipping this vendor, based on the evaluation criteria",
+        "title": "Reasoning"
+      }
+    },
+    "title": "CompanyAnalysis",
+    "type": "object"
+  },
+  "content_sent": "# SITE-WIDE ELEMENTS (Navigation, Footer, etc.)\n\nSkip to content\n\n================================================================================\n\n# PAGE-SPECIFIC CONTENT\n\n# URL: https://www.newgreen-recycling.com\n###  Welcome To New Green Electronic Recycle\n## Sustainable Electronic Recycling Made Simple\n## Electronics Recycling\nWe responsibly disassemble outdated devices and recycle salvageable components to reduce e-waste and protect our planet.\n## Data Destruction\nKeep your sensitive data safe with certified data wiping and physical destruction of drives—giving you total peace of mind.\n## Data Center Decommissioning\nFrom servers to switches, we manage full data center shutdowns with documentation & secure disposal.\n## Remarketing & Refurbishment\nWe refurbish reusable electronics for resale—recovering value while reducing landfill waste.\n###  About New Green Recycling\n## Secure. Responsible. Eco-Friendly\nAt **New Green Recycling** , we help businesses and individuals turn outdated electronics into valuable resources—safely, responsibly, and sustainably. Whether you’re looking to recycle old equipment, securely destroy sensitive data, or decommission a full data center, we’ve got you covered.\n## Recycle Electronics Responsibly – Secure, Certified, and Eco-Friendly Solutions Start Here!\n Get a Quote\n###  Get Involved Now\n## Why Choose New Green Recycling?\nChoose New Green Recycling for certified, secure, and eco-friendly e-waste solutions. We refurbish for resale to maximize value while ensuring fast, traceable, and sustainable service.\n  * **R2 Certified** – Meeting the highest standards in electronic recycling.\n  * **Eco-Friendly Methods** – Supporting your sustainability goals.\n  * **Value Recovery** – Refurbishing for resale to maximize return.\n  * **Reliable Service** – Fast, traceable, and fully secure.\n###  Trusted. Certified. Secure.\n## Security & Compliance You Can Trust\n  * Certified Data Destruction\n  * Secure Collection & Transport\n  * GPS-Tracked Logistics\n  * Full Documentation\n Get a Quote\n###  Recycling\nProcess\n# URL: https://newgreen-recycling.com/about\n# About Us\n###  Get Involved Now\n## Sustainable Solutions for a Smarter Tomorrow\nAt **New Green Recycling** , we’re committed to turning outdated electronics into opportunities for the planet, for your business, and data security. Headquartered in Concord, California, we specialize in eco-friendly electronics recycling, secure data destruction, and responsible IT asset disposition (ITAD).\nWith a strong emphasis on **security, compliance, and sustainability** , we help individuals and organizations of all sizes safely manage their end-of-life electronics while maximizing value recovery through remarketing and refurbishment.\n## Our Security & Logistics Promise\nWe understand that protecting your data is as important as protecting the environment. That’s why we go above and beyond to implement\n### Certified Data Wiping & Hard Drive Shredding\nEnsures all sensitive data is irreversibly destroyed.\n### GPS-Tracked Transportation\nFor complete visibility and accountability during logistics.\n### Tamper-Proof Collection & Packaging\nKeeping your equipment secure from pickup to final disposition.\n### End-to-End Documentation\nProviding transparency and traceability at every stage.\n## Why Businesses Trust Us\nTrust New Green Recycling for certified, secure, and environmentally responsible e-waste solutions. We maximize value through expert refurbishment and provide fast, traceable service with a strong commitment to sustainability.\n  * **Data Security & Compliance** – Strict protocols for peace of mind\n  * **R2 Certified** – Compliant with industry-leading recycling standards\n  * **Efficient Logistics & Tracking ** – Timely and transparent processes\n  * **Eco-Friendly Methods** – Supporting your green initiatives\n  * **Value Recovery** – Turning IT waste into revenue through resale\n## Give your old electronics a new purpose—recycle responsibly with certified experts!\n Get a Quote\n# URL: https://newgreen-recycling.com/contact\n# Contact Us\nLet’s Make Recycling Easy, Secure, and Sustainable\n### [ Phone  +1 (925) 436-9365 ](tel:+1%20\\(925\\)%20436-9365)\nEmail  recycle@newgreen-recycling.com\n###  Business Hours\nMonday – Friday: 9:00 AM – 6:00 PM\nSaturday: 10:00 AM – 2:00 PM\nSunday: Closed\n###  Address  New Green Recycling 1300 Galaxy Way, Unit 18 Concord, CA 94520, US\n## Reach out to us today—we’re just a call or click away.\n###  Have old electronics to recycle? Need certified data destruction? We’re here to help with fast, secure, and eco-friendly solutions.\n# URL: https://newgreen-recycling.com/data-center-decommissioning\n# Data Center Decommissioning\n## Equipment We Decommission\n###  Servers & storage arrays\n###  Networking switches & routers\n###  Server racks & enclosures\n###  Backup power systems (UPS)\n###  Cabling, peripherals, and more\n  Dewey Palmer  Phone : +62 281 7318\n## Need Help!\n## [+1 (925) 436-9365 ](tel:%20+1%20\\(925\\)%20436-9365)\n## End-of-Life Data Center Solutions—Handled from Start to Finish\nShutting down a data center is more than unplugging servers—it requires secure handling, expert logistics, and strict compliance. At New Green Recycling, our Data Center Decommissioning service ensures every step is done safely, efficiently, and responsibly.\n## What’s Included\n Full Equipment Teardown\nServers, racks, switches, power units, cables—we dismantle everything.\n Secure Data Destruction\nHard drives and storage devices are wiped or shredded according to compliance standards.\n Asset Inventory & Reporting\nDetailed logging of each item removed, including serial numbers.\n Responsible Recycling or Remarketing\nDevices are either recycled according to R2 standards or refurbished for resale.\n End-to-End Documentation\nYou’ll receive full proof of removal, destruction, and final disposition.\n## Why It Matters\n  * 📋 Ensures regulatory and corporate compliance\n  * 🔐 Eliminates risks tied to sensitive infrastructure\n  * ♻️ Reduces waste and maximizes equipment value\n## Decommission with confidence. We’ll handle the heavy lifting—securely and sustainably.\n REquest Pickup\n# URL: https://newgreen-recycling.com/data-destruction\n# Data Destruction\n## Devices We Handle\n###  Hard drives (HDD/SSD)\n###  Laptops & desktops\n###  Servers & backup tapes\n###  Smartphones & tablets\n###  USB drives & external storage\n## Need Help!\n## Secure Your Data. Protect Your Reputation.\nAt New Green Recycling, we understand that simply deleting files isn’t enough. Our Data Destruction services ensure that all sensitive information is permanently and securely removed from your devices—protecting your business, your clients, and your peace of mind.\n## What We Offer\n Certified Data Wiping\nUsing DoD and NIST-compliant methods to digitally erase all data.\n Hard Drive Shredding\nPhysical destruction of drives to eliminate all recovery possibilities.\n On-Site or Off-Site Options\nWe can destroy data at your location or securely transport devices to our facility.\n Certificate of Destruction\nDocumentation provided for each device destroyed, supporting audits and compliance needs.\n## Why It Matters\n  * 🛡️ Prevents data breaches and identity theft\n  * ✅ Supports HIPAA, FERPA, GDPR, and other compliance standards\n  * 🧾 Gives you proof of secure disposal\n## Don’t take risks with your data. Let us destroy it—safely and professionally.\n REquest Pickup\n# URL: https://newgreen-recycling.com/electronics-recycling\n# Electronics Recycling\n## What We Recycle\n###  Computers, laptops, and monitors\n###  Printers, copiers, and scanners\n###  Phones, tablets, and accessories\n###  Networking equipment (routers, switches, etc.)\n###  TVs, audio systems, and other electronics\n  Dewey Palmer  Phone : +62 281 7318\n## Need Help!\n## Dispose Responsibly. Recycle Sustainably.\nAt New Green Recycling, we offer secure and environmentally friendly electronics recycling services for businesses and individuals. Whether you’re upgrading office equipment or clearing out outdated devices, we ensure every item is handled responsibly and in compliance with environmental regulations.\n## Our Process\n Collection & Sorting\nWe pick up your e-waste and categorize it based on type and condition.\n Component Recovery\nReusable parts are safely extracted for refurbishment or resale.\n Responsible Recycling\nRemaining materials are broken down and recycled according to R2-certified standards.\n Compliance & Documentation\nYou receive documentation verifying responsible disposal.\n## Why It Matters\n  * 🌍 Reduces e-waste in landfills\n  * 🔋 Prevents toxic materials from harming the environment\n  * 💼 Helps meet corporate sustainability goals\n## Uncover more ways we help businesses and individuals recycle smarter.\n Request Pickup\n# URL: https://newgreen-recycling.com/faqs\n# Frequently Asked Questions\n###  Need Help?\n## Got Questions? We Answer\n##  What types of electronics do you accept?\nWe accept a wide range of electronic items including computers, laptops, monitors, printers, phones, networking equipment, servers, and more. If you’re unsure about a specific item, feel free to contact us.\n##  Is my data really safe during the recycling process?\nAbsolutely. We provide certified data wiping and hard drive shredding services to ensure all sensitive information is completely destroyed. You’ll also receive a Certificate of Destruction for your records.\n##  Do you offer pickup services?\nYes, we offer secure on-site pickups using GPS-tracked vehicles and tamper-proof packaging. Our logistics team ensures safe transportation from your location to our facility.\n##  What certifications do you hold?\nWe are R2 Certified, meaning we meet globally recognized standards for electronics recycling, data security, and environmental responsibility.\n##  What is the process for data center decommissioning?\nWe handle everything—from hardware removal and asset tagging to data destruction and recycling. You’ll receive detailed documentation throughout the process.\n##  Do you recycle batteries or hazardous materials?\nWe do recycle batteries that are part of electronic equipment. For standalone batteries or hazardous waste, please contact us for specific handling and acceptance.\n##  Do you serve individuals or only businesses?\nWe work with both businesses and individuals. Whether you’re a homeowner with a few devices or an organization decommissioning a full office, we’re here to help.\n##  Do you provide documentation for compliance?\nYes, we provide full documentation including Certificates of Destruction, recycling reports, and asset tracking logs for audit and compliance purposes.\n##  How can I get started?\nSimple! Call us at +1 (925) 436-9365, email us at recycle@newgreen-recycling.com, or schedule a pickup directly from our website.\n##  What does it mean to be R2 certified?\nKey aspects of R2 certification include: [3]\n* **Environmental Management System:** Implementing a system to manage air emissions, water discharges, and waste. [5]\n* **Worker Health and Safety:** Ensuring a safe working environment with proper training and protective equipment. [5]\n* **Data Security:** Implementing measures to protect data stored on electronic devices, including secure data destruction. [5]\n* **Prioritizing Reuse and Recycling:** R2 certified recyclers must prioritize reuse and recycling before considering disposal options. [5, 6]\n* **Downstream Management:** Ensuring that any vendors involved in the recycling chain also adhere to responsible practices. [5, 6]\n* **Independent Audits:** R2 certification requires regular audits by an independent third-party to verify compliance. [5]\nR2 certification is a voluntary program, but it is widely recognized and can help organizations demonstrate their commitment to responsible electronics recycling. It is also often a requirement for organizations looking to responsibly manage their electronic waste and ensure data security. [1, 2, 3, 4, 7, 8, 9]\n[1] <https://nsysgroup.com/blog/what-is-r2-certification-and-why-is-it-important/>\n[2] <https://upscsociology.in/q-r2-code-of-practices-constitutes-a-tool-available-for-promoting-the-adoption-of/>\n[3] <https://www.quality-assurance.com/blog/what-is-the-approximate-cost-for-an-r2-certification-and-what-are-the-key-aspects.html>\n[4] <https://india.sustainableelectronics.org/r2/>\n[5] https://gcitad.com/r2-certification\n[6] <https://www.trustcobalt.com/articles/what-is-r2-certification-and-why-is-it-important/>\n[7] <https://www.youtube.com/watch?v=gy0D8TJKZbs>\n[8] <https://securis.com/news/what-is-r2-certification-in-e-waste-recycling/>\n[9] <https://mayeralloys.com/what-is-an-r2-certification/>\n## Recycle electronics the smart way—secure, certified, and eco-friendly. Get started now!\n# URL: https://newgreen-recycling.com/it-asset-disposition-itad\n# IT Asset Disposition (ITAD)\n## Ideal For\n###  Corporate IT refresh cycles\n###  Office closures and relocations\n###  Mergers, acquisitions, or downsizing\n###  Government and healthcare equipment replacement\n  Dewey Palmer  Phone : +62 281 7318\n## Need Help!\n## End-of-Life IT Management with Maximum Security and ROI\nManaging the retirement of outdated IT equipment can be complex and risky. At New Green Recycling, our IT Asset Disposition (ITAD) service provides a secure, compliant, and value-driven solution for retiring IT assets. From collection to final disposal or resale, we make sure nothing is left unchecked.\n## What’s Included\n Asset Tagging & Tracking\nEach item is cataloged, serialized, and tracked throughout the process.\n Data Destruction\nSecure wiping or shredding of all data-bearing devices to ensure compliance and protection.\n Recycling & Responsible Disposal\nNon-resale items are broken down and recycled per R2 standards.\n Detailed Reporting\nFull chain-of-custody, certificates of destruction, and inventory reports provided.\n## Why It Matters\n  * 🔒 Minimizes data breach risks\n  * ♻️ Supports environmental compliance and ESG goals\n  * 💵 Maximizes return on retired assets\n## Decommission with confidence. We’ll handle the heavy lifting—securely and sustainably.\n Request Pickup\n# URL: https://newgreen-recycling.com/remarketing-refurbishment\n# Remarketing & Refurbishment\n## What We Refurbish\n###  Laptops & desktops\n###  Tablets & smartphones\n###  Servers & storage devices\n###  Networking equipment\n###  Office electronics\n  Dewey Palmer  Phone : +62 281 7318\n## Need Help!\n## Breathe New Life Into Old Tech—And Boost Your ROI\nNot all used electronics are destined for the landfill. At New Green Recycling, our Remarketing & Refurbishment service helps you recover value from devices that are still functional. We securely sanitize, test, and refurbish electronics for resale—reducing waste and generating returns.\n## Our Process\n Secure Data Sanitization\nAll devices are wiped using certified methods to remove any sensitive data.\n Thorough Testing\nEach device is evaluated for performance, hardware integrity, and usability.\n Refurbishment & Repairs\nFunctional components are replaced or upgraded to restore full functionality.\n Resale Channels\nRefurbished equipment is resold through trusted B2B and B2C marketplaces.\n## Why It Matters\n  * 💰 Generates cash flow from old assets\n  * 🌿 Supports sustainability by reducing e-waste\n  * 🔄 Extends the lifecycle of electronics through reuse\n## Turn surplus into opportunity. Let us help you get more from your retired tech.\n Request Pickup\n# URL: https://newgreen-recycling.com/request-pickup\n# Request Pickup\n## Schedule a Pickup\n###  Book your pickup effortlessly and get service at your convenience. Quick, secure, and hassle-free!\nPickup is **free** if you have laptops, mobiles, tablets, desktops, monitors, or printers.\n# URL: https://newgreen-recycling.com/secure-pickup-logistics\n# Secure Pickup & Logistics\n## Ideal For\n###  Corporate offices\n###  Healthcare facilities\n###  Educational institutions\n###  Data centers and IT departments\n  Dewey Palmer  Phone : +62 281 7318\n## Need Help!\n## Safe, Trackable, and Hassle-Free Electronics Collection\nAt New Green Recycling, we offer Secure Pickup & Logistics services designed to simplify the transportation of your retired IT assets and electronic waste. Whether you’re recycling a few desktops or decommissioning an entire data center, we ensure secure handling from your door to our facility—with full transparency every step of the way.\n## What You Can Expect\n On-Site Pickup\nSchedule a convenient pickup time that works for you. Our trained team will arrive with all necessary packaging and tools.\n Tamper-Proof Packaging\nWe use sealed containers and anti-tamper tape to protect equipment during transit.\n GPS-Tracked Vehicles\nMonitor the journey of your equipment with real-time GPS tracking for full accountability.\n Chain-of-Custody Documentation\nFrom collection to delivery, we provide detailed records to verify secure handling.\n Flexible Scheduling\nSame-day, next-day, and weekend pickups available based on your business needs.\n## Why It Matters\n  * 🔐 Eliminates risk of loss, theft, or tampering\n  * 📝 Provides compliance documentation for audits\n  * 🧘 Offers peace of mind with end-to-end security\n## Sit back while we handle your e-waste securely—from start to finish.\n Request Pickup\n# URL: https://newgreen-recycling.com/services\n# Services\n## Electronics Recycling\nWe responsibly disassemble outdated devices and recycle salvageable components to reduce e-waste and protect our planet.\n## Data Destruction\nKeep your sensitive data safe with certified data wiping and physical destruction of drives—giving you total peace of mind.\n## IT Asset Disposition (ITAD)\nFrom servers to switches, we handle complete data center shutdowns with full documentation and secure disposal.\n## Data Center Decommissioning\nFrom servers to switches, we handle complete data center shutdowns with full documentation and secure disposal.\n## Secure Pickup & Logistics\nWe responsibly disassemble outdated devices and recycle salvageable components to reduce e-waste and protect our planet.\n## Remarketing & Refurbishment\nWe refurbish reusable electronics for resale—recovering value while reducing landfill waste.\n## Recycle Electronics Responsibly – Secure, Certified, and Eco-Friendly Solutions Start Here!\n Request Pickup",
+  "content_length_stats": {
+    "characters": 18239,
+    "estimated_tokens": 4559,
+    "estimated_cost_input_usd": 0.001277
+  }
+}

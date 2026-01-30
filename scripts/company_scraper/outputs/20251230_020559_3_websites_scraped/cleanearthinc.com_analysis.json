@@ -1,0 +1,58 @@
+[
+  {
+    "company_name": "Clean Earth",
+    "website_url": "https://www.cleanearthinc.com",
+    "main_business": "Environmental and Waste Services",
+    "description": "Clean Earth is a specialty waste company providing comprehensive hazardous and non-hazardous waste disposal, recycling, and environmental remediation solutions. They offer a full-service approach for contaminated soil, dredged material, hazardous waste, and electronic waste, with a focus on recycling and beneficial reuse. They operate a national network of Treatment, Storage, and Disposal Facilities (TSDFs).",
+    "products_services": [
+      "Hazardous & Non-Hazardous Waste Disposal",
+      "Contaminated Soil Remediation",
+      "Dredged Material Processing & Beneficial Reuse",
+      "Electronic Waste Recycling & IT Asset Management (ITAD)",
+      "Aerosols, Paint, & Consumer Commodities Recycling",
+      "DEA & Pharmaceutical Waste Disposal",
+      "Universal Waste Recycling (lamps, batteries, ballasts)",
+      "Lab Packing Services",
+      "Emergency Response",
+      "Environmental Support & Professional Services",
+      "On-Site Soil Solutions",
+      "Transportation Services",
+      "Household Hazardous Waste Services",
+      "Wastewater Solutions",
+      "Fullcircle™ (Advanced Waste Lifecycle Program)",
+      "AssetSure (IT Asset Ship Direct Recycling & Data Destruction)",
+      "RecycleKits (prepaid recycling kits for small quantity generators)"
+    ],
+    "contact_emails": [
+      "recyclekits@cleanearthinc.com"
+    ],
+    "contact_phones": [
+      "877.577.2669",
+      "886.303.7344",
+      "972.627.3224",
+      "713.679.2300",
+      "866.447.5177"
+    ],
+    "physical_address": "405 Powell Street, Avalon, TX 76623, United States (One of many facility locations)",
+    "year_founded": null,
+    "certifications": [
+      "R2/RIOS Certified Electronics Recycler ™",
+      "NAID AAA Certification"
+    ],
+    "service_areas": [
+      "United States (nationwide network)"
+    ],
+    "summary": "Clean Earth is a major US-based environmental services company specializing in the treatment, recycling, and disposal of a wide range of waste streams. With over 30 years in business, they operate one of the largest networks of hazardous waste TSDFs in the country, serving industries such as construction, manufacturing, chemical, pharmaceutical, retail, and aerospace. Their services span from soil and dredge remediation to comprehensive IT Asset Disposition (ITAD) and data destruction through their AssetSure and IT Asset Management programs. They emphasize recycling and beneficial reuse, reporting that 93% of material processed in 2021 was recycled. The company holds R2/RIOS and NAID AAA certifications for its electronics recycling operations, indicating a structured, compliant approach to IT asset handling.",
+    "is_good_fit": true,
+    "inventory_fit_assessment": "Clean Earth explicitly offers IT Asset Management (ITAM) and IT Asset Disposal (ITAD) services, which aligns with Yilong's core need for enterprise IT assets. Their services include decommissioning, diagnostics, refurbishment, and certified data destruction for electronics. They mention handling 'electronics' and 'IT assets' broadly, which likely includes laptops, desktops, servers, and networking equipment from commercial sources. Their R2 certification and focus on data security suggest they test and process assets to a standard that could meet Yilong's 'Tested Functional' requirement (R2v3 F2/C3 or better). The AssetSure program is designed for remote companies and small retail locations, indicating they handle bulk shipments from business clients. A potential bonus is their mention of 'harvested components' not being explicit, but their refurbishment process includes testing key functions and could involve component-level recovery.",
+    "operational_fit_assessment": "Clean Earth operates as a B2B environmental services and ITAD processor, not a consumer reseller. Their entire service model is built around serving businesses across multiple industries (construction, manufacturing, pharmaceutical, retail, etc.). They possess the highly preferred R2/RIOS certification for electronics recycling, which is a strong indicator of proper testing, data wiping, and downstream management practices. They support wholesale/bulk operations: their transportation services handle full truckloads, they have a nationwide network for consolidation, and their AssetSure program is built for shipping company-owned electronic assets from anywhere in the US. They mention providing 'customized waste volume and costing reports' and handling projects for clients, which aligns with a B2B, volume-based sales channel.",
+    "red_flags": [
+      "ITAD is one of many service lines within a much broader environmental waste business. Their primary focus is hazardous/non-hazardous waste and soil remediation, which could mean IT assets are not their core volume driver.",
+      "No explicit mention of 'wholesale' or 'bulk sales' of tested IT assets in the context Yilong seeks (i.e., EXW purchases). Their model appears to be service-fee based for recycling/disposal, not necessarily asset resale.",
+      "The website does not explicitly detail asset grading (A/B/C) or a resale marketplace for functional units, which is central to Yilong's procurement model."
+    ],
+    "recommendation": "Research further",
+    "reasoning": "Clean Earth is a certified, nationwide B2B operator with a legitimate ITAD service arm (R2/RIOS certified), making them a potentially strong fit on paper. However, key uncertainties require clarification before a procurement outreach. It is not clear if they sell tested, functional assets in bulk (EXW) or if their business model is purely service-based (charging for recycling/destruction). A direct inquiry is needed to confirm: 1) if they sell graded, functional IT assets in pallet/truckload quantities, 2) the primary source and volume of their IT asset stream, and 3) their standard sales terms for asset recovery. Their certifications and scale make them worth investigating, but their core environmental business model means the ITAD division might not operate as a traditional wholesale asset supplier.",
+    "error": false
+  }
+]

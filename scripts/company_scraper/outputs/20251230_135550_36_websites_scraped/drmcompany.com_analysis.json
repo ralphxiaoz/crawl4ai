@@ -1,0 +1,53 @@
+[
+  {
+    "company_name": "Direct Resource Management, Inc.",
+    "website_url": "https://drmcompany.com",
+    "main_business": "IT Asset Disposition (ITAD), E-Waste Recycling, Data Center and Lab Decommissioning",
+    "description": "Direct Resource Management (DRM) is a security and sustainability-focused company providing comprehensive technology recycling, IT asset disposition (ITAD), data destruction, and product destruction solutions for corporate entities of all sizes. They specialize in refurbishing, repairing, and restoring materials to facilitate reuse, while also recycling discarded electronics. Their services include enterprise ITAD, data center decommissioning, medical/lab equipment remarketing, and global e-waste recycling with a strict zero landfill and data breach policy.",
+    "products_services": [
+      "IT Asset Disposition (ITAD)",
+      "E-Waste Recycling",
+      "Data Center Decommissioning",
+      "Medical & Lab Equipment Decommissioning and Remarketing",
+      "Data Destruction (On-site, Bulk, Erasure, Shredding, Degaussing)",
+      "IT Asset Recovery (Refurbishment, Resale, Redeployment)",
+      "Logistics & Transportation",
+      "Global Services",
+      "Reporting & Client Portal",
+      "Sustainability Calculator",
+      "RFP Template for ITAD",
+      "Parts Recovery/Harvesting",
+      "Bulk Hard Drive Destruction",
+      "Mobile Device Redeployment"
+    ],
+    "contact_emails": [
+      "info@drmcompany.com"
+    ],
+    "contact_phones": [
+      "(925) 315-9590"
+    ],
+    "physical_address": null,
+    "year_founded": null,
+    "certifications": [
+      "R2v3",
+      "ISO 14001",
+      "ISO 45001",
+      "ISO 9001",
+      "NAID"
+    ],
+    "service_areas": [
+      "Americas",
+      "EMEA",
+      "APAC",
+      "Global"
+    ],
+    "summary": "Direct Resource Management (DRM) is a global leader in IT Asset Disposition (ITAD), e-waste recycling, and data center decommissioning services. The company operates with a strong focus on data security, environmental sustainability, and value recovery for its B2B clients, which include enterprises, data centers, and electronics manufacturers. DRM offers a comprehensive suite of services, from secure on-site data destruction and asset refurbishment to global logistics and detailed reporting via a client portal. They are R2v3, ISO, and NAID certified, adhering to a strict zero landfill and data breach policy. Their process emphasizes the circular economy, aiming to maximize reuse and recycling of IT assets, data center hardware, and specialized medical/lab equipment.",
+    "is_good_fit": true,
+    "inventory_fit_assessment": "DRM is an excellent inventory fit for Yilong. They explicitly process the full range of required enterprise IT assets: laptops, desktops, data center servers (rack servers, blade servers), networking equipment (routers, switches), and storage devices (hard drives, storage arrays). They also offer parts harvesting and recovery (CPUs, RAM, circuit boards) as a key service, which is a bonus. Their business model is centered on refurbishment, redeployment, and resale, indicating they test and grade assets. They mention 'refurbish, repair, and restore materials' and have 'testing, grading, repair and refurbishment' as part of their ITAD process, which aligns with Yilong's requirement for 'Tested Functional' (R2v3 F2/C3 or better) assets. There is no indication they focus on residential recycling or only scrap metal.",
+    "operational_fit_assessment": "DRM is a strong operational fit. They are a B2B-focused ITAD processor and asset recovery firm, serving enterprises, data centers, and global companies. They hold the highly preferred R2v3 certification (explicitly mentioned for e-recycling centers) as well as ISO and NAID certifications. Their sales model is wholesale/bulk-oriented; they discuss 'bulk resale to brokers,' 'pallet sized bags' of commodities, and handling 'full containers.' They have a global network of processing facilities and offer services like 'bulk hard drive destruction' and managing 'hyperscale volumes,' which demonstrates capability for large-volume transactions suitable for Yilong's $1.5M monthly budget. They provide EXW-compatible services like on-site decommissioning and packing for shipment.",
+    "red_flags": [],
+    "recommendation": "Reach out",
+    "reasoning": "DRM meets or exceeds all critical qualification criteria. They are a certified, B2B ITAD processor with a clear focus on enterprise and data center assets, including the specific equipment Yilong seeks. Their operational model supports bulk/wholesale transactions and they have the certifications (R2v3) that ensure proper testing and data wiping. There are no red flags such as a consumer focus, lack of certifications, or a scrap-only model. The company's global footprint and emphasis on value recovery through refurbishment and resale make them a highly promising vendor for a bulk purchasing partnership.",
+    "error": false
+  }
+]
