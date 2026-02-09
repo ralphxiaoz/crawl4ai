@@ -13,6 +13,7 @@ Results are saved with timestamps in the outputs/ directory.
 import asyncio
 import json
 import os
+import sys
 import yaml
 import logging
 from datetime import datetime
@@ -36,6 +37,21 @@ from pydantic import BaseModel, Field, create_model
 
 # Import content consolidator for universal deduplication
 from content_consolidator import UniversalContentConsolidator
+
+
+def sanitize_company_name(company_name: str) -> str:
+    """Sanitize company name for use as a filename base."""
+    safe_name = ''.join(c if c.isalnum() or c in [' ', '-', '_'] else '_' for c in company_name)
+    return safe_name.replace(' ', '_')[:50]
+
+
+def save_progress(progress: dict, progress_file: Path):
+    """Save progress.json atomically (write to temp, then rename)."""
+    progress["last_updated"] = datetime.now().isoformat()
+    tmp_file = progress_file.with_suffix('.json.tmp')
+    with open(tmp_file, 'w', encoding='utf-8') as f:
+        json.dump(progress, f, indent=2, ensure_ascii=False)
+    tmp_file.rename(progress_file)
 
 
 def setup_logging(script_dir: Path) -> logging.Logger:
@@ -124,6 +140,58 @@ def load_websites(filepath: str = "websites.txt") -> List[str]:
     return websites
 
 
+def load_companies(filepath: str = "input/companies_validated.csv") -> List[Dict[str, str]]:
+    """
+    Load companies from validated CSV file (output of url_validator.py).
+
+    CSV columns: Company, Original_URL, Researched_URL, Confidence, Status, LinkedIn, Notes
+
+    Returns list of dicts with: name, url (best available), linkedin_url, confidence
+    """
+    import csv
+
+    companies = []
+    with open(filepath, 'r', encoding='utf-8') as f:
+        reader = csv.reader(f, delimiter='\t')
+
+        # Skip header
+        header = next(reader, None)
+        if not header:
+            return companies
+
+        for row in reader:
+            if len(row) < 5:
+                continue
+
+            name = row[0].strip()
+            original_url = row[1].strip() if len(row) > 1 else ''
+            researched_url = row[2].strip() if len(row) > 2 else ''
+            confidence = row[3].strip() if len(row) > 3 else '0'
+            status = row[4].strip() if len(row) > 4 else ''
+            linkedin_url = row[5].strip() if len(row) > 5 else ''
+
+            # Use researched_url if available, otherwise original_url
+            url = researched_url or original_url
+
+            # Skip if no valid URL
+            if not url:
+                continue
+
+            # Normalize URL
+            if not url.startswith(('http://', 'https://')):
+                url = 'https://' + url
+
+            companies.append({
+                'name': name,
+                'url': url,
+                'linkedin_url': linkedin_url,
+                'confidence': int(confidence) if confidence.isdigit() else 0,
+                'status': status
+            })
+
+    return companies
+
+
 def create_pydantic_model_from_schema(schema: Dict[str, Any]) -> type[BaseModel]:
     """
     Create a Pydantic model from the YAML schema definition
@@ -200,24 +268,34 @@ def get_domain_name(url: str) -> str:
 
 async def crawl_and_analyze_website(
     crawler: AsyncWebCrawler,
-    url: str,
+    company: Dict[str, Any],
     config: Dict[str, Any],
     output_dir: Path,
     logger: logging.Logger
 ) -> Dict[str, Any]:
     """
     Crawl a website and analyze it with Deepseek
+
+    Args:
+        company: Dict with 'name', 'url', 'linkedin_url', 'confidence', 'status'
     """
+    url = company['url']
+    company_name = company['name']
+    linkedin_url = company.get('linkedin_url', '')
+
     print(f"\n{'='*80}")
-    print(f"Processing: {url}")
+    print(f"Processing: {company_name}")
+    print(f"URL: {url}")
+    if linkedin_url:
+        print(f"LinkedIn: {linkedin_url}")
     print(f"{'='*80}\n")
 
-    logger.info(f"Starting processing for: {url}")
+    logger.info(f"Starting processing for: {company_name} ({url})")
     logger.debug(f"Output directory: {output_dir}")
 
-    # Create filename (no timestamp prefix since we have run-specific folder)
-    domain = get_domain_name(url)
-    base_filename = domain
+    # Create filename from company name (sanitized)
+    safe_name = sanitize_company_name(company_name)
+    base_filename = safe_name
 
     # Configure Deepseek
     logger.debug("Configuring Deepseek LLM")
@@ -268,11 +346,16 @@ async def crawl_and_analyze_website(
         cache_mode=CacheMode.ENABLED, # Use cache for speed if retrying
     )
     
+    # Get system prompt and replace language placeholder
+    output_language = deepseek_config.get('output_language', 'English')
+    system_prompt = config['system_prompt'].replace('{output_language}', output_language)
+    logger.debug(f"Output language: {output_language}")
+
     # Initialize extraction strategy (used later for analysis, not during crawl)
     extraction_strategy = LLMExtractionStrategy(
         llm_config=llm_config,
         schema=config['output_schema'],
-        instruction=config['system_prompt'],
+        instruction=system_prompt,
         chunk_token_threshold=deepseek_config.get('chunk_token_threshold', 50000)
     )
 
@@ -510,7 +593,8 @@ async def crawl_and_analyze_website(
                 "sent_size_chars": len(content_for_analysis),
                 "reduction_percent": round(100 * (1 - len(content_for_analysis) / len(combined_markdown)), 1) if len(combined_markdown) > 0 else 0
             },
-            "system_prompt": config['system_prompt'],
+            "system_prompt": system_prompt,
+            "output_language": output_language,
             "json_schema": CompanyModel.model_json_schema(),
             "content_sent": content_for_analysis,
             "content_length_stats": {
@@ -592,31 +676,45 @@ async def crawl_and_analyze_website(
             if content_filter_config.get('enabled', False) and filtered_size < original_size:
                 files_dict['filtered'] = f"{base_filename}_filtered.md"
 
+            # Inject company name and LinkedIn URL from validated data
+            if isinstance(analysis_data, list) and len(analysis_data) > 0:
+                analysis_data[0]['company_name'] = company_name
+                analysis_data[0]['linkedin_url'] = linkedin_url
+            elif isinstance(analysis_data, dict):
+                analysis_data['company_name'] = company_name
+                analysis_data['linkedin_url'] = linkedin_url
+
             return {
+                'company_name': company_name,
                 'url': url,
+                'linkedin_url': linkedin_url,
                 'status': 'success',
                 'pages_crawled': len(results),
-                'confidence': 1.0, 
+                'confidence': 1.0,
                 'analysis': analysis_data,
                 'files': files_dict
             }
         else:
             error_msg = analysis_result.error_message or "Unknown error"
             print(f"✗ Analysis failed: {error_msg}")
-            logger.error(f"Analysis failed for {url}: {error_msg}")
+            logger.error(f"Analysis failed for {company_name}: {error_msg}")
             return {
+                'company_name': company_name,
                 'url': url,
+                'linkedin_url': linkedin_url,
                 'status': 'analysis_failed',
                 'error': error_msg
             }
 
     except Exception as e:
         print(f"✗ Error processing {url}: {str(e)}")
-        logger.error(f"Error processing {url}: {str(e)}", exc_info=True)
+        logger.error(f"Error processing {company_name}: {str(e)}", exc_info=True)
         import traceback
         traceback.print_exc()
         return {
+            'company_name': company_name,
             'url': url,
+            'linkedin_url': linkedin_url,
             'status': 'error',
             'error': str(e)
         }
@@ -649,21 +747,21 @@ async def main():
     config = load_config(config_file)
     logger.info("Configuration loaded successfully")
 
-    # Load websites
-    websites_file = script_dir / "websites.txt"
-    logger.debug(f"Loading websites from {websites_file}")
-    if not websites_file.exists():
-        print(f"❌ Error: websites.txt not found at {websites_file}")
-        logger.error(f"websites.txt not found at {websites_file}")
-        print("Please create websites.txt with one URL per line.")
+    # Load companies from validated CSV
+    companies_file = script_dir / "input" / "companies_validated.csv"
+    logger.debug(f"Loading companies from {companies_file}")
+    if not companies_file.exists():
+        print(f"❌ Error: companies_validated.csv not found at {companies_file}")
+        logger.error(f"companies_validated.csv not found at {companies_file}")
+        print("Please run url_validator.py first to generate the validated companies file.")
         return
 
-    websites = load_websites(websites_file)
-    logger.info(f"Loaded {len(websites)} websites from {websites_file}")
+    companies = load_companies(companies_file)
+    logger.info(f"Loaded {len(companies)} companies from {companies_file}")
 
-    if not websites:
-        print("❌ No websites found in websites.txt")
-        logger.error("No websites found in websites.txt")
+    if not companies:
+        print("❌ No companies with valid URLs found in companies_validated.csv")
+        logger.error("No companies with valid URLs found")
         return
 
     # Check for Deepseek API key
@@ -680,14 +778,55 @@ async def main():
     base_output_dir = script_dir / config['output']['output_dir']
     base_output_dir.mkdir(exist_ok=True)
 
-    # Create run-specific subfolder: timestamp_N_websites_scraped
-    run_timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
-    run_folder_name = f"{run_timestamp}_{len(websites)}_websites_scraped"
-    output_dir = base_output_dir / run_folder_name
-    output_dir.mkdir(exist_ok=True)
+    # Resume mode: reuse existing output directory
+    resume_dir = None
+    if len(sys.argv) >= 3 and sys.argv[1] == '--resume':
+        resume_path = Path(sys.argv[2])
+        if not resume_path.is_absolute():
+            resume_dir = base_output_dir / sys.argv[2]
+        else:
+            resume_dir = resume_path
+        if not resume_dir.exists():
+            print(f"Error: Resume directory not found: {resume_dir}")
+            logger.error(f"Resume directory not found: {resume_dir}")
+            return
+        logger.info(f"RESUME MODE: Resuming from {resume_dir}")
+
+    if resume_dir:
+        output_dir = resume_dir
+        logger.info(f"Resuming into existing output directory: {output_dir}")
+    else:
+        # Create run-specific subfolder: timestamp_N_companies_scraped
+        run_timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
+        run_folder_name = f"{run_timestamp}_{len(companies)}_companies_scraped"
+        output_dir = base_output_dir / run_folder_name
+        output_dir.mkdir(exist_ok=True)
 
     logger.info(f"Output directory: {output_dir}")
-    logger.info(f"Processing {len(websites)} websites in this run")
+    logger.info(f"Processing {len(companies)} companies in this run")
+
+    # Load or initialize progress tracking
+    progress_file = output_dir / "progress.json"
+    if progress_file.exists():
+        with open(progress_file, 'r') as f:
+            progress = json.load(f)
+        logger.info(f"Loaded existing progress: {progress['completed']} completed, "
+                     f"{progress['failed']} failed of {progress['total_companies']}")
+        print(f"\nResuming: {progress['completed']} already completed, "
+              f"{progress['failed']} failed")
+    else:
+        progress = {
+            "run_id": output_dir.name,
+            "started_at": datetime.now().isoformat(),
+            "last_updated": datetime.now().isoformat(),
+            "total_companies": len(companies),
+            "completed": 0,
+            "failed": 0,
+            "skipped_on_resume": 0,
+            "status": "running",
+            "companies": {}
+        }
+        save_progress(progress, progress_file)
 
     print(f"\n{'='*80}")
     print(f"Crawl4AI + Deepseek Company Analyzer")
@@ -696,10 +835,11 @@ async def main():
     print(f"  Model: {config['deepseek']['model']}")
     print(f"  Strategy: {config['crawl_settings']['strategy']}")
     print(f"  Max pages: {config['crawl_settings']['max_pages']}")
+    print(f"  Language: {config['deepseek'].get('output_language', 'English')}")
     print(f"  Output directory: {output_dir}")
-    print(f"\nWebsites to process: {len(websites)}")
-    for i, url in enumerate(websites, 1):
-        print(f"  {i}. {url}")
+    print(f"\nCompanies to process: {len(companies)}")
+    for i, company in enumerate(companies, 1):
+        print(f"  {i}. {company['name']} ({company['url'][:40]}...)")
 
     # Configure browser
     browser_config = BrowserConfig(
@@ -712,17 +852,83 @@ async def main():
     # Process each website
     logger.info("Initializing AsyncWebCrawler")
     async with AsyncWebCrawler(config=browser_config) as crawler:
-        for i, url in enumerate(websites, 1):
-            logger.info(f"Processing website {i}/{len(websites)}: {url}")
+        for i, company in enumerate(companies, 1):
+            safe_name = sanitize_company_name(company['name'])
+
+            # Check if already completed successfully
+            company_progress = progress["companies"].get(safe_name, {})
+            if company_progress.get("status") == "success":
+                analysis_file = output_dir / f"{safe_name}_analysis.json"
+                if analysis_file.exists():
+                    logger.info(f"SKIP (already completed): {company['name']}")
+                    print(f"\n[{i}/{len(companies)}] SKIP: {company['name']} (already completed)")
+                    progress["skipped_on_resume"] += 1
+                    results.append({
+                        'company_name': company['name'],
+                        'url': company['url'],
+                        'linkedin_url': company.get('linkedin_url', ''),
+                        'status': 'success',
+                        'pages_crawled': company_progress.get('pages_crawled', 0),
+                        'confidence': 1.0,
+                        'analysis': None,
+                        'files': {},
+                        'resumed': True
+                    })
+                    continue
+                else:
+                    logger.warning(f"Progress says success but {safe_name}_analysis.json missing. Re-processing.")
+
+            # Mark as in_progress
+            progress["companies"][safe_name] = {
+                "name": company['name'],
+                "url": company['url'],
+                "safe_name": safe_name,
+                "status": "in_progress",
+                "started_at": datetime.now().isoformat(),
+                "finished_at": None,
+                "duration_seconds": None,
+                "pages_crawled": None,
+                "error": None
+            }
+            save_progress(progress, progress_file)
+
+            logger.info(f"Processing company {i}/{len(companies)}: {company['name']} ({company['url']})")
+            start_time = datetime.now()
             result = await crawl_and_analyze_website(
                 crawler,
-                url,
+                company,
                 config,
                 output_dir,
                 logger
             )
+            elapsed = (datetime.now() - start_time).total_seconds()
+
             results.append(result)
-            logger.info(f"Completed {i}/{len(websites)} websites")
+
+            # Update progress
+            progress["companies"][safe_name]["status"] = result['status']
+            progress["companies"][safe_name]["finished_at"] = datetime.now().isoformat()
+            progress["companies"][safe_name]["duration_seconds"] = round(elapsed, 1)
+            if result.get('error'):
+                progress["companies"][safe_name]["error"] = result['error']
+            if result.get('pages_crawled'):
+                progress["companies"][safe_name]["pages_crawled"] = result['pages_crawled']
+
+            if result['status'] == 'success':
+                progress["completed"] += 1
+            else:
+                progress["failed"] += 1
+
+            save_progress(progress, progress_file)
+            logger.info(f"Completed {i}/{len(companies)} companies "
+                        f"({progress['completed']} success, {progress['failed']} failed)")
+
+    # Finalize progress
+    if progress["failed"] > 0:
+        progress["status"] = "completed_with_errors"
+    else:
+        progress["status"] = "completed"
+    save_progress(progress, progress_file)
 
     # Print final summary
     print(f"\n\n{'='*80}")
@@ -740,7 +946,7 @@ async def main():
     print(f"✗ Failed: {failed}/{len(results)}\n")
 
     for result in results:
-        print(f"\n{result['url']}:")
+        print(f"\n{result['company_name']} ({result['url']}):")
         if result['status'] == 'success':
             print(f"  ✓ Status: Success")
             print(f"  📄 Pages crawled: {result['pages_crawled']}")
@@ -748,6 +954,10 @@ async def main():
             print(f"  📁 Files:")
             for file_type, filename in result['files'].items():
                 print(f"     - {filename}")
+
+            # Show LinkedIn if available
+            if result.get('linkedin_url'):
+                print(f"  🔗 LinkedIn: {result['linkedin_url']}")
 
             # Show extracted contact info
             if result.get('analysis'):

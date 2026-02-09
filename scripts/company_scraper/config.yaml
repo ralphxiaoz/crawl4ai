@@ -1,12 +1,53 @@
 # Crawl4AI + Deepseek Configuration
 # Edit this file to customize what information you want to extract from company websites
 
-# Deepseek LLM Configuration
+# =============================================================================
+# URL Validator Settings (url_validator.py)
+# =============================================================================
+url_validator:
+  # Number of companies to process per batch
+  batch_size: 10
+
+  # HTTP timeout for URL validation (seconds)
+  timeout_seconds: 15
+
+  # Maximum concurrent HTTP requests
+  max_concurrent: 5
+
+  # Minimum confidence score to include in websites.txt output
+  confidence_threshold: 70
+
+  # Research URLs for companies with no URL provided
+  research_missing: true
+
+  # Research URLs that have low confidence after validation
+  research_low_confidence: true
+
+  # Threshold below which to trigger research (0-100)
+  low_confidence_threshold: 50
+
+  # Search provider settings
+  search:
+    # Provider: "brave" or "serper"
+    # - brave: Brave Search API (free tier, uses OpenClaw config or BRAVE_API_KEY)
+    # - serper: Serper.dev API (Google results, $0.30/1000 queries, uses SERPER_API_KEY)
+    provider: "serper"
+
+    # Serper API key (optional, can also use SERPER_API_KEY env var)
+    # serper_api_key: "your-serper-api-key"
+
+# =============================================================================
+# Deepseek LLM Configuration (used by both scraper and url_validator)
+# =============================================================================
 deepseek:
   model: "deepseek/deepseek-chat"
   temperature: 0.7
   max_tokens: 4000
   chunk_token_threshold: 50000  # Input chunking threshold - prevents splitting content into multiple chunks
+
+  # Output language for LLM responses
+  # Options: "Chinese", "English", "Spanish", etc.
+  output_language: "English"
 
 # Adaptive Crawler Settings
 crawl_settings:
@@ -83,7 +124,7 @@ content_filter:
 
 # System Prompt - Define what you want Deepseek to extract
 system_prompt: |
-  IMPORTANT: 请用中文回答所有文本字段。All text output must be in Chinese.
+  IMPORTANT: All text output must be in {output_language}.
 
   ## YOUR ROLE
   You are a Senior Procurement Consultant for Yilong Business Limited, a high-volume IT Asset Disposition (ITAD) trading firm.
@@ -233,6 +274,10 @@ output_schema:
   summary:
     type: "string"
     description: "A 2-3 paragraph human-readable summary of the company"
+
+  linkedin_url:
+    type: "string"
+    description: "LinkedIn company page URL (provided from validated data)"
 
   # Vendor Qualification Fields
   is_good_fit:
