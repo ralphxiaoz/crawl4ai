@@ -54,6 +54,49 @@ def save_progress(progress: dict, progress_file: Path):
     tmp_file.rename(progress_file)
 
 
+import atexit
+import signal
+
+_active_lock_file: Path | None = None
+
+
+def acquire_lock(output_dir: Path) -> Path:
+    """Acquire a PID-based lock file. Exits if another instance is running."""
+    global _active_lock_file
+    lock_file = output_dir / ".lock"
+    if lock_file.exists():
+        try:
+            pid = int(lock_file.read_text().strip())
+            # Check if PID is still alive
+            os.kill(pid, 0)
+            print(f"ERROR: Another scraper (PID {pid}) is already running on this directory.")
+            print(f"If the process is dead, remove {lock_file} and retry.")
+            sys.exit(1)
+        except (ValueError, ProcessLookupError):
+            # PID is dead or invalid — stale lock
+            print(f"Removing stale lock file (PID no longer running).")
+            lock_file.unlink()
+        except PermissionError:
+            # Process exists but we can't signal it — it's alive
+            print(f"ERROR: Another scraper (PID {pid}) is already running on this directory.")
+            sys.exit(1)
+    lock_file.write_text(str(os.getpid()))
+    _active_lock_file = lock_file
+    atexit.register(release_lock)
+    return lock_file
+
+
+def release_lock():
+    """Release the lock file. Registered with atexit for automatic cleanup."""
+    global _active_lock_file
+    if _active_lock_file:
+        try:
+            _active_lock_file.unlink(missing_ok=True)
+        except Exception:
+            pass
+        _active_lock_file = None
+
+
 def setup_logging(script_dir: Path) -> logging.Logger:
     """Setup logging to both file and console"""
     # Create logs directory
@@ -805,6 +848,10 @@ async def main():
     logger.info(f"Output directory: {output_dir}")
     logger.info(f"Processing {len(companies)} companies in this run")
 
+    # Acquire lock — prevents multiple instances from running on the same directory
+    lock_file = acquire_lock(output_dir)
+    logger.info(f"Lock acquired (PID {os.getpid()})")
+
     # Load or initialize progress tracking
     progress_file = output_dir / "progress.json"
     if progress_file.exists():
@@ -1042,6 +1089,10 @@ async def main():
     logger.info(f"All results saved to: {output_dir}")
     logger.info("Session complete")
     logger.info("="*80)
+
+    # Release lock (also handled by atexit)
+    release_lock()
+    logger.info("Lock released")
 
 
 if __name__ == "__main__":
